@@ -1,5 +1,5 @@
 # Libraries
-Integrate into your Vault API's using one of our official libraries.
+Integrate into your Vault APIs using one of our official libraries.
 
 We offer an official SDK for most languages widely used in the industry today and are actively maintained by our engineering team.
 
