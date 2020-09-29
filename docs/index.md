@@ -1,9 +1,7 @@
 # Overview
-Guides and reference materials to help you get started, integrate, optimize, and troubleshoot your use of the ViziVault Platform.
+The ViziVault Platform is the first comprehensive PrivSec (privacy/security) solution on the market today.
 
-
-## Intro
-The ViziVault platform is the first privsec (privacy/security) solution on the market today. We aim to allow developers to easily control access to their customer's sensitive private information and provide tools to help visualize and contextualize the usage of private information. 
+We aim to empower engineers to easily control access to their customer's sensitive private information and provide tools to help visualize and contextualize the usage of private information.
 
 ## ViziVault API
 
