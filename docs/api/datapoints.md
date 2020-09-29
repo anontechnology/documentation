@@ -12,7 +12,7 @@ This is to store many data points at once
 ### Body Parameters (Required)
 |Name            |Type                           |Description                  |
 |----------------|-------------------------------|-----------------------------|
-|payload         |Array\<Object>                 |List of Objects to be stored |
+|payload         |Array<Object\>                 |List of Objects to be stored |
 
 
 ### Example Payload
