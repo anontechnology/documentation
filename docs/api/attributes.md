@@ -31,7 +31,7 @@ A valid value for an attribute with this schema would be:
 ```js
 {
   "firstName" : "John",
-  "middleName" : [
+  "middleName" : [ // Don't include the square brackets when sending the attribute value!
     "Ronald", "Reuel"
   ],
   "lastName" : "Tolkien"
