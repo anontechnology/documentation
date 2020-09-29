@@ -1,4 +1,4 @@
-# DataPoints
+# Datapoints
 
 ## POST /data/bulk
 This is to store many data points at once
@@ -22,7 +22,7 @@ This is to store many data points at once
     {
       "dataPoints": [
         {
-          "accessibility": "Read Only",                            
+          "accessibility": "Read Only",
           "attribute": "SAMPLE_ATTRIBUTE",
           "classification": "NAME_FIRST",
           "regulations": "MY_REGULATION",
@@ -40,7 +40,7 @@ This is to store many data points at once
 
 ### Example Response
 ```json
-{ 
+{
   "data": [
     {
       "attribute": "NAME_FIRST",
@@ -49,7 +49,7 @@ This is to store many data points at once
       "dataSources": "MY_DATA_SOURCE",
       "derivedFrom": "string",
       "key": "FIRST_NAME",
-      "modifiedDate": "2020-01-01T10:06:32.4426+08:00",           
+      "modifiedDate": "2020-01-01T10:06:32.4426+08:00",
       "regulations": "MY_REGULATION",
       "sensitivity": "PERSONAL",
       "userId": -1,
