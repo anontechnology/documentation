@@ -8,7 +8,8 @@ None
 
 ### Example response
 ```json
-[
+{
+  "data": [
     {
         "key": "SAMPLE_ATTRIBUTE",
         "name": "Sample Attribute",
@@ -22,8 +23,9 @@ None
         "schema": "string",
         "repeatable": false,
         "regulations": [ "GDPR", "HIPAA" ]
-    },
-]
+    }
+  ]
+}
 ```
 
 ## POST /attributes
@@ -62,22 +64,24 @@ On success, returns 201 Created and a description of the updated attribute.
 
 ```json
 {
-  "key": "SAMPLE_ATTRIBUTE",
-  "name": "Sample Attribute",
-  "categories": [
-    "age",
-    "financial",
-    "geographic"
-  ],
-  "hint": "example data for this attribute",
-  "immutable": false,
-  "indexed": false,
-  "mandatory": true,
-  "regulations": [ "GDPR", "CCPA" ],
-  "repeatable": true,
-  "schema": "string",
-  "createdDate": "2020-09-03T02:18:54Z",
-  "modifiedDate": "2020-09-24T18:28:29Z",
+  "data": {
+    "key": "SAMPLE_ATTRIBUTE",
+    "name": "Sample Attribute",
+    "categories": [
+      "age",
+      "financial",
+      "geographic"
+    ],
+    "hint": "example data for this attribute",
+    "immutable": false,
+    "indexed": false,
+    "mandatory": true,
+    "regulations": [ "GDPR", "CCPA" ],
+    "repeatable": true,
+    "schema": "string",
+    "createdDate": "2020-09-03T02:18:54Z",
+    "modifiedDate": "2020-09-24T18:28:29Z",
+  }
 }
 ```
 
@@ -92,21 +96,23 @@ Displays information about one attribute. Returns an [Attribute](#somewhere) obj
 ### Example response
 ```json
 {
-  "key": "SAMPLE_ATTRIBUTE",
-  "name": "Sample Attribute",
-  "categories": [
-    "age",
-    "financial",
-    "geographic"
-  ],
-  "hint": "example data for this attribute",
-  "immutable": false,
-  "indexed": false,
-  "mandatory": true,
-  "regulations": [ "GDPR", "CCPA" ],
-  "repeatable": true,
-  "schema": "string",
-  "createdDate": "2020-09-03T02:18:54Z",
-  "modifiedDate": "2020-09-24T18:28:29Z",
+  "data": {
+    "key": "SAMPLE_ATTRIBUTE",
+    "name": "Sample Attribute",
+    "categories": [
+      "age",
+      "financial",
+      "geographic"
+    ],
+    "hint": "example data for this attribute",
+    "immutable": false,
+    "indexed": false,
+    "mandatory": true,
+    "regulations": [ "GDPR", "CCPA" ],
+    "repeatable": true,
+    "schema": "string",
+    "createdDate": "2020-09-03T02:18:54Z",
+    "modifiedDate": "2020-09-24T18:28:29Z",
+  }
 }
 ```

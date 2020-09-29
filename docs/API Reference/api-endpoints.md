@@ -13,24 +13,13 @@ Guides and reference materials to help you get started, integrate, optimize, and
 -   [POST /data/search](/API Reference/datapoints)
     
 
-### Users
+### Categories
 
--   [GET ​/users​/data](/API Reference/users)
+-   [POST​ /categories](/API Reference/categories#post-categories)
     
--   [GET /users/{userId}/data](/API Reference/users)
+-   [GET /categories](/API Reference/categories#get-categories)
     
--   [DELETE /users/{userId}/data](/API Reference/users)
-    
--   [DELETE /users/{userId}/data/{attributeKey}](/API Reference/users)
-    
-
-### Classifications
-
--   [POST​ /classification](/API Reference/classifications)
-    
--   [GET /classifications](/API Reference/classifications)
-    
--   [GET /classifications/{classificationKey}](/API Reference/classifications)
+-   [GET /categories/{categoryKey}](/API Reference/categories#get-categories-categorykey)
     
 
 ### Attributes
