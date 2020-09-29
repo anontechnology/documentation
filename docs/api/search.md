@@ -13,7 +13,7 @@ The search system can be accessed in two ways: through the ViziVault Enterprise 
 
 ### Performing a search using the ViziVault API
 To perform a search request using the ViziVault API, send a HTTP POST request to `/data/search`. The body of the request should be a JSON object formatted as follows:
-```
+```json
 {
     "page": <integer>,
     "count": <integer>,
@@ -48,7 +48,7 @@ This query will return all data points in the vault that either belong to an att
 
 ## Examples
 To list all users whose job title is "Software Engineer":
-```
+```json
 {
     "page": 0,
     "count": 100,
