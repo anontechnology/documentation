@@ -1,14 +1,18 @@
-# ViziVault Platform Documentation
-Guides and reference materials to help you get started, integrate, optimize, and troubleshoot your use of the Anon Tech Platform.
-
-
 # Overview
+Guides and reference materials to help you get started, integrate, optimize, and troubleshoot your use of the ViziVault Platform.
+
+
+## Intro
 The ViziVault platform is the first privsec (privacy/security) solution on the market today. We aim to allow developers to easily control access to their customer's sensitive private information and provide tools to help visualize and contextualize the usage of private information. 
 
 ## ViziVault API
 
-The file explorer is accessible using the button in left corner of the navigation bar. You can create a new file by clicking the **New file** button in the file explorer. You can also create folders by clicking the **New folder** button.
+The ViziVault API is designed to enable you as a developer to store and retrieve personal/sensitive information in a safe and secure manner that is easy to use. The multi layer encryption/decryption will prevent even you as a developer from accessing certain pieces of an end users personal information. This is meant to provide users with the greatest flexibility on the security of their data.
 
 ## ViziVault Enterprise
 
-All your files and folders are presented as a tree in the file explorer. You can switch from one to another by clicking a file in the tree.
+ViziVault Enterprise is an aggregated view of the personal information stored using the ViziVault API for a company’s users, highlighting risks, accessibility to, and the composition of governed data. Here, companies can take action to reduce data privacy risks down to desired levels and monitor risk levels in real-time.
+
+## Getting Started
+[Click here to get started now](/api/getting-started)
+
