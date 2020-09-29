@@ -2,5 +2,6 @@ site_name: Anontech
 theme:
   name: material
   logo: assets/images/anontech.png
+  favicon: assets/images/favicon.png
 extra_css:
   - stylesheets/extra.css
