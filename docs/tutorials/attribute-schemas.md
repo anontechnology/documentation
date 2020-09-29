@@ -1,5 +1,4 @@
-
-## Attribute Schemas
+# Attribute Schemas
 
 Attribute schemas can be used to structure your data and to specify what form it takes, whether that is textual, numeric, or something more structured. An attribute can have a primitive schema, meaning that its datapoints consist of a single piece of unstructured information; alternatively, an attribute can have a structured schema, breaking up its data into multiple sub-attributes.
 
@@ -12,7 +11,7 @@ The supported primitive schemas are as follows:
 
 Structured schemas take the form of JSON objects, which map sub-attribute keys to further attribute schemas. Thesse nested schemas can be either primitive or structured. In this way, arbitrarily complex structurse can be represented within a single attribute. To mark that a sub-attribute should be able to take on multiple values within a single datapoint, or that the value of a sub-attribute should be a list, enclose the name of the sub-attribute in square brackets.
 
-### Examples
+## Examples
 
 An example schema that could be used to store a person's name:
 
