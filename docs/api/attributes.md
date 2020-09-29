@@ -1,3 +1,4 @@
+
 ## Attribute Schemas
 
 Attribute schemas can be used to structure your data and to specify what form it takes, whether that is textual, numeric, or something more structured. An attribute can have a primitive schema, meaning that its datapoints consist of a single piece of unstructured information; alternatively, an attribute can have a structured schema, breaking up its data into multiple sub-attributes.
