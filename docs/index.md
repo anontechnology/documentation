@@ -1,7 +1,13 @@
 # Overview
-The ViziVault Platform is the first comprehensive PrivSec (privacy/security) solution on the market today.
+The ViziVault Platform is the first all-in-one PrivSec (privacy/security) solution on the market today.
 
-We aim to empower engineers to easily control access to their customer's sensitive private information and provide tools to help visualize and contextualize the usage of private information.
+We aim to empower engineers to easily control access to their organization's sensitive information and provide rich applications to help visualize and contextualize the usage of their data as it moves throughout systems.
+
+![ViziVault Platform Overview](/assets/images/anontech-overview-no-data.png)
+
+Our platform and suite of connectors/tools makes it easy for you to stream sensitive data from various sources into secure storage using military-grade encryption through our [ViziVault API](#vizivault-api).
+
+Easily grant access to trusted applications to limit the scope of who and what can query your data using [ViziVault Enterprise](#vizivault-enterprise).
 
 ## ViziVault API
 
