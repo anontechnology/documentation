@@ -1,0 +1,6 @@
+site_name: Anontech
+theme:
+  name: material
+  logo: assets/images/anontech.png
+extra_css:
+  - stylesheets/extra.css
