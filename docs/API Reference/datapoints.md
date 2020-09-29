@@ -1,7 +1,7 @@
 # Datapoints
 
 ## POST /data/bulk
-This is to store many data points at once
+Stores data for multiple users simultaneously.
 
 ### Header Parameters
 |Name            |Type                           |Description                  |
@@ -24,15 +24,14 @@ This is to store many data points at once
         {
           "accessibility": "Read Only",
           "attribute": "SAMPLE_ATTRIBUTE",
-          "classification": "NAME_FIRST",
-          "regulations": "MY_REGULATION",
+          "regulations": ["SAMPLE_REGULATION"],
           "sensitivity": "PERSONAL",
           "value": "123-456-789"
         }
       ],
       "namespace": "Example_Namespace",
       "origin": "127.0.0.1",
-      "userId": -1
+      "userId": "001"
     }
   ]
 }
@@ -46,20 +45,19 @@ This is to store many data points at once
       "attribute": "NAME_FIRST",
       "createdDate": "2020-01-01T10:05:59.5646+08:00",
       "dataPointId": "a9fcbf23-852f-441e-b729-dc9fffa528f7",
-      "dataSources": "MY_DATA_SOURCE",
-      "derivedFrom": "string",
       "key": "FIRST_NAME",
       "modifiedDate": "2020-01-01T10:06:32.4426+08:00",
-      "regulations": "MY_REGULATION",
+      "regulations": ["SAMPLE_REGULATION"],
       "sensitivity": "PERSONAL",
-      "userId": -1,
-      "value": "Doug"
+      "userId": "001",
+      "value": "123-456-789"
     }
   ]
 }
 ```
 
 ## POST /data
+(NOT SUPPORTED)
 Edits metadata for an existing data point
 
 ### Body Parameters (Required)
@@ -101,6 +99,7 @@ Edits metadata for an existing data point
 ```
 
 ## POST /data/search
+(THIS DOCUMENTATION IS OBSOLETE)
 Searches data that matches criteria
 
 ### Body Parameters (Required)
@@ -143,14 +142,14 @@ Returns a list of encrypted values for the specified attributes
 ### Body Parameters (Required)
 |Name                |Type                           |Description                             |
 |--------------------|-------------------------------|----------------------------------------|
-|payload             |<Object\>                      |Object containing specified attributes  |
+|payload             |DataPointExportDTO                      |Object containing specified attributes  |
 
 
 ### Example Payload
 ```json
 {
   "attributes": [
-    "string"
+    "SAMPLE_ATTRIBUTE"
   ]
 }
 ```
@@ -163,13 +162,12 @@ Returns a list of encrypted values for the specified attributes
       "attribute": "NAME_FIRST",
       "createdDate": "2020-01-01T10:05:59.5646+08:00",
       "dataPointId": "a9fcbf23-852f-441e-b729-dc9fffa528f7",
-      "dataSources": "MY_DATA_SOURCE",
       "key": "FIRST_NAME",
       "modifiedDate": "2020-01-01T10:06:32.4426+08:00",
-      "regulations": "MY_REGULATION",
+      "regulations": ["SAMPLE_REGULATION"],
       "sensitivity": "PERSONAL",
-      "structureRootId": "string",
-      "userId": -1,
+      "structureRootId": null,
+      "userId": "001",
       "value": "Doug"
     }
   ]
@@ -187,7 +185,7 @@ Stores datapoints for the given user
 ### Body Parameters (Required)
 |Name                |Type                           |Description      |
 |--------------------|-------------------------------|-----------------|
-|payload             |<Object\>                      |Storage Request  |
+|payload             |StorageRequest                      |Storage Request  |
 
 ### Path Variables
 |Name               |Type                          |Description      |
@@ -203,7 +201,7 @@ Stores datapoints for the given user
       "accessibility": "Read Only",
       "attribute": "SAMPLE_ATTRIBUTE",
       "dataPointId": "string",
-      "regulations": "MY_REGULATION",
+      "regulations": ["SAMPLE_REGULATION"],
       "sensitivity": "PERSONAL",
       "value": "123-456-789"
     }
@@ -221,14 +219,13 @@ Stores datapoints for the given user
       "attribute": "NAME_FIRST",
       "createdDate": "2020-01-01T10:05:59.5646+08:00",
       "dataPointId": "a9fcbf23-852f-441e-b729-dc9fffa528f7",
-      "dataSources": "MY_DATA_SOURCE",
       "key": "FIRST_NAME",
       "modifiedDate": "2020-01-01T10:06:32.4426+08:00",
-      "regulations": "MY_REGULATION",
+      "regulations": ["SAMPLE_REGULATION"],
       "sensitivity": "PERSONAL",
       "structureRootId": "string",
-      "userId": -1,
-      "value": "Doug"
+      "userId": "001",
+      "value": "123-456-789"
     }
   ]
 }
@@ -255,14 +252,13 @@ Retrieves datapoints for the given user
       "attribute": "NAME_FIRST",
       "createdDate": "2020-01-01T10:05:59.5646+08:00",
       "dataPointId": "a9fcbf23-852f-441e-b729-dc9fffa528f7",
-      "dataSources": "MY_DATA_SOURCE",
       "key": "FIRST_NAME",
       "modifiedDate": "2020-01-01T10:06:32.4426+08:00",
-      "regulations": "MY_REGULATION",
+      "regulations": ["SAMPLE_REGULATION"],
       "sensitivity": "PERSONAL",
       "structureRootId": "string",
-      "userId": -1,
-      "value": "Doug"
+      "userId": "001",
+      "value": "123-456-789"
     }
   ]
 }
@@ -288,14 +284,13 @@ Retrieves data with the given datapoint id
     "attribute": "NAME_FIRST",
     "createdDate": "2020-01-01T10:05:59.5646+08:00",
     "dataPointId": "a9fcbf23-852f-441e-b729-dc9fffa528f7",
-    "dataSources": "MY_DATA_SOURCE",
     "key": "FIRST_NAME",
     "modifiedDate": "2020-01-01T10:06:32.4426+08:00",
-    "regulations": "MY_REGULATION",
+    "regulations": ["SAMPLE_REGULATION"],
     "sensitivity": "PERSONAL",
     "structureRootId": "string",
-    "userId": -1,
-    "value": "Doug"
+    "userId": "001",
+    "value": "123-456-789"
   }
 }
 ```
@@ -316,14 +311,13 @@ Retrieves datapoints for every user
       "attribute": "NAME_FIRST",
       "createdDate": "2020-01-01T10:05:59.5646+08:00",
       "dataPointId": "a9fcbf23-852f-441e-b729-dc9fffa528f7",
-      "dataSources": "MY_DATA_SOURCE",
       "key": "FIRST_NAME",
       "modifiedDate": "2020-01-01T10:06:32.4426+08:00",
-      "regulations": "MY_REGULATION",
+      "regulations": ["SAMPLE_REGULATION"],
       "sensitivity": "PERSONAL",
       "structureRootId": "string",
-      "userId": -1,
-      "value": "Doug"
+      "userId": "001",
+      "value": "123-456-789"
     }
   ]
 }
@@ -341,7 +335,7 @@ Deletes datapoints for the given user and attribute
 ### Example Response
 ```json
 {
-  "data": "string"
+  "data": "Successfully Deleted Data Point"
 }
 ```
 
@@ -356,6 +350,6 @@ Deletes all datapoints for the given user
 ### Example Response
 ```json
 {
-  "data": "string"
+  "data": "Successfully Deleted User"
 }
 ```
