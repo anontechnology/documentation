@@ -9,7 +9,7 @@ The ViziVault Platform provides you with all the tools to enable you to take con
 
 To begin using our platform, use the button below to visit our form to request your own vault.
 
-[Request a Vault](#){: .md-button }
+<a class="md-button md-button--primary" href="https://anontech.io" target="_blank">Request a Vault</a>
 
 ## Integration
 Integrating with new infrastructure can be tricky when you are forced to write your own client libraries just to use an API.
@@ -18,4 +18,4 @@ You have to think about, what request libraries can I use for my application, or
 
 Luckily, that's why we created officially supported libraries to help make your integration with ViziVault seamless and easy.
 
-[Tools and Libraries](#){: .md-button }
+[Tools and Libraries](libraries.md){: .md-button .md-button--primary }
