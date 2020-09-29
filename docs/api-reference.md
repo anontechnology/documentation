@@ -3,49 +3,52 @@ Guides and reference materials to help you get started, integrate, optimize, and
 
 ### DataPoints
 
--   [POST​ /bulk​/data](/api/datapoints)
+-   [POST​ /bulk​/data](/API Reference/datapoints)
     
--   [POST /data/dataList](/api/datapoints)
+-   [POST​ /bulk​/data](/API Reference Reference/datapoints)
     
--   [POST /data/search](/api/datapoints)
+-   [POST /data/dataList](/API Reference/datapoints)
+    
+-   [POST /data/search](/API Reference/datapoints)
     
 
 ### Users
 
--   [GET ​/users​/data](/api/users)
+-   [GET ​/users​/data](/API Reference/users)
     
--   [GET /users/{userId}/data](/api/users)
+-   [GET /users/{userId}/data](/API Reference/users)
     
--   [DELETE /users/{userId}/data](/api/users)
+-   [DELETE /users/{userId}/data](/API Reference/users)
     
--   [DELETE /users/{userId}/data/{attributeKey}](/api/users)
+-   [DELETE /users/{userId}/data/{attributeKey}](/API Reference/users)
     
 
 ### Classifications
 
--   [POST​ /classification](/api/classifications)
+-   [POST​ /classification](/API Reference/classifications)
     
--   [GET /classifications](/api/classifications)
+-   [GET /classifications](/API Reference/classifications)
     
--   [GET /classifications/{classificationKey}](/api/classifications)
+-   [GET /classifications/{classificationKey}](/API Reference/classifications)
     
 
 ### Attributes
 
--   [GET /attributes](/api/attributes)
+-   [GET /attributes](/API Reference/attributes)
     
--   [GET /attributes/{attributeKey}](/api/attributes)
+-   [GET /attributes/{attributeKey}](/API Reference/attributes)
     
--   [POST /attributes](/api/attributes)
+-   [POST /attributes](/API Reference/attributes)
 
 
 ### Regulations
 
--   [POST /regulations](/api/regulations)
+-   [POST /regulations](/API Reference/regulations)
     
--   [GET /regulations](/api/regulations)
+-   [GET /regulations](/API Reference/regulations)
     
--   [GET /regulations/{regulation}](/api/regulations)
+-   [GET /regulations/{regulation}](/API Reference/regulations)
     
--   [DELETE /regulations/{regulation}](/api/regulations)
+-   [DELETE /regulations/{regulation}](/API Reference/regulations)
+    
     
