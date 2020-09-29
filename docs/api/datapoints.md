@@ -18,23 +18,23 @@ This is to store many data points at once
 ### Example Payload
 ```json
 {
-   "requests":  [
-         {
-            "dataPoints": [
-              {
-                "accessibility": "Read Only",                            
-                "attribute": "SAMPLE_ATTRIBUTE",
-                "classification": "NAME_FIRST",
-                "regulations": "MY_REGULATION",
-                "sensitivity": "PERSONAL",
-                "value": "123-456-789"
-             }
-        ],
-        "namespace": "Example_Namespace",
-        "origin": "127.0.0.1",
-        "userId": -1
+  "requests":  [
+    {
+      "dataPoints": [
+        {
+          "accessibility": "Read Only",                            
+          "attribute": "SAMPLE_ATTRIBUTE",
+          "classification": "NAME_FIRST",
+          "regulations": "MY_REGULATION",
+          "sensitivity": "PERSONAL",
+          "value": "123-456-789"
         }
-   ]
+      ],
+      "namespace": "Example_Namespace",
+      "origin": "127.0.0.1",
+      "userId": -1
+    }
+  ]
 }
 ```
 
