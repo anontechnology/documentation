@@ -21,15 +21,15 @@ Guides and reference materials to help you get started, integrate, optimize, and
 -   [GET /categories/{categoryKey}](/API Reference/categories#get-categories-categorykey)
     
 ### Attributes
+-   [POST /attributes](/API Reference/attributes#post-attributes)
 -   [GET /attributes](/API Reference/attributes#get-attributes)
 -   [GET /attributes/{attributeKey}](/API Reference/attributes#get-attributes-attribute-key)
--   [POST /attributes](/API Reference/attributes#post-attributes)
 
 ### Regulations    
--   [GET /regulations](/API Reference/regulations#get-regulations)
--   [GET /regulations/{regulation}](/API Reference/regulations#get-regulations-regulation-key)
 -   [POST /regulations](/API Reference/regulations#post-regulations)
 -   [POST /regulations/{regulation}/propagate](/API Reference/regulations#post-regulations-regulation-key-propagate)
+-   [GET /regulations](/API Reference/regulations#get-regulations)
+-   [GET /regulations/{regulation}](/API Reference/regulations#get-regulations-regulation-key)
 -   [DELETE /regulations/{regulation}](/API Reference/regulations#delete-regulations-regulation-key)
     
     
