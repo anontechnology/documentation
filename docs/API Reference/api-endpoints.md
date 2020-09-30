@@ -4,10 +4,8 @@ Guides and reference materials to help you get started, integrate, optimize, and
 
 ### DataPoints
 
--   [POST​ /data/bulk](/API Reference/datapoints#post-databulk)
--   [POST​ /data](/API Reference/datapoints#post-data)
+-   [POST​ /data/bulk](/API Reference/datapoints#post-databulk)7
 -   [POST /data/search](/API Reference/datapoints#post-datasearch)
--   [POST /data/dataList](/API Reference/datapoints#post-datadatalist)
 -   [POST /data/user/{userId}](/API Reference/datapoints#post-datauseruserid)
 -   [GET /data/user/{userId}](/API Reference/datapoints#get-datauseruserid)
 -   [GET /data/{dataPointId}](/API Reference/datapoints#get-datadatapointid)

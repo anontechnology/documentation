@@ -1,8 +1,11 @@
 site_name: Anontech
 site_url: https://anontech.io
+google_analytics:
+  - UA-145420782-2
+  - auto
 theme:
   name: material
-  logo: assets/images/anontech.png
+  logo: assets/images/anontech-cropped.png
   favicon: assets/images/favicon.png
 extra_css:
   - stylesheets/extra.css
