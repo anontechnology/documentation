@@ -75,3 +75,7 @@ Displays information about one category. Returns an [Category](/glossary/categor
 }
 ```
 
+### Error responses
+|Status code|Error message|Description|
+|-----------|-------------|-----------|
+|404        |No such category|The system does not contain a category with the specified key.|
