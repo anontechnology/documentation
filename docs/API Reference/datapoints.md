@@ -12,7 +12,7 @@ Stores data for multiple users simultaneously.
 ### Body Parameters (Required)
 |Name            |Type                           |Description                  |
 |----------------|-------------------------------|-----------------------------|
-|payload         |Array<Object\>                 |List of Objects to be stored |
+|payload         |Array<[DataPoint](/docs/glossary/data-point)\>|List of Objects to be stored |
 
 
 ### Example Payload
@@ -63,7 +63,7 @@ Edits metadata for an existing data point
 ### Body Parameters (Required)
 |Name                |Type                           |Description                     |
 |--------------------|-------------------------------|--------------------------------|
-|Data Point Metadata |<Object\>                      |Metadata of data point to edit  |
+|Data Point Metadata |<[DataPoint](/docs/glossary/data-point)\>|Metadata of data point to edit  |
 
 
 ### Example Payload
@@ -142,7 +142,7 @@ Returns a list of encrypted values for the specified attributes
 ### Body Parameters (Required)
 |Name                |Type                           |Description                             |
 |--------------------|-------------------------------|----------------------------------------|
-|payload             |DataPointExportDTO                      |Object containing specified attributes  |
+|payload             |DataPointExportDTO             |Object containing specified attributes  |
 
 
 ### Example Payload
@@ -185,7 +185,7 @@ Stores datapoints for the given user
 ### Body Parameters (Required)
 |Name                |Type                           |Description      |
 |--------------------|-------------------------------|-----------------|
-|payload             |StorageRequest                      |Storage Request  |
+|payload             |[StorageRequest](/docs/glossary/storage-request)|Storage Request  |
 
 ### Path Variables
 |Name               |Type                          |Description      |

@@ -28,7 +28,7 @@ Creates or edits an category. If there is an existing category in the system wit
 #### Body Parameters (Required)
 |Name            |Type                           |Description                  |
 |----------------|-------------------------------|-----------------------------|
-|payload         |[CategoryDefinition](#somewhere)        |Description of new category |
+|payload         |[Category](#somewhere)         |Description of new category |
 
 ### Example payload
 
@@ -53,13 +53,13 @@ On success, returns 201 Created and a description of the updated category.
 }
 ```
 
-## GET /categories/{category key}
+## GET /categories/{categoryKey}
 Displays information about one category. Returns an [Category](#somewhere) object.
 
 ### Path Parameters
 |Name            |Type                           |Description                  |
 |----------------|-------------------------------|-----------------------------|
-|Category key|String                         |Key of the category to describe        |
+|categoryKey     |String                         |Key of the category to describe|
 
 ### Example response
 ```json

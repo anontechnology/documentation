@@ -1,7 +1,7 @@
 # Regulations
 
 ## GET /regulations
-Retrieves data for all regulations in the system. Returns a list of [Regulation](#somewhere) objects.
+Retrieves data for all regulations in the system. Returns a list of [Regulation](/docs/glossary/regulation) objects.
 
 ### Parameters
 None
@@ -29,7 +29,7 @@ Creates or edits a regulation. If there is an existing regulation in the system 
 #### Body Parameters (Required)
 |Name            |Type                           |Description                  |
 |----------------|-------------------------------|-----------------------------|
-|payload         |[RegulationDefinition](#somewhere)        |Description of new regulation |
+|payload         |[Regulation](/docs/glossary/regulation)|Description of new regulation |
 
 ### Example payload
 For more information on how to specify rules for regulations, see [Regulation rules](#../tutorials/regulation-rules.md).
@@ -50,13 +50,13 @@ For more information on how to specify rules for regulations, see [Regulation ru
 }
 ```
 
-## GET /regulations/{regulation key}
-Displays information about one regulation. Returns a [Regulation](#somewhere) object, or 404 Not Found if there is no regulation with the specified key.
+## GET /regulations/{regulationKey}
+Displays information about one regulation. Returns a [Regulation](/docs/glossary/regulation) object, or 404 Not Found if there is no regulation with the specified key.
 
 ### Path Parameters
 |Name            |Type                           |Description                  |
 |----------------|-------------------------------|-----------------------------|
-|Regulation key  |String                         |Key of the regulation to describe|
+|regulationKey   |String                         |Key of the regulation to describe|
 
 ### Example response
 ```json
@@ -71,13 +71,13 @@ Displays information about one regulation. Returns a [Regulation](#somewhere) ob
 }
 ```
 
-## DELETE /regulations/{regulation key}
+## DELETE /regulations/{regulationKey}
 Deletes a specified regulation, and untags it from all attributes. Returns 404 Not Found if there is no regulation with the specified key.
 
 ### Path Parameters
 |Name            |Type                           |Description                  |
 |----------------|-------------------------------|-----------------------------|
-|Regulation key  |String                         |Key of the regulation to delete|
+|regulationKey   |String                         |Key of the regulation to delete|
 
 ### Example response
 ```json
@@ -86,13 +86,13 @@ Deletes a specified regulation, and untags it from all attributes. Returns 404 N
 }
 ```
 
-## POST /regulations/{regulation key}/propagate
+## POST /regulations/{regulationKey}/propagate
 Updates what data is tagged with a specific regulation. Because regulations can depend on attribute values (for example, COPPA is applied to data belonging to people under the age of 13, but age is itself an attribute and is therefore stored encrypted), it is necessary to provide a private key to decrypt the relevant data.
 
 ### Path Parameters
 |Name            |Type                           |Description                  |
 |----------------|-------------------------------|-----------------------------|
-|Regulation key  |String                         |Key of the regulation to describe|
+|regulationKey   |String                         |Key of the regulation to describe|
 
 ### Header Parameters
 |Name            |Type                           |Description                  |

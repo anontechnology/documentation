@@ -1,12 +1,12 @@
 
-# API Reference
+# API Endpoints
 Guides and reference materials to help you get started, integrate, optimize, and troubleshoot your use of the Anon Tech Platform.
 
 ### DataPoints
 
 -   [POST​ /bulk​/data](/API Reference/datapoints)
     
--   [POST​ /bulk​/data](/API Reference Reference/datapoints)
+-   [POST​ /bulk​/data](/API Reference/datapoints)
     
 -   [POST /data/dataList](/API Reference/datapoints)
     
