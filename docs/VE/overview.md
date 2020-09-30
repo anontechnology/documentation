@@ -19,10 +19,10 @@ Vizivault Enterprise is how you control and manage your organization personal in
 - **Regulations** Create rules to manage personal information across your organization
 - **Applications** Define which programs have access to which attributes.
 
-## Distibution
+## Distribution
 
 Vizivault Enterprise has specific controls to manage where data is stores in our vault network and managie who you share data with.
 
 - **Data Sharing** Share data with other organizations. Control what gets shared and how often.
 - **Vaults** Manage your personal data repositories
-   
+
