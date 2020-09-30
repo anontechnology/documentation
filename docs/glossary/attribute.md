@@ -2,6 +2,8 @@
 
 Attributes are how the ViziVault ecosystem organizes your data. Every data point consists of three main components: a user id, which represents who the data is about; a value, which is some piece of information about the user; and an attribute, which expresses the relationship between the user and the value. For example, in an online retail application, there would be an attribute for shipping addresses, an attribute for billing addresses, and an attribute for credit card information.
 
+## Definition
+
 There are several forms of metadata associated with attributes, as follows:
 
 |Name |Type |Description|
@@ -18,3 +20,31 @@ There are several forms of metadata associated with attributes, as follows:
 |schema|[Attribute schema](/docs/tutorials/attribute-schemas.md)|A representation of the structure of data this attribute is expected to have, including any sub-attributes, and whether its data is textual, numeric, or other formats. Read [the Attribute Schemas tutorial](/docs/tutorials/attribute-schemas.md) for more information.|
 |repeatable|boolean|Whether a user should be able to have multiple values for this attribute.|
 |regulations|List of strings|A list of [regulation keys](/docs/glossary/regulation.md), each representing a regulation that is applicable to all datapoints of this attribute.|
+
+## Examples
+
+An example attribute definition representing a user's billing address:
+
+```json
+{
+  "key" : "BILLING_ADDRESS",
+  "name" : "Billing address",
+  "categories": ["geographic_location", "financial"],
+  "hint" : "{\n  \"line_one\": \"1 Hacker Way\".\n  \"line_two\": \"Apt. 53\",\n  \"city\": \"Menlo Park\",\n  \"state\": \"California\",\n  \"postal_code\": \"94025-1456\",\n  \"country\": \"USA\"\n}",
+  "schema": {
+    "line_one": "string",
+    "line_two": "string",
+    "city": "string",
+    "state": "string",
+    "postal_code": "string",
+    "country": "string"
+  },
+  "repeatable": false,
+  "immutable": false,
+  "mandatory" : true,
+  "indexed": false,
+  "regulations" : ["GDPR", "CCPA"],
+  "createdDate" : "2020-01-01T02:18:54Z",
+  "modifiedDate" : "2020-01-01T02:18:54Z"
+}
+```
