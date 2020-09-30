@@ -1,4 +1,5 @@
 site_name: Anontech
+site_url: https://anontech.io
 theme:
   name: material
   logo: assets/images/anontech.png
