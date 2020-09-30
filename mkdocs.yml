@@ -5,7 +5,7 @@ google_analytics:
   - auto
 theme:
   name: material
-  logo: assets/images/anontech.png
+  logo: assets/images/anontech-cropped.png
   favicon: assets/images/favicon.png
 extra_css:
   - stylesheets/extra.css
