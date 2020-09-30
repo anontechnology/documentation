@@ -1,5 +1,8 @@
 site_name: Anontech
 site_url: https://anontech.io
+google_analytics:
+  - UA-145420782-2
+  - auto
 theme:
   name: material
   logo: assets/images/anontech.png
