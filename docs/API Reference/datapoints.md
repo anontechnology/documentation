@@ -12,7 +12,7 @@ Stores data for multiple users simultaneously.
 ### Body Parameters (Required)
 |Name            |Type                           |Description                  |
 |----------------|-------------------------------|-----------------------------|
-|payload         |Array<[DataPoint](/glossary/data-point)\>|List of Objects to be stored |
+|payload         |List of [StorageRequest](/glossary/storage-request)s|List of storage requests (i.e. lists of data points, each for one user) to be processed |
 
 
 ### Example Payload
@@ -52,46 +52,6 @@ Stores data for multiple users simultaneously.
       "value": "123-456-789"
     }
   ]
-}
-```
-
-## POST /data
-(NOT SUPPORTED)
-Edits metadata for an existing data point
-
-### Body Parameters (Required)
-|Name                |Type                           |Description                     |
-|--------------------|-------------------------------|--------------------------------|
-|Data Point Metadata |<[DataPoint](/glossary/data-point)\>|Metadata of data point to edit  |
-
-
-### Example Payload
-```json
-{
-  "accessibility": "Read Only",
-  "attribute": "SAMPLE_ATTRIBUTE",
-  "namespace": "string",
-  "origin": "string",
-  "regulations": "MY_REGULATION",
-  "sensitivity": "PERSONAL",
-  "userId": "string"
-}
-```
-
-### Example Response
-```json
-{
-  "data": {
-    "attribute": "NAME_FIRST",
-    "createdDate": "2020-01-01T10:05:59.5646+08:00",
-    "dataPointId": "a9fcbf23-852f-441e-b729-dc9fffa528f7",
-    "modifiedDate": "2020-01-01T10:06:32.4426+08:00",
-    "regulations": "MY_REGULATION",
-    "sensitivity": "PERSONAL",
-    "structureRootId": "string",
-    "userId": -1,
-    "value": "Doug"
-  }
 }
 ```
 
@@ -144,43 +104,6 @@ Searches data that matches specified criteria, using blind indexing to allow sea
       "sensitivity": "NORMAL",
       "structureRootId": null,
       "userId": "001",
-    }
-  ]
-}
-```
-
-## POST /data/dataList
-Returns a list of encrypted values for the specified attributes
-
-### Body Parameters (Required)
-|Name                |Type                           |Description                             |
-|--------------------|-------------------------------|----------------------------------------|
-|payload             |DataPointExportDTO             |Object containing specified attributes  |
-
-
-### Example Payload
-```json
-{
-  "attributes": [
-    "SAMPLE_ATTRIBUTE"
-  ]
-}
-```
-
-### Example Response
-```json
-{
-  "data": [
-    {
-      "attribute": "NAME_FIRST",
-      "createdDate": "2020-01-01T10:05:59.5646+08:00",
-      "dataPointId": "a9fcbf23-852f-441e-b729-dc9fffa528f7",
-      "modifiedDate": "2020-01-01T10:06:32.4426+08:00",
-      "regulations": ["SAMPLE_REGULATION"],
-      "sensitivity": "PERSONAL",
-      "structureRootId": null,
-      "userId": "001",
-      "value": "Doug"
     }
   ]
 }
