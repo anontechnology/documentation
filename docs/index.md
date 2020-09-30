@@ -17,6 +17,8 @@ The ViziVault API is designed to enable you as a developer to store and retrieve
 
 ViziVault Enterprise is an aggregated view of the personal information stored using the ViziVault API for a company’s users, showing the accessibility and composition of governed data. Here, companies can take action to reduce data privacy risks down to desired levels and monitor risk levels in real-time.
 
-## Getting Started
-[Click here to get started now](/api/getting-started)
+## Try the Platform
+Looking to use the ViziVault Platform for your organization today?
+
+[Get Started](getting-started){: .md-button .md-button--primary }
 
