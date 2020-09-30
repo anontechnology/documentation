@@ -59,4 +59,5 @@ A valid value for an attribute with this schema would be:
     "year" : 2025
   }
 }
+
 ```
