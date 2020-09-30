@@ -1,33 +1,5 @@
 # Attributes
 
-## GET /attributes
-Retrieves data for all attributes in the system. Returns a list of [Attribute](/docs/glossary/attribute) objects.
-
-### Parameters
-None
-
-### Example response
-```json
-{
-  "data": [
-    {
-        "key": "SAMPLE_ATTRIBUTE",
-        "name": "Sample Attribute",
-        "categories": ["financial", "medical"],
-        "hint": "example data for this attribute",
-        "immutable": false,
-        "indexed": true,
-        "createdDate": "2020-09-03T02:18:54Z",
-        "modifiedDate": "2020-09-24T18:28:29Z",
-        "mandatory": false,
-        "schema": "string",
-        "repeatable": false,
-        "regulations": [ "GDPR", "HIPAA" ]
-    }
-  ]
-}
-```
-
 ## POST /attributes
 Creates or edits an attribute. If there is an existing attribute in the system with the `key` of the provided attribute, that attribute will be updated; otherwise, a new attribute will be created.
 
@@ -36,7 +8,7 @@ Creates or edits an attribute. If there is an existing attribute in the system w
 #### Body Parameters (Required)
 |Name            |Type                           |Description                  |
 |----------------|-------------------------------|-----------------------------|
-|payload         |[Attribute](/docs/glossary/attribute)        |Description of new attribute |
+|payload         |[Attribute](/glossary/attribute)        |Description of new attribute |
 
 ### Example payload
 
@@ -85,8 +57,36 @@ On success, returns 201 Created and a description of the updated attribute.
 }
 ```
 
+## GET /attributes
+Retrieves data for all attributes in the system. Returns a list of [Attribute](/glossary/attribute) objects.
+
+### Parameters
+None
+
+### Example response
+```json
+{
+  "data": [
+    {
+        "key": "SAMPLE_ATTRIBUTE",
+        "name": "Sample Attribute",
+        "categories": ["financial", "medical"],
+        "hint": "example data for this attribute",
+        "immutable": false,
+        "indexed": true,
+        "createdDate": "2020-09-03T02:18:54Z",
+        "modifiedDate": "2020-09-24T18:28:29Z",
+        "mandatory": false,
+        "schema": "string",
+        "repeatable": false,
+        "regulations": [ "GDPR", "HIPAA" ]
+    }
+  ]
+}
+```
+
 ## GET /attributes/{attributeKey}
-Displays information about one attribute. Returns an [Attribute](/docs/glossary/attribute) object.
+Displays information about one attribute. Returns an [Attribute](/glossary/attribute) object.
 
 ### Path Parameters
 |Name            |Type                           |Description                  |
