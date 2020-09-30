@@ -26,7 +26,7 @@
 
 9. **Creation and Export**: Add a new attribute ot export the existing attributes.
 
-&nbsp;&nbsp;&nbsp;&nbsp;![Add](../assets/images/Add.png "Add")
+&nbsp;&nbsp;&nbsp;&nbsp;![Add](../assets/images/add.png "Add")
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add a new attribute.
 
