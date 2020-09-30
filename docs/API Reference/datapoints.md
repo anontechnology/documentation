@@ -12,7 +12,7 @@ Stores data for multiple users simultaneously.
 ### Body Parameters (Required)
 |Name            |Type                           |Description                  |
 |----------------|-------------------------------|-----------------------------|
-|payload         |Array<[DataPoint](/docs/glossary/data-point)\>|List of Objects to be stored |
+|payload         |Array<[DataPoint](/glossary/data-point)\>|List of Objects to be stored |
 
 
 ### Example Payload
@@ -62,7 +62,7 @@ Edits metadata for an existing data point
 ### Body Parameters (Required)
 |Name                |Type                           |Description                     |
 |--------------------|-------------------------------|--------------------------------|
-|Data Point Metadata |<[DataPoint](/docs/glossary/data-point)\>|Metadata of data point to edit  |
+|Data Point Metadata |<[DataPoint](/glossary/data-point)\>|Metadata of data point to edit  |
 
 
 ### Example Payload
@@ -96,7 +96,7 @@ Edits metadata for an existing data point
 ```
 
 ## POST /data/search
-Searches data that matches specified criteria, using blind indexing to allow searching for values without decrypting data. For more information, [read about ViziVault search](/docs/tutorials/search.md).
+Searches data that matches specified criteria, using blind indexing to allow searching for values without decrypting data. For more information, [read about ViziVault search](/tutorials/search.md).
 
 ### Body Parameters (Required)
 |Name                 |Type                           |Description                     |
@@ -202,7 +202,7 @@ Stores datapoints for the given user
 ### Body Parameters (Required)
 |Name                |Type                           |Description      |
 |--------------------|-------------------------------|-----------------|
-|payload             |[StorageRequest](/docs/glossary/storage-request)|Storage Request  |
+|payload             |[StorageRequest](/glossary/storage-request)|Storage Request  |
 
 ### Path Variables
 |Name               |Type                          |Description      |

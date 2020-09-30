@@ -1,7 +1,7 @@
 # Regulations
 
 ## GET /regulations
-Retrieves data for all regulations in the system. Returns a list of [Regulation](/docs/glossary/regulation) objects.
+Retrieves data for all regulations in the system. Returns a list of [Regulation](/glossary/regulation) objects.
 
 ### Parameters
 None
@@ -29,7 +29,7 @@ Creates or edits a regulation. If there is an existing regulation in the system 
 #### Body Parameters (Required)
 |Name            |Type                           |Description                  |
 |----------------|-------------------------------|-----------------------------|
-|payload         |[Regulation](/docs/glossary/regulation)|Description of new regulation |
+|payload         |[Regulation](/glossary/regulation)|Description of new regulation |
 
 ### Example payload
 For more information on how to specify rules for regulations, see [Regulation rules](#../tutorials/regulation-rules.md).
@@ -51,7 +51,7 @@ For more information on how to specify rules for regulations, see [Regulation ru
 ```
 
 ## GET /regulations/{regulationKey}
-Displays information about one regulation. Returns a [Regulation](/docs/glossary/regulation) object, or 404 Not Found if there is no regulation with the specified key.
+Displays information about one regulation. Returns a [Regulation](/glossary/regulation) object, or 404 Not Found if there is no regulation with the specified key.
 
 ### Path Parameters
 |Name            |Type                           |Description                  |

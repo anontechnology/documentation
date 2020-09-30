@@ -1,7 +1,7 @@
 # Attributes
 
 ## GET /attributes
-Retrieves data for all attributes in the system. Returns a list of [Attribute](/docs/glossary/attribute) objects.
+Retrieves data for all attributes in the system. Returns a list of [Attribute](/glossary/attribute) objects.
 
 ### Parameters
 None
@@ -36,7 +36,7 @@ Creates or edits an attribute. If there is an existing attribute in the system w
 #### Body Parameters (Required)
 |Name            |Type                           |Description                  |
 |----------------|-------------------------------|-----------------------------|
-|payload         |[Attribute](/docs/glossary/attribute)        |Description of new attribute |
+|payload         |[Attribute](/glossary/attribute)        |Description of new attribute |
 
 ### Example payload
 
@@ -86,7 +86,7 @@ On success, returns 201 Created and a description of the updated attribute.
 ```
 
 ## GET /attributes/{attributeKey}
-Displays information about one attribute. Returns an [Attribute](/docs/glossary/attribute) object.
+Displays information about one attribute. Returns an [Attribute](/glossary/attribute) object.
 
 ### Path Parameters
 |Name            |Type                           |Description                  |

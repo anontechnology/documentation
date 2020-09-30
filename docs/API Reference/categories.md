@@ -1,7 +1,7 @@
 # Categories
 
 ## GET /categories
-Retrieves data for all categories in the system. Returns a list of [Category](#somewhere) objects.
+Retrieves data for all categories in the system. Returns a list of [Category](/glossary/category) objects.
 
 ### Parameters
 None
@@ -28,7 +28,7 @@ Creates or edits an category. If there is an existing category in the system wit
 #### Body Parameters (Required)
 |Name            |Type                           |Description                  |
 |----------------|-------------------------------|-----------------------------|
-|payload         |[Category](#somewhere)         |Description of new category |
+|payload         |[Category](/glossary/category)         |Description of new category |
 
 ### Example payload
 
@@ -54,7 +54,7 @@ On success, returns 201 Created and a description of the updated category.
 ```
 
 ## GET /categories/{categoryKey}
-Displays information about one category. Returns an [Category](#somewhere) object.
+Displays information about one category. Returns an [Category](/glossary/category) object.
 
 ### Path Parameters
 |Name            |Type                           |Description                  |
