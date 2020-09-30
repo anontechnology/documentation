@@ -10,13 +10,13 @@ None
 ```json
 {
   "data" : [
-      {
-          "key": "SAMPLE_REGULATION",
-          "name": "Sample Regulation",
-          "url": "https://example.com/regulation",
-          "createdDate": "2020-01-01T04:00:00Z",
-          "modifiedDate": "2020-09-25T01:10:02Z"
-      }
+    {
+      "key": "SAMPLE_REGULATION",
+      "name": "Sample Regulation",
+      "url": "https://example.com/regulation",
+      "createdDate": "2020-01-01T04:00:00Z",
+      "modifiedDate": "2020-09-25T01:10:02Z"
+    }
   ]
 }
 ```
@@ -36,10 +36,10 @@ For more information on how to specify rules for regulations, see [Regulation ru
 
 ```json
 {
-    "key": "SAMPLE_REGULATION",
-    "name": "Sample Regulation",
-    "url": "https://example.com/regulation",
-    "rule": "{}"
+  "key": "SAMPLE_REGULATION",
+  "name": "Sample Regulation",
+  "url": "https://example.com/regulation",
+  "rule": "{}"
 }
 ```
 
@@ -60,13 +60,13 @@ Displays information about one regulation. Returns a [Regulation](/glossary/regu
 
 ### Example response
 ```json
-{ "data": 
-  {
-      "key": "SAMPLE_REGULATION",
-      "name": "Sample Regulation",
-      "url": "https://example.com/regulation",
-      "createdDate": "2020-01-01T04:00:00Z",
-      "modifiedDate": "2020-09-25T01:10:02Z"
+{ 
+  "data": {
+    "key": "SAMPLE_REGULATION",
+    "name": "Sample Regulation",
+    "url": "https://example.com/regulation",
+    "createdDate": "2020-01-01T04:00:00Z",
+    "modifiedDate": "2020-09-25T01:10:02Z"
   }
 }
 ```

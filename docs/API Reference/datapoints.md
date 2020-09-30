@@ -118,21 +118,16 @@ Searches data that matches specified criteria, using blind indexing to allow sea
         "value": "Value of sample attribute 2"
       }
     ],
-  
     "attributes": ["SAMPLE_ATTRIBUTE_3", "SAMPLE_ATTRIBUTE_4"],
-
     "regulations" : ["SAMPLE_REGULATION"],
     "sensitivity": "NORMAL",
     "userId": ["001", "002", "003"],
     "country": "US",
-    
     "minCreatedDate": "2020-01-01T10:06:32.4426+08:00",
     "maxCreatedDate": "2020-01-31T10:06:32.4426+08:00"
-    
   },
   "page": 0,
   "count": 100
-
 }
 ```
 
