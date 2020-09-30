@@ -45,7 +45,6 @@ Stores data for multiple users simultaneously.
       "attribute": "NAME_FIRST",
       "createdDate": "2020-01-01T10:05:59.5646+08:00",
       "dataPointId": "a9fcbf23-852f-441e-b729-dc9fffa528f7",
-      "key": "FIRST_NAME",
       "modifiedDate": "2020-01-01T10:06:32.4426+08:00",
       "regulations": ["SAMPLE_REGULATION"],
       "sensitivity": "PERSONAL",
@@ -86,8 +85,6 @@ Edits metadata for an existing data point
     "attribute": "NAME_FIRST",
     "createdDate": "2020-01-01T10:05:59.5646+08:00",
     "dataPointId": "a9fcbf23-852f-441e-b729-dc9fffa528f7",
-    "dataSources": "MY_DATA_SOURCE",
-    "key": "FIRST_NAME",
     "modifiedDate": "2020-01-01T10:06:32.4426+08:00",
     "regulations": "MY_REGULATION",
     "sensitivity": "PERSONAL",
@@ -99,19 +96,43 @@ Edits metadata for an existing data point
 ```
 
 ## POST /data/search
-(THIS DOCUMENTATION IS OBSOLETE)
-Searches data that matches criteria
+Searches data that matches specified criteria, using blind indexing to allow searching for values without decrypting data. For more information, [read about ViziVault search](/docs/tutorials/search.md).
 
 ### Body Parameters (Required)
 |Name                 |Type                           |Description                     |
 |---------------------|-------------------------------|--------------------------------|
-|StorageSearchRequest |<Object\>                      |Storage search request          |
+|request              |DataSearchRequest              |Parameters to search for        |
 
 
 ### Example Payload
 ```json
 {
-  "query": "FIRST_NAME=='Vivian'"
+  "query": {
+    "values": [
+      {
+        "attribute": "SAMPLE_ATTRIBUTE_1",
+        "value": "Value of sample attribute 1"
+      },
+      {
+        "attribute": "SAMPLE_ATTRIBUTE_2",
+        "value": "Value of sample attribute 2"
+      }
+    ],
+  
+    "attributes": ["SAMPLE_ATTRIBUTE_3", "SAMPLE_ATTRIBUTE_4"],
+
+    "regulations" : ["SAMPLE_REGULATION"],
+    "sensitivity": "NORMAL",
+    "userId": ["001", "002", "003"],
+    "country": "US",
+    
+    "minCreatedDate": "2020-01-01T10:06:32.4426+08:00",
+    "maxCreatedDate": "2020-01-31T10:06:32.4426+08:00"
+    
+  },
+  "page": 0,
+  "count": 100
+
 }
 ```
 
@@ -120,17 +141,14 @@ Searches data that matches criteria
 {
   "data": [
     {
-      "attribute": "NAME_FIRST",
-      "createdDate": "2020-01-01T10:05:59.5646+08:00",
+      "attribute": "SAMPLE_ATTRIBUTE_2",
+      "createdDate": "2020-01-15T10:05:59.5646+08:00",
       "dataPointId": "a9fcbf23-852f-441e-b729-dc9fffa528f7",
-      "dataSources": "MY_DATA_SOURCE",
-      "key": "FIRST_NAME",
       "modifiedDate": "2020-01-01T10:06:32.4426+08:00",
-      "regulations": "MY_REGULATION",
-      "sensitivity": "PERSONAL",
-      "structureRootId": "string",
-      "userId": -1,
-      "value": "Doug"
+      "regulations": ["SAMPLE_REGULATION"],
+      "sensitivity": "NORMAL",
+      "structureRootId": null,
+      "userId": "001",
     }
   ]
 }
@@ -162,7 +180,6 @@ Returns a list of encrypted values for the specified attributes
       "attribute": "NAME_FIRST",
       "createdDate": "2020-01-01T10:05:59.5646+08:00",
       "dataPointId": "a9fcbf23-852f-441e-b729-dc9fffa528f7",
-      "key": "FIRST_NAME",
       "modifiedDate": "2020-01-01T10:06:32.4426+08:00",
       "regulations": ["SAMPLE_REGULATION"],
       "sensitivity": "PERSONAL",
@@ -219,7 +236,6 @@ Stores datapoints for the given user
       "attribute": "NAME_FIRST",
       "createdDate": "2020-01-01T10:05:59.5646+08:00",
       "dataPointId": "a9fcbf23-852f-441e-b729-dc9fffa528f7",
-      "key": "FIRST_NAME",
       "modifiedDate": "2020-01-01T10:06:32.4426+08:00",
       "regulations": ["SAMPLE_REGULATION"],
       "sensitivity": "PERSONAL",
@@ -252,7 +268,6 @@ Retrieves datapoints for the given user
       "attribute": "NAME_FIRST",
       "createdDate": "2020-01-01T10:05:59.5646+08:00",
       "dataPointId": "a9fcbf23-852f-441e-b729-dc9fffa528f7",
-      "key": "FIRST_NAME",
       "modifiedDate": "2020-01-01T10:06:32.4426+08:00",
       "regulations": ["SAMPLE_REGULATION"],
       "sensitivity": "PERSONAL",
@@ -284,7 +299,6 @@ Retrieves data with the given datapoint id
     "attribute": "NAME_FIRST",
     "createdDate": "2020-01-01T10:05:59.5646+08:00",
     "dataPointId": "a9fcbf23-852f-441e-b729-dc9fffa528f7",
-    "key": "FIRST_NAME",
     "modifiedDate": "2020-01-01T10:06:32.4426+08:00",
     "regulations": ["SAMPLE_REGULATION"],
     "sensitivity": "PERSONAL",
@@ -311,7 +325,6 @@ Retrieves datapoints for every user
       "attribute": "NAME_FIRST",
       "createdDate": "2020-01-01T10:05:59.5646+08:00",
       "dataPointId": "a9fcbf23-852f-441e-b729-dc9fffa528f7",
-      "key": "FIRST_NAME",
       "modifiedDate": "2020-01-01T10:06:32.4426+08:00",
       "regulations": ["SAMPLE_REGULATION"],
       "sensitivity": "PERSONAL",
