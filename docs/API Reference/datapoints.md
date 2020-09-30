@@ -12,7 +12,7 @@ Stores data for multiple users simultaneously.
 ### Body Parameters (Required)
 |Name            |Type                           |Description                  |
 |----------------|-------------------------------|-----------------------------|
-|payload         |List of [StorageRequest](/glossary/storage-request)s|List of storage requests (i.e. lists of data points, each for one user) to be processed |
+|payload         |Array<[StorageRequest](/glossary/storage-request)>|List of storage requests (i.e. lists of data points, each for one user) to be processed |
 
 
 ### Example Payload
@@ -54,6 +54,16 @@ Stores data for multiple users simultaneously.
   ]
 }
 ```
+
+### Error responses
+|Status code|Error message|Description|
+|-----------|-------------|-----------|
+|400|Encoded key provided is invalid|The public encryption key provided is not correct.|
+|400|No such attribute|You are attempting to store data for an attribute that does not exist.|
+|400|No such regulation|You are attempting to store data that is tagged with a regulation that does not exist.|
+|403|Forbidden access to attribute|Your application does not have permission to access some of the attributes of the data you are attempting to store.|
+|422|Expected \[type\] for value of attribute \[attribute\]|The value given for the indicated attribute or sub-attribute does not match what is expected according to that attribute's [schema](/docs/tutorials/attribute-schemas.md).|
+|422|Unknown sub-attribute \[sub-attribute\]|A value given for a structured attribute contains a sub-attribute that is not present in that attribute's [schema](/docs/tutorials/attribute-schemas.md).|
 
 ## POST /data/search
 Searches data that matches specified criteria, using blind indexing to allow searching for values without decrypting data. For more information, [read about ViziVault search](/tutorials/search.md).
@@ -108,6 +118,11 @@ Searches data that matches specified criteria, using blind indexing to allow sea
   ]
 }
 ```
+
+### Error responses
+|Status code|Error message|Description|
+|-----------|-------------|-----------|
+|404|Data Not Found|No search results were found for the provided query.|
 
 ## POST /data/user/{userId}
 Stores datapoints for the given user
@@ -165,6 +180,17 @@ Stores datapoints for the given user
 }
 ```
 
+### Error responses
+|Status code|Error message|Description|
+|-----------|-------------|-----------|
+|400|Encoded key provided is invalid|The public encryption key provided is not correct.|
+|400|No such attribute|You are attempting to store data for an attribute that does not exist.|
+|400|No such regulation|You are attempting to store data that is tagged with a regulation that does not exist.|
+|403|Forbidden access to attribute|Your application does not have permission to access some of the attributes of the data you are attempting to store.|
+|422|Expected \[type\] for value of attribute \[attribute\]|The value given for the indicated attribute or sub-attribute does not match what is expected according to that attribute's [schema](/docs/tutorials/attribute-schemas.md).|
+|422|Unknown sub-attribute \[sub-attribute\]|A value given for a structured attribute contains a sub-attribute that is not present in that attribute's [schema](/docs/tutorials/attribute-schemas.md).|
+
+
 ## GET /data/user/{userId}
 Retrieves datapoints for the given user
 
@@ -177,6 +203,11 @@ Retrieves datapoints for the given user
 |Name               |Type                          |Description      |
 |-------------------|------------------------------|-----------------|
 |userId             |String                        |User Identifier  |
+
+### Query Parameter Variables
+|Name               |Type                          |Description      |
+|-------------------|------------------------------|-----------------|
+|attributes         |Array<String>                 |Comma-delimited list of attribute keys to access|
 
 ### Example Response
 ```json
@@ -196,6 +227,14 @@ Retrieves datapoints for the given user
   ]
 }
 ```
+
+### Error responses
+|Status code|Error message|Description|
+|-----------|-------------|-----------|
+|400|Encoded key provided is invalid|The private decryption key provided is not correct.|
+|403|Forbidden|You are trying to access attributes that your application does not have access to.|
+|404|User Data Not Found|The specified user does not exist, or else that user has no value for the attributes specified.|
+
 
 ## GET /data/{dataPointId}
 Retrieves data with the given datapoint id
@@ -226,6 +265,13 @@ Retrieves data with the given datapoint id
   }
 }
 ```
+
+### Error responses
+|Status code|Error message|Description|
+|-----------|-------------|-----------|
+|400|Encoded key provided is invalid|The private decryption key provided is not correct.|
+|403|Forbidden|Your application does not have access to the attribute of the data point you are trying to read.|
+|404|User Data Not Found|There is no data point in the system with the specified ID.|
 
 ## GET /data/users
 Retrieves datapoints for every user
@@ -270,6 +316,12 @@ Deletes datapoints for the given user and attribute
 }
 ```
 
+### Error responses
+|Status code|Error message|Description|
+|-----------|-------------|-----------|
+|403|Forbidden|You are trying to delete data from an attribute your application does not have access to.|
+|404|User Data Not Found|There is no data in the system with the specified user ID and attribute.|
+
 ## DELETE /data/user/{userId}
 Deletes all datapoints for the given user
 
@@ -284,3 +336,8 @@ Deletes all datapoints for the given user
   "data": "Successfully Deleted User"
 }
 ```
+
+### Error responses
+|Status code|Error message|Description|
+|-----------|-------------|-----------|
+|404|User Not Found|There is no user in the system with the specified ID.|
