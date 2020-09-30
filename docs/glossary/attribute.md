@@ -30,7 +30,7 @@ An example attribute definition representing a user's billing address:
   "key" : "BILLING_ADDRESS",
   "name" : "Billing address",
   "categories": ["geographic_location", "financial"],
-  "hint" : "{\n  \"line_one\": \"1 Hacker Way\".\n  \"line_two\": \"Apt. 53\",\n  \"city\": \"Menlo Park\",\n  \"state\": \"California\",\n  \"postal_code\": \"94025-1456\",\n  \"country\": \"USA\"\n}",
+  "hint" : "{ line_one: \"1 Hacker Way\", line_two: \"Apt. 53\", city: \"Menlo Park\", state: \"California\", postal_code: \"94025-1456\", country: \"USA\"}",
   "schema": {
     "line_one": "string",
     "line_two": "string",

@@ -4,7 +4,7 @@
 ![attributes](../assets/images/attributes.png "Attributes Annotates")
 
 1. **Name**: The user-friendly non-unique attribute identifier
-2. **Key**: THe unique identifier for an attribute for purpses of insertion and retrieval progmatically from a vault
+2. **Key**: THe unique identifier for an attribute for puropses of insertion and retrieval progmatically from a vault
 3. **Categories**: The category tags that are applied to an attribute
 4. **Indexed**: The index status of an attribute for return in searches across users
 5. **Sample Data**: Sample faux data demonstrating the format of the attribute
