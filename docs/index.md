@@ -7,6 +7,9 @@ We aim to empower engineers to easily control access to their organization's sen
 
 Our platform and suite of connectors/tools makes it easy for you to stream sensitive data from various sources into secure storage using military-grade encryption through our [ViziVault API](#vizivault-api).
 
+With the ever-growing demand for increased data regulation, we are designed with compliance at the core and offer our services globally to meet the regulations of today and tomorrow.
+![Global Vaults](/assets/images/anontech-geovaults.png)
+
 Easily grant access to trusted applications to limit the scope of who and what can query your data using [ViziVault Enterprise](#vizivault-enterprise).
 
 ## ViziVault API
