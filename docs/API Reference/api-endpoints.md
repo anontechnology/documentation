@@ -4,9 +4,9 @@ Guides and reference materials to help you get started, integrate, optimize, and
 
 ### DataPoints
 
--   [POST​ /bulk​/data](/API Reference/datapoints)
+-   [POST​ /data/bulk](/API Reference/datapoints)
     
--   [POST​ /bulk​/data](/API Reference/datapoints)
+-   [POST​ /data](/API Reference/datapoints)
     
 -   [POST /data/dataList](/API Reference/datapoints)
     
