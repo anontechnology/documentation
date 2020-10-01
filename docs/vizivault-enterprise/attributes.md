@@ -11,25 +11,27 @@
 6. **Regulations**: List of regulations that are considered to apply to the attribute.
 7. **Application**: The applications that have access to an attribute.
 8. **Actions**: Actions that you can take on an attribute.
+<br/><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;![view](../assets/images/view.png "View") **View the full properties of an attribute.**
+<br/><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;![edit](../assets/images/edit.png "Edit") **Edit the Properties of the Attribute**
+<br/><br/>
+<br/><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![edit_attribute](../assets/images/edit_attribute.png "Edit Attribute")
+<br/><br/>
+<br/><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;![delete](../assets/images/delete.png "Delete") **Delete the attribute**.
+<br/><br/>
+<br/><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![delete-attribute](../assets/images/delete-attribute.png "Delete Attribute")
+<br/><br/>
+9. **Creation and Export**: Add a new attribute ot export the existing attributes
+<br/><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;![Add](../assets/images/add.png "Add") Add a new attribute.
+<br/><br/>
+<br/><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;![new-attribute](../assets/images/new-attribute.png "New Attribute")
+<br/><br/>
+<br/><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;![export](../assets/images/export.png "Export") Export information on existing attributes.
 
-&nbsp;&nbsp;&nbsp;&nbsp;![view](../assets/images/view.png "View")
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View the full properties of an attribute.
-
-&nbsp;&nbsp;&nbsp;&nbsp;![edit](../assets/images/edit.png "Edit")
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Edit the properties of an attribute.
-
-&nbsp;&nbsp;&nbsp;&nbsp;![delete](../assets/images/delete.png "Delete")
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delete the attribute.
-
-9. **Creation and Export**: Add a new attribute ot export the existing attributes.
-
-&nbsp;&nbsp;&nbsp;&nbsp;![Add](../assets/images/add.png "Add")
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add a new attribute.
-
-&nbsp;&nbsp;&nbsp;&nbsp;![export](../assets/images/export.png "Export")
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Export information on existing attributes.

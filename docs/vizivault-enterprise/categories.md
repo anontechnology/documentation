@@ -19,7 +19,6 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delete the category.
 
-
 7. **Creation and Export**: Add a new attribute ot export the existing attributes.
 
 &nbsp;&nbsp;&nbsp;&nbsp;![Add](../assets/images/add.png "Add")
