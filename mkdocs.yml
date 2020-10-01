@@ -21,7 +21,7 @@ nav:
   - Glossary:
     - Attribute: glossary/attribute.md
     - Category: glossary/category.md
-    - Datapoint: glossary/data-point.md
+    - Datapoint: glossary/datapoint.md
     - Regulation: glossary/regulation.md
     - Storage Request: glossary/storage-request.md
   - Tutorials:
