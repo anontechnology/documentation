@@ -12,12 +12,11 @@
 4. **Actions**: Actions that you can take on an application.
 
 &nbsp;&nbsp;&nbsp;&nbsp;![edit](../assets/images/edit.png "Edit") **Edit the properties of an application**
- <br/><br/>
+ 
 &nbsp;&nbsp;&nbsp;&nbsp; ![edit-application](../assets/images/edit-application.png "Edit Application")
- <br/><br/>
- <br/><br/>
+
 &nbsp;&nbsp;&nbsp;&nbsp;![delete](../assets/images/delete.png "Delete") **Delete the application**
- <br/><br/>
+
 &nbsp;&nbsp;&nbsp;&nbsp; ![delete-application](../assets/images/delete-application.png "Delete Application")
 
 5. **Creation and Export**
