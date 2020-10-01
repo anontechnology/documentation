@@ -11,7 +11,7 @@ There are several forms of metadata associated with regulations, as follows:
 |key|String|An unambiguous identifier for this regulation. Usually, this is an acronym or abbreviation.|
 |name|String|A human-readable identifier for this regulation. If the regulation key is an acronym, this should spell it out.|
 |url|String|The URL of a webpage containing more information about this regulation.|
-|rule|[RegulationRule](/docs/tutorials/regulation-rules.md)|A string or JSON object representing a rule describing what data this regulation is applicable to. See [Regulation rules](/docs/tutorials/regulation-rules.md) for more information.|
+|rule|[RegulationRule](/tutorials/regulation-rules)|A string or JSON object representing a rule describing what data this regulation is applicable to. See [Regulation rules](/tutorials/regulation-rules) for more information.|
 |createdDate|String|An ISO 8601 representation of the timestamp when the regulation was created.|
 |modifiedDate|String|An ISO 8601 representation of the timestamp when the regulation was most recently modified.|
 

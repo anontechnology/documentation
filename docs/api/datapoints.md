@@ -62,11 +62,11 @@ Stores data for multiple users simultaneously.
 |400|No such attribute|You are attempting to store data for an attribute that does not exist.|
 |400|No such regulation|You are attempting to store data that is tagged with a regulation that does not exist.|
 |403|Forbidden access to attribute|Your application does not have permission to access some of the attributes of the data you are attempting to store.|
-|422|Expected \[type\] for value of attribute \[attribute\]|The value given for the indicated attribute or sub-attribute does not match what is expected according to that attribute's [schema](/docs/tutorials/attribute-schemas.md).|
-|422|Unknown sub-attribute \[sub-attribute\]|A value given for a structured attribute contains a sub-attribute that is not present in that attribute's [schema](/docs/tutorials/attribute-schemas.md).|
+|422|Expected \[type\] for value of attribute \[attribute\]|The value given for the indicated attribute or sub-attribute does not match what is expected according to that attribute's [schema](/tutorials/attribute-schemas).|
+|422|Unknown sub-attribute \[sub-attribute\]|A value given for a structured attribute contains a sub-attribute that is not present in that attribute's [schema](/tutorials/attribute-schemas).|
 
 ## POST /data/search
-Searches data that matches specified criteria, using blind indexing to allow searching for values without decrypting data. For more information, [read about ViziVault search](/tutorials/search.md).
+Searches data that matches specified criteria, using blind indexing to allow searching for values without decrypting data. For more information, [read about ViziVault search](/tutorials/search).
 
 ### Body Parameters (Required)
 |Name                 |Type                           |Description                     |
@@ -187,8 +187,8 @@ Stores datapoints for the given user
 |400|No such attribute|You are attempting to store data for an attribute that does not exist.|
 |400|No such regulation|You are attempting to store data that is tagged with a regulation that does not exist.|
 |403|Forbidden access to attribute|Your application does not have permission to access some of the attributes of the data you are attempting to store.|
-|422|Expected \[type\] for value of attribute \[attribute\]|The value given for the indicated attribute or sub-attribute does not match what is expected according to that attribute's [schema](/docs/tutorials/attribute-schemas.md).|
-|422|Unknown sub-attribute \[sub-attribute\]|A value given for a structured attribute contains a sub-attribute that is not present in that attribute's [schema](/docs/tutorials/attribute-schemas.md).|
+|422|Expected \[type\] for value of attribute \[attribute\]|The value given for the indicated attribute or sub-attribute does not match what is expected according to that attribute's [schema](/tutorials/attribute-schemas).|
+|422|Unknown sub-attribute \[sub-attribute\]|A value given for a structured attribute contains a sub-attribute that is not present in that attribute's [schema](/tutorials/attribute-schemas).|
 
 
 ## GET /data/user/{userId}
