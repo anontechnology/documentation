@@ -17,5 +17,5 @@
   ![edit](../assets/images/edit.png "Edit") **Edit the properties of a report**:
   ![create_report](../assets/images/create_report.png "Create Report")
   ![delete](../assets/images/delete.png "Delete") **Delete the report**:
-  ![delete_regulation](../assets/images/delete_regulation.png "Delete Regulation Prompt")
+  ![delete_regulation](../assets/images/delete-regulation.png "Delete Regulation Prompt")
 
