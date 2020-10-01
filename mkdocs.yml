@@ -34,11 +34,11 @@ nav:
     - GDPR (European Union): https://gdpr-info.eu/chapter-3/
     - CCPA (California): https://oag.ca.gov/privacy/ccpa
   - ViziVault Enterprise:
+      - Overview: vizivault-enterprise/overview.md
       - Applications: vizivault-enterprise/applications.md
       - Attributes: vizivault-enterprise/attributes.md
       - Categories: vizivault-enterprise/categories.md
       - Data Sharing: vizivault-enterprise/data-sharing.md
-      - Overview: vizivault-enterprise/overview.md
       - Regulations: vizivault-enterprise/regulations.md
       - Reports: vizivault-enterprise/reports.md
       - Vault: vizivault-enterprise/vault.md
