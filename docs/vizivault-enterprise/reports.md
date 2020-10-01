@@ -9,24 +9,13 @@
 5. **Minimum**: The minimum percentage or absolute number to trigger the alert
 6. **Maximum**: The maximum percentage or absolute number to trigger the alert.
 7. **Fields**: The combination of application, attribute, and operation being monitored.
-8. **Creation and Export**
-
-&nbsp;&nbsp;&nbsp;&nbsp;![Add](../assets/images/add.png "Add") **Add a new Report**.
- <br/><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;![create_report](../assets/images/create_report.png "Create Report")
- <br/><br/>
- <br/><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;![export](../assets/images/export.png "Export") **Export information on existing categories**.
- <br/><br/>
- <br/><br/>
-
-9. **Actions**: Actions that you can take on a report.
-
-  &nbsp;&nbsp;&nbsp;&nbsp;![edit](../assets/images/edit.png "Edit") **Edit the properties of a report**:
-  <br/><br/>
-  &nbsp;&nbsp;&nbsp;&nbsp;![create_report](../assets/images/create_report.png "Create Report")
-  <br/><br/>
-  <br/><br/>
-  &nbsp;&nbsp;&nbsp;&nbsp;![delete](../assets/images/delete.png "Delete") **Delete the report**:
-  &nbsp;&nbsp;&nbsp;&nbsp;![delete_regulation](../assets/images/delete-regulation.png "Delete Regulation Prompt")
+8. **Creation and Export**<br/>
+    ![Add](../assets/images/add.png "Add") Add a new Report.
+    ![create_report](../assets/images/create_report.png "Create Report")
+    ![export](../assets/images/export.png "Export") Export information on existing categories.
+9. **Actions**: Actions that you can take on a report.<br/>
+  ![edit](../assets/images/edit.png "Edit") **Edit the properties of a report**:
+  ![create_report](../assets/images/create_report.png "Create Report")
+  ![delete](../assets/images/delete.png "Delete") **Delete the report**:
+  ![delete_regulation](../assets/images/delete-regulation.png "Delete Regulation Prompt")
 
