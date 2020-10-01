@@ -10,26 +10,11 @@
 5. **Sample Data**: Sample faux data demonstrating the format of the attribute.
 6. **Regulations**: List of regulations that are considered to apply to the attribute.
 7. **Application**: The applications that have access to an attribute.
-8. **Actions**: Actions that you can take on an attribute.
+8. **Actions**: Actions that you can take on an attribute.<br/>
+    ![view](../assets/images/view.png "View") View the full properties of an attribute.
+    ![edit](../assets/images/edit.png "Edit") Edit the properties of an attribute.
+    ![delete](../assets/images/delete.png "Delete") Delete the attribute.
 
-&nbsp;&nbsp;&nbsp;&nbsp;![view](../assets/images/view.png "View")
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View the full properties of an attribute.
-
-&nbsp;&nbsp;&nbsp;&nbsp;![edit](../assets/images/edit.png "Edit")
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Edit the properties of an attribute.
-
-&nbsp;&nbsp;&nbsp;&nbsp;![delete](../assets/images/delete.png "Delete")
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delete the attribute.
-
-9. **Creation and Export**: Add a new attribute ot export the existing attributes.
-
-&nbsp;&nbsp;&nbsp;&nbsp;![Add](../assets/images/add.png "Add")
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add a new attribute.
-
-&nbsp;&nbsp;&nbsp;&nbsp;![export](../assets/images/export.png "Export")
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Export information on existing attributes.
+9. **Creation and Export**: Add a new attribute ot export the existing attributes.<br/>
+    ![Add](../assets/images/add.png "Add") Add a new attribute.
+    ![export](../assets/images/export.png "Export") Export information on existing attributes.
