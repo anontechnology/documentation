@@ -60,8 +60,8 @@ On success, returns 201 Created and a description of the updated attribute.
 |Status code|Error message|Description|
 |-----------|-------------|-----------|
 |400        |Attribute key must contain only alphanumeric characters and underscores|Returned if the provided attribute key contains disallowed characters.|
-|400        |Sub-attribute key contains unusable characters|Returned if a sub-attribute key contained in the attribute's [schema](/docs/tutorials/attribute-schemas.md) contains disallowed characters.|
-|400        |Schema has unexpected class|Returned if the [schema](/docs/tutorials/attribute-schemas.md) of this attribute, or one of its sub-attributes, is netiher a JSON object nor a string (i.e. numbers, booleans, or `null`)|
+|400        |Sub-attribute key contains unusable characters|Returned if a sub-attribute key contained in the attribute's [schema](/tutorials/attribute-schemas.md) contains disallowed characters.|
+|400        |Schema has unexpected class|Returned if the [schema](/tutorials/attribute-schemas.md) of this attribute, or one of its sub-attributes, is netiher a JSON object nor a string (i.e. numbers, booleans, or `null`)|
 |
 
 ## GET /attributes
