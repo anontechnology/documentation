@@ -29,6 +29,39 @@ Here, companies can take action to reduce data privacy risks down to desired lev
 
 ![ViziVault Enterprise](/assets/images/vizivault-enterprise.png)
 
+## Deployment Models
+The ViziVault Platform aims to eliminate any risk of malicious intrusions by hacks and exploits alike by enforcing encryption for data in transit and in persistence.
+
+Carefully designed, we eliminate the threat of having your organization's data leaked publicly on the internet.
+
+Our organization has no desire and does not wish to analyze your sensitive data in any manner and internally hold strict protocols and standards to ensure that your data is always secure.
+
+Although we take extra precautions, we completely understand that streaming data to our platform may not be in compliance with some company policies and standards.
+
+As a result, we offer an alternative option to host our lightweight API in your own infrastrucutre and network to ensure that it is impossible for Anontech to decrypt or view your data (think of it like a proxy).
+
+### On-Premise
+Our On-Premise option places our Vault API behind your firewall for added security to ensure that it is strictly prohibited that any unencrypted data can be read by an external party (including us). You organizaiton is in full control of the keys used for decryption and can
+
+Our architecture is container-ready and can be deployed to fit your needs with all security best-practices baked-in.
+
+Streaming back to our platform, you maintain rich insights and powerful control to enable your users and customers to take control of their data with full-transparency.
+
+![Anontech On-Premise](/assets/images/anontech-onprem.png)
+
+### Hosted
+We offer a full SaaS solution that is managed by Anontech in the cloud. If hosting our API in your infrastructure adds complexity or overhead, this is most convenient option for you.
+
+Hosting in the cloud enables your vaults to dynamically scale to meet your demand and rapidly configure platform features at the click of a button.
+
+With this, you can be sure that you will only pay for infrastructure and features that you need.
+
+We strongly enforce internal policies built around your data security at the core, we ensure that no third-parties and/or employees will have access to your data.
+
+![Anontech Hosted](/assets/images/anontech-hosted.png)
+
+Our deployment models can fit your company's needs without sacrificing the features unlocked by using the ViziVault Platform.
+
 ## Global Availability
 With the ever-growing demand for increased data regulation, we are designed with compliance at the core and offer our services globally at the click of a button to meet the regulations of today and tomorrow.
 ![Global Vaults](/assets/images/anontech-geovaults.png)
