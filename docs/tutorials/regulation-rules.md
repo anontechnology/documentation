@@ -1,4 +1,4 @@
-# Regulation rules
+# Regulation Rules
 
 ViziVault contains a flexible, powerful rules engine that allows specifying exactly what subsets of your data various governmental regulations such as GDPR or HIPAA apply to. This is accomplished by defining constraints, and tagging all data matching those constraints with the regulation. For more sophisticated or nuanced use cases, it is possible to combine multiple constraints together using boolean operators.
 
@@ -46,7 +46,7 @@ Rules are expressed as a JSON object, structured as described below:
    - `category` : category constraint object
    - `attribute` : attribute constraint object
    - `user` : user constraint object
- - Category constraint object: 
+ - Category constraint object:
    - `operator` : either `any`, `all`, or `none`
    - `categories` : list of category keys (strings)
  - Attribute constraint object:
@@ -55,8 +55,8 @@ Rules are expressed as a JSON object, structured as described below:
  - User constraint object:
    - `attribute` : attribute key (string)
    - `predicate` : one of `eq`, `neq`, `gt`, `lt`, `geq`, `leq`, `before`, `after`, `any`, `none`
-   - `value` : 
-     - When predicate is `eq` or `neq`, any number or string. 
+   - `value` :
+     - When predicate is `eq` or `neq`, any number or string.
      - When predicate is `gt`, `lt`, `geq`, or `leq`, any number.
      - When predicate is `before` or `after`, a string representing a point in time.
      - When predicate is `any` or `none`, a list of strings.
