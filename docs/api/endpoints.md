@@ -12,7 +12,7 @@ Guides and reference materials to help you get started, integrate, optimize, and
 -   [GET /categories](/api/categories#get-categories)
 -   [GET /categories/{categoryKey}](/api/categories#get-categoriescategorykey)
 
-### DataPoints
+### Datapoints
 -   [POST​ /data/bulk](/api/datapoints#post-databulk)
 -   [POST /data/search](/api/datapoints#post-datasearch)
 -   [POST /data/user/{userId}](/api/datapoints#post-datauseruserid)
