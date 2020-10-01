@@ -36,7 +36,7 @@ nav:
   - ViziVault Enterprise:
       - Overview: vizivault-enterprise/overview.md
       - Dashboard: vizivault-enterprise/dashboard.md
-      - Discovery: vizivault-enterprise/discover.md
+      - Discover: vizivault-enterprise/discover.md
       - Applications: vizivault-enterprise/applications.md
       - Attributes: vizivault-enterprise/attributes.md
       - Categories: vizivault-enterprise/categories.md
