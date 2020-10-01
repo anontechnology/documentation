@@ -11,10 +11,10 @@
 6. **Regulations**: List of regulations that are considered to apply to the attribute.
 7. **Application**: The applications that have access to an attribute.
 8. **Actions**: Actions that you can take on an attribute.<br/>
-    ![view](../assets/images/view.png "View") View the full properties of an attribute.
-    ![edit](../assets/images/edit.png "Edit") Edit the properties of an attribute.
+    ![view](../assets/images/view.png "View") View the full properties of an attribute.<br/>
+    ![edit](../assets/images/edit.png "Edit") Edit the properties of an attribute.<br/>
     ![delete](../assets/images/delete.png "Delete") Delete the attribute.
 
 9. **Creation and Export**: Add a new attribute ot export the existing attributes.<br/>
-    ![Add](../assets/images/add.png "Add") Add a new attribute.
+    ![Add](../assets/images/add.png "Add") Add a new attribute.<br/>
     ![export](../assets/images/export.png "Export") Export information on existing attributes.
