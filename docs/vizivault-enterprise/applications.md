@@ -10,22 +10,11 @@
     - Last Updated: The last time the properties of the application was updated.
     - Support Email: The email address of the system support expert.
 4. **Actions**: Actions that you can take on an application.
-
-&nbsp;&nbsp;&nbsp;&nbsp;![edit](../assets/images/edit.png "Edit") **Edit the properties of an application**
- 
-&nbsp;&nbsp;&nbsp;&nbsp; ![edit-application](../assets/images/edit-application.png "Edit Application")
-
-&nbsp;&nbsp;&nbsp;&nbsp;![delete](../assets/images/delete.png "Delete") **Delete the application**
-
-&nbsp;&nbsp;&nbsp;&nbsp; ![delete-application](../assets/images/delete-application.png "Delete Application")
-
+    ![edit](../assets/images/edit.png "Edit") **Edit the properties of an application**
+    ![edit-application](../assets/images/edit-application.png "Edit Application")
+    ![delete](../assets/images/delete.png "Delete") **Delete the application**
+    ![delete-application](../assets/images/delete-application.png "Delete Application")
 5. **Creation and Export**
-
 &nbsp;&nbsp;&nbsp;&nbsp;![Add](../assets/images/add.png "Add") **Add a new Data Sharing Schedule**.
- <br/><br/>
 &nbsp;&nbsp;&nbsp;&nbsp; ![create-application](../assets/images/create-application.png "Create Application")
- <br/><br/>
- <br/><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;![export](../assets/images/export.png "Export") **Export information on existing sharing schedules**.
- <br/><br/>
- <br/><br/>
