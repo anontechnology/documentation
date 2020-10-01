@@ -1,5 +1,6 @@
 site_name: Anontech
 site_url: https://anontech.io
+site_description: Official documentation for the Anontech ViziVault Platform
 google_analytics:
   - UA-145420782-2
   - auto
