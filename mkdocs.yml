@@ -7,6 +7,35 @@ theme:
   name: material
   logo: assets/images/anontech-cropped.png
   favicon: assets/images/favicon.png
+nav:
+  - Overview: index.md
+  - Getting Started: getting-started.md
+  - Libraries: libraries.md
+  - API Reference:
+    - Endpoints: api/endpoints.md
+    - Attributes: api/attributes.md
+    - Categories: api/categories.md
+    - Datapoints: api/datapoints.md
+    - Regulations: api/regulations.md
+  - Glossary:
+    - Attribute: glossary/attribute.md
+    - Category: glossary/category.md
+    - Datapoint: glossary/data-point.md
+    - Regulation: glossary/regulation.md
+    - Storage Request: glossary/storage-request.md
+  - Tutorials:
+    - Attribute Schemas: tutorials/attribute-schemas.md
+    - Data Sharing: tutorials/datasharing.md
+    - Regulation Rules: tutorials/regulation-rules.md
+    - Reports: tutorials/reports.md
+    - Search: tutorials/search.md
+  - ViziVault Enterprise:
+      - Applications: vizivault-enterprise/applications.md
+      - Attributes: vizivault-enterprise/attributes.md
+      - Categories: vizivault-enterprise/categories.md
+      - Overview: vizivault-enterprise/overview.md
+      - Regulations: vizivault-enterprise/regulations.md
+      - Vault: vizivault-enterprise/vault.md
 extra_css:
   - stylesheets/extra.css
 markdown_extensions:
