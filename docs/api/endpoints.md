@@ -5,7 +5,7 @@ Guides and reference materials to help you get started, integrate, optimize, and
 ### Attributes
 -   [POST /attributes](/api/attributes#post-attributes)
 -   [GET /attributes](/api/attributes#get-attributes)
--   [GET /attributes/{attributeKey}](/api/attributes#get-attributesattribute-key)
+-   [GET /attributes/{attributeKey}](/api/attributes#get-attributesattributekey)
 
 ### Categories
 -   [POST​ /categories](/api/categories#post-categories)
@@ -24,9 +24,9 @@ Guides and reference materials to help you get started, integrate, optimize, and
 
 ### Regulations
 -   [POST /regulations](/api/regulations#post-regulations)
--   [POST /regulations/{regulation}/propagate](/api/regulations#post-regulationsregulation-keypropagate)
+-   [POST /regulations/{regulation}/propagate](/api/regulations#post-regulationsregulationkeypropagate)
 -   [GET /regulations](/api/regulations#get-regulations)
--   [GET /regulations/{regulation}](/api/regulations#get-regulationsregulation-key)
--   [DELETE /regulations/{regulation}](/api/regulations#delete-regulationsregulation-key)
+-   [GET /regulations/{regulation}](/api/regulations#get-regulationsregulationkey)
+-   [DELETE /regulations/{regulation}](/api/regulations#delete-regulationsregulationkey)
 
 
