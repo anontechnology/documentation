@@ -37,8 +37,10 @@ nav:
       - Applications: vizivault-enterprise/applications.md
       - Attributes: vizivault-enterprise/attributes.md
       - Categories: vizivault-enterprise/categories.md
+      - Data Sharing: vizivault-enterprise/data-sharing.md
       - Overview: vizivault-enterprise/overview.md
       - Regulations: vizivault-enterprise/regulations.md
+      - Reports: vizivault-enterprise/reports.md
       - Vault: vizivault-enterprise/vault.md
 extra_css:
   - stylesheets/extra.css
