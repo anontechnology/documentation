@@ -26,4 +26,4 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;![export](../assets/images/export.png "Export")
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Export existing regulations.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Export information on existing regulations.
