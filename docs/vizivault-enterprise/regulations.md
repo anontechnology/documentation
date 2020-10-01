@@ -8,22 +8,9 @@
 3. **Rules**: Custom rule structure for the regulation.
 4. **Created Date**: The date when the regulation was first introduced.
 5. **Last Modified**:  The date when the regualation was last changed.
-6. **Actions**: Actions that you can take on an attribute.
-
-&nbsp;&nbsp;&nbsp;&nbsp;![edit](../assets/images/edit.png "Edit")
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Edit the properties of a regulation.
-
-&nbsp;&nbsp;&nbsp;&nbsp;![delete](../assets/images/delete.png "Delete")
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delete the regulation
-
-7. **Creation and Export**: Add a new attribute ot export the existing attributes.
-
-&nbsp;&nbsp;&nbsp;&nbsp;![Add](../assets/images/add.png "Add")
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add a new regulation.
-
-&nbsp;&nbsp;&nbsp;&nbsp;![export](../assets/images/export.png "Export")
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Export information on existing regulations.
+6. **Actions**: Actions that you can take on an attribute.<br/>
+    ![edit](../assets/images/edit.png "Edit") Edit the properties of a regulation.<br/>
+    ![delete](../assets/images/delete.png "Delete") Delete the regulation.
+7. **Creation and Export**: Add a new attribute ot export the existing attributes.<br/>
+    ![Add](../assets/images/add.png "Add") Add a new regulation.<br/>
+    ![export](../assets/images/export.png "Export") Export information on existing regulations.
