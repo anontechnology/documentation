@@ -20,7 +20,7 @@ Guides and reference materials to help you get started, integrate, optimize, and
 -   [GET /data/{dataPointId}](/api/datapoints#get-datadatapointid)
 -   [GET /data/users](/api/datapoints#get-datausers)
 -   [DELETE /data/user/{userId}/{attributeKey}](/api/datapoints#delete-datauseruseridattributekey)
--   [DELETE /data/user/{userId}](/api/datapoints#delete-datauseruseridattributekey)
+-   [DELETE /data/user/{userId}](/api/datapoints#delete-datauseruserid)
 
 ### Regulations
 -   [POST /regulations](/api/regulations#post-regulations)

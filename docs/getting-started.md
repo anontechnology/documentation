@@ -15,9 +15,9 @@ To begin using our platform, use the button below to visit our form to request y
 
 The ViziVault Platform uses terminology that pertains to the classification and language around managing and storing sensitive information.
 
-You can find a comprehensive list of these terms in our [Glossary](glossary/attribute) to familizarize with the terminology used within the platform.
+You can find a comprehensive list of these terms in our [Glossary](/glossary/attribute) to familizarize with the terminology used within the platform.
 
-[Glossary](glossary/attribute){: .md-button .md-button--primary }
+[Glossary](/glossary/attribute){: .md-button .md-button--primary }
 
 ## Integration
 

@@ -19,7 +19,7 @@ This is meant to provide users with the greatest flexibility on the security of 
 
 ![ViziVault API](/assets/images/vault-api-docs.png)
 
-Visit the [API Reference](/API%20Reference/api-endpoints/) to learn more about the available endpoints.
+Visit the [API Reference](/api/endpoints/) to learn more about the available endpoints.
 
 ### ViziVault Enterprise
 
@@ -33,12 +33,12 @@ Here, companies can take action to reduce data privacy risks down to desired lev
 With the ever-growing demand for increased data regulation, we are designed with compliance at the core and offer our services globally at the click of a button to meet the regulations of today and tomorrow.
 ![Global Vaults](/assets/images/anontech-geovaults.png)
 
-Creating new vaults for your orgnization's data has never been easier with [ViziVault Enterprise](#vizivault-enterprise).
+Creating new vaults for your orgnization's data has never been easier with [ViziVault Enterprise](/vizivault-enterprise/overview).
 
 Whether you are provisioning for compliance, performance, and/or availability, we have the tools to meet your needs.
 
 ## Complete Access Control
-Easily grant access to trusted applications to limit the scope of who and what can query your data using [ViziVault Enterprise](#vizivault-enterprise).
+Easily grant access to trusted applications to limit the scope of who and what can query your data using [ViziVault Enterprise](/vizivault-enterprise/overview).
 
 ## Try the Platform
 Looking to use the ViziVault Platform for your organization today?

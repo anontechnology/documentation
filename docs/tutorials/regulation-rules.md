@@ -15,6 +15,7 @@ Category list constraints are similar to attribute list constraints, in that the
 User attribute constraints allow you to apply regulations to data based on things that are true about the user it belongs to, rather than just basing it off of the data point itself. A user attribute constraint consists of three parts: the attribute to consider, the value to compare the user's value of the attribute to, and the precise way the attribute values should be compared (referred to as the predicate).
 
 The valid predicates are as follows:
+
  - `eq`: Matches users whose value of this attribute is exactly equal to the provided value.
  - `neq`: Matches users whose value of this attribute is anything other than the provided value.
  - `gt`: For numerical data; matches users whose value of this attribute is greater than the provided value.
@@ -39,27 +40,27 @@ Conjunctive constraints allow you to broaden what data is matched. They consist 
 Rules are expressed as a JSON object, structured as described below:
 
  - Root node: an object that must contain a `constraint` field and exactly one other of the following fields
-   - `type` : one of `all`, `any`, `category`, `attribute`, or `user`
-   - `value`: depends on the value of `type`
-   - `all` : list of root nodes
-   - `any` : list of root nodes
-   - `category` : category constraint object
-   - `attribute` : attribute constraint object
-   - `user` : user constraint object
+    - `type` : one of `all`, `any`, `category`, `attribute`, or `user`
+    - `value`: depends on the value of `type`
+    - `all` : list of root nodes
+    - `any` : list of root nodes
+    - `category` : category constraint object
+    - `attribute` : attribute constraint object
+    - `user` : user constraint object
  - Category constraint object:
-   - `operator` : either `any`, `all`, or `none`
-   - `categories` : list of category keys (strings)
+    - `operator` : either `any`, `all`, or `none`
+    - `categories` : list of category keys (strings)
  - Attribute constraint object:
-   - `operator` : either `any` or `none`
-   - `attributes` : list of attribute keys (strings)
+    - `operator` : either `any` or `none`
+    - `attributes` : list of attribute keys (strings)
  - User constraint object:
-   - `attribute` : attribute key (string)
-   - `predicate` : one of `eq`, `neq`, `gt`, `lt`, `geq`, `leq`, `before`, `after`, `any`, `none`
-   - `value` :
-     - When predicate is `eq` or `neq`, any number or string.
-     - When predicate is `gt`, `lt`, `geq`, or `leq`, any number.
-     - When predicate is `before` or `after`, a string representing a point in time.
-     - When predicate is `any` or `none`, a list of strings.
+    - `attribute` : attribute key (string)
+    - `predicate` : one of `eq`, `neq`, `gt`, `lt`, `geq`, `leq`, `before`, `after`, `any`, `none`
+    - `value` :
+        - When predicate is `eq` or `neq`, any number or string.
+        - When predicate is `gt`, `lt`, `geq`, or `leq`, any number.
+        - When predicate is `before` or `after`, a string representing a point in time.
+        - When predicate is `any` or `none`, a list of strings.
 
 ## Examples
 

@@ -38,7 +38,7 @@ For more information on how to specify rules for regulations, see [Regulation ru
 |422        |Category \[category\] not found|A category specified for a category list constraint in the regulation's rule does not exist.|
 |422        |Attribute list operator \[operator\] is not supported.|An invalid operator was specified for an attribute list constraint. For more information on what operators are valid, see [Attribute list constraints](/tutorials/regulation-rules#attribute-list-constraints).|
 |422        |Category list operator \[operator\] is not supported.|An invalid operator was specified for a category list constraint. For more information on what operators are valid, see [Category list constraints](/tutorials/regulation-rules#category-list-constraints).|
-|422        |User-attribute constraint predicate \[predicate\] is not supported.|An invalid predicate was specified for a user attribute value constraint. For more information on what predicates are valid, see [User attribute constraints](/tutorials/regulation-rules#user-attribute-constraints).|
+|422        |User-attribute constraint predicate \[predicate\] is not supported.|An invalid predicate was specified for a user attribute value constraint. For more information on what predicates are valid, see [User attribute constraints](/tutorials/regulation-rules#user-attribute-value-constraints).|
 |422        |Unrecognized constraint type|An invalid constraint type was specified. For more information on what constraint types are valid, see [Regulation rules](/tutorials/regulation-rules)|
 
 

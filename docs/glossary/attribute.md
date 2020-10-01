@@ -13,7 +13,7 @@ There are several forms of metadata associated with attributes, as follows:
 |categories|Array<String>|A list of [category keys](/glossary/category), each representing a grouping this attribute falls under. Categories can be used to group related attributes and to facilitate tracking what regulations are applicable to an attribute.|
 |hint|String|An example value that this attribute could take.|
 |immutable|boolean|Whether this attribute is a pre-loaded attribute provided by ViziVault that cannot be modified through the web interface.|
-|indexed|boolean|Whether this attribute's value should be indexed to allow searching on it. For more information, read [the Search tutorial](/tutorials.search).|
+|indexed|boolean|Whether this attribute's value should be indexed to allow searching on it. For more information, read [the Search tutorial](/tutorials/search).|
 |createdDate|String|An ISO 8601 representation of the timestamp when the attribute was created.|
 |modifiedDate|String|An ISO 8601 representation of the timestamp when the attribute was most recently modified.|
 |mandatory|boolean|If true, it is not valid for the system to contain users with no value for this attribute.|

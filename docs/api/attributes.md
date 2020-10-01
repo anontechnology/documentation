@@ -6,9 +6,9 @@ Creates or edits an attribute. If there is an existing attribute in the system w
 ### Parameters
 
 #### Body Parameters (Required)
-|Name            |Type                           |Description                  |
-|----------------|-------------------------------|-----------------------------|
-|payload         |[Attribute](/glossary/attribute)        |Description of new attribute |
+|Name            |Type                            |Description                  |
+|----------------|--------------------------------|-----------------------------|
+|payload         |[Attribute](/glossary/attribute)|Description of new attribute |
 
 ### Example payload
 
