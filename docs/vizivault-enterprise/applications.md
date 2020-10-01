@@ -15,6 +15,6 @@
     ![delete](../assets/images/delete.png "Delete") **Delete the application**
     ![delete-application](../assets/images/delete-application.png "Delete Application")
 5. **Creation and Export**
-&nbsp;&nbsp;&nbsp;&nbsp;![Add](../assets/images/add.png "Add") **Add a new Data Sharing Schedule**.
-&nbsp;&nbsp;&nbsp;&nbsp; ![create-application](../assets/images/create-application.png "Create Application")
-&nbsp;&nbsp;&nbsp;&nbsp;![export](../assets/images/export.png "Export") **Export information on existing sharing schedules**.
+    ![Add](../assets/images/add.png "Add") **Add a new Data Sharing Schedule**.
+    ![create-application](../assets/images/create-application.png "Create Application")
+    ![export](../assets/images/export.png "Export") **Export information on existing sharing schedules**.
