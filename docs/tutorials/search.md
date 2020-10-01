@@ -4,14 +4,7 @@ In order to allow users of the ViziVault system to search on data without openin
 
 Of course, this behavior is not desirable for all attributes, which is why it is possible to specify at the attribute level what data should be indexed. This allows analytics such as "what is the ratio of male to female customers" to be calculated, while making it impossible to search for a user by their social security number; in order to do this, all that is necessary is for gender to be an indexed attribute but not social security number. If an indexed attribute contains structured data by means of an attribute schema, each sub-attribute is indexed separately, allowing greater flexibility in how search can be used.
 
-## Technical Details
-
-The search system can be accessed in two ways: through the ViziVault Enterprise front-end, and through the ViziVault API.
-
-### Performing a search in the ViziVault Enterprise front-end
-[TBD, waiting on frontend mockup - but mention the async nature of this and the notifications involved]
-
-### Performing a search using the ViziVault API
+## Performing a search using the ViziVault API
 To perform a search request using the ViziVault API, send a HTTP POST request to `/data/search`. The body of the request should be a JSON object formatted as follows:
 ```json
 {
