@@ -38,7 +38,7 @@ Creating new vaults for your orgnization's data has never been easier with [Vizi
 Whether you are provisioning for compliance, performance, and/or availability, we have the tools to meet your needs.
 
 ## Complete Access Control
-Easily grant access to trusted applications to limit the scope of who and what can query your data using [ViziVault Enterprise](#vizivault-enterprise).
+Easily grant access to trusted applications to limit the scope of who and what can query your data using [ViziVault Enterprise](/vizivault-enterprise/overview/).
 
 ## Try the Platform
 Looking to use the ViziVault Platform for your organization today?
