@@ -11,13 +11,13 @@
 6. **Regulations**: List of regulations that are considered to apply to the attribute.
 7. **Application**: The applications that have access to an attribute.
 8. **Actions**: Actions that you can take on an attribute.<br/>
-    ![view](../assets/images/view.png "View") View the full properties of an attribute.<br/><br/>
-    ![edit](../assets/images/edit.png "Edit") Edit the properties of an attribute.<br/><br/>
-    ![edit_attribute.png](../assets/images/edit_attribute.png)<br/><br/>
-    ![delete](../assets/images/delete.png "Delete") Delete the attribute.<br/><br/>
+    ![view](../assets/images/view.png "View") View the full properties of an attribute.<br/>
+    ![edit](../assets/images/edit.png "Edit") Edit the properties of an attribute.<br/>
+    ![edit_attribute.png](../assets/images/edit_attribute.png)<br/>
+    ![delete](../assets/images/delete.png "Delete") Delete the attribute.<br/>
     ![delete-attribute.png](../assets/images/delete-attribute.png)
-9. **Creation and Export**: Add a new attribute ot export the existing attributes.<br/><br/>
-       ![Add](../assets/images/add.png "Add") Add a new attribute.<br/><br/>
-       ![new-attribute.png](../assets/images/new-attribute.png)<br/><br/>
-       ![export](../assets/images/export.png "Export") Export information on existing attributes.
+9. **Creation and Export**: Add a new attribute ot export the existing attributes.<br/>
+    ![Add](../assets/images/add.png "Add") Add a new attribute.<br/>
+    ![new-attribute.png](../assets/images/new-attribute.png)<br/>
+    ![export](../assets/images/export.png "Export") Export information on existing attributes.
 
