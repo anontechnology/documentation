@@ -75,18 +75,18 @@ None
 {
   "data": [
     {
-        "key": "SAMPLE_ATTRIBUTE",
-        "name": "Sample Attribute",
-        "categories": ["financial", "medical"],
-        "hint": "example data for this attribute",
-        "immutable": false,
-        "indexed": true,
-        "createdDate": "2020-09-03T02:18:54Z",
-        "modifiedDate": "2020-09-24T18:28:29Z",
-        "mandatory": false,
-        "schema": "string",
-        "repeatable": false,
-        "regulations": [ "GDPR", "HIPAA" ]
+      "key": "SAMPLE_ATTRIBUTE",
+      "name": "Sample Attribute",
+      "categories": ["financial", "medical"],
+      "hint": "example data for this attribute",
+      "immutable": false,
+      "indexed": true,
+      "createdDate": "2020-09-03T02:18:54Z",
+      "modifiedDate": "2020-09-24T18:28:29Z",
+      "mandatory": false,
+      "schema": "string",
+      "repeatable": false,
+      "regulations": [ "GDPR", "HIPAA" ]
     }
   ]
 }
