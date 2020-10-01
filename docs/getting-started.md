@@ -15,9 +15,9 @@ To begin using our platform, use the button below to visit our form to request y
 
 The ViziVault Platform uses terminology that pertains to the classification and language around managing and storing sensitive information.
 
-You can find a comprehensive list of these terms in our [Glossary](glossary/attribute.md) to familizarize with the terminology used within the platform.
+You can find a comprehensive list of these terms in our [Glossary](glossary/attribute) to familizarize with the terminology used within the platform.
 
-[Glossary](glossary/attribute.md){: .md-button .md-button--primary }
+[Glossary](glossary/attribute){: .md-button .md-button--primary }
 
 ## Integration
 
@@ -25,7 +25,7 @@ Integrating with a new API can be tricky, with potential pitfalls such as what c
 
 For this reason, we have created officially supported libraries to help make your integration with ViziVault seamless and easy.
 
-[Tools and Libraries](libraries.md){: .md-button .md-button--primary }
+[Tools and Libraries](/libraries){: .md-button .md-button--primary }
 
 ## Using the Platform
 
@@ -35,4 +35,4 @@ You can find numerous tutorials and guides in our documentation to help get star
 
 These tutorials are designed to help you unlock the most control and valuable insights over your organization's data.
 
-[Tutorials](/tutorials/attribute-schemas/){: .md-button .md-button--primary }
+[Tutorials](/tutorials/attribute-schemas){: .md-button .md-button--primary }

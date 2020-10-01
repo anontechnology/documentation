@@ -10,11 +10,11 @@ The Reports page shows a list of schedulded reports that are currently active. Y
 
 To create a new report, click the plus icon at the top of the Reports page. This will open a prompt allowing you to enter details about the report you wish to create.
 
-#### Name 
+#### Name
 A human-readable name to show at a glance what this report is measuring.
 
 #### Report type
-What type of report this will be: activity volume, users percent change, or activity percent change. See [Types of Reports](reports.md#types-of-reports) for more information; many report types have specific parameters that you will also need to provide.
+What type of report this will be: activity volume, users percent change, or activity percent change. See [Types of Reports](#types-of-reports) for more information; many report types have specific parameters that you will also need to provide.
 
 #### Frequency
 How often to calculate the analytics for this report. Options are once per day, once per week, once per month, once per quarter, and once per year.
