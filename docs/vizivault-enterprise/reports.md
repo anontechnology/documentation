@@ -28,5 +28,5 @@
   <br/><br/>
   <br/><br/>
   &nbsp;&nbsp;&nbsp;&nbsp;![delete](../assets/images/delete.png "Delete") **Delete the report**:
-  &nbsp;&nbsp;&nbsp;&nbsp;![delete_regulation](../assets/images/delete_regulation.png "Delete Regulation Prompt")
+  &nbsp;&nbsp;&nbsp;&nbsp;![delete_regulation](../assets/images/delete-regulation.png "Delete Regulation Prompt")
 

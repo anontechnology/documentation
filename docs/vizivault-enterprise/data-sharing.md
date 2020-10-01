@@ -13,7 +13,7 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;![Add](../assets/images/add.png "Add") **Add a new Data Sharing Schedule**.
  <br/><br/>
-&nbsp;&nbsp;&nbsp;&nbsp; ![sharing_schedule](../assets/images/sharing_schedule.png "Create Sharing Schedule")
+&nbsp;&nbsp;&nbsp;&nbsp; ![sharing_schedule](../assets/images/sharing-schedule.png "Create Sharing Schedule")
  <br/><br/>
  <br/><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;![export](../assets/images/export.png "Export") **Export information on existing sharing schedules**.
@@ -24,7 +24,7 @@
 
   &nbsp;&nbsp;&nbsp;&nbsp;![edit](../assets/images/edit.png "Edit") **Edit the properties of a Sharing Schedule**:
   <br/><br/>
-  &nbsp;&nbsp;&nbsp;&nbsp;![sharing_schedule](../assets/images/sharing_schedule.png "Create Sharing Schedule")
+  &nbsp;&nbsp;&nbsp;&nbsp;![sharing_schedule](../assets/images/sharing-schedule.png "Create Sharing Schedule")
   <br/><br/>
   <br/><br/>
   &nbsp;&nbsp;&nbsp;&nbsp;![view](../assets/images/view.png "View") **View Shared Data**
