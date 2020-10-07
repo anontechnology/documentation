@@ -27,4 +27,6 @@ Guides and reference materials to help you get started, integrate, optimize, and
 -   [GET /regulations/{regulation}](/api/regulations#get-regulationsregulationkey)
 -   [DELETE /regulations/{regulation}](/api/regulations#delete-regulationsregulationkey)
 
-
+### Users
+-   [GET /users](/api/users#get-users)
+-   [GET /users/{userId}](/api/users#get-usersuserid)
