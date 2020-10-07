@@ -42,37 +42,6 @@ For more information on how to specify rules for regulations, see [Regulation ru
 |422        |Unrecognized constraint type|An invalid constraint type was specified. For more information on what constraint types are valid, see [Regulation rules](/tutorials/regulation-rules)|
 
 
-
-## POST /regulations/{regulationKey}/propagate
-Updates what data is tagged with a specific regulation. Because regulations can depend on attribute values (for example, COPPA is applied to data belonging to people under the age of 13, but age is itself an attribute and is therefore stored encrypted), it is necessary to provide a private key to decrypt the relevant data.
-
-### Path Parameters
-|Name            |Type                           |Description                  |
-|----------------|-------------------------------|-----------------------------|
-|regulationKey   |String                         |Key of the regulation to describe|
-
-### Header Parameters
-|Name            |Type                           |Description                  |
-|----------------|-------------------------------|-----------------------------|
-|X-Decryption-Key|String                         |Private decryption key       |
-
-### Example Response
-Returns a list of how many data points were affected by this update.
-```json
-{
-  "data" : {
-    "added": 100,
-    "removed": 100
-  }
-}
-```
-
-### Error responses
-|Status code|Error message|Description|
-|-----------|-------------|-----------|
-|400        |Encoded key provided is invalid|The private decryption key provided is not correct.|
-|404        |No such regulation|The system does not contain a regulation with the specified key.|
-
 ## GET /regulations
 Retrieves data for all regulations in the system. Returns a list of [Regulation](/glossary/regulation) objects.
 

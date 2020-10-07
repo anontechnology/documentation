@@ -1,6 +1,6 @@
 # Datapoints
 
-## POST /data/bulk
+## POST /data
 Stores data for multiple users simultaneously.
 
 ### Header Parameters
@@ -66,7 +66,7 @@ Stores data for multiple users simultaneously.
 |422|Expected \[type\] for value of attribute \[attribute\]|The value given for the indicated attribute or sub-attribute does not match what is expected according to that attribute's [schema](/tutorials/attribute-schemas).|
 |422|Unknown sub-attribute \[sub-attribute\]|A value given for a structured attribute contains a sub-attribute that is not present in that attribute's [schema](/tutorials/attribute-schemas).|
 
-## POST /data/search
+## POST /search
 Searches data that matches specified criteria, using blind indexing to allow searching for values without decrypting data. For more information, [read about ViziVault search](/tutorials/search).
 
 ### Body Parameters (Required)
@@ -125,7 +125,7 @@ Searches data that matches specified criteria, using blind indexing to allow sea
 |-----------|-------------|-----------|
 |404|Data Not Found|No search results were found for the provided query.|
 
-## POST /data/user/{userId}
+## POST /users/{userId}/attributes
 Stores datapoints for the given user
 
 ### Header Parameters
@@ -193,7 +193,7 @@ Stores datapoints for the given user
 |422|Unknown sub-attribute \[sub-attribute\]|A value given for a structured attribute contains a sub-attribute that is not present in that attribute's [schema](/tutorials/attribute-schemas).|
 
 
-## GET /data/user/{userId}
+## GET /users/{userId}/attributes
 Retrieves datapoints for the given user
 
 ### Header Parameters
@@ -275,34 +275,7 @@ Retrieves data with the given datapoint id
 |403|Forbidden|Your application does not have access to the attribute of the data point you are trying to read.|
 |404|User Data Not Found|There is no data point in the system with the specified ID.|
 
-## GET /data/users
-Retrieves datapoints for every user
-
-### Header Parameters
-|Name            |Type                           |Description                  |
-|----------------|-------------------------------|-----------------------------|
-|X-Decryption-Key|String                         |Private decryption key       |
-
-### Example Response
-```json
-{
-  "data": [
-    {
-      "attribute": "NAME_FIRST",
-      "createdDate": "2020-01-01T10:05:59.5646+08:00",
-      "dataPointId": "a9fcbf23-852f-441e-b729-dc9fffa528f7",
-      "modifiedDate": "2020-01-01T10:06:32.4426+08:00",
-      "regulations": ["SAMPLE_REGULATION"],
-      "sensitivity": "PERSONAL",
-      "structureRootId": "string",
-      "userId": "001",
-      "value": "123-456-789"
-    }
-  ]
-}
-```
-
-## DELETE /data/user/{userId}/{attributeKey}
+## DELETE /users/{userId}/attributes/{attributeKey}
 Deletes datapoints for the given user and attribute
 
 ### Path Variables
@@ -324,7 +297,7 @@ Deletes datapoints for the given user and attribute
 |403|Forbidden|You are trying to delete data from an attribute your application does not have access to.|
 |404|User Data Not Found|There is no data in the system with the specified user ID and attribute.|
 
-## DELETE /data/user/{userId}
+## DELETE /users/{userId}/data
 Deletes all datapoints for the given user
 
 ### Path Variables
