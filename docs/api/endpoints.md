@@ -13,18 +13,16 @@ Guides and reference materials to help you get started, integrate, optimize, and
 -   [GET /categories/{categoryKey}](/api/categories#get-categoriescategorykey)
 
 ### Datapoints
--   [POST​ /data/bulk](/api/datapoints#post-databulk)
--   [POST /data/search](/api/datapoints#post-datasearch)
--   [POST /data/user/{userId}](/api/datapoints#post-datauseruserid)
--   [GET /data/user/{userId}](/api/datapoints#get-datauseruserid)
+-   [POST​ /data](/api/datapoints#post-databulk)
+-   [POST /search](/api/datapoints#post-datasearch)
+-   [POST /users/{userId}/attributes](/api/datapoints#post-datauseruserid)
+-   [GET /users/{userId}/attributes](/api/datapoints#get-datauseruserid)
 -   [GET /data/{dataPointId}](/api/datapoints#get-datadatapointid)
--   [GET /data/users](/api/datapoints#get-datausers)
--   [DELETE /data/user/{userId}/{attributeKey}](/api/datapoints#delete-datauseruseridattributekey)
--   [DELETE /data/user/{userId}](/api/datapoints#delete-datauseruserid)
+-   [DELETE /users/{userId}/attributes/{attributeKey}](/api/datapoints#delete-datauseruseridattributekey)
+-   [DELETE /users/{userId}/data](/api/datapoints#delete-datauseruserid)
 
 ### Regulations
 -   [POST /regulations](/api/regulations#post-regulations)
--   [POST /regulations/{regulation}/propagate](/api/regulations#post-regulationsregulationkeypropagate)
 -   [GET /regulations](/api/regulations#get-regulations)
 -   [GET /regulations/{regulation}](/api/regulations#get-regulationsregulationkey)
 -   [DELETE /regulations/{regulation}](/api/regulations#delete-regulationsregulationkey)
