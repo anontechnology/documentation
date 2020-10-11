@@ -31,12 +31,12 @@ Library not available for your desired language? Feel free to contribute to our 
 ### Adding an Attribute to an Entity or User
 
   ``` java
-  // Adding data to user
+  // Adding an attribute to user
   User user = vault.findByUser("User1234");
   user.setAttribute("FIRST_NAME", "Jane");
   vault.save(user);
 
-  // Adding data to entity
+  // Adding an attribute to entity
   Entity entity = vault.findByUser("Client6789");
   entity.setAttribute("FULL_ADDRESS", "1 Hacker Way, Beverly Hills, CA 90210");
   vault.save(entity);
@@ -56,11 +56,11 @@ Library not available for your desired language? Feel free to contribute to our 
 ### Retrieving an Attribute of an Entity or User
 
 ``` java
-  // Retrieving specific data for a user
+  // Retrieving specific attribute for a user
   User user = vault.findByUser("User1234");
   UserAttribute attribute = user.getAttribute("FIRST_NAME");
 
-  // Retrieving specific data for an entity
+  // Retrieving specific attribute for an entity
   Entity entity = vault.findByEntity("Client6789");
   List<Attribute> attributes = entity.getAttribute("FULL_ADDRESS");
 ```
@@ -74,11 +74,11 @@ Library not available for your desired language? Feel free to contribute to our 
 ### Deleting User Attributes
 
   ``` java
-  // Purging all user data
+  // Purging all user attributes
   User user = vault.findByUser("User1234");
   user.purge();
 
-  // Removing specific data
+  // Removing specific attribute
   User user = vault.findByUser("User1234");
   user.remove("LAST_NAME");
   ```
