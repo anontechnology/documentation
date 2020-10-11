@@ -15,7 +15,7 @@ HOW DOES THE SDK WORK?
 
 ----------------------------------------------------------------------
 VAULT SETUP
-```
+
   === "C"
   ``` c
   #include <stdio.h>
@@ -54,7 +54,7 @@ VAULT SETUP
   Coming Soon
   === "PHP"
   Coming Soon
-```
+
 ----------------------------------------------------------------------
 STORING DATA
 
