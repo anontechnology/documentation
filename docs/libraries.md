@@ -11,10 +11,9 @@ We offer an official SDK for most languages widely used in the industry today an
 
 Library not available for your desired language? Feel free to contribute to our [open source community](https://github.com/anontechnology)!
 
-HOW DOES THE SDK WORK?
-
+## HOW DOES THE SDK WORK?
 ----------------------------------------------------------------------
-VAULT SETUP
+### VAULT SETUP
 
   ``` java
   String encryptionKey = System.getenv("ENCRYPTIONKEY");
@@ -29,53 +28,53 @@ VAULT SETUP
   ```
 
 ----------------------------------------------------------------------
-STORING DATA
+### STORING DATA
 
   ``` java
 
-  ADDING DATA TO USER
+  // ADDING DATA TO USER
   User user = vault.findByUser("User1234");
   user.setAttribute("FIRST_NAME", "Jane");
   vault.save(user);
 
-  ADDING DATA TO ENTITY
+  // ADDING DATA TO ENTITY
   Entity entity = vault.findByUser("Client6789");
   entity.setAttribute("FULL_ADDRESS", "1 Hacker Way, Beverly Hills, CA 90210");
   vault.save(entity);
 
-  RETRIEVING ALL DATA FOR USER
+  // RETRIEVING ALL DATA FOR USER
   User user = vault.findByUser("User1234");
   List<Attribute> attributes = user.getAttributes();
 
-  RETRIEVING ALL DATA FOR ENTITY
+  // RETRIEVING ALL DATA FOR ENTITY
   Entity entity = vault.findByEntity("Client6789");
   List<Attribute> attributes = entity.getAttributes();
 
-  RETRIEVING SPECIFIC DATA FOR USER
+  // RETRIEVING SPECIFIC DATA FOR USER
   User user = vault.findByUser("User1234");
   UserAttribute attribute = user.getAttribute("FIRST_NAME");
 
-  RETRIEVING SPECIFIC DATA FOR ENTITY
+  // RETRIEVING SPECIFIC DATA FOR ENTITY
   Entity entity = vault.findByEntity("Client6789");
   List<Attribute> attributes = entity.getAttribute("FULL_ADDRESS");
 
-  SEARCHING
+  // SEARCHING
   List<Attribute> attributes = vault.search("LAST_NAME == 'DOE'");
 
-  PURGING ALL USER DATA
+  // PURGING ALL USER DATA
   User user = vault.findByUser("User1234");
   user.purge();
 
-  REMOVING SPECIFIC DATA
+  // REMOVING SPECIFIC DATA
   User user = vault.findByUser("User1234");
   user.remove("LAST_NAME");
   ```
 
 ----------------------------------------------------------------------
-STORING ATTRIBUTES
+### STORING ATTRIBUTES
 
   ``` java
-  STORE AN ATTRIBUTE
+  // STORE AN ATTRIBUTE
   AttributeDefinition attribute = new AttributeDefinition();
   attribute.setName("Billing Address");
   attribute.setCategories(["geographic_location", "financial"]);
@@ -99,47 +98,47 @@ STORING ATTRIBUTES
 
   vault.storeAttribute(attribute);
 
-  RETRIEVING ALL ATTRIBUTES
+  // RETRIEVING ALL ATTRIBUTES
   List<AttributeDefinition> attributes = vault.getAttributeDefinitions();
 
-  RETRIEVING SPECIFIC ATTRIBUTE
+  // RETRIEVING SPECIFIC ATTRIBUTE
   AttributeDefinition attribute = vault.getAttributeDefinition("Billing Address");
   ```
 
 ----------------------------------------------------------------------
-STORING TAGS
+### STORING TAGS
 
   ``` java
-  STORING A TAG
+  // STORING A TAG
   Tag tag = vault.save(new Tag("Financial Data"));
 
-  RETRIEVING ALL TAGS
+  // RETRIEVING ALL TAGS
   List<Tag> tags = vault.getTags();
 
-  RETRIEVING SPECIFIC TAG
+  // RETRIEVING SPECIFIC TAG
   String tag = vault.getTag("Financial Data");
 
-  REMOVING A SPECIFIC TAG
+  // REMOVING A SPECIFIC TAG
   Boolean bool = vault.removeTag("Financial Data");
   ```
 
 ----------------------------------------------------------------------
-STORING REGULATIONS
+### STORING REGULATIONS
 
   ``` java
-  STORING A REGULATION
+  // STORING A REGULATION
   Regulation regulation = new Regulation("GDPR", 
                                         "General Data Protection Regulation",
                                         "https://gdpr.eu/" 
                                         );
   Regulation savedRegulation = vault.save(regulation);
 
-  RETRIEVING ALL REGULATIONS
+  // RETRIEVING ALL REGULATIONS
   List<Regulation> regulations = vault.getRegulations();
 
-  RETRIEVING SPECIFIC REGULATION
+  // RETRIEVING SPECIFIC REGULATION
   Regulation regulation = vault.getRegulation("GDPR");
 
-  REMOVING A SPECIFIC REGULATION
+  // REMOVING A SPECIFIC REGULATION
   Boolean bool = vault.removeRegulation("GDPR");
   ```
