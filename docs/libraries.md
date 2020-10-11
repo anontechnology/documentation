@@ -15,44 +15,44 @@ HOW DOES THE SDK WORK?
 
 ----------------------------------------------------------------------
 VAULT SETUP
-=== "C"
-``` c
-#include <stdio.h>
+  === "C"
+  ``` c
+  #include <stdio.h>
 
-int main(void) {
-  printf("Hello world!\n");
-  return 0;
-}
-```
-=== "C++"
-``` c++
-#include <iostream>
+  int main(void) {
+    printf("Hello world!\n");
+    return 0;
+  }
+  ```
+  === "C++"
+  ``` c++
+  #include <iostream>
 
-int main(void) {
-  std::cout << "Hello world!" << std::endl;
-  return 0;
-}
-```
-=== "Java"
-``` java
-String encryptionKey = System.getenv("ENCRYPTIONKEY");
-String decryptionKey = System.getenv("DECRYPTIONKEY");
-ViziVault vault = new ViziVault()
-  .withBaseURL(url)
-  .withClientId(clientId)
-  .withAPIKey(apiKey)
-  .withEncryptionKey(encryptionKey)
-  .withDecryptionKey(decryptionKey)
-  .build();
-```
-=== "Node.js"
-Coming Soon
-=== "Python"
-Coming Soon
-=== "C#"
-Coming Soon
-=== "PHP"
-Coming Soon
+  int main(void) {
+    std::cout << "Hello world!" << std::endl;
+    return 0;
+  }
+  ```
+  === "Java"
+  ``` java
+  String encryptionKey = System.getenv("ENCRYPTIONKEY");
+  String decryptionKey = System.getenv("DECRYPTIONKEY");
+  ViziVault vault = new ViziVault()
+    .withBaseURL(url)
+    .withClientId(clientId)
+    .withAPIKey(apiKey)
+    .withEncryptionKey(encryptionKey)
+    .withDecryptionKey(decryptionKey)
+    .build();
+  ```
+  === "Node.js"
+  Coming Soon
+  === "Python"
+  Coming Soon
+  === "C#"
+  Coming Soon
+  === "PHP"
+  Coming Soon
 
 ----------------------------------------------------------------------
 STORING DATA
