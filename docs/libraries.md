@@ -15,8 +15,6 @@ Library not available for your desired language? Feel free to contribute to our 
 
 ## Vault Setup
 
-Sample Text
-
   ``` java
   String encryptionKey = System.getenv("ENCRYPTIONKEY");
   String decryptionKey = System.getenv("DECRYPTIONKEY");
@@ -32,8 +30,6 @@ Sample Text
 ----------------------------------------------------------------------
 ### Adding an Attribute to an Entity or User
 
-Sample Text
-
   ``` java
   // Adding data to user
   User user = vault.findByUser("User1234");
@@ -48,8 +44,6 @@ Sample Text
 
 ### Retrieving all Attributes of an Entity or User
 
-Sample Text
-
   ``` java
   // Retrieving all attributes for a user
   User user = vault.findByUser("User1234");
@@ -60,8 +54,6 @@ Sample Text
   List<Attribute> attributes = entity.getAttributes();
   ```
 ### Retrieving an Attribute of an Entity or User
-
-Sample Text
 
 ``` java
   // Retrieving specific data for a user
@@ -75,15 +67,11 @@ Sample Text
 
 ### Searching
 
-Sample Text
-
   ``` java
   List<Attribute> attributes = vault.search("LAST_NAME == 'DOE'");
   ```
 
 ### Deleting User Attributes
-
-Sample Text
 
   ``` java
   // Purging all user data
@@ -97,8 +85,6 @@ Sample Text
 
 ----------------------------------------------------------------------
 ### Storing an Attribute in the Vault
-
-Sample Text
 
   ``` java
   AttributeDefinition attribute = new AttributeDefinition();
@@ -127,8 +113,6 @@ Sample Text
 
 ### Retrieving Attributes from the Vault
 
-Sample Text
-
   ``` java
   // Retrieving all attributes
   List<AttributeDefinition> attributes = vault.getAttributeDefinitions();
@@ -140,15 +124,11 @@ Sample Text
 ----------------------------------------------------------------------
 ### Storing a Tag in the Vault
 
-Sample Text
-
   ``` java
   // Storing a tag
   Tag tag = vault.save(new Tag("Financial Data"));
   ```
 ### Retrieving Attributes from the Vault
-
-Sample Text
 
   ``` java
   // Retrieving all tags
@@ -160,8 +140,6 @@ Sample Text
 
 ### Deleting Tags from the Vault
 
-Sample Text
-
   ``` java
   // Removing a specific tag
   Boolean bool = vault.removeTag("Financial Data");
@@ -169,8 +147,6 @@ Sample Text
 
 ----------------------------------------------------------------------
 ### Storing a Regulation in the Vault
-
-Sample Text
 
   ``` java
   // Storing a regulation
@@ -183,8 +159,6 @@ Sample Text
 
 ### Retrieving Regulations from the Vault
 
-Sample Text
-
   ``` java
   // Retrieving all regulations
   List<Regulation> regulations = vault.getRegulations();
@@ -194,8 +168,6 @@ Sample Text
   ```
 
 ### Deleting Regulations from the Vault
-
-Sample Text
 
   ``` java
   // Removing a specific regulation
