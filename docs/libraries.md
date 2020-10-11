@@ -15,29 +15,24 @@ HOW DOES THE SDK WORK?
 
 ----------------------------------------------------------------------
 VAULT SETUP
-
 === "C"
+``` c
+#include <stdio.h>
 
-    ``` c
-    #include <stdio.h>
-
-    int main(void) {
-      printf("Hello world!\n");
-      return 0;
-    }
-    ```
-
+int main(void) {
+  printf("Hello world!\n");
+  return 0;
+}
+```
 === "C++"
+``` c++
+#include <iostream>
 
-    ``` c++
-    #include <iostream>
-
-    int main(void) {
-      std::cout << "Hello world!" << std::endl;
-      return 0;
-    }
-    ```
-
+int main(void) {
+  std::cout << "Hello world!" << std::endl;
+  return 0;
+}
+```
 === "Java"
 ``` java
 String encryptionKey = System.getenv("ENCRYPTIONKEY");
