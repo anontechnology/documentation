@@ -28,7 +28,7 @@ Library not available for your desired language? Feel free to contribute to our 
   ```
 
 ----------------------------------------------------------------------
-### Storing Data
+### Storing and Retrieving Data
 
   ``` java
 
@@ -71,7 +71,7 @@ Library not available for your desired language? Feel free to contribute to our 
   ```
 
 ----------------------------------------------------------------------
-### Storing Attibutes
+### Storing and Retrieving Attibute Definitions
 
   ``` java
   // Store an attribute
@@ -106,7 +106,7 @@ Library not available for your desired language? Feel free to contribute to our 
   ```
 
 ----------------------------------------------------------------------
-### Storing Tags
+### Storing and Retrieving Tags
 
   ``` java
   // Storing a tag
@@ -123,7 +123,7 @@ Library not available for your desired language? Feel free to contribute to our 
   ```
 
 ----------------------------------------------------------------------
-### Storing Regulations
+### Storing and Retrieving Regulations
 
   ``` java
   // Storing a regulation
