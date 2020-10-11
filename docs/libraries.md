@@ -11,9 +11,9 @@ We offer an official SDK for most languages widely used in the industry today an
 
 Library not available for your desired language? Feel free to contribute to our [open source community](https://github.com/anontechnology)!
 
-## HOW DOES THE SDK WORK?
-----------------------------------------------------------------------
-### VAULT SETUP
+## How does the SDK work?
+
+### Vault Setup
 
   ``` java
   String encryptionKey = System.getenv("ENCRYPTIONKEY");
@@ -28,53 +28,53 @@ Library not available for your desired language? Feel free to contribute to our 
   ```
 
 ----------------------------------------------------------------------
-### STORING DATA
+### Storing Data
 
   ``` java
 
-  // ADDING DATA TO USER
+  // Adding data to user
   User user = vault.findByUser("User1234");
   user.setAttribute("FIRST_NAME", "Jane");
   vault.save(user);
 
-  // ADDING DATA TO ENTITY
+  // Adding data to entity
   Entity entity = vault.findByUser("Client6789");
   entity.setAttribute("FULL_ADDRESS", "1 Hacker Way, Beverly Hills, CA 90210");
   vault.save(entity);
 
-  // RETRIEVING ALL DATA FOR USER
+  // Retrieving all data for user
   User user = vault.findByUser("User1234");
   List<Attribute> attributes = user.getAttributes();
 
-  // RETRIEVING ALL DATA FOR ENTITY
+  // Retrieving all data for entity
   Entity entity = vault.findByEntity("Client6789");
   List<Attribute> attributes = entity.getAttributes();
 
-  // RETRIEVING SPECIFIC DATA FOR USER
+  // Retrieving specific data for user
   User user = vault.findByUser("User1234");
   UserAttribute attribute = user.getAttribute("FIRST_NAME");
 
-  // RETRIEVING SPECIFIC DATA FOR ENTITY
+  // Retrieving specific data for entity
   Entity entity = vault.findByEntity("Client6789");
   List<Attribute> attributes = entity.getAttribute("FULL_ADDRESS");
 
-  // SEARCHING
+  // Searching
   List<Attribute> attributes = vault.search("LAST_NAME == 'DOE'");
 
-  // PURGING ALL USER DATA
+  // Purging all user data
   User user = vault.findByUser("User1234");
   user.purge();
 
-  // REMOVING SPECIFIC DATA
+  // Removing specific data
   User user = vault.findByUser("User1234");
   user.remove("LAST_NAME");
   ```
 
 ----------------------------------------------------------------------
-### STORING ATTRIBUTES
+### Storing Attibutes
 
   ``` java
-  // STORE AN ATTRIBUTE
+  // Store an attribute
   AttributeDefinition attribute = new AttributeDefinition();
   attribute.setName("Billing Address");
   attribute.setCategories(["geographic_location", "financial"]);
@@ -98,47 +98,47 @@ Library not available for your desired language? Feel free to contribute to our 
 
   vault.storeAttribute(attribute);
 
-  // RETRIEVING ALL ATTRIBUTES
+  // Retrieving all attributes
   List<AttributeDefinition> attributes = vault.getAttributeDefinitions();
 
-  // RETRIEVING SPECIFIC ATTRIBUTE
+  // Retrieving specific attribute
   AttributeDefinition attribute = vault.getAttributeDefinition("Billing Address");
   ```
 
 ----------------------------------------------------------------------
-### STORING TAGS
+### Storing Tags
 
   ``` java
-  // STORING A TAG
+  // Storing a tag
   Tag tag = vault.save(new Tag("Financial Data"));
 
-  // RETRIEVING ALL TAGS
+  // Retrieving all tags
   List<Tag> tags = vault.getTags();
 
-  // RETRIEVING SPECIFIC TAG
+  // Retrieving specific tag
   String tag = vault.getTag("Financial Data");
 
-  // REMOVING A SPECIFIC TAG
+  // Removing a specific tag
   Boolean bool = vault.removeTag("Financial Data");
   ```
 
 ----------------------------------------------------------------------
-### STORING REGULATIONS
+### Storing Regulations
 
   ``` java
-  // STORING A REGULATION
+  // Storing a regulation
   Regulation regulation = new Regulation("GDPR", 
                                         "General Data Protection Regulation",
                                         "https://gdpr.eu/" 
                                         );
   Regulation savedRegulation = vault.save(regulation);
 
-  // RETRIEVING ALL REGULATIONS
+  // Retrieving all regulations
   List<Regulation> regulations = vault.getRegulations();
 
-  // RETRIEVING SPECIFIC REGULATION
+  // Retrieving specific regulation
   Regulation regulation = vault.getRegulation("GDPR");
 
-  // REMOVING A SPECIFIC REGULATION
+  // Removing a specific regulation
   Boolean bool = vault.removeRegulation("GDPR");
   ```
