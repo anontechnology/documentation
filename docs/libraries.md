@@ -28,6 +28,8 @@ Library not available for your desired language? Feel free to contribute to our 
   ```
 
 ----------------------------------------------------------------------
+## Attributes
+
 ### Adding an Attribute to an Entity or User
 
   ``` java
@@ -84,7 +86,9 @@ Library not available for your desired language? Feel free to contribute to our 
   ```
 
 ----------------------------------------------------------------------
-### Storing an Attribute in the Vault
+## Attribute Definitions
+
+### Storing an Attribute Definition in the Vault
 
   ``` java
   AttributeDefinition attribute = new AttributeDefinition();
@@ -111,7 +115,7 @@ Library not available for your desired language? Feel free to contribute to our 
   vault.storeAttribute(attribute);
   ```
 
-### Retrieving Attributes from the Vault
+### Retrieving Attribute Definitions from the Vault
 
   ``` java
   // Retrieving all attributes
@@ -122,6 +126,8 @@ Library not available for your desired language? Feel free to contribute to our 
   ```
 
 ----------------------------------------------------------------------
+## Tags
+
 ### Storing a Tag in the Vault
 
   ``` java
@@ -146,6 +152,8 @@ Library not available for your desired language? Feel free to contribute to our 
   ```
 
 ----------------------------------------------------------------------
+## Regulations
+
 ### Storing a Regulation in the Vault
 
   ``` java
