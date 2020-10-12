@@ -75,6 +75,8 @@ Retrieves a single specified attribute for the specified entity or user. Returns
 
 ### Searching
 
+To search a Vault for attributes, pass in a search string. A list of matching Attributes will be returned.
+
   ``` java
   List<Attribute> attributes = vault.search("LAST_NAME == 'DOE'");
   ```
@@ -97,6 +99,8 @@ Attributes can be removed from the User object by calling `remove` with the spec
 ## Attribute Definitions
 
 ### Storing an Attribute Definition in the Vault
+
+To store an Attribute Definition, create one and save it to the Vault. The following code details the various properties of the AttributeDefinition object.
 
   ``` java
   AttributeDefinition attribute = new AttributeDefinition();
@@ -172,7 +176,7 @@ To remove a Tag, specify the Tag to be removed. A Boolean denoting the status of
 
 ### Storing a Regulation in the Vault
 
-To store a regulation to the Vault, create a new Regulation object and save it to the vault. The constructor takes the `key`, `name`, and `url` of the Regulation.
+To store a Regulation to the Vault, create a new Regulation object and save it to the Vault. The constructor takes the `key`, `name`, and `url` of the Regulation.
 
   ``` java
   // Storing a regulation
