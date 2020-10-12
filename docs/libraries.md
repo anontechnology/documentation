@@ -13,7 +13,7 @@ Library not available for your desired language? Feel free to contribute to our 
 
 ## How does the SDK work?
 
-### Vault Setup
+## Vault Setup
 
   ``` java
   String encryptionKey = System.getenv("ENCRYPTIONKEY");
@@ -28,7 +28,11 @@ Library not available for your desired language? Feel free to contribute to our 
   ```
 
 ----------------------------------------------------------------------
+## Attributes
+
 ### Adding an Attribute to an Entity or User
+
+Attributes are stored as key/value pairs of strings. Both users and entities can have attributes set to them. If there is an existing attribute in the system with the key of the provided attribute, that attribute will be updated; otherwise, a new attribute will be created.
 
   ``` java
   // Adding an attribute to user
@@ -44,6 +48,8 @@ Library not available for your desired language? Feel free to contribute to our 
 
 ### Retrieving all Attributes of an Entity or User
 
+Retrieves all attributes for the specified entity or user. Returns a list of Attribute objects.
+
   ``` java
   // Retrieving all attributes for a user
   User user = vault.findByUser("User1234");
@@ -54,6 +60,8 @@ Library not available for your desired language? Feel free to contribute to our 
   List<Attribute> attributes = entity.getAttributes();
   ```
 ### Retrieving an Attribute of an Entity or User
+
+Retrieves a single specified attribute for the specified entity or user. Returns a UserAttribute object from the User object, or returns a list of Attributes from the Entity object.
 
 ``` java
   // Retrieving specific attribute for a user
@@ -67,11 +75,15 @@ Library not available for your desired language? Feel free to contribute to our 
 
 ### Searching
 
+To search a Vault for attributes, pass in a search string. A list of matching Attributes will be returned.
+
   ``` java
   List<Attribute> attributes = vault.search("LAST_NAME == 'DOE'");
   ```
 
 ### Deleting User Attributes
+
+Attributes can be removed from the User object by calling `remove` with the specified Attribute key, or by calling `purge` to remove all.
 
   ``` java
   // Purging all user attributes
@@ -84,7 +96,11 @@ Library not available for your desired language? Feel free to contribute to our 
   ```
 
 ----------------------------------------------------------------------
-### Storing an Attribute in the Vault
+## Attribute Definitions
+
+### Storing an Attribute Definition in the Vault
+
+To store an Attribute Definition, create one and save it to the Vault. The following code details the various properties of the AttributeDefinition object.
 
   ``` java
   AttributeDefinition attribute = new AttributeDefinition();
@@ -111,7 +127,9 @@ Library not available for your desired language? Feel free to contribute to our 
   vault.storeAttribute(attribute);
   ```
 
-### Retrieving Attributes from the Vault
+### Retrieving Attribute Definitions from the Vault
+
+Attribute Definitions can be retrieved from the Vault in bulk or by specifying the Attribute key.
 
   ``` java
   // Retrieving all attributes
@@ -122,13 +140,19 @@ Library not available for your desired language? Feel free to contribute to our 
   ```
 
 ----------------------------------------------------------------------
+## Tags
+
 ### Storing a Tag in the Vault
+
+To store a new Tag, create a Tag object and save it to the Vault.
 
   ``` java
   // Storing a tag
   Tag tag = vault.save(new Tag("Financial Data"));
   ```
 ### Retrieving Attributes from the Vault
+
+Tags can be retrieved as a list of Tag objects or as a single Tag if the specific Tag is specified.
 
   ``` java
   // Retrieving all tags
@@ -140,13 +164,19 @@ Library not available for your desired language? Feel free to contribute to our 
 
 ### Deleting Tags from the Vault
 
+To remove a Tag, specify the Tag to be removed. A Boolean denoting the status of the operation will be returned.
+
   ``` java
   // Removing a specific tag
   Boolean bool = vault.removeTag("Financial Data");
   ```
 
 ----------------------------------------------------------------------
+## Regulations
+
 ### Storing a Regulation in the Vault
+
+To store a Regulation to the Vault, create a new Regulation object and save it to the Vault. The constructor takes the `key`, `name`, and `url` of the Regulation.
 
   ``` java
   // Storing a regulation
@@ -159,6 +189,8 @@ Library not available for your desired language? Feel free to contribute to our 
 
 ### Retrieving Regulations from the Vault
 
+Regulations can be retrieved as a list of Regulation objects or as a single Regulation if the specific Regulation is specified.
+
   ``` java
   // Retrieving all regulations
   List<Regulation> regulations = vault.getRegulations();
@@ -168,6 +200,8 @@ Library not available for your desired language? Feel free to contribute to our 
   ```
 
 ### Deleting Regulations from the Vault
+
+To remove a Regulation, specify the Regulation to be removed. A Boolean denoting the status of the operation will be returned.
 
   ``` java
   // Removing a specific regulation
