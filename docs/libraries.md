@@ -32,7 +32,7 @@ Library not available for your desired language? Feel free to contribute to our 
 
 ### Adding an Attribute to an Entity or User
 
-Attributes are stored as key/value pairs of strings. Both users and entities can have attributes set to them. If there is an existing attribute in the system with the key of the provided attribute, that attribute will be updated; otherwise, a new attribute will be created.
+[Attributes](/glossary/attribute) are stored as key/value pairs of strings. Both Users and Entities can have Attributes set to them. If there is an existing Attribute in the system with the key of the provided Attribute, that Attribute will be updated; otherwise, a new Attribute will be created.
 
   ``` java
   // Adding an attribute to user
@@ -48,7 +48,7 @@ Attributes are stored as key/value pairs of strings. Both users and entities can
 
 ### Retrieving all Attributes of an Entity or User
 
-Retrieves all attributes for the specified entity or user. Returns a list of Attribute objects.
+Retrieves all [Attributes](/glossary/attribute) for the specified entity or user. Returns a list of Attribute objects.
 
   ``` java
   // Retrieving all attributes for a user
@@ -61,7 +61,7 @@ Retrieves all attributes for the specified entity or user. Returns a list of Att
   ```
 ### Retrieving an Attribute of an Entity or User
 
-Retrieves a single specified attribute for the specified entity or user. Returns a UserAttribute object from the User object, or returns a list of Attributes from the Entity object.
+Retrieves a single specified [Attribute](/glossary/attribute) for the specified entity or user. Returns a UserAttribute object from the User object, or returns a list of Attributes from the Entity object.
 
 ``` java
   // Retrieving specific attribute for a user
@@ -75,15 +75,15 @@ Retrieves a single specified attribute for the specified entity or user. Returns
 
 ### Searching
 
-To search a Vault for attributes, pass in a search string. A list of matching Attributes will be returned.
+To search a Vault for [Attributes](/glossary/attribute), pass in a SearchRequest. A list of matching Attributes will be returned. For more information, [read about ViziVault search](/tutorials/search). 
 
   ``` java
-  List<Attribute> attributes = vault.search("LAST_NAME == 'DOE'");
+  List<Attribute> attributes = vault.search(new SearchRequest("LAST_NAME", "Doe"));
   ```
 
 ### Deleting User Attributes
 
-Attributes can be removed from the User object by calling `remove` with the specified Attribute key, or by calling `purge` to remove all.
+[Attributes](/glossary/attribute) can be removed from the User object by calling `remove` with the specified Attribute key, or by calling `purge` to remove all.
 
   ``` java
   // Purging all user attributes
@@ -176,7 +176,7 @@ To remove a Tag, specify the Tag to be removed. A Boolean denoting the status of
 
 ### Storing a Regulation in the Vault
 
-To store a Regulation to the Vault, create a new Regulation object and save it to the Vault. The constructor takes the `key`, `name`, and `url` of the Regulation.
+To store a [Regulation](/glossary/regulation) to the Vault, create a new Regulation object and save it to the Vault. The constructor takes the `key`, `name`, and `url` of the Regulation.
 
   ``` java
   // Storing a regulation
@@ -189,7 +189,7 @@ To store a Regulation to the Vault, create a new Regulation object and save it t
 
 ### Retrieving Regulations from the Vault
 
-Regulations can be retrieved as a list of Regulation objects or as a single Regulation if the specific Regulation is specified.
+[Regulations](/glossary/regulation) can be retrieved as a list of Regulation objects or as a single Regulation if the specific Regulation is specified.
 
   ``` java
   // Retrieving all regulations
@@ -201,7 +201,7 @@ Regulations can be retrieved as a list of Regulation objects or as a single Regu
 
 ### Deleting Regulations from the Vault
 
-To remove a Regulation, specify the Regulation to be removed. A Boolean denoting the status of the operation will be returned.
+To remove a [Regulation](/glossary/regulation), specify the Regulation to be removed. A Boolean denoting the status of the operation will be returned.
 
   ``` java
   // Removing a specific regulation
