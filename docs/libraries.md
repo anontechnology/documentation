@@ -34,18 +34,6 @@ Library not available for your desired language? Feel free to contribute to our 
 
 [Attributes](/glossary/attribute) are stored as key/value pairs of strings. Both Users and Entities can have Attributes set to them. If there is an existing Attribute in the system with the key of the provided Attribute, that Attribute will be updated; otherwise, a new Attribute will be created.
 
-  ``` java
-  // Adding an attribute to user
-  User user = vault.findByUser("User1234");
-  user.setAttribute("FIRST_NAME", "Jane");
-  vault.save(user);
-
-  // Adding an attribute to entity
-  Entity entity = vault.findByUser("Client6789");
-  entity.setAttribute("FULL_ADDRESS", "1 Hacker Way, Beverly Hills, CA 90210");
-  vault.save(entity);
-  ```
-
 === "Java"
 
     ``` java
@@ -63,6 +51,24 @@ Library not available for your desired language? Feel free to contribute to our 
 === "C#"
 
     ``` c#
+    // coming soon
+    ```
+
+=== "Node.js"
+
+    ``` node.js
+    // coming soon
+    ```
+
+=== "Python"
+
+    ``` python
+    // coming soon
+    ```
+
+=== "PHP"
+
+    ``` python
     // coming soon
     ```
 
