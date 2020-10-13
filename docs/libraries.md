@@ -15,18 +15,6 @@ Library not available for your desired language? Feel free to contribute to our 
 
 ## Vault Setup
 
-  ``` java
-  String encryptionKey = System.getenv("ENCRYPTIONKEY");
-  String decryptionKey = System.getenv("DECRYPTIONKEY");
-  ViziVault vault = new ViziVault()
-    .withBaseURL(url)
-    .withClientId(clientId)
-    .withAPIKey(apiKey)
-    .withEncryptionKey(encryptionKey)
-    .withDecryptionKey(decryptionKey)
-    .build();
-  ```
-
 === "Java"
 
     ``` java
