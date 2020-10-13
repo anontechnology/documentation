@@ -46,26 +46,24 @@ Library not available for your desired language? Feel free to contribute to our 
   vault.save(entity);
   ```
 
-=== "C"
+=== "Java"
 
-    ``` c
-    #include <stdio.h>
+    ``` java
+    // Adding an attribute to user
+    User user = vault.findByUser("User1234");
+    user.setAttribute("FIRST_NAME", "Jane");
+    vault.save(user);
 
-    int main(void) {
-      printf("Hello world!\n");
-      return 0;
-    }
+    // Adding an attribute to entity
+    Entity entity = vault.findByUser("Client6789");
+    entity.setAttribute("FULL_ADDRESS", "1 Hacker Way, Beverly Hills, CA 90210");
+    vault.save(entity);
     ```
 
-=== "C++"
+=== "C#"
 
-    ``` c++
-    #include <iostream>
-
-    int main(void) {
-      std::cout << "Hello world!" << std::endl;
-      return 0;
-    }
+    ``` c#
+    // coming soon
     ```
 
 ### Retrieving all Attributes of an Entity or User
