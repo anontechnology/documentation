@@ -46,6 +46,28 @@ Library not available for your desired language? Feel free to contribute to our 
   vault.save(entity);
   ```
 
+=== "C"
+
+    ``` c
+    #include <stdio.h>
+
+    int main(void) {
+      printf("Hello world!\n");
+      return 0;
+    }
+    ```
+
+=== "C++"
+
+    ``` c++
+    #include <iostream>
+
+    int main(void) {
+      std::cout << "Hello world!" << std::endl;
+      return 0;
+    }
+    ```
+
 ### Retrieving all Attributes of an Entity or User
 
 Retrieves all [Attributes](/glossary/attribute) for the specified entity or user. Returns a list of Attribute objects.
