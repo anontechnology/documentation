@@ -27,6 +27,45 @@ Library not available for your desired language? Feel free to contribute to our 
     .build();
   ```
 
+=== "Java"
+
+    ``` java
+    String encryptionKey = System.getenv("ENCRYPTIONKEY");
+    String decryptionKey = System.getenv("DECRYPTIONKEY");
+    ViziVault vault = new ViziVault()
+      .withBaseURL(url)
+      .withClientId(clientId)
+      .withAPIKey(apiKey)
+      .withEncryptionKey(encryptionKey)
+      .withDecryptionKey(decryptionKey)
+      .build();
+    ```
+
+=== "C#"
+
+    ``` c#
+    // Coming soon!
+    ```
+
+=== "Node.js"
+
+    ``` javascript
+    // Coming soon!
+    ```
+
+=== "Python"
+
+    ``` python
+    // Coming soon!
+    ```
+
+=== "PHP"
+
+    ``` php
+    // Coming soon!
+    ```
+
+
 ----------------------------------------------------------------------
 ## Attributes
 
@@ -51,7 +90,13 @@ Library not available for your desired language? Feel free to contribute to our 
 === "C#"
 
     ``` c#
-    // coming soon
+    // Coming soon!
+    ```
+
+=== "Node.js"
+
+    ``` javascript
+    // Coming soon!
     ```
 
 === "Node.js"
@@ -76,51 +121,157 @@ Library not available for your desired language? Feel free to contribute to our 
 
 Retrieves all [Attributes](/glossary/attribute) for the specified entity or user. Returns a list of Attribute objects.
 
-  ``` java
-  // Retrieving all attributes for a user
-  User user = vault.findByUser("User1234");
-  List<Attribute> attributes = user.getAttributes();
+=== "Java"
 
-  // Retrieving all attributes for an entity
-  Entity entity = vault.findByEntity("Client6789");
-  List<Attribute> attributes = entity.getAttributes();
-  ```
+    ``` java
+    // Retrieving all attributes for a user
+    User user = vault.findByUser("User1234");
+    List<Attribute> attributes = user.getAttributes();
+
+    // Retrieving all attributes for an entity
+    Entity entity = vault.findByEntity("Client6789");
+    List<Attribute> attributes = entity.getAttributes();
+    ```
+
+=== "C#"
+
+    ``` c#
+    // Coming soon!
+    ```
+
+=== "Node.js"
+
+    ``` javascript
+    // Coming soon!
+    ```
+
+=== "Python"
+
+    ``` python
+    // Coming soon!
+    ```
+
+=== "PHP"
+
+    ``` php
+    // Coming soon!
+    ```  
+
 ### Retrieving an Attribute of an Entity or User
 
 Retrieves a single specified [Attribute](/glossary/attribute) for the specified entity or user. Returns a UserAttribute object from the User object, or returns a list of Attributes from the Entity object.
 
-``` java
-  // Retrieving specific attribute for a user
-  User user = vault.findByUser("User1234");
-  UserAttribute attribute = user.getAttribute("FIRST_NAME");
+=== "Java"
 
-  // Retrieving specific attribute for an entity
-  Entity entity = vault.findByEntity("Client6789");
-  List<Attribute> attributes = entity.getAttribute("FULL_ADDRESS");
-```
+    ``` java
+    // Retrieving specific attribute for a user
+    User user = vault.findByUser("User1234");
+    UserAttribute attribute = user.getAttribute("FIRST_NAME");
+
+    // Retrieving specific attribute for an entity
+    Entity entity = vault.findByEntity("Client6789");
+    List<Attribute> attributes = entity.getAttribute("FULL_ADDRESS");
+    ```
+
+=== "C#"
+
+    ``` c#
+    // Coming soon!
+    ```
+
+=== "Node.js"
+
+    ``` javascript
+    // Coming soon!
+    ```
+
+=== "Python"
+
+    ``` python
+    // Coming soon!
+    ```
+
+=== "PHP"
+
+    ``` php
+    // Coming soon!
+    ```  
 
 ### Searching
 
 To search a Vault for [Attributes](/glossary/attribute), pass in a SearchRequest. A list of matching Attributes will be returned. For more information, [read about ViziVault search](/tutorials/search). 
 
-  ``` java
-  List<Attribute> attributes = vault.search(new SearchRequest("LAST_NAME", "Doe"));
-  ```
+=== "Java"
+
+    ``` java
+    List<Attribute> attributes = vault.search(new SearchRequest("LAST_NAME", "Doe"));
+    ```
+
+=== "C#"
+
+    ``` c#
+    // Coming soon!
+    ```
+
+=== "Node.js"
+
+    ``` javascript
+    // Coming soon!
+    ```
+
+=== "Python"
+
+    ``` python
+    // Coming soon!
+    ```
+
+=== "PHP"
+
+    ``` php
+    // Coming soon!
+    ```  
+  
 
 ### Deleting User Attributes
 
 [Attributes](/glossary/attribute) can be removed from the User object by calling `remove` with the specified Attribute key, or by calling `purge` to remove all.
 
-  ``` java
-  // Purging all user attributes
-  User user = vault.findByUser("User1234");
-  user.purge();
+=== "Java"
 
-  // Removing specific attribute
-  User user = vault.findByUser("User1234");
-  user.remove("LAST_NAME");
-  ```
+    ``` java
+    // Purging all user attributes
+    User user = vault.findByUser("User1234");
+    user.purge();
 
+    // Removing specific attribute
+    User user = vault.findByUser("User1234");
+    user.remove("LAST_NAME");
+    ```
+
+=== "C#"
+
+    ``` c#
+    // Coming soon!
+    ```
+
+=== "Node.js"
+
+    ``` javascript
+    // Coming soon!
+    ```
+
+=== "Python"
+
+    ``` python
+    // Coming soon!
+    ```
+
+=== "PHP"
+
+    ``` php
+    // Coming soon!
+    ```  
+  
 ----------------------------------------------------------------------
 ## Attribute Definitions
 
@@ -128,42 +279,97 @@ To search a Vault for [Attributes](/glossary/attribute), pass in a SearchRequest
 
 To store an Attribute Definition, create one and save it to the Vault. The following code details the various properties of the AttributeDefinition object.
 
-  ``` java
-  AttributeDefinition attribute = new AttributeDefinition();
-  attribute.setName("Billing Address");
-  attribute.setCategories(["geographic_location", "financial"]);
-  attribute.setHint("{ line_one: \"1 Hacker Way\", line_two: \"Apt. 53\", 
-                      city: \"Menlo Park\", state: \"California\", 
-                      postal_code: \"94025-1456\", country: \"USA\"
-                    }");
-  attribute.setSchema(gson.toJson({ 
-                      "line_one": "string",
-                      "line_two": "string",
-                      "city": "string",
-                      "state": "string",
-                      "postal_code": "string",
-                      "country": "string"
-                    });
-  attribute.setRepeatable(false);
-  attribute.setImmutable(false);
-  attribute.setMandatory(true);
-  attribute.setIndexed(false);
-  attribute.setRegulations(["GDPR", "CCPA"]);
+=== "Java"
 
-  vault.storeAttribute(attribute);
-  ```
+    ``` java
+    AttributeDefinition attribute = new AttributeDefinition();
+    attribute.setName("Billing Address");
+    attribute.setCategories(["geographic_location", "financial"]);
+    attribute.setHint("{ line_one: \"1 Hacker Way\", line_two: \"Apt. 53\", 
+                        city: \"Menlo Park\", state: \"California\", 
+                        postal_code: \"94025-1456\", country: \"USA\"
+                      }");
+    attribute.setSchema(gson.toJson({ 
+                        "line_one": "string",
+                        "line_two": "string",
+                        "city": "string",
+                        "state": "string",
+                        "postal_code": "string",
+                        "country": "string"
+                      });
+    attribute.setRepeatable(false);
+    attribute.setImmutable(false);
+    attribute.setMandatory(true);
+    attribute.setIndexed(false);
+    attribute.setRegulations(["GDPR", "CCPA"]);
+
+    vault.storeAttribute(attribute);
+    ```
+
+=== "C#"
+
+    ``` c#
+    // Coming soon!
+    ```
+
+=== "Node.js"
+
+    ``` javascript
+    // Coming soon!
+    ```
+
+=== "Python"
+
+    ``` python
+    // Coming soon!
+    ```
+
+=== "PHP"
+
+    ``` php
+    // Coming soon!
+    ```  
+  
 
 ### Retrieving Attribute Definitions from the Vault
 
 Attribute Definitions can be retrieved from the Vault in bulk or by specifying the Attribute key.
 
-  ``` java
-  // Retrieving all attributes
-  List<AttributeDefinition> attributes = vault.getAttributeDefinitions();
 
-  // Retrieving specific attribute
-  AttributeDefinition attribute = vault.getAttributeDefinition("Billing Address");
-  ```
+=== "Java"
+
+    ``` java
+    // Retrieving all attributes
+    List<AttributeDefinition> attributes = vault.getAttributeDefinitions();
+
+    // Retrieving specific attribute
+    AttributeDefinition attribute = vault.getAttributeDefinition("Billing Address");
+    ```
+
+=== "C#"
+
+    ``` c#
+    // Coming soon!
+    ```
+
+=== "Node.js"
+
+    ``` javascript
+    // Coming soon!
+    ```
+
+=== "Python"
+
+    ``` python
+    // Coming soon!
+    ```
+
+=== "PHP"
+
+    ``` php
+    // Coming soon!
+    ```  
+  
 
 ----------------------------------------------------------------------
 ## Tags
@@ -172,30 +378,112 @@ Attribute Definitions can be retrieved from the Vault in bulk or by specifying t
 
 To store a new Tag, create a Tag object and save it to the Vault.
 
-  ``` java
-  // Storing a tag
-  Tag tag = vault.save(new Tag("Financial Data"));
-  ```
+
+=== "Java"
+
+    ``` java
+    Tag tag = vault.save(new Tag("Financial Data"));
+    ```
+
+=== "C#"
+
+    ``` c#
+    // Coming soon!
+    ```
+
+=== "Node.js"
+
+    ``` javascript
+    // Coming soon!
+    ```
+
+=== "Python"
+
+    ``` python
+    // Coming soon!
+    ```
+
+=== "PHP"
+
+    ``` php
+    // Coming soon!
+    ```  
+  
+
 ### Retrieving Attributes from the Vault
 
 Tags can be retrieved as a list of Tag objects or as a single Tag if the specific Tag is specified.
 
-  ``` java
-  // Retrieving all tags
-  List<Tag> tags = vault.getTags();
+=== "Java"
 
-  // Retrieving specific tag
-  String tag = vault.getTag("Financial Data");
-  ```
+    ``` java
+    // Retrieving all tags
+    List<Tag> tags = vault.getTags();
+
+    // Retrieving specific tag
+    String tag = vault.getTag("Financial Data");
+    ```
+
+=== "C#"
+
+    ``` c#
+    // Coming soon!
+    ```
+
+=== "Node.js"
+
+    ``` javascript
+    // Coming soon!
+    ```
+
+=== "Python"
+
+    ``` python
+    // Coming soon!
+    ```
+
+=== "PHP"
+
+    ``` php
+    // Coming soon!
+    ```  
+  
 
 ### Deleting Tags from the Vault
 
 To remove a Tag, specify the Tag to be removed. A Boolean denoting the status of the operation will be returned.
 
-  ``` java
-  // Removing a specific tag
-  Boolean bool = vault.removeTag("Financial Data");
-  ```
+=== "Java"
+
+    ``` java
+    // Removing a specific tag
+    Boolean bool = vault.removeTag("Financial Data");
+    ```
+
+=== "C#"
+
+    ``` c#
+    // Coming soon!
+    ```
+
+=== "Node.js"
+
+    ``` javascript
+    // Coming soon!
+    ```
+
+=== "Python"
+
+    ``` python
+    // Coming soon!
+    ```
+
+=== "PHP"
+
+    ``` php
+    // Coming soon!
+    ```  
+ 
 
 ----------------------------------------------------------------------
 ## Regulations
@@ -204,32 +492,113 @@ To remove a Tag, specify the Tag to be removed. A Boolean denoting the status of
 
 To store a [Regulation](/glossary/regulation) to the Vault, create a new Regulation object and save it to the Vault. The constructor takes the `key`, `name`, and `url` of the Regulation.
 
-  ``` java
-  // Storing a regulation
-  Regulation regulation = new Regulation("GDPR", 
-                                        "General Data Protection Regulation",
-                                        "https://gdpr.eu/" 
-                                        );
-  Regulation savedRegulation = vault.save(regulation);
-  ```
+=== "Java"
+
+    ``` java
+    // Storing a regulation
+    Regulation regulation = new Regulation("GDPR", 
+                                          "General Data Protection Regulation",
+                                          "https://gdpr.eu/" 
+                                          );
+    Regulation savedRegulation = vault.save(regulation);
+    ```
+
+=== "C#"
+
+    ``` c#
+    // Coming soon!
+    ```
+
+=== "Node.js"
+
+    ``` javascript
+    // Coming soon!
+    ```
+
+=== "Python"
+
+    ``` python
+    // Coming soon!
+    ```
+
+=== "PHP"
+
+    ``` php
+    // Coming soon!
+    ```  
+ 
 
 ### Retrieving Regulations from the Vault
 
 [Regulations](/glossary/regulation) can be retrieved as a list of Regulation objects or as a single Regulation if the specific Regulation is specified.
 
-  ``` java
-  // Retrieving all regulations
-  List<Regulation> regulations = vault.getRegulations();
+=== "Java"
 
-  // Retrieving specific regulation
-  Regulation regulation = vault.getRegulation("GDPR");
-  ```
+    ``` java
+    // Retrieving all regulations
+    List<Regulation> regulations = vault.getRegulations();
+
+    // Retrieving specific regulation
+    Regulation regulation = vault.getRegulation("GDPR");
+    ```
+
+=== "C#"
+
+    ``` c#
+    // Coming soon!
+    ```
+
+=== "Node.js"
+
+    ``` javascript
+    // Coming soon!
+    ```
+
+=== "Python"
+
+    ``` python
+    // Coming soon!
+    ```
+
+=== "PHP"
+
+    ``` php
+    // Coming soon!
+    ```  
+ 
 
 ### Deleting Regulations from the Vault
 
 To remove a [Regulation](/glossary/regulation), specify the Regulation to be removed. A Boolean denoting the status of the operation will be returned.
 
-  ``` java
-  // Removing a specific regulation
-  Boolean bool = vault.removeRegulation("GDPR");
-  ```
+=== "Java"
+
+    ``` java
+    // Removing a specific regulation
+    Boolean bool = vault.removeRegulation("GDPR");
+    ```
+
+=== "C#"
+
+    ``` c#
+    // Coming soon!
+    ```
+
+=== "Node.js"
+
+    ``` javascript
+    // Coming soon!
+    ```
+
+=== "Python"
+
+    ``` python
+    // Coming soon!
+    ```
+
+=== "PHP"
+
+    ``` php
+    // Coming soon!
+    ```  
+ 
