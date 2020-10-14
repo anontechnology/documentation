@@ -25,8 +25,7 @@ Library not available for your desired language? Feel free to contribute to our 
       .withClientId(clientId)
       .withAPIKey(apiKey)
       .withEncryptionKey(encryptionKey)
-      .withDecryptionKey(decryptionKey)
-      .build();
+      .withDecryptionKey(decryptionKey);
     ```
 
 === "C#"
@@ -44,7 +43,7 @@ Library not available for your desired language? Feel free to contribute to our 
 === "Python"
 
     ``` python
-    // Coming soon!
+    # Coming soon!
     ```
 
 === "PHP"
@@ -136,7 +135,7 @@ Retrieves all [Attributes](/glossary/attribute) for the specified entity or user
 === "Python"
 
     ``` python
-    // Coming soon!
+    # Coming soon!
     ```
 
 === "PHP"
@@ -229,11 +228,12 @@ To search a Vault for [Attributes](/glossary/attribute), pass in a SearchRequest
     ``` java
     // Purging all user attributes
     User user = vault.findByUser("User1234");
-    user.purge();
+    vault.purge(user);
 
     // Removing specific attribute
     User user = vault.findByUser("User1234");
     user.remove("LAST_NAME");
+    vault.save(user);
     ```
 
 === "C#"
