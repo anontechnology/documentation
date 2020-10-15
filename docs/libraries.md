@@ -57,9 +57,11 @@ Library not available for your desired language? Feel free to contribute to our 
 ----------------------------------------------------------------------
 ## Attributes
 
+Attributes are how the ViziVault ecosystem organizes your data. Every data point consists of three main components: a user id, which represents who the data is about; a value, which is some piece of information about the user; and an attribute, which expresses the relationship between the user and the value. For example, in an online retail application, there would be an attribute for shipping addresses, an attribute for billing addresses, and an attribute for credit card information.
+
 ### Adding an Attribute to an Entity or User
 
-[Attributes](/glossary/attribute) are stored as key/value pairs of strings. Both Users and Entities can have Attributes set to them. If there is an existing Attribute in the system with the key of the provided Attribute, that Attribute will be updated; otherwise, a new Attribute will be created.
+[Attributes](/glossary/attribute) are stored as `key`/`value` pairs of strings. Both Users and Entities can have Attributes set to them. If there is an existing Attribute in the system with the `key` of the provided Attribute, that Attribute will be updated; otherwise, a new Attribute will be created.
 
 === "Java"
 
@@ -222,7 +224,7 @@ To search a Vault for [Attributes](/glossary/attribute), pass in a SearchRequest
 
 ### Deleting User Attributes
 
-[Attributes](/glossary/attribute) can be removed from the User object by calling `remove` with the specified Attribute key, or by calling `purge` to remove all.
+[Attributes](/glossary/attribute) can be removed from the User object by calling `remove` with the specified Attribute key, or by calling `purge` to remove all Attributes.
 
 === "Java"
 
@@ -263,9 +265,11 @@ To search a Vault for [Attributes](/glossary/attribute), pass in a SearchRequest
 ----------------------------------------------------------------------
 ## Attribute Definitions
 
+Attributes are defined with an object housing all relevant metadata for the `key`. This is where attributes are given [Categories](/glossary/category) and [Regulations](/glossary/regulation), along with any schema to further break down the structure of the `value` of the Attribute. Display names and hints can also be added to the Attribute Definition for ease of use and readability. 
+
 ### Storing an Attribute Definition in the Vault
 
-To store an Attribute Definition, create one and save it to the Vault. The following code details the various properties of the AttributeDefinition object.
+To store an Attribute Definition, create an AttributeDefinition object and save it to the Vault. The following code details the various properties of the AttributeDefinition object.
 
 === "Java"
 
@@ -321,8 +325,7 @@ To store an Attribute Definition, create one and save it to the Vault. The follo
 
 ### Retrieving Attribute Definitions from the Vault
 
-Attribute Definitions can be retrieved from the Vault in bulk or by specifying the Attribute key.
-
+Attribute Definitions can be retrieved from the Vault in bulk or by specifying the AttributeDefinition name. `getAttributeDefinitions` returns a list of AttributeDefinitions and `getAttributeDefinition` returns the AttributeDefinition given its name.
 
 === "Java"
 
@@ -361,6 +364,8 @@ Attribute Definitions can be retrieved from the Vault in bulk or by specifying t
 
 ----------------------------------------------------------------------
 ## Tags
+
+Similar to [Regulations](/glossary/regulation), Tags are user-defined strings that can be applied to Attributes to aid in classification and searching.
 
 ### Storing a Tag in the Vault
 
@@ -475,6 +480,8 @@ To remove a Tag, specify the Tag to be removed. A Boolean denoting the status of
 
 ----------------------------------------------------------------------
 ## Regulations
+
+A regulation object represents a governmental regulation that impacts how you can use the data in your vault. Each data point can have a number of regulations associated with it, which makes it easier to ensure your use of the data is compliant. You can tag data points with regulations when entering them into the system, or specify rules that the system will use to automatically tag regulations for you.
 
 ### Storing a Regulation in the Vault
 
