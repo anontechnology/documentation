@@ -74,14 +74,14 @@ Library not available for your desired language? Feel free to contribute to our 
 === "PHP"
 
     ``` php
-    getenv("ENCRYPTIONKEY");
-    getenv("DECRYPTIONKEY");
+    $encryptionKey = getenv("ENCRYPTIONKEY");
+    $decryptionKey = getenv("DECRYPTIONKEY");
     $vault = new ViziVault()
-      ->withBaseURL(url)
-      ->withClientId(clientId)
-      ->withAPIKey(apiKey)
-      ->withEncryptionKey(encryptionKey)
-      ->withDecryptionKey(decryptionKey)
+      ->withBaseURL($url)
+      ->withClientId($clientId)
+      ->withAPIKey($apiKey)
+      ->withEncryptionKey($encryptionKey)
+      ->withDecryptionKey($decryptionKey)
       ->build();
     ```
 
@@ -226,7 +226,7 @@ Retrieves all [Attributes](/glossary/attribute) for the specified entity or user
 
     // Retrieving all attributes for an entity
     $entity = $vault->findByEntity("Client6789");
-    $attributes = entity->getAttributes();
+    $attributes = $entity->getAttributes();
     ```  
 
 ### Retrieving an Attribute of an Entity or User
@@ -524,7 +524,7 @@ To store an Attribute Definition, create an AttributeDefinition object and save 
     $attribute->setIndexed(false);
     $attribute->setRegulations(array("GDPR", "CCPA"));
 
-    $vault->storeAttribute(attribute);
+    $vault->storeAttribute($attribute);
     ```  
   
 
@@ -780,7 +780,7 @@ To store a [Regulation](/glossary/regulation) to the Vault, create a new Regulat
                                     "General Data Protection Regulation",
                                     "https://gdpr.eu/" 
                                     );
-    $savedRegulation = $vault->save(regulation);
+    $savedRegulation = $vault->save($regulation);
     ```  
  
 
