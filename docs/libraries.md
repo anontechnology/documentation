@@ -22,7 +22,6 @@ Library not available for your desired language? Feel free to contribute to our 
     String decryptionKey = System.getenv("DECRYPTIONKEY");
     ViziVault vault = new ViziVault()
       .withBaseURL(url)
-      .withClientId(clientId)
       .withAPIKey(apiKey)
       .withEncryptionKey(encryptionKey)
       .withDecryptionKey(decryptionKey);
@@ -35,7 +34,6 @@ Library not available for your desired language? Feel free to contribute to our 
     string decryptionKey = System.Environment.GetEnvironmentVariable("DECRYPTIONKEY");
     ViziVault vault = new ViziVault()
       .withBaseURL(url)
-      .withClientId(clientId)
       .withAPIKey(apiKey)
       .withEncryptionKey(encryptionKey)
       .withDecryptionKey(decryptionKey)
@@ -49,7 +47,6 @@ Library not available for your desired language? Feel free to contribute to our 
     const decryptionKey = process.env.DECRYPTIONKEY;
     let vault = new ViziVault()
       .withBaseURL(url)
-      .withClientId(clientId)
       .withAPIKey(apiKey)
       .withEncryptionKey(encryptionKey)
       .withDecryptionKey(decryptionKey)
@@ -63,7 +60,6 @@ Library not available for your desired language? Feel free to contribute to our 
     decryptionKey = os.getenv('DECRYPTIONKEY')
     vault = ViziVault()
       .withBaseURL(url)
-      .withClientId(clientId)
       .withAPIKey(apiKey)
       .withEncryptionKey(encryptionKey)
       .withDecryptionKey(decryptionKey)
@@ -77,7 +73,6 @@ Library not available for your desired language? Feel free to contribute to our 
     $decryptionKey = getenv("DECRYPTIONKEY");
     $vault = new ViziVault()
       ->withBaseURL($url)
-      ->withClientId($clientId)
       ->withAPIKey($apiKey)
       ->withEncryptionKey($encryptionKey)
       ->withDecryptionKey($decryptionKey)
@@ -103,7 +98,7 @@ Attributes are how the ViziVault ecosystem organizes your data. Every data point
     vault.save(user);
 
     // Adding an attribute to entity
-    Entity entity = vault.findByUser("Client6789");
+    Entity entity = vault.findByEntity("Client6789");
     entity.setAttribute("FULL_ADDRESS", "1 Hacker Way, Beverly Hills, CA 90210");
     vault.save(entity);
     ```
@@ -340,7 +335,7 @@ To search a Vault for [Attributes](/glossary/attribute), pass in a SearchRequest
 
     // Removing specific attribute
     User user = vault.findByUser("User1234");
-    user.remove("LAST_NAME");
+    user.clearAttribute("LAST_NAME");
     vault.save(user);
     ```
 
@@ -405,25 +400,15 @@ To store an Attribute Definition, create an AttributeDefinition object and save 
 
     ``` java
     AttributeDefinition attribute = new AttributeDefinition();
+    attribute.setKey("BILLING_ADDRESS");
     attribute.setName("Billing Address");
-    attribute.setCategories(["geographic_location", "financial"]);
-    attribute.setHint("{ line_one: \"1 Hacker Way\", line_two: \"Apt. 53\", 
-                        city: \"Menlo Park\", state: \"California\", 
-                        postal_code: \"94025-1456\", country: \"USA\"
-                      }");
-    attribute.setSchema(gson.toJson({ 
-                        "line_one": "string",
-                        "line_two": "string",
-                        "city": "string",
-                        "state": "string",
-                        "postal_code": "string",
-                        "country": "string"
-                      });
+    attribute.setHint("{ line_one: \"1 Hacker Way\", line_two: \"Apt. 53\"," +
+                        "city: \"Menlo Park\", state: \"California\", " +
+                        "postal_code: \"94025-1456\", country: \"USA\"" +
+                      "}");
+    attribute.setSchema(???);
     attribute.setRepeatable(false);
-    attribute.setImmutable(false);
-    attribute.setMandatory(true);
     attribute.setIndexed(false);
-    attribute.setRegulations(["GDPR", "CCPA"]);
 
     vault.storeAttribute(attribute);
     ```
@@ -536,10 +521,10 @@ Attribute Definitions can be retrieved from the Vault in bulk or by specifying t
 
     ``` java
     // Retrieving all attributes
-    List<AttributeDefinition> attributes = vault.getAttributeDefinitions();
+    List<AttributeDefinition> attributes = vault.getAttributes();
 
     // Retrieving specific attribute
-    AttributeDefinition attribute = vault.getAttributeDefinition("Billing Address");
+    AttributeDefinition attribute = vault.getAttribute("Billing Address");
     ```
 
 === "C#"
