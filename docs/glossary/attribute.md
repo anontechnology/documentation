@@ -10,7 +10,7 @@ There are several forms of metadata associated with attributes, as follows:
 |-----|-----|-----------|
 |key|String|An unambiguous identifier for this attribute. Only alphanumeric characters and underscores may appear in attribute keys.|
 |name|String|A human-readable identifier for this attribute.|
-|categories|Array<String>|A list of [category keys](/glossary/category), each representing a grouping this attribute falls under. Categories can be used to group related attributes and to facilitate tracking what regulations are applicable to an attribute.|
+|tags|Array<String>|A list of [tags](/glossary/tag) that should be applied to all datapoints under this attribute.|
 |hint|String|An example value that this attribute could take.|
 |immutable|boolean|Whether this attribute is a pre-loaded attribute provided by ViziVault that cannot be modified through the web interface.|
 |indexed|boolean|Whether this attribute's value should be indexed to allow searching on it. For more information, read [the Search tutorial](/tutorials/search).|
@@ -29,7 +29,7 @@ An example attribute definition representing a user's billing address:
 {
   "key" : "BILLING_ADDRESS",
   "name" : "Billing address",
-  "categories": ["geographic_location", "financial"],
+  "tags": ["geographic_location", "financial"],
   "hint" : "{ line_one: \"1 Hacker Way\", line_two: \"Apt. 53\", city: \"Menlo Park\", state: \"California\", postal_code: \"94025-1456\", country: \"USA\"}",
   "schema": {
     "line_one": "string",

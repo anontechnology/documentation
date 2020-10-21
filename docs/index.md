@@ -41,7 +41,7 @@ Although we take extra precautions, we completely understand that streaming data
 As a result, we offer an alternative option to host our lightweight API in your own infrastrucutre and network to ensure that it is impossible for Anontech to decrypt or view your data (think of it like a proxy).
 
 ### On-Premise
-Our On-Premise option places our Vault API behind your firewall for added security to ensure that it is strictly prohibited that any unencrypted data can be read by an external party (including us). You organizaiton is in full control of the keys used for decryption and can
+Our On-Premise option places our Vault API behind your firewall for added security to ensure that it is strictly prohibited that any unencrypted data can be read by an external party (including us).
 
 Our architecture is container-ready and can be deployed to fit your needs with all security best-practices baked-in.
 

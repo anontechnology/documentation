@@ -7,10 +7,10 @@ Guides and reference materials to help you get started, integrate, optimize, and
 -   [GET /attributes](/api/attributes#get-attributes)
 -   [GET /attributes/{attributeKey}](/api/attributes#get-attributesattributekey)
 
-### Categories
--   [POST​ /categories](/api/categories#post-categories)
--   [GET /categories](/api/categories#get-categories)
--   [GET /categories/{categoryKey}](/api/categories#get-categoriescategorykey)
+### Tags
+-   [POST​ /tags](/api/tags#post-tags)
+-   [GET /tags](/api/tags#get-tags)
+-   [GET /tags/{tagName}](/api/tags#get-tagstagname)
 
 ### Datapoints
 -   [POST​ /data](/api/datapoints#post-databulk)
