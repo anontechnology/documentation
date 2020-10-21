@@ -395,7 +395,7 @@ To search a Vault for [Attributes](/glossary/attribute), pass in a SearchRequest
 ----------------------------------------------------------------------
 ## Attribute Definitions
 
-Attributes are defined with an object housing all relevant metadata for the `key`. This is where attributes are given [Categories](/glossary/category) and [Regulations](/glossary/regulation), along with any schema to further break down the structure of the `value` of the Attribute. Display names and hints can also be added to the Attribute Definition for ease of use and readability. 
+Attributes are defined with an object housing all relevant metadata for the `key`. This is where attributes are given [Tags](/glossary/tag) and [Regulations](/glossary/regulation), along with any schema to further break down the structure of the `value` of the Attribute. Display names and hints can also be added to the Attribute Definition for ease of use and readability. 
 
 ### Storing an Attribute Definition in the Vault
 
@@ -406,7 +406,7 @@ To store an Attribute Definition, create an AttributeDefinition object and save 
     ``` java
     AttributeDefinition attribute = new AttributeDefinition();
     attribute.setName("Billing Address");
-    attribute.setCategories(["geographic_location", "financial"]);
+    attribute.setTags(["geographic_location", "financial"]);
     attribute.setHint("{ line_one: \"1 Hacker Way\", line_two: \"Apt. 53\", 
                         city: \"Menlo Park\", state: \"California\", 
                         postal_code: \"94025-1456\", country: \"USA\"
@@ -433,7 +433,7 @@ To store an Attribute Definition, create an AttributeDefinition object and save 
     ``` c#
     AttributeDefinition attribute = new AttributeDefinition();
     attribute.name = "Billing Address";
-    attribute.categories = {"geographic_location", "financial"};
+    attribute.tags = {"geographic_location", "financial"};
     attribute.hint = "{ line_one: \"1 Hacker Way\", line_two: \"Apt. 53\", city: \"Menlo Park\", state: \"California\", postal_code: \"94025-1456\" country: \"USA\" }";
     attribute.schema = JsonSerializer.Serialize({ 
                         "line_one": "string",
@@ -457,7 +457,7 @@ To store an Attribute Definition, create an AttributeDefinition object and save 
     ``` javascript
     let attribute = new AttributeDefinition();
     attribute.name = "Billing Address";
-    attribute.categories = ["geographic_location", "financial"];
+    attribute.tags = ["geographic_location", "financial"];
     attribute.hint = "{ line_one: \"1 Hacker Way\", line_two: \"Apt. 53\", city: \"Menlo Park\", state: \"California\", postal_code: \"94025-1456\" country: \"USA\" }";
     attribute.schema = JSON.stringify({ 
                         "line_one": "string",
@@ -481,7 +481,7 @@ To store an Attribute Definition, create an AttributeDefinition object and save 
     ``` python
     attribute = AttributeDefinition()
     attribute.name = "Billing Address"
-    attribute.categories = ["geographic_location", "financial"]
+    attribute.tags = ["geographic_location", "financial"]
     attribute.hint = "{ line_one: \"1 Hacker Way\", line_two: \"Apt. 53\", city: \"Menlo Park\", state: \"California\", postal_code: \"94025-1456\" country: \"USA\" }"
     attribute.schema = json.dumps({ 
                         "line_one": "string",
@@ -505,7 +505,7 @@ To store an Attribute Definition, create an AttributeDefinition object and save 
     ``` php
     $attribute = new AttributeDefinition();
     $attribute->setName("Billing Address");
-    $attribute->setCategories(array("geographic_location", "financial"));
+    $attribute->setTags(array("geographic_location", "financial"));
     $attribute->setHint("{ line_one: \"1 Hacker Way\", line_two: \"Apt. 53\", 
                         city: \"Menlo Park\", state: \"California\", 
                         postal_code: \"94025-1456\", country: \"USA\"

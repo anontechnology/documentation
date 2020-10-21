@@ -16,7 +16,7 @@ Creates or edits an attribute. If there is an existing attribute in the system w
 {
   "key": "SAMPLE_ATTRIBUTE",
   "name": "Sample Attribute",
-  "categories": [
+  "tags": [
     "age",
     "financial",
     "geographic"
@@ -39,7 +39,7 @@ On success, returns 201 Created and a description of the updated attribute.
   "data": {
     "key": "SAMPLE_ATTRIBUTE",
     "name": "Sample Attribute",
-    "categories": [
+    "tags": [
       "age",
       "financial",
       "geographic"
@@ -77,7 +77,7 @@ None
     {
       "key": "SAMPLE_ATTRIBUTE",
       "name": "Sample Attribute",
-      "categories": ["financial", "medical"],
+      "tags": ["financial", "medical"],
       "hint": "example data for this attribute",
       "immutable": false,
       "indexed": true,
@@ -106,7 +106,7 @@ Displays information about one attribute. Returns an [Attribute](/glossary/attri
   "data": {
     "key": "SAMPLE_ATTRIBUTE",
     "name": "Sample Attribute",
-    "categories": [
+    "tags": [
       "age",
       "financial",
       "geographic"

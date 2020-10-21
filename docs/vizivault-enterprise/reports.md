@@ -12,7 +12,7 @@
 8. **Creation and Export**<br/>
     ![Add](../assets/images/add.png "Add") Add a new Report.
     ![create_report](../assets/images/create_report.png "Create Report")
-    ![export](../assets/images/export.png "Export") Export information on existing categories.
+    ![export](../assets/images/export.png "Export") Export information on existing tags.
 9. **Actions**: Actions that you can take on a report.<br/>
   ![edit](../assets/images/edit.png "Edit") **Edit the properties of a report**:
   ![create_report](../assets/images/create_report.png "Create Report")
