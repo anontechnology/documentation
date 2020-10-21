@@ -410,7 +410,7 @@ To store an Attribute Definition, create an AttributeDefinition object and save 
     attribute.setRepeatable(false);
     attribute.setIndexed(false);
 
-    vault.storeAttribute(attribute);
+    vault.storeAttributeDefinition(attribute);
     ```
 
 === "C#"
@@ -521,10 +521,10 @@ Attribute Definitions can be retrieved from the Vault in bulk or by specifying t
 
     ``` java
     // Retrieving all attributes
-    List<AttributeDefinition> attributes = vault.getAttributes();
+    List<AttributeDefinition> attributes = vault.getAttributeDefinitions();
 
     // Retrieving specific attribute
-    AttributeDefinition attribute = vault.getAttribute("Billing Address");
+    AttributeDefinition attribute = vault.getAttributeDefinition("Billing Address");
     ```
 
 === "C#"
@@ -581,7 +581,7 @@ To store a new Tag, create a Tag object and save it to the Vault.
 === "Java"
 
     ``` java
-    Tag tag = vault.save(new Tag("Financial Data"));
+    Tag tag = vault.storeTag(new Tag("Financial Data"));
     ```
 
 === "C#"
@@ -609,7 +609,7 @@ To store a new Tag, create a Tag object and save it to the Vault.
     ```  
   
 
-### Retrieving Attributes from the Vault
+### Retrieving Tags from the Vault
 
 Tags can be retrieved as a list of Tag objects or as a single Tag if the specific Tag is specified.
 
@@ -620,7 +620,7 @@ Tags can be retrieved as a list of Tag objects or as a single Tag if the specifi
     List<Tag> tags = vault.getTags();
 
     // Retrieving specific tag
-    String tag = vault.getTag("Financial Data");
+    Tag tag = vault.getTag("Financial Data");
     ```
 
 === "C#"
@@ -672,7 +672,7 @@ To remove a Tag, specify the Tag to be removed. A Boolean denoting the status of
 
     ``` java
     // Removing a specific tag
-    Boolean removed = vault.removeTag("Financial Data");
+    boolean removed = vault.removeTag("Financial Data");
     ```
 
 === "C#"
