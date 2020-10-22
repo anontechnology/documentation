@@ -114,12 +114,12 @@ Attributes are how the ViziVault ecosystem organizes your data. Every data point
     ``` c#
     // Adding an attribute to user
     User user = vault.findByUser("User1234");
-    user.addAttribute("FIRST_NAME", "Jane");
+    user.setAttribute("FIRST_NAME", "Jane");
     vault.save(user);
 
     // Adding an attribute to entity
     Entity entity = vault.findByUser("Client6789");
-    entity.addAttribute("FULL_ADDRESS", "1 Hacker Way, Beverly Hills, CA 90210");
+    entity.setAttribute("FULL_ADDRESS", "1 Hacker Way, Beverly Hills, CA 90210");
     vault.save(entity);
     ```
 
@@ -128,12 +128,12 @@ Attributes are how the ViziVault ecosystem organizes your data. Every data point
     ``` javascript
     // Adding an attribute to user
     let user = vault.findByUser("User1234");
-    user.addAttribute("FIRST_NAME", "Jane");
+    user.setAttribute("FIRST_NAME", "Jane");
     vault.save(user);
 
     // Adding an attribute to entity
     let entity = vault.findByUser("Client6789");
-    entity.addAttribute("FULL_ADDRESS", "1 Hacker Way, Beverly Hills, CA 90210");
+    entity.setAttribute("FULL_ADDRESS", "1 Hacker Way, Beverly Hills, CA 90210");
     vault.save(entity);
     ```
 
@@ -142,12 +142,12 @@ Attributes are how the ViziVault ecosystem organizes your data. Every data point
     ``` python
     # Adding an attribute to user
     user = vault.findByUser("User1234")
-    user.addAttribute("FIRST_NAME", "Jane");
+    user.setAttribute("FIRST_NAME", "Jane")
     vault.save(user)
 
     # Adding an attribute to entity
     entity = vault.findByUser("Client6789")
-    entity.addAttribute("FULL_ADDRESS", "1 Hacker Way, Beverly Hills, CA 90210");
+    entity.setAttribute("FULL_ADDRESS", "1 Hacker Way, Beverly Hills, CA 90210")
     vault.save(entity)
     ```
 
@@ -708,7 +708,7 @@ To remove a Tag, specify the Tag to be removed. A Boolean denoting the status of
 
     ``` python
     # Removing a specific tag
-    removed = vault.removeTag("Financial Data");
+    removed = vault.removeTag("Financial Data")
     ```
 
 === "PHP"
@@ -822,10 +822,10 @@ To store a [Regulation](/glossary/regulation) to the Vault, create a new Regulat
 
     ``` python
     # Retrieving all regulations
-    regulations = vault.regulations;
+    regulations = vault.regulations
 
     # Retrieving specific regulation
-    regulation = vault.getRegulation("GDPR");
+    regulation = vault.getRegulation("GDPR")
     ```
 
 === "PHP"
