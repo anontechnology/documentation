@@ -33,11 +33,10 @@ Library not available for your desired language? Feel free to contribute to our 
     string encryptionKey = System.Environment.GetEnvironmentVariable("ENCRYPTIONKEY");
     string decryptionKey = System.Environment.GetEnvironmentVariable("DECRYPTIONKEY");
     ViziVault vault = new ViziVault()
-      .withBaseURL(url)
-      .withAPIKey(apiKey)
-      .withEncryptionKey(encryptionKey)
-      .withDecryptionKey(decryptionKey)
-      .build();
+      .WithBaseUrl(url)
+      .WithApiKey(apiKey)
+      .WithEncryptionKey(encryptionKey)
+      .WithDecryptionKey(decryptionKey);
     ```
 
 === "Node.js"
@@ -94,12 +93,12 @@ Attributes are how the ViziVault ecosystem organizes your data. Every data point
     ``` java
     // Adding an attribute to user
     User user = vault.findByUser("User1234");
-    user.setAttribute("FIRST_NAME", "Jane");
+    user.addAttribute("FIRST_NAME", "Jane");
     vault.save(user);
 
     // Adding an attribute to entity
     Entity entity = vault.findByEntity("Client6789");
-    entity.setAttribute("FULL_ADDRESS", "1 Hacker Way, Beverly Hills, CA 90210");
+    entity.addAttribute("FULL_ADDRESS", "1 Hacker Way, Beverly Hills, CA 90210");
     vault.save(entity);
     ```
 
@@ -107,14 +106,14 @@ Attributes are how the ViziVault ecosystem organizes your data. Every data point
 
     ``` c#
     // Adding an attribute to user
-    User user = vault.findByUser("User1234");
+    User user = await vault.FindByUserAsync("User1234");
     user.addAttribute("FIRST_NAME", "Jane");
-    vault.save(user);
+    await vault.SaveAsync(user);
 
     // Adding an attribute to entity
-    Entity entity = vault.findByUser("Client6789");
+    Entity entity = await vault.FindByEntityAsync("Client6789");
     entity.addAttribute("FULL_ADDRESS", "1 Hacker Way, Beverly Hills, CA 90210");
-    vault.save(entity);
+    await vault.SaveAsync(entity);
     ```
 
 === "Node.js"
@@ -180,11 +179,11 @@ Retrieves all [Attributes](/glossary/attribute) for the specified entity or user
     ``` c#
     // Retrieving all attributes for a user
     User user = vault.findByUser("User1234");
-    List<Attribute> attributes = user.attributes;
+    List<Attribute> attributes = user.Attributes;
 
     // Retrieving all attributes for an entity
     Entity entity = vault.findByEntity("Client6789");
-    List<Attribute> attributes = entity.attributes;
+    List<Attribute> attributes = entity.Attributes;
     ```
 
 === "Node.js"
@@ -232,7 +231,7 @@ Retrieves a single specified [Attribute](/glossary/attribute) for the specified 
     ``` java
     // Retrieving specific attribute for a user
     User user = vault.findByUser("User1234");
-    UserAttribute attribute = user.getAttribute("FIRST_NAME");
+    Attribute attribute = user.getAttribute("FIRST_NAME");
 
     // Retrieving specific attribute for an entity
     Entity entity = vault.findByEntity("Client6789");
@@ -244,7 +243,7 @@ Retrieves a single specified [Attribute](/glossary/attribute) for the specified 
     ``` c#
     // Retrieving specific attribute for a user
     User user = vault.findByUser("User1234");
-    UserAttribute attribute = user.getAttribute("FIRST_NAME");
+    Attribute attribute = user.getAttribute("FIRST_NAME");
 
     // Retrieving specific attribute for an entity
     Entity entity = vault.findByEntity("Client6789");
@@ -300,7 +299,7 @@ To search a Vault for [Attributes](/glossary/attribute), pass in a SearchRequest
 === "C#"
 
     ``` c#
-    List<Attribute> attributes = vault.search(new SearchRequest("LAST_NAME", "Doe"));
+    List<Attribute> attributes = await vault.SearchAsync(new SearchRequest("LAST_NAME", "Doe"));
     ```
 
 === "Node.js"
@@ -344,7 +343,7 @@ To search a Vault for [Attributes](/glossary/attribute), pass in a SearchRequest
     ``` c#
     // Purging all user attributes
     User user = vault.findByUser("User1234");
-    user.purge();
+    await vault.PurgeAsync(user);
 
     // Removing specific attribute
     User user = vault.findByUser("User1234");
@@ -421,21 +420,11 @@ To store an Attribute Definition, create an AttributeDefinition object and save 
     attribute.name = "Billing Address";
     attribute.tags = {"geographic_location", "financial"};
     attribute.hint = "{ line_one: \"1 Hacker Way\", line_two: \"Apt. 53\", city: \"Menlo Park\", state: \"California\", postal_code: \"94025-1456\" country: \"USA\" }";
-    attribute.schema = JsonSerializer.Serialize({ 
-                        "line_one": "string",
-                        "line_two": "string",
-                        "city": "string",
-                        "state": "string",
-                        "postal_code": "string",
-                        "country": "string"
-                      });
+    attribute.schema = ???;
     attribute.repeatable = false;
-    attribute.immutable = false;
-    attribute.mandatory = true;
     attribute.indexed = false;
-    attribute.regulations = {"GDPR", "CCPA"};
 
-    vault.storeAttribute(attribute);
+    await vault.StoreAttributeDefinitionAsync(attribute);
     ```
 
 === "Node.js"
@@ -532,10 +521,10 @@ Attribute Definitions can be retrieved from the Vault in bulk or by specifying t
 
     ``` c#
       // Retrieving all attributes
-    List<AttributeDefinition> attributes = vault.attributeDefinitions;
+    List<AttributeDefinition> attributes = await vault.GetAttributeDefinitionsAsync();
 
     // Retrieving specific attribute
-    AttributeDefinition attribute = vault.getAttributeDefinition("Billing Address");
+    AttributeDefinition attribute = await vault.GetAttributeDefinitionAsync("Billing Address");
     ```
 
 === "Node.js"
@@ -582,13 +571,13 @@ To store a new Tag, create a Tag object and save it to the Vault.
 === "Java"
 
     ``` java
-    Tag tag = vault.storeTag(new Tag("Financial Data"));
+    vault.storeTag(new Tag("Financial Data"));
     ```
 
 === "C#"
 
     ``` c#
-    Tag tag = vault.save(new Tag("Financial Data"));
+    await vault.SaveAsync(new Tag("Financial Data"));
     ```
 
 === "Node.js"
@@ -628,10 +617,10 @@ Tags can be retrieved as a list of Tag objects or as a single Tag if the specifi
 
     ``` c#
     // Retrieving all tags
-    List<Tag> tags = vault.tags;
+    List<Tag> tags = await vault.GetTagsAsync();
 
     // Retrieving specific tag
-    String tag = vault.getTag("Financial Data");
+    String tag = await vault.GetTagAsync("Financial Data");
     ```
 
 === "Node.js"
@@ -673,14 +662,14 @@ To remove a Tag, specify the Tag to be removed. A Boolean denoting the status of
 
     ``` java
     // Removing a specific tag
-    boolean removed = vault.removeTag("Financial Data");
+    boolean removed = vault.deleteTag("Financial Data");
     ```
 
 === "C#"
 
     ``` c#
     // Removing a specific tag
-    bool removed = vault.removeTag("Financial Data");
+    bool removed = await vault.DeleteTagAsync("Financial Data");
     ```
 
 === "Node.js"
@@ -718,11 +707,11 @@ To store a [Regulation](/glossary/regulation) to the Vault, create a new Regulat
 
     ``` java
     // Storing a regulation
-    Regulation regulation = new Regulation("GDPR", 
-                                          "General Data Protection Regulation",
-                                          "https://gdpr.eu/" 
-                                          );
-    Regulation savedRegulation = vault.save(regulation);
+    Regulation regulation = new Regulation()
+    regulation.setKey("GDPR");
+    regulation.setName("General Data Protection Regulation");
+    regulation.setUrl("https://gdpr.eu/")
+    vault.storeRegulation(regulation);
     ```
 
 === "C#"
@@ -833,7 +822,7 @@ To remove a [Regulation](/glossary/regulation), specify the Regulation to be rem
 
     ``` java
     // Removing a specific regulation
-    Boolean removed = vault.removeRegulation("GDPR");
+    Boolean removed = vault.deleteRegulation("GDPR");
     ```
 
 === "C#"
