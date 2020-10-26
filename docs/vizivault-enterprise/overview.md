@@ -13,7 +13,7 @@ Vizivault Enterprise gives your organization a window into the personal informat
 
 Vizivault Enterprise is how you control and manage your organization personal information. You can define attributes that control your data. You can define regulations that control how data is shared and stored.
 
-- **Categories** Create Attribute tags that create useful grouping of similar attributes.
+- **Tags** Create Attribute tags that create useful grouping of similar attributes.
 - **Attributes** Create the fundamental data types of data and set the regulations and applications that apply to them.
 - **Regulations** Create rules to manage personal information across your organization
 - **Applications** Define which programs have access to which attributes.

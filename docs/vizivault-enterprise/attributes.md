@@ -5,7 +5,7 @@
 
 1. **Name**: The user-friendly non-unique attribute identifier.
 2. **Key**: The unique identifier for an attribute for purposes of insertion and retrieval programmatically from a vault.
-3. **Categories**: The category tags that are applied to an attribute.
+3. **Tags**: The tag tags that are applied to an attribute.
 4. **Indexed**: The index status of an attribute for return in searches across users.
 5. **Sample Data**: Sample faux data demonstrating the format of the attribute.
 6. **Regulations**: List of regulations that are considered to apply to the attribute.

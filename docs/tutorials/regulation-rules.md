@@ -6,9 +6,9 @@ ViziVault contains a flexible, powerful rules engine that allows specifying exac
 
 The simplest constraint is an attribute list constraint, which can mark a regulation as applying to either all attributes in a specified list, or all attributes that are not in that specified list. The attribute list constraint consists of a list of attribute keys, and an operator, which is either `any` (which will match data whose attribute is in the list) or `none` (which will match data whose attribute is not in the list).
 
-## Category list constraints
+## Tag list constraints
 
-Category list constraints are similar to attribute list constraints, in that they consist of a list of categories and an operator. However, since a data point can belong to multiple categories (but not multiple attributes), the operator `all` is also allowed; in this case, the constraint would only match data points whose attribute is tagged with all of the categories in the provided list.
+Tag list constraints are similar to attribute list constraints, in that they consist of a list of tags and an operator. However, since a data point can have multiple tags (but not belong to multiple attributes), the operator `all` is also allowed; in this case, the constraint would only match data points whose attribute is tagged with all of the tags in the provided list.
 
 ## User attribute value constraints
 
@@ -40,16 +40,16 @@ Conjunctive constraints allow you to broaden what data is matched. They consist 
 Rules are expressed as a JSON object, structured as described below:
 
  - Root node: an object that must contain a `constraint` field and exactly one other of the following fields
-    - `type` : one of `all`, `any`, `category`, `attribute`, or `user`
+    - `type` : one of `all`, `any`, `tag`, `attribute`, or `user`
     - `value`: depends on the value of `type`
     - `all` : list of root nodes
     - `any` : list of root nodes
-    - `category` : category constraint object
+    - `tag` : tag constraint object
     - `attribute` : attribute constraint object
     - `user` : user constraint object
- - Category constraint object:
+ - Tag constraint object:
     - `operator` : either `any`, `all`, or `none`
-    - `categories` : list of category keys (strings)
+    - `tags` : list of tag names (strings)
  - Attribute constraint object:
     - `operator` : either `any` or `none`
     - `attributes` : list of attribute keys (strings)
