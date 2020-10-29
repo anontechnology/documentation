@@ -224,7 +224,7 @@ Retrieves all [Attributes](/glossary/attribute) for the specified entity or user
 
 ### Retrieving an Attribute of an Entity or User
 
-Retrieves a single specified [Attribute](/glossary/attribute) for the specified entity or user. Returns a UserAttribute object from the User object, or returns a list of Attributes from the Entity object.
+Retrieves a single specified [Attribute](/glossary/attribute) for the specified entity or user. For repeatable attributes, use `getAttributes(attributeName)`; for non-repeatable attributes, use `getAttribute(attributeName)`.
 
 === "Java"
 
@@ -235,7 +235,10 @@ Retrieves a single specified [Attribute](/glossary/attribute) for the specified 
 
     // Retrieving specific attribute for an entity
     Entity entity = vault.findByEntity("Client6789");
-    List<Attribute> attributes = entity.getAttribute("FULL_ADDRESS");
+    Attribute attribute = entity.getAttribute("FULL_ADDRESS");
+
+    // Tertrieving multiple values for a repeatable attribute
+    List<Attribute> attributes = user.getAttributes("SHIPPING_ADDRESS");
     ```
 
 === "C#"
