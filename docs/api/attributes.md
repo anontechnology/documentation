@@ -1,4 +1,4 @@
-# Attributes
+# Attribute Definitions
 
 ## POST /attributes
 Creates or edits an attribute. If there is an existing attribute in the system with the `key` of the provided attribute, that attribute will be updated; otherwise, a new attribute will be created.
