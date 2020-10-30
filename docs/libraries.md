@@ -659,7 +659,7 @@ Tags can be retrieved as a list of Tag objects or as a single Tag if the specifi
 
 ### Deleting Tags from the Vault
 
-To remove a Tag, specify the Tag to be removed. A Boolean denoting the status of the operation will be returned.
+To remove a Tag, specify the Tag to be removed. A boolean denoting the status of the operation will be returned.
 
 === "Java"
 
@@ -820,13 +820,13 @@ To store a [Regulation](/glossary/regulation) to the Vault, create a new Regulat
 
 ### Deleting Regulations from the Vault
 
-To remove a [Regulation](/glossary/regulation), specify the Regulation to be removed.
+To remove a [Regulation](/glossary/regulation), specify the Regulation to be removed. A boolean denoting the status of the operation will be returned.
 
 === "Java"
 
     ``` java
     // Removing a specific regulation
-    vault.deleteRegulation("GDPR");
+    boolean removed = vault.deleteRegulation("GDPR");
     ```
 
 === "C#"
