@@ -65,7 +65,7 @@ On success, returns 201 Created and a description of the updated attribute.
 |
 
 ## GET /attributes
-Retrieves data for all attributes in the system. Returns a list of [Attribute](/glossary/attribute) objects.
+Retrieves data for all attributes in the system. Returns a list of [AttributeDefinition](/glossary/attribute) objects.
 
 ### Parameters
 None
