@@ -22,7 +22,7 @@ Library not available for your desired language? Feel free to contribute to our 
     String decryptionKey = System.getenv("DECRYPTIONKEY");
     ViziVault vault = new ViziVault()
       .withBaseURL(url)
-      .withAPIKey(apiKey)
+      .withApiKey(apiKey)
       .withEncryptionKey(encryptionKey)
       .withDecryptionKey(decryptionKey);
     ```
@@ -224,7 +224,7 @@ Retrieves all [Attributes](/glossary/attribute) for the specified entity or user
 
 ### Retrieving an Attribute of an Entity or User
 
-Retrieves a single specified [Attribute](/glossary/attribute) for the specified entity or user. Returns a UserAttribute object from the User object, or returns a list of Attributes from the Entity object.
+Retrieves a single specified [Attribute](/glossary/attribute) for the specified entity or user. For repeatable attributes, use `getAttributes(attributeName)`; for non-repeatable attributes, use `getAttribute(attributeName)`.
 
 === "Java"
 
@@ -235,7 +235,10 @@ Retrieves a single specified [Attribute](/glossary/attribute) for the specified 
 
     // Retrieving specific attribute for an entity
     Entity entity = vault.findByEntity("Client6789");
-    List<Attribute> attributes = entity.getAttribute("FULL_ADDRESS");
+    Attribute attribute = entity.getAttribute("FULL_ADDRESS");
+
+    // Tertrieving multiple values for a repeatable attribute
+    List<Attribute> attributes = user.getAttributes("SHIPPING_ADDRESS");
     ```
 
 === "C#"
@@ -323,7 +326,7 @@ To search a Vault for [Attributes](/glossary/attribute), pass in a SearchRequest
 
 ### Deleting User Attributes
 
-[Attributes](/glossary/attribute) can be removed from the User object by calling `remove` with the specified Attribute key, or by calling `purge` to remove all Attributes.
+[Attributes](/glossary/attribute) can be removed from the User object by calling `clearAttribute` with the specified attribute name, or by calling `purge` to remove all Attributes.
 
 === "Java"
 
@@ -398,19 +401,19 @@ To store an Attribute Definition, create an AttributeDefinition object and save 
 === "Java"
 
     ``` java
-    AttributeDefinition attribute = new AttributeDefinition();
-    attribute.setKey("BILLING_ADDRESS");
-    attribute.setName("Billing Address");
-    attribute.setTags(["geographic_location", "financial"]);
-    attribute.setHint("{ line_one: \"1 Hacker Way\", line_two: \"Apt. 53\"," +
+    AttributeDefinition attributeDef = new AttributeDefinition();
+    attributeDef.setName("Billing Address");
+    attributeDef.setTags(List.of("geographic_location", "financial"));
+    attributeDef.setHint("{ line_one: \"1 Hacker Way\", line_two: \"Apt. 53\"," +
                         "city: \"Menlo Park\", state: \"California\", " +
                         "postal_code: \"94025-1456\", country: \"USA\"" +
                       "}");
-    attribute.setSchema(???);
-    attribute.setRepeatable(false);
-    attribute.setIndexed(false);
+    attributeDef.setSchema(PrimitiveSchema.STRING); // For simple, unstsructured data
+    attributeDef.schemaFromClass(YourModel.class); // Alternatively, creating a schema to store objects of a class
+    attributeDef.setRepeatable(false);
+    attributeDef.setIndexed(false);
 
-    vault.storeAttributeDefinition(attribute);
+    vault.storeAttributeDefinition(attributeDef);
     ```
 
 === "C#"
@@ -510,11 +513,11 @@ Attribute Definitions can be retrieved from the Vault in bulk or by specifying t
 === "Java"
 
     ``` java
-    // Retrieving all attributes
-    List<AttributeDefinition> attributes = vault.getAttributeDefinitions();
+    // Retrieving all attribute definitions
+    List<AttributeDefinition> attributeDefs = vault.getAttributeDefinitions();
 
-    // Retrieving specific attribute
-    AttributeDefinition attribute = vault.getAttributeDefinition("Billing Address");
+    // Retrieving specific attribute definition
+    AttributeDefinition attributeDef = vault.getAttributeDefinition("Billing Address");
     ```
 
 === "C#"
@@ -707,10 +710,11 @@ To store a [Regulation](/glossary/regulation) to the Vault, create a new Regulat
 
     ``` java
     // Storing a regulation
-    Regulation regulation = new Regulation()
+    Regulation regulation = new Regulation();
     regulation.setKey("GDPR");
     regulation.setName("General Data Protection Regulation");
-    regulation.setUrl("https://gdpr.eu/")
+    regulation.setUrl("https://gdpr.eu/");
+    regulation.setRule(new UserRule("GEOGRAPHIC_REGION", UserRule.UserValuePredicate.EQUALS, "EU"));
     vault.storeRegulation(regulation);
     ```
 
@@ -816,13 +820,13 @@ To store a [Regulation](/glossary/regulation) to the Vault, create a new Regulat
 
 ### Deleting Regulations from the Vault
 
-To remove a [Regulation](/glossary/regulation), specify the Regulation to be removed. A Boolean denoting the status of the operation will be returned.
+To remove a [Regulation](/glossary/regulation), specify the Regulation to be removed.
 
 === "Java"
 
     ``` java
     // Removing a specific regulation
-    Boolean removed = vault.deleteRegulation("GDPR");
+    vault.deleteRegulation("GDPR");
     ```
 
 === "C#"
