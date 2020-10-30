@@ -1,4 +1,4 @@
-# Datapoints
+# Attributes
 
 ## POST /data
 Stores data for multiple users simultaneously.
@@ -126,7 +126,7 @@ Searches data that matches specified criteria, using blind indexing to allow sea
 |404|Data Not Found|No search results were found for the provided query.|
 
 ## POST /users/{userId}/attributes
-Stores datapoints for the given user
+Stores attributes for the given user
 
 ### Header Parameters
 |Name            |Type                           |Description                  |
@@ -147,7 +147,7 @@ Stores datapoints for the given user
 ### Example Payload
 ```json
 {
-  "dataPoints": [
+  "data": [
     {
       "accessibility": "Read Only",
       "attribute": "SAMPLE_ATTRIBUTE",
@@ -194,7 +194,7 @@ Stores datapoints for the given user
 
 
 ## GET /users/{userId}/attributes
-Retrieves datapoints for the given user
+Retrieves attributes for the given user
 
 ### Header Parameters
 |Name            |Type                           |Description                  |
@@ -276,7 +276,7 @@ Retrieves data with the given datapoint id
 |404|User Data Not Found|There is no data point in the system with the specified ID.|
 
 ## DELETE /users/{userId}/attributes/{attributeKey}
-Deletes datapoints for the given user and attribute
+Deletes attributes for the given user and attribute
 
 ### Path Variables
 |Name          |Type                          |Description      |
@@ -298,7 +298,7 @@ Deletes datapoints for the given user and attribute
 |404|User Data Not Found|There is no data in the system with the specified user ID and attribute.|
 
 ## DELETE /users/{userId}/data
-Deletes all datapoints for the given user
+Deletes all data for the given user
 
 ### Path Variables
 |Name          |Type                          |Description      |
