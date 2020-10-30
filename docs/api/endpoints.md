@@ -1,8 +1,7 @@
-
 # API Endpoints
 Guides and reference materials to help you get started, integrate, optimize, and troubleshoot your use of the Anon Tech Platform.
 
-### Attributes
+### Attribute Definitions
 -   [POST /attributes](/api/attributes#post-attributes)
 -   [GET /attributes](/api/attributes#get-attributes)
 -   [GET /attributes/{attributeKey}](/api/attributes#get-attributesattributekey)
@@ -12,7 +11,7 @@ Guides and reference materials to help you get started, integrate, optimize, and
 -   [GET /tags](/api/tags#get-tags)
 -   [GET /tags/{tagName}](/api/tags#get-tagstagname)
 
-### Datapoints
+### Attributes
 -   [POST​ /data](/api/datapoints#post-databulk)
 -   [POST /search](/api/datapoints#post-datasearch)
 -   [POST /users/{userId}/attributes](/api/datapoints#post-datauseruserid)
