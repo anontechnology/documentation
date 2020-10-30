@@ -8,7 +8,7 @@ Creates or edits an attribute. If there is an existing attribute in the system w
 #### Body Parameters (Required)
 |Name            |Type                            |Description                  |
 |----------------|--------------------------------|-----------------------------|
-|payload         |[Attribute](/glossary/attribute)|Description of new attribute |
+|payload         |[AttributeDefinition](/glossary/attribute)|Description of new attribute |
 
 ### Example payload
 
@@ -93,7 +93,7 @@ None
 ```
 
 ## GET /attributes/{attributeKey}
-Displays information about one attribute. Returns an [Attribute](/glossary/attribute) object.
+Displays information about one attribute. Returns an [AttributeDefinition](/glossary/attribute) object.
 
 ### Path Parameters
 |Name            |Type                           |Description                  |
