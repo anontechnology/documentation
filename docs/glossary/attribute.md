@@ -1,6 +1,6 @@
-# Attribute
+# Attribute Defintions
 
-Attributes are how the ViziVault ecosystem organizes your data. Every data point consists of three main components: a user id, which represents who the data is about; a value, which is some piece of information about the user; and an attribute, which expresses the relationship between the user and the value. For example, in an online retail application, there would be an attribute for shipping addresses, an attribute for billing addresses, and an attribute for credit card information.
+Attributes are how the ViziVault ecosystem organizes your data. Every data point consists of two main components: a user id (or entity id), which represents who the data is about; and an attribute, which is some piece of information about the user; For example, in an online retail application, there would be an attribute for shipping addresses, an attribute for billing addresses, and an attribute for credit card information.
 
 ## Definition
 
