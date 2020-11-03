@@ -46,6 +46,8 @@ nav:
       - Vault: vizivault-enterprise/vault.md
 extra_css:
   - stylesheets/extra.css
+extra_javascript:
+  - javascript/libraries.js
 markdown_extensions:
   - attr_list
   - admonition
