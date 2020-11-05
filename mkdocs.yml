@@ -14,14 +14,14 @@ nav:
   - Libraries: libraries.md
   - API Reference:
     - Endpoints: api/endpoints.md
-    - Attributes: api/attributes.md
+    - Attributes: api/datapoints.md
+    - Attribute Definitions: api/attributes.md
     - Tags: api/tags.md
-    - Datapoints: api/datapoints.md
     - Regulations: api/regulations.md
   - Glossary:
-    - Attribute: glossary/attribute.md
+    - Attribute Definition: glossary/attribute.md
     - Tag: glossary/tag.md
-    - Datapoint: glossary/datapoint.md
+    - Attribute: glossary/datapoint.md
     - Regulation: glossary/regulation.md
     - Storage Request: glossary/storage-request.md
   - Tutorials:
