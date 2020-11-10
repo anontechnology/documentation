@@ -20,7 +20,7 @@ Stores data for multiple users simultaneously.
 {
   "requests":  [
     {
-      "dataPoints": [
+      "data": [
         {
           "accessibility": "Read Only",
           "attribute": "SAMPLE_ATTRIBUTE",

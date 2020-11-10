@@ -83,7 +83,7 @@ Displays information about one tag. Returns an [Tag](/glossary/tag) object.
 
 
 ## DELETE /tags/{tagName}
-Deletes a tag from the system, and removes it from all datapoints, users, and attributes tagged with it.
+Deletes a tag from the system, and removes it from all attribute definitions, users, and attributes tagged with it.
 
 ### Path Parameters
 |Name            |Type                           |Description                  |
