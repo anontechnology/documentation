@@ -107,12 +107,12 @@ Attributes are how the ViziVault ecosystem organizes your data. Every data point
     ``` c#
     // Adding an attribute to user
     User user = await vault.FindByUserAsync("User1234");
-    user.addAttribute("FIRST_NAME", "Jane");
+    user.AddAttribute("FIRST_NAME", "Jane");
     await vault.SaveAsync(user);
 
     // Adding an attribute to entity
     Entity entity = await vault.FindByEntityAsync("Client6789");
-    entity.addAttribute("FULL_ADDRESS", "1 Hacker Way, Beverly Hills, CA 90210");
+    entity.AddAttribute("FULL_ADDRESS", "1 Hacker Way, Beverly Hills, CA 90210");
     await vault.SaveAsync(entity);
     ```
 
@@ -178,11 +178,11 @@ Retrieves all [Attributes](/glossary/attribute) for the specified entity or user
 
     ``` c#
     // Retrieving all attributes for a user
-    User user = vault.findByUser("User1234");
+    User user = await vault.FindByUserAsync("User1234");
     List<Attribute> attributes = user.Attributes;
 
     // Retrieving all attributes for an entity
-    Entity entity = vault.findByEntity("Client6789");
+    Entity entity = await vault.FindByEntityAsync("Client6789");
     List<Attribute> attributes = entity.Attributes;
     ```
 
@@ -237,7 +237,7 @@ Retrieves a single specified [Attribute](/glossary/attribute) for the specified 
     Entity entity = vault.findByEntity("Client6789");
     Attribute attribute = entity.getAttribute("FULL_ADDRESS");
 
-    // Tertrieving multiple values for a repeatable attribute
+    // Retrieving multiple values for a repeatable attribute
     List<Attribute> attributes = user.getAttributes("SHIPPING_ADDRESS");
     ```
 
@@ -245,12 +245,15 @@ Retrieves a single specified [Attribute](/glossary/attribute) for the specified 
 
     ``` c#
     // Retrieving specific attribute for a user
-    User user = vault.findByUser("User1234");
-    Attribute attribute = user.getAttribute("FIRST_NAME");
+    User user = await vault.FindByUserAsync("User1234");
+    Attribute attribute = user.GetAttribute("FIRST_NAME");
 
     // Retrieving specific attribute for an entity
-    Entity entity = vault.findByEntity("Client6789");
-    List<Attribute> attributes = entity.getAttribute("FULL_ADDRESS");
+    Entity entity = vault.FindByEntity("Client6789");
+    Attribute attribute = entity.GetAttribute("FULL_ADDRESS");
+
+    // Retrieving multiple values for a repeatable attribute
+    List<Attribute> attributes = user.GetAttributes("SHIPPING_ADDRESS");
     ```
 
 === "Node.js"
@@ -345,12 +348,13 @@ To search a Vault for [Attributes](/glossary/attribute), pass in a SearchRequest
 
     ``` c#
     // Purging all user attributes
-    User user = vault.findByUser("User1234");
+    User user = await vault.FindByUserAsync("User1234");
     await vault.PurgeAsync(user);
 
     // Removing specific attribute
-    User user = vault.findByUser("User1234");
-    user.remove("LAST_NAME");
+    User user = await vault.FindByUserAsync("User1234");
+    user.ClearAttribute("LAST_NAME");
+    await vault.SaveAsync(user);
     ```
 
 === "Node.js"
@@ -419,13 +423,14 @@ To store an Attribute Definition, create an AttributeDefinition object and save 
 === "C#"
 
     ``` c#
-    AttributeDefinition attribute = new AttributeDefinition();
-    attribute.name = "Billing Address";
-    attribute.tags = {"geographic_location", "financial"};
-    attribute.hint = "{ line_one: \"1 Hacker Way\", line_two: \"Apt. 53\", city: \"Menlo Park\", state: \"California\", postal_code: \"94025-1456\" country: \"USA\" }";
-    attribute.schema = ???;
-    attribute.repeatable = false;
-    attribute.indexed = false;
+    AttributeDefinition attributeDef = new AttributeDefinition();
+    attributeDef.name = "Billing Address";
+    attributeDef.tags = {"geographic_location", "financial"};
+    attributeDef.hint = "{ line_one: \"1 Hacker Way\", line_two: \"Apt. 53\", city: \"Menlo Park\", state: \"California\", postal_code: \"94025-1456\" country: \"USA\" }";
+    attributeDef.SetSchema(PrimitiveSchema.String); // For simple, unstsructured data
+    attributeDef.SchemaFromClass(typeof(YourModel)); // Alternatively, creating a schema to store objects of a class
+    attributeDef.repeatable = false;
+    attributeDef.indexed = false;
 
     await vault.StoreAttributeDefinitionAsync(attribute);
     ```
@@ -580,7 +585,7 @@ To store a new Tag, create a Tag object and save it to the Vault.
 === "C#"
 
     ``` c#
-    await vault.SaveAsync(new Tag("Financial Data"));
+    await vault.StoreTagAsync(new Tag("Financial Data"));
     ```
 
 === "Node.js"
@@ -722,11 +727,12 @@ To store a [Regulation](/glossary/regulation) to the Vault, create a new Regulat
 
     ``` c#
     // Storing a regulation
-    Regulation regulation = new Regulation("GDPR", 
-                                          "General Data Protection Regulation",
-                                          "https://gdpr.eu/" 
-                                          );
-    Regulation savedRegulation = vault.save(regulation);
+    Regulation regulation = new Regulation();
+    regulation.Key = "GDPR";
+    regulation.Name = "General Data Protection Regulation";
+    regulation.Url = "https://gdpr.eu/";
+    regulation.Rule = new UserRule("GEOGRAPHIC_REGION", UserRule.UserValuePredicate.Eq, "EU");
+    await vault.StoreRegulationAsync(regulation);
     ```
 
 === "Node.js"
@@ -781,10 +787,10 @@ To store a [Regulation](/glossary/regulation) to the Vault, create a new Regulat
 
     ``` c#
     /// Retrieving all regulations
-    List<Regulation> regulations = vault.regulations;
+    List<Regulation> regulations = await vault.GetRegulationsAsync();
 
     // Retrieving specific regulation
-    Regulation regulation = vault.getRegulation("GDPR");
+    Regulation regulation = await vault.GetRegulationAsync("GDPR");
     ```
 
 === "Node.js"
@@ -833,7 +839,7 @@ To remove a [Regulation](/glossary/regulation), specify the Regulation to be rem
 
     ``` c#
     // Removing a specific regulation
-    bool removed = vault.removeRegulation("GDPR");
+    bool removed = await vault.DeleteRegulationAsync("GDPR");
     ```
 
 === "Node.js"
