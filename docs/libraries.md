@@ -48,8 +48,7 @@ Library not available for your desired language? Feel free to contribute to our 
       .withBaseURL(url)
       .withAPIKey(apiKey)
       .withEncryptionKey(encryptionKey)
-      .withDecryptionKey(decryptionKey)
-      .build();
+      .withDecryptionKey(decryptionKey);
     ```
 
 === "Python"
@@ -120,14 +119,17 @@ Attributes are how the ViziVault ecosystem organizes your data. Every data point
 
     ``` javascript
     // Adding an attribute to user
-    let user = vault.findByUser("User1234");
-    user.setAttribute("FIRST_NAME", "Jane");
-    vault.save(user);
-
+    vault.findByUser("User1234").then((user) => {
+        user.setAttribute("FIRST_NAME", "Jane");
+        vault.save(user);
+    });
+ 
     // Adding an attribute to entity
-    let entity = vault.findByUser("Client6789");
-    entity.setAttribute("FULL_ADDRESS", "1 Hacker Way, Beverly Hills, CA 90210");
-    vault.save(entity);
+    vault.findByEntity("Client6789").then((entity) => {
+        entity.setAttribute("FULL_ADDRESS", "1 Hacker Way, Beverly Hills, CA 90210");
+        vault.save(entity);
+    });
+
     ```
 
 === "Python"
@@ -190,12 +192,15 @@ Retrieves all [Attributes](/glossary/attribute) for the specified entity or user
 
     ``` javascript
     // Retrieving all attributes for a user
-    let user = vault.findByUser("User1234");
-    let attributes = user.attributes;
+    vault.findByUser("User1234").then((user) => {
+        let attributes = user.getAttributes();
+    });
 
     // Retrieving all attributes for an entity
-    let entity = vault.findByEntity("Client6789");
-    let attributes = entity.attributes;
+    vault.findByEntity("Client6789").then((entity) => {
+        let attributes = entity.getAttributes();
+    });
+
     ```
 
 === "Python"
@@ -260,12 +265,15 @@ Retrieves a single specified [Attribute](/glossary/attribute) for the specified 
 
     ``` javascript
     // Retrieving specific attribute for a user
-    let user = vault.findByUser("User1234");
-    let attribute = user.getAttribute("FIRST_NAME");
+    vault.findByUser("User1234").then((user) => {
+        let attribute = user.getAttribute("FIRST_NAME");
+    });
 
     // Retrieving specific attribute for an entity
-    let entity = vault.findByEntity("Client6789");
-    let attributes = entity.getAttribute("FULL_ADDRESS");
+    let entity = vault.findByEntity("Client6789").then((entity) => {
+        let attribute = entity.getAttribute("FULL_ADDRESS");
+    });
+    
     ```
 
 === "Python"
@@ -311,7 +319,11 @@ To search a Vault for [Attributes](/glossary/attribute), pass in a SearchRequest
 === "Node.js"
 
     ``` javascript
-    let attributes = vault.search(new SearchRequest("LAST_NAME", "Doe"));
+    const count = 1;
+    const page = 1;
+    vault.search(new SearchRequest("LAST_NAME", "Doe"), page, count).then((attributes) => {
+        // use attributes
+    });
     ```
 
 === "Python"
@@ -361,12 +373,14 @@ To search a Vault for [Attributes](/glossary/attribute), pass in a SearchRequest
 
     ``` javascript
     // Purging all user attributes
-    let user = vault.findByUser("User1234");
-    user.purge();
+    vault.findByUser("User1234").then((user) => {
+        user.purge();
+    });
 
     // Removing specific attribute
-    let user = vault.findByUser("User1234");
-    user.remove("LAST_NAME");
+    let user = vault.findByUser("User1234").then((user) => {
+        user.remove("LAST_NAME");
+    });
     ```
 
 === "Python"
@@ -439,22 +453,22 @@ To store an Attribute Definition, create an AttributeDefinition object and save 
 
     ``` javascript
     let attribute = new AttributeDefinition();
-    attribute.name = "Billing Address";
-    attribute.tags = ["geographic_location", "financial"];
-    attribute.hint = "{ line_one: \"1 Hacker Way\", line_two: \"Apt. 53\", city: \"Menlo Park\", state: \"California\", postal_code: \"94025-1456\" country: \"USA\" }";
-    attribute.schema = JSON.stringify({ 
+    attribute.setName("Billing Address");
+    attribute.setTags(["geographic_location", "financial"]);
+    attribute.setHint("{ line_one: \"1 Hacker Way\", line_two: \"Apt. 53\", city: \"Menlo Park\", state: \"California\", postal_code: \"94025-1456\" country: \"USA\" }");
+    attribute.setSchema(JSON.stringify({ 
                         "line_one": "string",
                         "line_two": "string",
                         "city": "string",
                         "state": "string",
                         "postal_code": "string",
                         "country": "string"
-                      });
-    attribute.repeatable = false;
-    attribute.immutable = false;
-    attribute.mandatory = true;
-    attribute.indexed = false;
-    attribute.regulations = ["GDPR", "CCPA"];
+                      }));
+    attribute.setRepeatable(false);
+    attribute.setImmutable(false);
+    attribute.setMandatory(true);
+    attribute.setIndexed(false);
+    attribute.setRegulations(["GDPR", "CCPA"]);
 
     vault.storeAttribute(attribute);
     ```
@@ -539,7 +553,7 @@ Attribute Definitions can be retrieved from the Vault in bulk or by specifying t
 
     ``` javascript
     // Retrieving all attributes
-    let attributes = vault.attributeDefinitions;
+    let attributes = vault.getAttributeDefinitions();
 
     // Retrieving specific attribute
     let attribute = vault.getAttributeDefinition("Billing Address");
@@ -591,7 +605,7 @@ To store a new Tag, create a Tag object and save it to the Vault.
 === "Node.js"
 
     ``` javascript
-    let tag = vault.save(new Tag("Financial Data"));
+    vault.save(new Tag("Financial Data"));
     ```
 
 === "Python"
@@ -635,10 +649,14 @@ Tags can be retrieved as a list of Tag objects or as a single Tag if the specifi
 
     ``` javascript
     // Retrieving all tags
-    let tags = vault.tags;
+    vault.getTags().then((tags) => {
+        // use tags
+    });
 
     // Retrieving specific tag
-    let tag = vault.getTag("Financial Data");
+    vault.getTag("Financial Data").then((tag) => {
+        // use tag
+    });
     ```
 
 === "Python"
@@ -684,7 +702,9 @@ To remove a Tag, specify the Tag to be removed. A boolean denoting the status of
 
     ``` javascript
     // Removing a specific tag
-    let removed = vault.removeTag("Financial Data");
+    vault.removeTag("Financial Data").then((removed) => {
+        // removed is a boolean
+    });
     ```
 
 === "Python"
@@ -739,11 +759,12 @@ To store a [Regulation](/glossary/regulation) to the Vault, create a new Regulat
 
     ``` javascript
     // Storing a regulation
-    let regulation = new Regulation("GDPR", 
-                                          "General Data Protection Regulation",
-                                          "https://gdpr.eu/" 
-                                          );
-    let savedRegulation = vault.save(regulation);
+    let regulation = new Regulation();
+    regulation.setKey("GDPR");
+    regulation.setName("General Data Protection Regulation");
+    regulation.setUrl("https://gdpr.eu/");
+    regulation.setRule(new UserRule("GEOGRAPHIC_REGION", UserRule.UserValuePredicate.EQUALS, "EU"));
+    vault.save(regulation);
     ```
 
 === "Python"
@@ -797,10 +818,14 @@ To store a [Regulation](/glossary/regulation) to the Vault, create a new Regulat
 
     ``` javascript
     // Retrieving all regulations
-    let regulations = vault.regulations;
+    vault.getRegulations().then((regulations) {
+        // use regulations
+    });
 
     // Retrieving specific regulation
-    let regulation = vault.getRegulation("GDPR");
+    vault.getRegulation("GDPR").then((regulation) => {
+        // use regulation
+    });
     ```
 
 === "Python"
@@ -846,7 +871,9 @@ To remove a [Regulation](/glossary/regulation), specify the Regulation to be rem
 
     ``` javascript
     // Removing a specific regulation
-    let removed = vault.removeRegulation("GDPR");
+    vault.removeRegulation("GDPR").then((removed) => {
+        // removed is a boolean
+    });
     ```
 
 === "Python"
