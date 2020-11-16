@@ -16,5 +16,6 @@ The anatomy of a Attribute is as follows:
 |value|(varies)|The actual value of this attribute. What type the value is depends on the [schema](/tutorials/attribute-schemas.md) of the attribute definition.|
 |regulations|Array<String>|A list of [regulations](/glossary/regulation.md) that are applicable to this datapoint.|
 |structureRootId|String|If this particular attribute represents a sub-attribute within a full attribute, this field contains the id of the root to that full attribute. See [Attribute schemas](/glossary/attribute-schemas.md) for more information on structured datapoints.|
+|reportOnly|Boolean|If true, indicates that the ViziVault system is being used to report on this data point but not to store it. As sucn, it will not be possible to read the value of this datapoint. In this case, providing the value while storing the attribute is optional.|
 |createdDate|String|An ISO 8601 representation of the timestamp when the attribute was created.|
 |modifiedDate|String|An ISO 8601 representation of the timestamp when the attribute was most recently modified.|

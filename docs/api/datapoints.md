@@ -48,6 +48,7 @@ Stores data for multiple users simultaneously.
       "modifiedDate": "2020-01-01T10:06:32.4426+08:00",
       "regulations": ["SAMPLE_REGULATION"],
       "sensitivity": "PERSONAL",
+      "reportOnly": false,
       "userId": "001",
       "value": "123-456-789"
     }
@@ -113,6 +114,7 @@ Searches data that matches specified criteria, using blind indexing to allow sea
       "modifiedDate": "2020-01-01T10:06:32.4426+08:00",
       "regulations": ["SAMPLE_REGULATION"],
       "sensitivity": "NORMAL",
+      "reportOnly": false,
       "structureRootId": null,
       "userId": "001",
     }
@@ -154,6 +156,7 @@ Stores attributes for the given user
       "dataPointId": "string",
       "regulations": ["SAMPLE_REGULATION"],
       "sensitivity": "PERSONAL",
+      "reportOnly": false,
       "value": "123-456-789"
     }
   ],
@@ -173,7 +176,8 @@ Stores attributes for the given user
       "modifiedDate": "2020-01-01T10:06:32.4426+08:00",
       "regulations": ["SAMPLE_REGULATION"],
       "sensitivity": "PERSONAL",
-      "structureRootId": "string",
+      "reportOnly": false,
+      "structureRootId": null,
       "userId": "001",
       "value": "123-456-789"
     }
@@ -222,7 +226,8 @@ Retrieves attributes for the given user
       "modifiedDate": "2020-01-01T10:06:32.4426+08:00",
       "regulations": ["SAMPLE_REGULATION"],
       "sensitivity": "PERSONAL",
-      "structureRootId": "string",
+      "reportOnly": false,
+      "structureRootId": null,
       "userId": "001",
       "value": "123-456-789"
     }
@@ -261,7 +266,8 @@ Retrieves data with the given datapoint id
     "modifiedDate": "2020-01-01T10:06:32.4426+08:00",
     "regulations": ["SAMPLE_REGULATION"],
     "sensitivity": "PERSONAL",
-    "structureRootId": "string",
+    "reportOnly": false,
+    "structureRootId": null,
     "userId": "001",
     "value": "123-456-789"
   }
