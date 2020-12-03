@@ -20,8 +20,7 @@ Library not available for your desired language? Feel free to contribute to our 
     ``` java
     String encryptionKey = System.getenv("ENCRYPTIONKEY");
     String decryptionKey = System.getenv("DECRYPTIONKEY");
-    ViziVault vault = new ViziVault()
-      .withBaseURL(url)
+    ViziVault vault = new ViziVault(url)
       .withApiKey(apiKey)
       .withEncryptionKey(encryptionKey)
       .withDecryptionKey(decryptionKey);
@@ -32,8 +31,7 @@ Library not available for your desired language? Feel free to contribute to our 
     ``` c#
     string encryptionKey = System.Environment.GetEnvironmentVariable("ENCRYPTIONKEY");
     string decryptionKey = System.Environment.GetEnvironmentVariable("DECRYPTIONKEY");
-    ViziVault vault = new ViziVault()
-      .WithBaseUrl(url)
+    ViziVault vault = new ViziVault(url)
       .WithApiKey(apiKey)
       .WithEncryptionKey(encryptionKey)
       .WithDecryptionKey(decryptionKey);
@@ -348,7 +346,7 @@ To search a Vault for [Attributes](/glossary/attribute), pass in a SearchRequest
     ``` java
     // Purging all user attributes
     User user = vault.findByUser("User1234");
-    vault.purge(user);
+    vault.purge(user.getId());
 
     // Removing specific attribute
     User user = vault.findByUser("User1234");
@@ -361,7 +359,7 @@ To search a Vault for [Attributes](/glossary/attribute), pass in a SearchRequest
     ``` c#
     // Purging all user attributes
     User user = await vault.FindByUserAsync("User1234");
-    await vault.PurgeAsync(user);
+    await vault.PurgeAsync(user.Id);
 
     // Removing specific attribute
     User user = await vault.FindByUserAsync("User1234");
