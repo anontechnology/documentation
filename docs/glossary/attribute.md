@@ -16,7 +16,6 @@ There are several forms of metadata associated with attributes, as follows:
 |indexed|boolean|Whether this attribute's value should be indexed to allow searching on it. For more information, read [the Search tutorial](/tutorials/search).|
 |createdDate|String|An ISO 8601 representation of the timestamp when the attribute was created.|
 |modifiedDate|String|An ISO 8601 representation of the timestamp when the attribute was most recently modified.|
-|mandatory|boolean|If true, it is not valid for the system to contain users with no value for this attribute.|
 |schema|[Attribute schema](/tutorials/attribute-schemas)|A representation of the structure of data this attribute is expected to have, including any sub-attributes, and whether its data is textual, numeric, or other formats. Read [the Attribute Schemas tutorial](/tutorials/attribute-schemas) for more information.|
 |repeatable|boolean|Whether a user should be able to have multiple values for this attribute.|
 |regulations|Array<String>|A list of [regulation keys](/glossary/regulation), each representing a regulation that is applicable to all datapoints of this attribute.|
@@ -41,7 +40,6 @@ An example attribute definition representing a user's billing address:
   },
   "repeatable": false,
   "immutable": false,
-  "mandatory" : true,
   "indexed": false,
   "regulations" : ["GDPR", "CCPA"],
   "createdDate" : "2020-01-01T02:18:54Z",

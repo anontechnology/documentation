@@ -24,7 +24,6 @@ Creates or edits an attribute. If there is an existing attribute in the system w
   "hint": "example data for this attribute",
   "immutable": false,
   "indexed": false,
-  "mandatory": true,
   "regulations": [ "GDPR", "CCPA" ],
   "repeatable": true,
   "schema": "string"
@@ -47,7 +46,6 @@ On success, returns 201 Created and a description of the updated attribute.
     "hint": "example data for this attribute",
     "immutable": false,
     "indexed": false,
-    "mandatory": true,
     "regulations": [ "GDPR", "CCPA" ],
     "repeatable": true,
     "schema": "string",
@@ -83,7 +81,6 @@ None
       "indexed": true,
       "createdDate": "2020-09-03T02:18:54Z",
       "modifiedDate": "2020-09-24T18:28:29Z",
-      "mandatory": false,
       "schema": "string",
       "repeatable": false,
       "regulations": [ "GDPR", "HIPAA" ]
@@ -114,7 +111,6 @@ Displays information about one attribute. Returns an [AttributeDefinition](/glos
     "hint": "example data for this attribute",
     "immutable": false,
     "indexed": false,
-    "mandatory": true,
     "regulations": [ "GDPR", "CCPA" ],
     "repeatable": true,
     "schema": "string",

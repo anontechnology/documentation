@@ -1,7 +1,12 @@
 # Overview
-The ViziVault Platform is the first all-in-one PrivSec (privacy/security) solution on the market today.
+The ViziVault Platform is the first all-in-one PrivSec (privacy/security) solution on the market today. The Vizivault SDk allows you to implement our full featured "privacy-as-a-service" solution. We aim to empower engineers to easily control access to their organization's sensitive information and provide rich applications to help visualize and contextualize the usage of their data as it moves throughout systems.
 
-We aim to empower engineers to easily control access to their organization's sensitive information and provide rich applications to help visualize and contextualize the usage of their data as it moves throughout systems.
+With the SDK you can:
+
+* Upload sensitive data and create a thorough inventory of your private data
+* Encrypt your personal data ensuring maximum data protection in our secure vault system
+* Enable private data reported on within your organization or make the data avaiable to be shared with
+
 
 ![ViziVault Platform Overview](/assets/images/anontech-overview-no-data.png)
 
@@ -11,11 +16,11 @@ Our platform and suite of connectors/tools makes it easy for you to stream sensi
 
 ### ViziVault API
 
-The ViziVault API is designed to enable you as a developer to store and retrieve personal/sensitive information in a safe and secure manner that is easy to use.
+The ViziVault API enables you to store, retrieve and manage personal/sensitive information in a safe and secure manner.
 
-The multi-layer encryption/decryption will prevent even you as a developer from accessing certain pieces of an end users personal information.
+The multi-layer encryption/decryption will allow you to manage access to end users personal information. You can allow access to individual users to different users, access group, or even from certain applications. You can also reveal a end-user's personal data in whole or in part keeping teh use of personal information tied to your company's workflows and business goals.
 
-This is meant to provide users with the greatest flexibility on the security of their data.
+This is meant to provide users with the greatest flexibility on the security of their data. You have the capability to maximize your usage of collectesd personal data without unessecary exposuere of sensitve data. You have the maximum flexability and capability to meet and exceed personal data regulatory requirements.
 
 ![ViziVault API](/assets/images/vault-api-docs.png)
 

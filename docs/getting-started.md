@@ -27,6 +27,12 @@ For this reason, we have created officially supported libraries to help make you
 
 [Tools and Libraries](/libraries){: .md-button .md-button--primary }
 
+## Quickstart
+
+Our quickstart allows you to get up and going importing your own data from our SDK libraries and start loading and securing your own end user personal data. You will learn how to search and retrieve data while respecting the security of the data. You'll also learn how to manage that data with tags and regulations.
+
+
+
 ## Using the Platform
 
 Do you have an active vault and are ready to start utilizing the platform?

@@ -1,4 +1,4 @@
-const onLibraries = window.location.pathname.includes('libraries');
+const onLibraries = window.location.pathname.includes('libraries', 'quickstart');
 
 function changeLanguage(idx) {
   const tabInputs = document.querySelectorAll('.tabbed-set input:nth-of-type(' + ++idx + ')');
