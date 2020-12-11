@@ -13,6 +13,46 @@ Library not available for your desired language? Feel free to contribute to our 
 
 ## How does the SDK work?
 
+### Installation
+
+=== "Java"
+
+    ``` xml
+    <!-- In your pom.xml -->
+    <dependency>
+        <groupId>io.anontech.vizivault</groupId>
+        <artifactId>anontech-vizivault-client</artifactId>
+    </dependency>
+    ```
+
+=== "C#"
+
+    ``` powershell
+    # Installing via NuGet
+    Install-Package Anontech-VizivaultClient
+    ```
+
+=== "Node.js"
+
+    ```
+    npm install anontech-vizivault-client
+    ```
+
+=== "Python"
+
+    ```
+    pip install -e git://github.com/anontechnology/vault-python-sdk.git/#egg=vizivault
+    ```
+
+=== "PHP"
+
+    ``` php
+    // Coming soon...
+    ```
+
+
+----------------------------------------------------------------------
+
 ## Vault Setup
 
 === "Java"
