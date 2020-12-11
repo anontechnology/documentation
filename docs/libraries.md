@@ -3,10 +3,10 @@ Integrate into your Vault APIs using one of our official libraries.
 
 We offer an official SDK for most languages widely used in the industry today and are actively maintained by our engineering team.
 
-- Java
-- Node.js
-- Python
-- C#
+- [Java](https://github.com/anontechnology/vault-java-sdk)
+- [Node.js](https://github.com/anontechnology/vault-node-sdk)
+- [Python](https://github.com/anontechnology/vault-python-sdk)
+- [C#](https://github.com/anontechnology/vault-csharp-sdk)
 - PHP
 
 Library not available for your desired language? Feel free to contribute to our [open source community](https://github.com/anontechnology)!
