@@ -16,6 +16,8 @@ In this tutorial you will learn how to load and retrieve personal data about you
 
 3. Download the example CSV file
 
+<a class="md-button md-button--primary" href="https://docs.anontech.io/assets/files/tutorial_test.csv" target="_blank">Sample File</a>
+
 ## Get your encryption key pair
 
 Put your public encryption key into a file. You may wish to secure your private decryption key further in a production environment. Even though we deliver our data securely to your system, you may wish to take precautions to secure these keys in your environment.
