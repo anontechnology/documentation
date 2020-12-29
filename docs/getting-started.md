@@ -29,7 +29,7 @@ For this reason, we have created officially supported libraries to help make you
 
 ## Quickstart
 
-Our quickstart allows you to get up and going importing your own data from our SDK libraries and start loading and securing your own end user personal data. You will learn how to search and retrieve data while respecting the security of your data.
+Our quickstart guide allows you to get up and going importing your own data from our SDK libraries and start loading and securing your own end user personal data. You will learn how to search and retrieve data while respecting the security of your data.
 
 [Quickstart](/tutorials/quickstart){: .md-button .md-button--primary }
 
