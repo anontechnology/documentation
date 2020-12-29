@@ -25,6 +25,7 @@ nav:
     - Regulation: glossary/regulation.md
     - Storage Request: glossary/storage-request.md
   - Tutorials:
+    - Quickstart: tutorials/quickstart.md
     - Attribute Schemas: tutorials/attribute-schemas.md
     - Data Sharing: tutorials/datasharing.md
     - Regulation Rules: tutorials/regulation-rules.md
