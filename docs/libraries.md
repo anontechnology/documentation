@@ -3,15 +3,55 @@ Integrate into your Vault APIs using one of our official libraries.
 
 We offer an official SDK for most languages widely used in the industry today and are actively maintained by our engineering team.
 
-- Java
-- Node.js
-- Python
-- C#
+- [Java](https://github.com/anontechnology/vault-java-sdk)
+- [Node.js](https://github.com/anontechnology/vault-node-sdk)
+- [Python](https://github.com/anontechnology/vault-python-sdk)
+- [C#](https://github.com/anontechnology/vault-csharp-sdk)
 - PHP
 
 Library not available for your desired language? Feel free to contribute to our [open source community](https://github.com/anontechnology)!
 
 ## How does the SDK work?
+
+### Installation
+
+=== "Java"
+
+    ``` xml
+    <!-- In your pom.xml -->
+    <dependency>
+        <groupId>io.anontech.vizivault</groupId>
+        <artifactId>anontech-vizivault-client</artifactId>
+    </dependency>
+    ```
+
+=== "C#"
+
+    ``` powershell
+    # Installing via NuGet
+    Install-Package Anontech-VizivaultClient
+    ```
+
+=== "Node.js"
+
+    ```
+    npm install anontech-vizivault-client
+    ```
+
+=== "Python"
+
+    ```
+    pip install -e git://github.com/anontechnology/vault-python-sdk.git/#egg=vizivault
+    ```
+
+=== "PHP"
+
+    ``` php
+    // Coming soon...
+    ```
+
+
+----------------------------------------------------------------------
 
 ## Vault Setup
 
@@ -52,14 +92,11 @@ Library not available for your desired language? Feel free to contribute to our 
 === "Python"
 
     ``` python
-    encryptionKey = os.getenv('ENCRYPTIONKEY')
-    decryptionKey = os.getenv('DECRYPTIONKEY')
-    vault = ViziVault()
-      .withBaseURL(url)
-      .withAPIKey(apiKey)
-      .withEncryptionKey(encryptionKey)
-      .withDecryptionKey(decryptionKey)
-      .build()
+    vault = vizivault.ViziVault(
+        base_url=url,
+        api_key=apiKey,
+        encryption_key=os.getenv('ENCRYPTIONKEY'),
+        decryption_key=os.getenv('DECRYPTIONKEY')
     ```
 
 === "PHP"
@@ -134,13 +171,13 @@ Attributes are how the ViziVault ecosystem organizes your data. Every data point
 
     ``` python
     # Adding an attribute to user
-    user = vault.findByUser("User1234")
-    user.setAttribute("FIRST_NAME", "Jane")
+    user = vault.find_by_user("User1234")
+    user.add_attribute("FIRST_NAME", "Jane")
     vault.save(user)
 
     # Adding an attribute to entity
-    entity = vault.findByUser("Client6789")
-    entity.setAttribute("FULL_ADDRESS", "1 Hacker Way, Beverly Hills, CA 90210")
+    entity = vault.find_by_entity("Client6789")
+    entity.add_attribute("FULL_ADDRESS", "1 Hacker Way, Beverly Hills, CA 90210")
     vault.save(entity)
     ```
 
@@ -205,12 +242,12 @@ Retrieves all [Attributes](/glossary/attribute) for the specified entity or user
 
     ``` python
     # Retrieving all attributes for a user
-    user = vault.findByUser("User1234")
-    attributes = user.attributes
+    user = vault.find_by_user("User1234")
+    attributes = user.get_attributes()
 
     # Retrieving all attributes for an entity
-    entity = vault.findByEntity("Client6789")
-    attributes = entity.attributes
+    entity = vault.find_by_entity("Client6789")
+    attributes = entity.get_attributes()
     ```
 
 === "PHP"
@@ -278,12 +315,12 @@ Retrieves a single specified [Attribute](/glossary/attribute) for the specified 
 
     ``` python
     # Retrieving specific attribute for a user
-    user = vault.findByUser("User1234")
-    attribute = user.getAttribute("FIRST_NAME")
+    user = vault.find_by_user("User1234")
+    attribute = user.get_attribute("FIRST_NAME")
 
     # Retrieving specific attribute for an entity
-    entity = vault.findByEntity("Client6789")
-    attributes = entity.getAttribute("FULL_ADDRESS")
+    entity = vault.find_by_entity("Client6789")
+    attributes = entity.get_attribute("FULL_ADDRESS")
     ```
 
 === "PHP"
@@ -385,12 +422,12 @@ To search a Vault for [Attributes](/glossary/attribute), pass in a SearchRequest
 
     ``` python
     # Purging all user attributes
-    user = vault.findByUser("User1234")
-    user.purge()
+    vault.purge("User1234")
 
     # Removing specific attribute
     user = vault.findByUser("User1234")
     user.remove("LAST_NAME")
+    vault.save(user)
     ```
 
 === "PHP"
@@ -473,24 +510,24 @@ To store an Attribute Definition, create an AttributeDefinition object and save 
 === "Python"
 
     ``` python
-    attribute = AttributeDefinition()
-    attribute.name = "Billing Address"
-    attribute.tags = ["geographic_location", "financial"]
-    attribute.hint = "{ line_one: \"1 Hacker Way\", line_two: \"Apt. 53\", city: \"Menlo Park\", state: \"California\", postal_code: \"94025-1456\" country: \"USA\" }"
-    attribute.schema = json.dumps({ 
+    attribute = AttributeDefinition(
+        name = "Billing Address",
+        tags = ["geographic_location", "financial"],
+        hint = "{ line_one: \"1 Hacker Way\", line_two: \"Apt. 53\", city: \"Menlo Park\", state: \"California\", postal_code: \"94025-1456\" country: \"USA\" }",
+        schema = json.dumps({ 
                         "line_one": "string",
                         "line_two": "string",
                         "city": "string",
                         "state": "string",
                         "postal_code": "string",
                         "country": "string"
-                      })
-    attribute.repeatable = false
-    attribute.immutable = false
-    attribute.indexed = false
-    attribute.regulations = ["GDPR", "CCPA"]
+                      }),
+        repeatable = false,
+        indexed = false,
+        regulations = ["GDPR", "CCPA"]
+    )
 
-    vault.storeAttribute(attribute)
+    vault.store_attribute(attribute)
     ```
 
 === "PHP"
@@ -558,10 +595,10 @@ Attribute Definitions can be retrieved from the Vault in bulk or by specifying t
 
     ``` python
     # Retrieving all attributes
-    attributes = vault.attributeDefinitions
+    attributes = vault.get_attribute_definitions()
 
     # Retrieving specific attribute
-    attribute = vault.getAttributeDefinition("Billing Address")
+    attribute = vault.get_attribute_definition("Billing Address")
     ```
 
 === "PHP"
@@ -606,7 +643,7 @@ To store a new Tag, create a Tag object and save it to the Vault.
 === "Python"
 
     ``` python
-    tag = vault.save(Tag("Financial Data"))
+    tag = vault.store_tag(Tag("Financial Data"))
     ```
 
 === "PHP"
@@ -658,10 +695,10 @@ Tags can be retrieved as a list of Tag objects or as a single Tag if the specifi
 
     ``` python
     # Retrieving all tags
-    tags = vault.tags
+    tags = vault.get_tags()
 
     # Retrieving specific tag
-    tag = vault.getTag("Financial Data")
+    tag = vault.get_tag("Financial Data")
     ```
 
 === "PHP"
@@ -706,7 +743,7 @@ To remove a Tag, specify the Tag to be removed. A boolean denoting the status of
 
     ``` python
     # Removing a specific tag
-    removed = vault.removeTag("Financial Data")
+    removed = vault.remove_tag("Financial Data")
     ```
 
 === "PHP"
@@ -766,11 +803,11 @@ To store a [Regulation](/glossary/regulation) to the Vault, create a new Regulat
 
     ``` python
     # Storing a regulation
-    regulation = Regulation("GDPR", 
-                                "General Data Protection Regulation",
-                                "https://gdpr.eu/" 
+    regulation = Regulation(key="GDPR", 
+                            name="General Data Protection Regulation",
+                            url="https://gdpr.eu/" 
                             )
-    savedRegulation = vault.save(regulation)
+    savedRegulation = vault.store_regulation(regulation)
     ```
 
 === "PHP"
@@ -827,10 +864,10 @@ To store a [Regulation](/glossary/regulation) to the Vault, create a new Regulat
 
     ``` python
     # Retrieving all regulations
-    regulations = vault.regulations
+    regulations = vault.get_regulations
 
     # Retrieving specific regulation
-    regulation = vault.getRegulation("GDPR")
+    regulation = vault.get_regulation("GDPR")
     ```
 
 === "PHP"
@@ -875,7 +912,7 @@ To remove a [Regulation](/glossary/regulation), specify the Regulation to be rem
 
     ``` python
     # Removing a specific regulation
-    removed = vault.removeRegulation("GDPR")
+    removed = vault.delete_regulation("GDPR")
     ```
 
 === "PHP"
