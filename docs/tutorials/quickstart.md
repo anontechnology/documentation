@@ -41,14 +41,14 @@ In the following eample you will want to replace:
     with open('my_encryption_file.txt', 'r') as encryption_file:
         encryption_key = encryption_file.read()
    
-    # 2 Replace 'my_decryption_file.txt' with the path to your decryption file
+    # 2. Replace 'my_decryption_file.txt' with the path to your decryption file
     with open('my_decryption_file.txt', 'r') as decryption_file:
         decryption_key = decryption_file.read()
     
     
     # Connect to the vault
-    # 3 Replace 'https://my.host:8080' with the web address and port of your vault server
-    # 4 replace '12345' with the api key (application key) of your application. 
+    # 3. Replace 'https://my.host:8080' with the web address and port of your vault server
+    # 4. Replace '12345' with the api key (application key) of your application. 
       
     vault = vizivault.ViziVault(base_url='https://my.host:8080', api_key='12345', encryption_key=encryption_key,
                   decryption_key=decryption_key)
@@ -94,7 +94,8 @@ Let's add some attributes with structure. Here we add a user's full name and the
                                                           "middle_name": "string",
                                                           "nickname": "string",
                                                           "maiden_name": "string",
-                                                          "company": "string"}
+                                                          "company": "string"
+                                                    })
 
     address_attribute_def = vault.AttributeDefinition(key="BILLING_ADDRESS",
                                                       name="Billing Address",
@@ -139,7 +140,7 @@ Now that we have attributes, let's load some data. We will iterate over every ex
                 # Create a User
                 new_user = User(user_data['USERID'])
 
-                # Add the "lat attribute values
+                # Add the attribute values
                 new_user.add_attribute(attribute=eye_color_attribute_def.name, value=user_data["EYE_COLOR"])
                 new_user.add_attribute(attribute=age_attribute_def.name, value=user_data["AGE"])
 
