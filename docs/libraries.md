@@ -501,7 +501,6 @@ To store an Attribute Definition, create an AttributeDefinition object and save 
                       }));
     attribute.setRepeatable(false);
     attribute.setImmutable(false);
-    attribute.setMandatory(true);
     attribute.setIndexed(false);
     attribute.setRegulations(["GDPR", "CCPA"]);
 
@@ -551,7 +550,6 @@ To store an Attribute Definition, create an AttributeDefinition object and save 
                       });
     $attribute->setRepeatable(false);
     $attribute->setImmutable(false);
-    $attribute->setMandatory(true);
     $attribute->setIndexed(false);
     $attribute->setRegulations(array("GDPR", "CCPA"));
 
