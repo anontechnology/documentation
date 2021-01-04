@@ -31,28 +31,28 @@ In the following eample you will want to replace:
 2. Replace "./resources/test_decryption_key.txt" with the path to your decryption file
 3. Replace "https://my.host:8080' with the secure http address and port of your provided vault.
 
-    ``` python
-    from  vizivault import ViziVault, AttributeDefinition, SearchRequest
-    #You'll need this later to load the CSV sample file
-    import csv 
-    
-    
-    # 1. Replace 'my_encryption_file.txt'  with the path to your encryption file
-    with open('my_encryption_file.txt', 'r') as encryption_file:
-        encryption_key = encryption_file.read()
-   
-    # 2. Replace 'my_decryption_file.txt' with the path to your decryption file
-    with open('my_decryption_file.txt', 'r') as decryption_file:
-        decryption_key = decryption_file.read()
-    
-    
-    # Connect to the vault
-    # 3. Replace 'https://my.host:8080' with the web address and port of your vault server
-    # 4. Replace '12345' with the api key (application key) of your application. 
-      
-    vault = vizivault.ViziVault(base_url='https://my.host:8080', api_key='12345', encryption_key=encryption_key,
-                  decryption_key=decryption_key)
-    ```
+``` python
+from  vizivault import ViziVault, AttributeDefinition, SearchRequest
+#You'll need this later to load the CSV sample file
+import csv 
+
+
+# 1. Replace 'my_encryption_file.txt'  with the path to your encryption file
+with open('my_encryption_file.txt', 'r') as encryption_file:
+    encryption_key = encryption_file.read()
+
+# 2. Replace 'my_decryption_file.txt' with the path to your decryption file
+with open('my_decryption_file.txt', 'r') as decryption_file:
+    decryption_key = decryption_file.read()
+
+
+# Connect to the vault
+# 3. Replace 'https://my.host:8080' with the web address and port of your vault server
+# 4. Replace '12345' with the api key (application key) of your application. 
+  
+vault = vizivault.ViziVault(base_url='https://my.host:8080', api_key='12345', encryption_key=encryption_key,
+            decryption_key=decryption_key)
+```
 
 ## Creating Attributes
 
@@ -61,11 +61,11 @@ The first thing we will need to do is establish attributes to store all of the d
 We start with creating some very simple attributes with no structure, such as strings or numeric data. In the next example we will see how to handle data in cases where you only may be interested in retrieving part of a related set of data, or where the data has an internal structure. The hint parameter contains a sample value of the attribute for the purposes of demonstrating the intended format.
 
 ``` python
-    eye_color_attribute_def = vault.AttributeDefinition(key="EYE_COLOR", name="Eye Color", hint="Green")
-    age_attribute_def = vault.AttributeDefinition(key="AGE", name="Age", hint="18")
+eye_color_attribute_def = vault.AttributeDefinition(key="EYE_COLOR", name="Eye Color", hint="Green")
+age_attribute_def = vault.AttributeDefinition(key="AGE", name="Age", hint="18")
     
-    vault.store_attribute_definition(attribute_definition=eye_color_attribute_def)
-    vault.store_attribute_definition(attribute_definition=age_attribute_def)
+vault.store_attribute_definition(attribute_definition=eye_color_attribute_def)
+vault.store_attribute_definition(attribute_definition=age_attribute_def)
 ```
 
 
@@ -80,42 +80,46 @@ Let's add some attributes with structure. Here we add a user's full name and the
 
 ``` python
 
-    name_attribute_def = vault.AttributeDefinition(key='CLIENT_NAME',
-                                                   name="Client Name",
-                                                   hint="{first_name: \"Agnes\","
-                                                        "last_name: \"Driscoll\","
-                                                        "middle_name: \"May\","
-                                                        "nickname: \"Madame X\","
-                                                        "maiden_name: \"Meyer\","
-                                                        "company: \"Hebern Electric\"}",
-                                                   schema={
-                                                          "first_name": "string",
-                                                          "last_name": "string",
-                                                          "middle_name": "string",
-                                                          "nickname": "string",
-                                                          "maiden_name": "string",
-                                                          "company": "string"
-                                                    })
+name_attribute_def = vault.AttributeDefinition(
+    key='CLIENT_NAME',
+    name="Client Name",
+    hint="{first_name: \"Agnes\","
+            "last_name: \"Driscoll\","
+            "middle_name: \"May\","
+            "nickname: \"Madame X\","
+            "maiden_name: \"Meyer\","
+            "company: \"Hebern Electric\"}",
+    schema={
+            "first_name": "string",
+            "last_name": "string",
+            "middle_name": "string",
+            "nickname": "string",
+            "maiden_name": "string",
+            "company": "string"
+        }
+)
 
-    address_attribute_def = vault.AttributeDefinition(key="BILLING_ADDRESS",
-                                                      name="Billing Address",
-                                                      hint="{line_one: \"1 Hacker Way\","
-                                                           "line_two: \"Apt. 53\", "
-                                                           "city: \"Menlo Park\", "
-                                                           "state: \"California\", "
-                                                           "postal_code: \"94025-1456\", "
-                                                           "country: \"USA\"}",
-                                                      schema={
-                                                          "line_one": "string",
-                                                          "line_two": "string",
-                                                          "city": "string",
-                                                          "state": "string",
-                                                          "postal_code": "string",
-                                                          "country": "string"
-                                                      })
-                                                      
-    vault.store_attribute_definition(attribute_definition=name_attribute_def)
-    vault.store_attribute_definition(attribute_definition=address_attribute_def)
+address_attribute_def = vault.AttributeDefinition(
+    key="BILLING_ADDRESS",
+    name="Billing Address",
+    hint="{line_one: \"1 Hacker Way\","
+        "line_two: \"Apt. 53\", "
+        "city: \"Menlo Park\", "
+        "state: \"California\", "
+        "postal_code: \"94025-1456\", "
+        "country: \"USA\"}",
+    schema={
+        "line_one": "string",
+        "line_two": "string",
+        "city": "string",
+        "state": "string",
+        "postal_code": "string",
+        "country": "string"
+    }
+)
+                                                    
+vault.store_attribute_definition(attribute_definition=name_attribute_def)
+vault.store_attribute_definition(attribute_definition=address_attribute_def)
     
 ```
 
@@ -123,74 +127,74 @@ Let's add some attributes with structure. Here we add a user's full name and the
 
 Now that we have attributes, let's load some data. We will iterate over every example in our sample CSV. For each row we define a user based on the userid. Then we simply load the vaules for the flat files. For structured object data we create a hash structure and insert the key/value pairs. Finally, we save the completed user to the vault.
 
-```python
-    with open('./resources/tutorial_test.csv', 'r') as csv_file:
-        csv_reader = csv.reader(csv_file, delimiter=',')
+``` python
+with open('./resources/tutorial_test.csv', 'r') as csv_file:
+    csv_reader = csv.reader(csv_file, delimiter=',')
+    header_row = True
+
+    user_data = {}
+    for row in csv_reader:
+        if header_row:
+            headers = row
+            header_row = False
+        else:
+            for index, name in enumerate(headers, start=0):
+                user_data[name] = row[index]
+
+            # Create a User
+            new_user = User(user_data['USERID'])
+
+            # Add the attribute values
+            new_user.add_attribute(attribute=eye_color_attribute_def.name, value=user_data["EYE_COLOR"])
+            new_user.add_attribute(attribute=age_attribute_def.name, value=user_data["AGE"])
+
+            # Create a dictionary for the user
+            user_name = {
+                "first_name": user_data["FIRST_NAME"],
+                "last_name": user_data["LAST_NAME"],
+                "middle_name": user_data["MIDDLE_NAME"],
+                "company": user_data["COMPANY"]
+            }
+
+            # Save the User
+            new_user.add_attribute(attribute=name_attribute_def.name, value=user_name)
+
+            # Create a dictionary for the address
+            address = {
+                "street": user_data["STREET"],
+                "city": user_data["CITY"],
+                "state": user_data["STATE"],
+                "country": user_data["COUNTRY"]
+            }
+
+            # Save the Address
+            new_user.add_attribute(attribute=address_attribute_def.name, value=address)
+
+            vault.save(new_user)
+            
+            
+    # Cleanup
+    csv_reader = csv.reader(csv_file, delimiter=',')
         header_row = True
 
         user_data = {}
         for row in csv_reader:
             if header_row:
                 headers = row
-                header_row = False
-            else:
-                for index, name in enumerate(headers, start=0):
-                    user_data[name] = row[index]
-
-                # Create a User
-                new_user = User(user_data['USERID'])
-
-                # Add the attribute values
-                new_user.add_attribute(attribute=eye_color_attribute_def.name, value=user_data["EYE_COLOR"])
-                new_user.add_attribute(attribute=age_attribute_def.name, value=user_data["AGE"])
-
-                # Create a dictionary for the user
-                user_name = {
-                    "first_name": user_data["FIRST_NAME"],
-                    "last_name": user_data["LAST_NAME"],
-                    "middle_name": user_data["MIDDLE_NAME"],
-                    "company": user_data["COMPANY"]
-                }
-
-                # Save the User
-                new_user.add_attribute(attribute=name_attribute_def.name, value=user_name)
-
-                # Create a dictionary for the address
-                address = {
-                    "street": user_data["STREET"],
-                    "city": user_data["CITY"],
-                    "state": user_data["STATE"],
-                    "country": user_data["COUNTRY"]
-                }
-
-                # Save the Address
-                new_user.add_attribute(attribute=address_attribute_def.name, value=address)
-
-                vault.save(new_user)
-                
-                
-        # Cleanup
-        csv_reader = csv.reader(csv_file, delimiter=',')
-            header_row = True
-
-            user_data = {}
-            for row in csv_reader:
-                if header_row:
-                    headers = row
-                    header_row = False    
-            vault.purge(new_user.id)
+                header_row = False    
+        vault.purge(new_user.id)
 ```
 
 ### Retrieving Data for a User
 
 Now that we have data in the system, let's try to get our data back. Here we grab the data for a user with the id 101.
 
-```python
+``` python
 
-    received_user = vault.find_by_user(entity_id='101')
+received_user = vault.find_by_user(entity_id='101')
     
-    for attribute in received_user.get_attributes():
-        print('Attribute:' + attribute.attribute + 'Value:' + attribute.value)
+for attribute in received_user.get_attributes():
+    print('Attribute:' + attribute.attribute + 'Value:' + attribute.value)
         
 
 ```
