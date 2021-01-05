@@ -18,7 +18,7 @@ For more information on how to specify rules for regulations, see [Regulation ru
   "key": "SAMPLE_REGULATION",
   "name": "Sample Regulation",
   "url": "https://example.com/regulation",
-  "rule": "{}"
+  "rule": null
 }
 ```
 

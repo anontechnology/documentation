@@ -37,23 +37,24 @@ Conjunctive constraints allow you to broaden what data is matched. They consist 
 
 ## JSON format of rules
 
-Rules are expressed as a JSON object, structured as described below:
+Rules are expressed as a JSON object, structured as described below. The value of the rule's `type` field determines the rest of its structure.
 
- - Root node: an object that must contain a `constraint` field and exactly one other of the following fields
-    - `type` : one of `all`, `any`, `tag`, `attribute`, or `user`
-    - `value`: depends on the value of `type`
-    - `all` : list of root nodes
-    - `any` : list of root nodes
-    - `tag` : tag constraint object
-    - `attribute` : attribute constraint object
-    - `user` : user constraint object
- - Tag constraint object:
+ - Conjunctive rule
+    - `type` : the string `"all"`
+    - `constraints` : a list of rule objects
+ - Disjunctive rule
+    - `type` : the string `"any"`
+    - `constraints` : a list of rule objects
+ - Tag rule
+    - `type` : the string `"tag"`
     - `operator` : either `any`, `all`, or `none`
     - `tags` : list of tag names (strings)
- - Attribute constraint object:
+ - Attribute rule
+    - `type` : the string `"attribute"`
     - `operator` : either `any` or `none`
     - `attributes` : list of attribute keys (strings)
- - User constraint object:
+ - User-attribute-value rule
+    - `type` : the string `"user"`
     - `attribute` : attribute key (string)
     - `predicate` : one of `eq`, `neq`, `gt`, `lt`, `geq`, `leq`, `before`, `after`, `any`, `none`
     - `value` :
@@ -69,22 +70,18 @@ An example representation of the Children's Online Privacy Protection Act (COPPA
 ```json
 {
   "type" : "all",
-  "value" : [
+  "constraints" : [
     {
       "type" : "user",
-      "value" : {
-        "attribute" : "AGE_YEARS",
-        "predicate" : "lt",
-        "value" : 13
-      }
+      "attribute" : "AGE_YEARS",
+      "predicate" : "lt",
+      "value" : 13
     },
     {
       "type" : "user",
-      "value" : {
-        "attribute" : "COUNTRY_OF_RESIDENCE",
-        "predicate" : "eq",
-        "value" : "US"
-      }
+      "attribute" : "COUNTRY_OF_RESIDENCE",
+      "predicate" : "eq",
+      "value" : "US"
     }
   ]
 }
