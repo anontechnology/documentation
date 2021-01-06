@@ -1,6 +1,6 @@
 # Attributes
 
-## POST /data
+<!---## POST /data
 Stores data for multiple users simultaneously.
 
 ### Header Parameters
@@ -65,7 +65,7 @@ Stores data for multiple users simultaneously.
 |403|Forbidden access to attribute|Your application does not have permission to access some of the attributes of the data you are attempting to store.|
 |413|Datapoint values may not exceed 1 MB in size|You are attempting to store a string that is longer than 1,048,576 characters long. For longer data, set the data's [attribute schema](/tutorials/attribute-schemas) to "file".
 |422|Expected \[type\] for value of attribute \[attribute\]|The value given for the indicated attribute or sub-attribute does not match what is expected according to that attribute's [schema](/tutorials/attribute-schemas).|
-|422|Unknown sub-attribute \[sub-attribute\]|A value given for a structured attribute contains a sub-attribute that is not present in that attribute's [schema](/tutorials/attribute-schemas).|
+|422|Unknown sub-attribute \[sub-attribute\]|A value given for a structured attribute contains a sub-attribute that is not present in that attribute's [schema](/tutorials/attribute-schemas).|-->
 
 ## POST /search
 Searches data that matches specified criteria, using blind indexing to allow searching for values without decrypting data. For more information, [read about ViziVault search](/tutorials/search).

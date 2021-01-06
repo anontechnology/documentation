@@ -13,7 +13,7 @@ Guides and reference materials to help you get started, integrate, optimize, and
 -   [DELETE /tags/{tagName}](/api/tags#delete-tagstagname)
 
 ### Attributes
--   [POST​ /data](/api/datapoints#post-data)
+<!--- -   [POST​ /data](/api/datapoints#post-data)-->
 -   [POST /search](/api/datapoints#post-search)
 -   [POST /users/{userId}/attributes](/api/datapoints#post-usersuseridattributes)
 -   [GET /users/{userId}/attributes](/api/datapoints#get-usersuseridattributes)
