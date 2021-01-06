@@ -33,40 +33,40 @@ In the following eample you will want to replace:
 
 === "Python"
 
-``` python
-from  vizivault import ViziVault, AttributeDefinition, SearchRequest
-#You'll need this later to load the CSV sample file
-import csv 
+    ``` python
+    from  vizivault import ViziVault, AttributeDefinition, SearchRequest
+    #You'll need this later to load the CSV sample file
+    import csv 
 
 
-# 1. Replace 'my_encryption_file.txt'  with the path to your encryption file
-with open('my_encryption_file.txt', 'r') as encryption_file:
-    encryption_key = encryption_file.read()
+    # 1. Replace 'my_encryption_file.txt'  with the path to your encryption file
+    with open('my_encryption_file.txt', 'r') as encryption_file:
+        encryption_key = encryption_file.read()
 
-# 2. Replace 'my_decryption_file.txt' with the path to your decryption file
-with open('my_decryption_file.txt', 'r') as decryption_file:
-    decryption_key = decryption_file.read()
+    # 2. Replace 'my_decryption_file.txt' with the path to your decryption file
+    with open('my_decryption_file.txt', 'r') as decryption_file:
+        decryption_key = decryption_file.read()
 
 
-# Connect to the vault
-# 3. Replace 'https://my.host:8080' with the web address and port of your vault server
-# 4. Replace '12345' with the api key (application key) of your application. 
-  
-vault = vizivault.ViziVault(base_url='https://my.host:8080', api_key='12345', encryption_key=encryption_key,
-            decryption_key=decryption_key)
-```
+    # Connect to the vault
+    # 3. Replace 'https://my.host:8080' with the web address and port of your vault server
+    # 4. Replace '12345' with the api key (application key) of your application. 
+    
+    vault = vizivault.ViziVault(base_url='https://my.host:8080', api_key='12345', encryption_key=encryption_key,
+                decryption_key=decryption_key)
+    ```
 
 === "C#"
-```c#
-    using IO.Anontech.Vizivault;
-    using Microsoft.VisualBasic.FileIO; // for CSV parser
+    ```c#
+        using IO.Anontech.Vizivault;
+        using Microsoft.VisualBasic.FileIO; // for CSV parser
 
-    /* your namespace and class definition here */
+        /* your namespace and class definition here */
 
-    decryptionKey = System.IO.File.ReadAllText("decryptionKey.txt");
-    encryptionKey = System.IO.File.ReadAllText("encryptionKey.txt");
-    ViziVault vault = new ViziVault(new Uri(baseUrl)).WithApiKey(apiKey).WithDecryptionKey(decryptionKey).WithEncryptionKey(encryptionKey);
-```
+        string decryptionKey = System.IO.File.ReadAllText("decryptionKey.txt");
+        string encryptionKey = System.IO.File.ReadAllText("encryptionKey.txt");
+        ViziVault vault = new ViziVault(new Uri("http://example.com:8080")).WithApiKey("your-api-key").WithDecryptionKey(decryptionKey).WithEncryptionKey(encryptionKey);
+    ```
 
 
 
@@ -78,26 +78,26 @@ We start with creating some very simple attributes with no structure, such as st
 
 === "Python"
 
-``` python
-eye_color_attribute_def = vault.AttributeDefinition(key="EYE_COLOR", name="Eye Color", hint="Green")
-age_attribute_def = vault.AttributeDefinition(key="AGE", name="Age", hint="18")
-    
-vault.store_attribute_definition(attribute_definition=eye_color_attribute_def)
-vault.store_attribute_definition(attribute_definition=age_attribute_def)
-```
+    ``` python
+    eye_color_attribute_def = vault.AttributeDefinition(key="EYE_COLOR", name="Eye Color", hint="Green")
+    age_attribute_def = vault.AttributeDefinition(key="AGE", name="Age", hint="18")
+        
+    vault.store_attribute_definition(attribute_definition=eye_color_attribute_def)
+    vault.store_attribute_definition(attribute_definition=age_attribute_def)
+    ```
 
 === "C#"
-```c#
-eyeColorAttributeDef = new AttributeDefinition("EyeColor") {
-    Hint = "Green"
-};
-ageAttributeDef = new AttributeDefinition("Age") {
-    Hint = "18"
-};
+    ```c#
+    AttributeDefinition eyeColorAttributeDef = new AttributeDefinition("EyeColor") {
+        Hint = "Green"
+    };
+    AttributeDefinition ageAttributeDef = new AttributeDefinition("Age") {
+        Hint = "18"
+    };
 
-await vault.StoreAttributeDefinitionAsync(eyeColorAttributeDef);
-await vault.StoreAttributeDefinitionAsync(ageAttributeDef);      
-```
+    await vault.StoreAttributeDefinitionAsync(eyeColorAttributeDef);
+    await vault.StoreAttributeDefinitionAsync(ageAttributeDef);      
+    ```
 
 ## Creating Attributes with Structure
 
@@ -109,85 +109,88 @@ Let's add some attributes with structure. Here we add a user's full name and the
 * file: For data that takes more than 126 characters to represent, such as long text files or base64-encoded representations of image files.
 
 === "Python"
-``` python
+    ``` python
 
-name_attribute_def = vault.AttributeDefinition(
-    key='CLIENT_NAME',
-    name="Client Name",
-    hint="{first_name: \"Agnes\","
-            "last_name: \"Driscoll\","
-            "middle_name: \"May\","
-            "nickname: \"Madame X\","
-            "maiden_name: \"Meyer\","
-            "company: \"Hebern Electric\"}",
-    schema={
-            "first_name": "string",
-            "last_name": "string",
-            "middle_name": "string",
-            "nickname": "string",
-            "maiden_name": "string",
-            "company": "string"
+    name_attribute_def = vault.AttributeDefinition(
+        key='CLIENT_NAME',
+        name="Client Name",
+        hint="{first_name: \"Agnes\","
+                "last_name: \"Driscoll\","
+                "middle_name: \"May\","
+                "nickname: \"Madame X\","
+                "maiden_name: \"Meyer\","
+                "company: \"Hebern Electric\"}",
+        schema={
+                "first_name": "string",
+                "last_name": "string",
+                "middle_name": "string",
+                "nickname": "string",
+                "maiden_name": "string",
+                "company": "string"
+            }
+    )
+
+    address_attribute_def = vault.AttributeDefinition(
+        key="BILLING_ADDRESS",
+        name="Billing Address",
+        hint="{line_one: \"1 Hacker Way\","
+            "line_two: \"Apt. 53\", "
+            "city: \"Menlo Park\", "
+            "state: \"California\", "
+            "postal_code: \"94025-1456\", "
+            "country: \"USA\"}",
+        schema={
+            "line_one": "string",
+            "line_two": "string",
+            "city": "string",
+            "state": "string",
+            "postal_code": "string",
+            "country": "string"
         }
-)
-
-address_attribute_def = vault.AttributeDefinition(
-    key="BILLING_ADDRESS",
-    name="Billing Address",
-    hint="{line_one: \"1 Hacker Way\","
-        "line_two: \"Apt. 53\", "
-        "city: \"Menlo Park\", "
-        "state: \"California\", "
-        "postal_code: \"94025-1456\", "
-        "country: \"USA\"}",
-    schema={
-        "line_one": "string",
-        "line_two": "string",
-        "city": "string",
-        "state": "string",
-        "postal_code": "string",
-        "country": "string"
-    }
-)
-                                                    
-vault.store_attribute_definition(attribute_definition=name_attribute_def)
-vault.store_attribute_definition(attribute_definition=address_attribute_def)
-    
-```
+    )
+                                                        
+    vault.store_attribute_definition(attribute_definition=name_attribute_def)
+    vault.store_attribute_definition(attribute_definition=address_attribute_def)
+        
+    ```
 
 === "C#"
-```c#
-    class Name {
-        string FirstName {get; set;}
-        string LastName {get; set;}
-        string MiddleName {get; set;}
-        string Nickname {get; set;}
-        string MaidenName {get; set;}
-        string Company {get; set;}
-    }
-
-    nameAttributeDef = new AttributeDefinition("Name") {
-        Hint = "{first_name: \"Agnes\", last_name: \"Driscoll\", middle_name: \"May\", nickname: \"Madame X\", maiden_name: \"Meyer\", company: \"Hebern Electric\"}"
-    };
-    nameAttributeDef.SchemaFromClass(typeof(Name));
-
-
-    class Address {
-        string LineOne {get; set;}
-        string LineTwo {get; set;}
-        string City {get; set;}
-        string State {get; set;}
-        string PostalCode {get; set;}
-        string Country {get; set;}
-    }
-    addressAttributeDef = new AttributeDefinition("Address") {
-        Hint = "{line_one: \"1 Hacker Way\", line_two: \"Apt. 53\", city: \"Menlo Park\", state: \"California\", postal_code: \"94025-1456\", country: \"USA\"}"
-    }
-    addressAttributeDef.SchemaFromClass(typeof(Address));
+    ```c#
+        // Put these classes in your namespace
+        public class Name {
+            public string FirstName {get; set;}
+            public string LastName {get; set;}
+            public string MiddleName {get; set;}
+            public string Nickname {get; set;}
+            public string MaidenName {get; set;}
+            public string Company {get; set;}
+        }
+        public class Address {
+            public string LineOne {get; set;}
+            public string LineTwo {get; set;}
+            public string City {get; set;}
+            public string State {get; set;}
+            public string PostalCode {get; set;}
+            public string Country {get; set;}
+        }
 
 
-    await vault.StoreAttributeDefinitionAsync(nameAttributeDef);
-    await vault.StoreAttributeDefinitionAsync(addressAttributeDef);
-```
+
+        AttributeDefinition nameAttributeDef = new AttributeDefinition("Name") {
+            Hint = "{first_name: \"Agnes\", last_name: \"Driscoll\", middle_name: \"May\", nickname: \"Madame X\", maiden_name: \"Meyer\", company: \"Hebern Electric\"}"
+        };
+        nameAttributeDef.SchemaFromClass(typeof(Name));
+
+
+        AttributeDefinition addressAttributeDef = new AttributeDefinition("Address") {
+            Hint = "{line_one: \"1 Hacker Way\", line_two: \"Apt. 53\", city: \"Menlo Park\", state: \"California\", postal_code: \"94025-1456\", country: \"USA\"}"
+        };
+        addressAttributeDef.SchemaFromClass(typeof(Address));
+
+
+        await vault.StoreAttributeDefinitionAsync(nameAttributeDef);
+        await vault.StoreAttributeDefinitionAsync(addressAttributeDef);
+    ```
 
 ## Loading Data
 
@@ -195,100 +198,100 @@ Now that we have attributes, let's load some data. We will iterate over every ex
 
 === "Python"
 
-``` python
-with open('./resources/tutorial_test.csv', 'r') as csv_file:
-    csv_reader = csv.reader(csv_file, delimiter=',')
-    header_row = True
-
-    user_data = {}
-    for row in csv_reader:
-        if header_row:
-            headers = row
-            header_row = False
-        else:
-            for index, name in enumerate(headers, start=0):
-                user_data[name] = row[index]
-
-            # Create a User
-            new_user = User(user_data['USERID'])
-
-            # Add the attribute values
-            new_user.add_attribute(attribute=eye_color_attribute_def.key, value=user_data["EYE_COLOR"])
-            new_user.add_attribute(attribute=age_attribute_def.key, value=user_data["AGE"])
-
-            # Create a dictionary for the user's name
-            user_name = {
-                "first_name": user_data["FIRST_NAME"],
-                "last_name": user_data["LAST_NAME"],
-                "middle_name": user_data["MIDDLE_NAME"],
-                "company": user_data["COMPANY"]
-            }
-
-            # Save the user's name
-            new_user.add_attribute(attribute=name_attribute_def.key, value=user_name)
-
-            # Create a dictionary for the address
-            address = {
-                "street": user_data["STREET"],
-                "city": user_data["CITY"],
-                "state": user_data["STATE"],
-                "country": user_data["COUNTRY"]
-            }
-
-            # Save the Address
-            new_user.add_attribute(attribute=address_attribute_def.key, value=address)
-
-            vault.save(new_user)
-            
-            
-    # Cleanup
-    csv_reader = csv.reader(csv_file, delimiter=',')
+    ``` python
+    with open('./resources/tutorial_test.csv', 'r') as csv_file:
+        csv_reader = csv.reader(csv_file, delimiter=',')
         header_row = True
 
         user_data = {}
         for row in csv_reader:
             if header_row:
                 headers = row
-                header_row = False    
-        vault.purge(new_user.id)
-```
+                header_row = False
+            else:
+                for index, name in enumerate(headers, start=0):
+                    user_data[name] = row[index]
+
+                # Create a User
+                new_user = User(user_data['USERID'])
+
+                # Add the attribute values
+                new_user.add_attribute(attribute=eye_color_attribute_def.key, value=user_data["EYE_COLOR"])
+                new_user.add_attribute(attribute=age_attribute_def.key, value=user_data["AGE"])
+
+                # Create a dictionary for the user's name
+                user_name = {
+                    "first_name": user_data["FIRST_NAME"],
+                    "last_name": user_data["LAST_NAME"],
+                    "middle_name": user_data["MIDDLE_NAME"],
+                    "company": user_data["COMPANY"]
+                }
+
+                # Save the user's name
+                new_user.add_attribute(attribute=name_attribute_def.key, value=user_name)
+
+                # Create a dictionary for the address
+                address = {
+                    "street": user_data["STREET"],
+                    "city": user_data["CITY"],
+                    "state": user_data["STATE"],
+                    "country": user_data["COUNTRY"]
+                }
+
+                # Save the Address
+                new_user.add_attribute(attribute=address_attribute_def.key, value=address)
+
+                vault.save(new_user)
+                
+                
+        # Cleanup
+        csv_reader = csv.reader(csv_file, delimiter=',')
+            header_row = True
+
+            user_data = {}
+            for row in csv_reader:
+                if header_row:
+                    headers = row
+                    header_row = False
+            vault.purge(new_user.id)
+    ```
 
 === "C#"
-``` c#
-using (var parser = new TextFieldParser("./resources/tutorial_test.csv")) {
-    parser.TextFieldType = FieldType.Delimited;
-    parser.setDelimiters(",")
-    
-    string[] headers = parser.ReadFields();
-    
-    while (!parser.EndOfData) {
-        string[] cells = parser.ReadFields();
-        Dictionary<string, string> userData = new Dictionary<string, string>();
-        for(int i=0; i<cells.Length; ++i) {
-            userData[headers[i]] = cells[i]l
-        }
-
-        User user = new User(userData["USERID"]);
+    ``` c#
+    using (var parser = new TextFieldParser("./resources/tutorial_test.csv")) {
+        parser.TextFieldType = FieldType.Delimited;
+        parser.setDelimiters(",");
         
-        user.addAttribute(eyeColorAttributeDef.Name, userData["EYE_COLOR"]);
-        user.addAttribute(ageAttributeDef.Name, userData["AGE"]);
-        user.addAttribute(nameAttributeDef.Name, new Name(){
-            FirstName = userData["FIRST_NAME"],
-            LastName = userData["LAST_NAME"],
-            MiddleName = userData["MIDDLE_NAME"],
-            Company = userData["COMPANY"]
-        });
-        user.addAttribute(addressAttributeDef.Name, new Address(){
-            Street = userData["STREET"],
-            City = userData["CITY"],
-            State = userData["STATE"],
-            Country = userData["COUNTRY"]
-        });
+        string[] headers = parser.ReadFields();
+        
+        while (!parser.EndOfData) {
+            string[] cells = parser.ReadFields();
+            Dictionary<string, string> userData = new Dictionary<string, string>();
+            for(int i=0; i<cells.Length; ++i) {
+                userData[headers[i]] = cells[i];
+            }
 
-        vault.save(user);
+            User user = new User(userData["USERID"]);
+            
+            user.addAttribute(eyeColorAttributeDef.Name, userData["EYE_COLOR"]);
+            user.addAttribute(ageAttributeDef.Name, userData["AGE"]);
+            user.addAttribute(nameAttributeDef.Name, new Name(){
+                FirstName = userData["FIRST_NAME"],
+                LastName = userData["LAST_NAME"],
+                MiddleName = userData["MIDDLE_NAME"],
+                Company = userData["COMPANY"]
+            });
+            user.addAttribute(addressAttributeDef.Name, new Address(){
+                Street = userData["STREET"],
+                City = userData["CITY"],
+                State = userData["STATE"],
+                Country = userData["COUNTRY"]
+            });
+
+            await vault.SaveAsync(user);
+        }
     }
-}
-```
+    ```
 
 ### Retrieving Data for a User
 
@@ -296,23 +299,23 @@ Now that we have data in the system, let's try to get our data back. Here we gra
 
 === "Python"
 
-``` python
+    ``` python
 
-received_user = vault.find_by_user(entity_id='101')
-    
-for attribute in received_user.get_attributes():
-    print('Attribute:' + attribute.attribute + 'Value:' + attribute.value)
+    received_user = vault.find_by_user(entity_id='101')
         
+    for attribute in received_user.get_attributes():
+        print('Attribute:' + attribute.attribute + 'Value:' + attribute.value)
+            
 
-```
+    ```
 
 === "C#"
-```c#
-User receivedUser = vault.FindByUser("101")
-foreach(AttributeValue attr in receivedUser.Attributes) {
-    Console.WriteLine($"Attribute: {attr.AttributeKey}; Value: {attr.Value}")
-}
-```
+    ```c#
+    User receivedUser = await vault.FindByUserAsync("101");
+    foreach(AttributeValue attr in receivedUser.Attributes) {
+        Console.WriteLine($"Attribute: {attr.AttributeKey}; Value: {attr.Value}");
+    }
+    ```
 
 ### Next Steps
    That covers basic usage. You can look at our [tutorials](/tutorials/attribute-schemas)  for more advanced usage including [searching](/tutorials/search) and applying [regulations](/tutorials/regulation) to data.
