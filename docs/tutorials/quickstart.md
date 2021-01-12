@@ -122,6 +122,9 @@ We start with creating some very simple attributes with no structure, such as st
     eyeColorattributeDef.setHint("Green");
     AttributeDefinition ageAttributeDef= new AttributeDefinition("Age");
     ageAttributeDef.setHint("18");
+
+    vault.storeAttributeDefinition(eyeColorAttributeDef);
+    vault.storeAttributeDefinition(ageAttributeDef);
     ```
 
 ## Creating Attributes with Structure
@@ -219,8 +222,8 @@ Let's add some attributes with structure. Here we add a user's full name and the
 
 === "Java"
 ``` java
-// Put these classes in your namespace
-static class Name {
+
+public static class Name {
 
   public String firstName;
   public String lastName;
@@ -256,7 +259,7 @@ static class Name {
 
 }
 
-static class Address {
+public static class Address {
   public String street;
   public String city;
   public String state;
@@ -305,20 +308,20 @@ static class Address {
       user.addAttribute(eyeColorattributeDef.getName(),csvVals.get("USERID"));
       user.addAttribute(ageAttributeDef.getName(),csvVals.get("AGE"));
 
-      Name myName=new Name();
+      Name name=new Name();
       
-      myName.setFirstName(csvVals.get("FIRST_NAME"));
-      myName.setLastName(csvVals.get("LAST_NAME"));
-      myName.setMiddleName(csvVals.get("MIDDLE_NAME"));
-      myName.setCompany(csvVals.get("COMPANY"));
+      name.setFirstName(csvVals.get("FIRST_NAME"));
+      name.setLastName(csvVals.get("LAST_NAME"));
+      name.setMiddleName(csvVals.get("MIDDLE_NAME"));
+      name.setCompany(csvVals.get("COMPANY"));
       user.addAttribute(nameAttributeDef.getName(),myName);
 
-      Address myAddress=new Address();
+      Address address=new Address();
       
-      myAddress.setStreet(csvVals.get("STREET"));
-      myAddress.setCity(csvVals.get("CITY"));
-      myAddress.setState(csvVals.get("STATE"));
-      myAddress.setCountry(csvVals.get("COUNTRY"));
+      address.setStreet(csvVals.get("STREET"));
+      address.setCity(csvVals.get("CITY"));
+      address.setState(csvVals.get("STATE"));
+      address.setCountry(csvVals.get("COUNTRY"));
 
       user.addAttribute(addressAttributeDef.getName(),myAddress);
       vault.save(user);
