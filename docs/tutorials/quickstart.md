@@ -68,6 +68,25 @@ In the following eample you will want to replace:
                 decryption_key=decryption_key)
     ```
 
+=== "Java"
+
+    ``` java
+     // 1. Replace 'decryptionKey.txt'  with the path to your encryption file
+    FileInputStream decKeyFile = new FileInputStream(new File("src" + File.separator + "test" + File.separator + "resources" + File.separator + "decryptionKey.txt"));
+    decryptionKey = new String(decKeyFile.readAllBytes());
+    decKeyFile.close();
+
+    // 2. Replace 'encryptionKey.txt'  with the path to your encryption file
+    FileInputStream encKeyFile = new FileInputStream(new File("src" + File.separator + "test" + File.separator + "resources" + File.separator + "encryptionKey.txt"));
+    encryptionKey = new String(encKeyFile.readAllBytes());
+    encKeyFile.close();
+
+    // Connect to the vault
+    // 3. Replace 'https://my.host:8080' with the web address and port of your vault server
+    // 4. Replace '12345' with the api key (application key) of your application.
+    ViziVault vault = new ViziVault(new URL("http://localhost:8080")).withApiKey("12345").withDecryptionKey(decryptionKey).withEncryptionKey(encryptionKey);
+    ```
+
 ## Creating Attributes
 
 The first thing we will need to do is establish attributes to store all of the data from our client. Attribute definitions specify the structure and rules thta will govern how your data is stored. For example, this can tell ViziVault whether a user can have more than one value of an attribute, and whether the data should be indexed for cross-user search functionality. We can also directly associate tags and regualtions here, establishing how Vizivault will treat the data for retention, storage, and sharing.
@@ -95,6 +114,17 @@ We start with creating some very simple attributes with no structure, such as st
         
     vault.store_attribute_definition(attribute_definition=eye_color_attribute_def)
     vault.store_attribute_definition(attribute_definition=age_attribute_def)
+    ```
+
+=== "Java"
+    ``` java
+    AttributeDefinition eyeColorattributeDef = new AttributeDefinition("EyeColor");
+    eyeColorattributeDef.setHint("Green");
+    AttributeDefinition ageAttributeDef= new AttributeDefinition("Age");
+    ageAttributeDef.setHint("18");
+
+    vault.storeAttributeDefinition(eyeColorAttributeDef);
+    vault.storeAttributeDefinition(ageAttributeDef);
     ```
 
 ## Creating Attributes with Structure
@@ -189,6 +219,115 @@ Let's add some attributes with structure. Here we add a user's full name and the
     vault.store_attribute_definition(attribute_definition=address_attribute_def)
         
     ```
+
+=== "Java"
+``` java
+
+public static class Name {
+
+  public String firstName;
+  public String lastName;
+  public String middleName;
+  public String nickName;
+  public String maidenName;
+  public String company;
+
+
+  public void setFirstName(String firstName) {
+    this.firstName = firstName;
+  }
+
+  public void setLastName(String lastName) {
+    this.lastName = lastName;
+  }
+
+  public void setMiddleName(String middleName) {
+    this.middleName = middleName;
+  }
+
+  public void setNickName(String nickName) {
+    this.nickName = nickName;
+  }
+
+  public void setMaidenName(String maidenName) {
+    this.maidenName = maidenName;
+  }
+
+  public void setCompany(String company) {
+    this.company = company;
+  }
+
+}
+
+public static class Address {
+  public String street;
+  public String city;
+  public String state;
+  public String postalCode;
+  public String country;
+
+
+  public void setStreet(String street) {
+    this.street = street;
+  }
+
+  public void setCity(String city) {
+    this.city = city;
+  }
+
+  public void setState(String state) {
+    this.state = state;
+  }
+
+  public void setPostalCode(String postalCode) {
+    this.postalCode = postalCode;
+  }
+
+  public void setCountry(String country) {
+    this.country = country;
+  }
+
+}
+
+  File csvSampleFile = new File("src" + File.separator + "test" + File.separator + "resources" + File.separator + "tutorial_test.csv");
+  Reader csvReader = new FileReader(csvSampleFile);
+
+  // Use Jackson
+  Iterator<Map<String, String>> iterator = new CsvMapper()
+    .readerFor(Map.class)
+    .with(CsvSchema.emptySchema().withHeader())
+    .readValues(csvReader);
+
+    while(iterator.hasNext()) {
+      Map<String, String> csvVals = iterator.next();
+      User user=new User(csvVals.get("USERID"));
+
+      // For cleanup
+      insertedUsers.add(csvVals.get("USERID"));
+
+      user.addAttribute(eyeColorattributeDef.getName(),csvVals.get("USERID"));
+      user.addAttribute(ageAttributeDef.getName(),csvVals.get("AGE"));
+
+      Name name=new Name();
+      
+      name.setFirstName(csvVals.get("FIRST_NAME"));
+      name.setLastName(csvVals.get("LAST_NAME"));
+      name.setMiddleName(csvVals.get("MIDDLE_NAME"));
+      name.setCompany(csvVals.get("COMPANY"));
+      user.addAttribute(nameAttributeDef.getName(),myName);
+
+      Address address=new Address();
+      
+      address.setStreet(csvVals.get("STREET"));
+      address.setCity(csvVals.get("CITY"));
+      address.setState(csvVals.get("STATE"));
+      address.setCountry(csvVals.get("COUNTRY"));
+
+      user.addAttribute(addressAttributeDef.getName(),myAddress);
+      vault.save(user);
+      
+  }
+```
 
 ## Loading Data
 
@@ -311,6 +450,17 @@ Now that we have data in the system, let's try to get our data back. Here we gra
     for attribute in received_user.get_attributes():
         print('Attribute:' + attribute.attribute + 'Value:' + attribute.value)
     ```
+
+=== "Java"
+   ``` java
+   
+    User receivedUser = vault.findByUser("101");
+    for (Attribute attribute : receivedUser.getAttributes()) {
+      System.out.printf("attribute_name: %s attribute_value: %s%n", attribute.getAttribute(), attribute.getValue());
+    }
+
+   ```
+
 
 ### Next Steps
    That covers basic usage. You can look at our [tutorials](/tutorials/attribute-schemas)  for more advanced usage including [searching](/tutorials/search) and applying [regulations](/tutorials/regulation) to data.
