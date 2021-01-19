@@ -238,7 +238,7 @@ Retrieves attributes for the given user
 ### Error responses
 |Status code|Error message|Description|
 |-----------|-------------|-----------|
-|404        |Not found    |The system does not contain an user with the specified id.|
+|404        |User Data Not found    |The system does not contain an user with the specified id.|
 
 
 ### Error responses
@@ -287,7 +287,7 @@ Displays information about an attribute for one user.
 ### Error responses
 |Status code|Error message|Description|
 |-----------|-------------|-----------|
-|404        |Not found    |The system does not contain an user with the specified id.|
+|404        |User Data Not found    |The system does not contain any data with the specified user id and attribute.|
 
 
 ### Error responses
