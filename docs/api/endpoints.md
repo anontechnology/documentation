@@ -16,6 +16,7 @@ Guides and reference materials to help you get started, integrate, optimize, and
 -   [POST /search](/api/datapoints#post-search)
 -   [POST /users/{userId}/attributes](/api/datapoints#post-usersuseridattributes)
 -   [GET /users/{userId}/attributes](/api/datapoints#get-usersuseridattributes)
+-   [GET /users/{userId}/attribute/{attributeKey}](/api/datapoints#get-usersuseridattributeattributtekey)
 -   [GET /data/{dataPointId}](/api/datapoints#get-datadatapointid)
 -   [DELETE /users/{userId}/attributes/{attributeKey}](/api/datapoints#delete-usersuseridattributesattributekey)
 -   [DELETE /users/{userId}/data](/api/datapoints#delete-usersuseriddata)

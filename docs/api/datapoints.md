@@ -238,6 +238,61 @@ Retrieves attributes for the given user
 ### Error responses
 |Status code|Error message|Description|
 |-----------|-------------|-----------|
+|404        |User Data Not found    |The system does not contain an user with the specified id.|
+
+
+### Error responses
+|Status code|Error message|Description|
+|-----------|-------------|-----------|
+|400|Encoded key provided is invalid|The private decryption key provided is not correct.|
+|403|Forbidden|You are trying to access attributes that your application does not have access to.|
+|404|User Data Not Found|The specified user does not exist, or else that user has no value for the attributes specified.|
+
+
+ ## GET /users/{userId}/attribute/{attributeKey}
+
+Displays information about an attribute for one user.
+
+### Header Parameters
+|Name            |Type                           |Description                  |
+|----------------|-------------------------------|-----------------------------|
+|X-Decryption-Key|String                         |Private decryption key       |
+
+### Path Variables
+|Name               |Type                          |Description      |
+|-------------------|------------------------------|-----------------|
+|userId             |String                        |User Identifier  |
+|attributeKey       |String                        |Attribute Name   |
+
+### Example Response
+```json
+{
+  "data": [
+    {
+      "attribute": "NAME_FIRST",
+      "createdDate": "2020-01-01T10:05:59.5646+08:00",
+      "dataPointId": "a9fcbf23-852f-441e-b729-dc9fffa528f7",
+      "modifiedDate": "2020-01-01T10:06:32.4426+08:00",
+      "regulations": ["SAMPLE_REGULATION"],
+      "sensitivity": "PERSONAL",
+      "reportOnly": false,
+      "structureRootId": null,
+      "userId": "001",
+      "value": "123-456-789"
+    }
+  ]
+}
+```
+
+### Error responses
+|Status code|Error message|Description|
+|-----------|-------------|-----------|
+|404        |User Data Not found    |The system does not contain any data with the specified user id and attribute.|
+
+
+### Error responses
+|Status code|Error message|Description|
+|-----------|-------------|-----------|
 |400|Encoded key provided is invalid|The private decryption key provided is not correct.|
 |403|Forbidden|You are trying to access attributes that your application does not have access to.|
 |404|User Data Not Found|The specified user does not exist, or else that user has no value for the attributes specified.|
