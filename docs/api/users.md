@@ -19,7 +19,7 @@ None
 ```
 
 ## GET /users/{userId}
-Displays information about one attribute. Returns a [User](/glossary/user) object.
+Displays information about one user. Returns a [User](/glossary/user) object.
 
 ### Path Parameters
 |Name            |Type                           |Description                  |
