@@ -235,6 +235,20 @@ Retrieves attributes for the given user
 }
 ```
 
+### Error responses
+|Status code|Error message|Description|
+|-----------|-------------|-----------|
+|404        |Not found    |The system does not contain an user with the specified id.|
+
+
+### Error responses
+|Status code|Error message|Description|
+|-----------|-------------|-----------|
+|400|Encoded key provided is invalid|The private decryption key provided is not correct.|
+|403|Forbidden|You are trying to access attributes that your application does not have access to.|
+|404|User Data Not Found|The specified user does not exist, or else that user has no value for the attributes specified.|
+
+
  ## GET /users/{userId}/attribute/{attributeKey}
 
 Displays information about an attribute for one user.
