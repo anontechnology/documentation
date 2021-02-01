@@ -20,8 +20,9 @@ Library not available for your desired language? Feel free to contribute to our 
     ``` xml
     <!-- In your pom.xml -->
     <dependency>
-        <groupId>io.anontech.vizivault</groupId>
-        <artifactId>anontech-vizivault-client</artifactId>
+      <groupId>io.anontech.vizivault</groupId>
+      <artifactId>vizivault-java-client</artifactId>
+      <version>1.0.0</version>
     </dependency>
     ```
 
