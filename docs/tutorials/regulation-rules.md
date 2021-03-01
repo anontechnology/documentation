@@ -61,7 +61,7 @@ Rules are expressed as a JSON object, structured as described below. The value o
         - When predicate is `eq` or `neq`, any number or string.
         - When predicate is `gt`, `lt`, `geq`, or `leq`, any number.
         - When predicate is `before` or `after`, a string representing a point in time.
-        - When predicate is `any` or `none`, a list of strings.
+        - When predicate is `any` or `none`, a string consisting of values separated by commas.
 
 ## Examples
 
