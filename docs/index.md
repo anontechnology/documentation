@@ -18,7 +18,7 @@ Our platform and suite of connectors/tools makes it easy for you to stream sensi
 
 The ViziVault API enables you to store, retrieve and manage personal/sensitive information in a safe and secure manner.
 
-The multi-layer encryption/decryption will allow you to manage access to end users personal information. You can allow access to individual users to different users, access group, or even from certain applications. You can also reveal a end-user's personal data in whole or in part keeping the use of personal information tied to your company's workflows and business goals.
+The multi-layer encryption/decryption will allow you to manage access to end users' personal information. You can allow access to individual users to different users, access group, or even from certain applications. You can also reveal a end-user's personal data in whole or in part keeping the use of personal information tied to your company's workflows and business goals.
 
 This is meant to provide users with the greatest flexibility on the security of their data. You have the capability to maximize your usage of collectesd personal data without unessecary exposuere of sensitve data. You have the maximum flexability and capability to meet and exceed personal data regulatory requirements.
 

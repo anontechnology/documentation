@@ -1,7 +1,7 @@
 # Attribute Definitions
 
 ## POST /attributes
-Creates or edits an attribute. If there is an existing attribute in the system with the `key` of the provided attribute, that attribute will be updated; otherwise, a new attribute will be created.
+Creates or edits an attribute definition. If there is an existing attribute in the system with the `key` of the provided attribute, that attribute will be updated; otherwise, a new attribute will be created.
 
 ### Parameters
 
@@ -63,7 +63,7 @@ On success, returns 201 Created and a description of the updated attribute.
 |
 
 ## GET /attributes
-Retrieves data for all attributes in the system. Returns a list of [AttributeDefinition](/glossary/attribute) objects.
+Retrieves data for all attribute definitions in the system. Returns a list of [AttributeDefinition](/glossary/attribute) objects.
 
 ### Parameters
 None
@@ -90,12 +90,12 @@ None
 ```
 
 ## GET /attributes/{attributeKey}
-Displays information about one attribute. Returns an [AttributeDefinition](/glossary/attribute) object.
+Displays information about one attribute definition. Returns an [AttributeDefinition](/glossary/attribute) object.
 
 ### Path Parameters
 |Name            |Type                           |Description                  |
 |----------------|-------------------------------|-----------------------------|
-|attributeKey    |String                         |Key of the attribute to describe        |
+|attributeKey    |String                         |Key of the attribute definition to describe |
 
 ### Example response
 ```json
@@ -124,3 +124,24 @@ Displays information about one attribute. Returns an [AttributeDefinition](/glos
 |Status code|Error message|Description|
 |-----------|-------------|-----------|
 |404        |No such attribute|The system does not contain an attribute with the specified key.|
+
+
+## DELETE /attributes/{attributeKey}
+Deletes an attribute definition if it is not being used.
+
+### Path Parameters
+|Name            |Type                           |Description                  |
+|----------------|-------------------------------|-----------------------------|
+|attributeKey    |String                         |Key of the attribute definition to delete |
+
+### Example response
+```json
+{
+  "data": "Successfully Deleted Attribute"
+}
+```
+
+### Error responses
+|Status code|Error message|Description|
+|403        |Cannot delete attribute, because it is in use|There is existing data in the system that uses this attribute definition, and as such the attribute definition cannot be deleted.|
+|404        |Attribute not found|The system does not contain an attribute with the specified key.|

@@ -5,6 +5,7 @@ Guides and reference materials to help you get started, integrate, optimize, and
 -   [POST /attributes](/api/attributes#post-attributes)
 -   [GET /attributes](/api/attributes#get-attributes)
 -   [GET /attributes/{attributeKey}](/api/attributes#get-attributesattributekey)
+-   [DELETE /attributes/{attributeKey}](/api/attributes#delete-attributesattributekey)
 
 ### Tags
 -   [POST​ /tags](/api/tags#post-tags)
