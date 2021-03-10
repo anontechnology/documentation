@@ -35,11 +35,10 @@ For more information on how to specify rules for regulations, see [Regulation ru
 |400        |Cannot parse JSON of regulation rule|The rule provided is not valid JSON.|
 |400        |Constraint type must be specified as a string|The rule provided contains constraints that do not have a type or whose type is not specified as a string.|
 |422        |Attribute \[attribute\] not found|An attribute specified for a user attribute value constraint or an attribute list constraint in the regulation's rule does not exist.|
-|422        |Tag \[tag\] not found|A tag specified for a tag list constraint in the regulation's rule does not exist.|
-|422        |Attribute list operator \[operator\] is not supported.|An invalid operator was specified for an attribute list constraint. For more information on what operators are valid, see [Attribute list constraints](/tutorials/regulation-rules#attribute-list-constraints).|
-|422        |Tag list operator \[operator\] is not supported.|An invalid operator was specified for a tag list constraint. For more information on what operators are valid, see [Tag list constraints](/tutorials/regulation-rules#tag-list-constraints).|
-|422        |User-attribute constraint predicate \[predicate\] is not supported.|An invalid predicate was specified for a user attribute value constraint. For more information on what predicates are valid, see [User attribute constraints](/tutorials/regulation-rules#user-attribute-value-constraints).|
-|422        |Unrecognized constraint type|An invalid constraint type was specified. For more information on what constraint types are valid, see [Regulation rules](/tutorials/regulation-rules)|
+|400        |Attribute list operator \[operator\] is not supported.|An invalid operator was specified for an attribute list constraint. For more information on what operators are valid, see [Attribute list constraints](/tutorials/regulation-rules#attribute-list-constraints).|
+|400        |Tag list operator \[operator\] is not supported.|An invalid operator was specified for a tag list constraint. For more information on what operators are valid, see [Tag list constraints](/tutorials/regulation-rules#tag-list-constraints).|
+|400        |User-attribute constraint predicate \[predicate\] is not supported.|An invalid predicate was specified for a user attribute value constraint. For more information on what predicates are valid, see [User attribute constraints](/tutorials/regulation-rules#user-attribute-value-constraints).|
+|400        |Unrecognized constraint type|An invalid constraint type was specified. For more information on what constraint types are valid, see [Regulation rules](/tutorials/regulation-rules)|
 
 
 ## GET /regulations
