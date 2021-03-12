@@ -198,7 +198,7 @@ Attributes are how the ViziVault ecosystem organizes your data. Every data point
 
 ### Retrieving all Attributes of an Entity or User
 
-Retrieves all [Attributes](/glossary/datapoint) for the specified entity or user. Returns a list of Attribute objects.
+Retrieves all [Attributes](/glossary/attribute) for the specified entity or user. Returns a list of Attribute objects.
 
 === "Java"
 
@@ -343,13 +343,17 @@ To search a Vault for [Attributes](/glossary/attribute), pass in a SearchRequest
 === "Java"
 
     ``` java
-    List<Attribute> attributes = vault.search(new SearchRequest("LAST_NAME", "Doe"));
+    int pageIndex = 0;
+    int maxCount = 25;
+    List<Attribute> attributes = vault.search(new SearchRequest("LAST_NAME", "Doe"), pageIndex, maxCount);
     ```
 
 === "C#"
 
     ``` c#
-    List<Attribute> attributes = await vault.SearchAsync(new SearchRequest("LAST_NAME", "Doe"));
+    int pageIndex = 0;
+    int maxCount = 25;
+    List<Attribute> attributes = await vault.SearchAsync(new SearchRequest("LAST_NAME", "Doe"), pageIndex, maxCount);
     ```
 
 === "Node.js"
@@ -383,8 +387,7 @@ To search a Vault for [Attributes](/glossary/attribute), pass in a SearchRequest
 
     ``` java
     // Purging all user attributes
-    User user = vault.findByUser("User1234");
-    vault.purge(user.getId());
+    vault.purge("User1234");
 
     // Removing specific attribute
     User user = vault.findByUser("User1234");
@@ -396,8 +399,7 @@ To search a Vault for [Attributes](/glossary/attribute), pass in a SearchRequest
 
     ``` c#
     // Purging all user attributes
-    User user = await vault.FindByUserAsync("User1234");
-    await vault.PurgeAsync(user.Id);
+    await vault.PurgeAsync("User1234");
 
     // Removing specific attribute
     User user = await vault.FindByUserAsync("User1234");
@@ -446,7 +448,7 @@ To search a Vault for [Attributes](/glossary/attribute), pass in a SearchRequest
 ----------------------------------------------------------------------
 ## Attribute Definitions
 
-Attributes are defined with an object housing all relevant metadata for the `key`. This is where attributes are given [Tags](/glossary/tag) and [Regulations](/glossary/regulation), along with any schema to further break down the structure of the `value` of the Attribute. Display names and hints can also be added to the Attribute Definition for ease of use and readability. 
+Attributes are defined with an object housing all relevant metadata for the `key`. This is where attributes are given [Tags](/glossary/tag) and [Regulations](/glossary/regulation), along with a [schema](/tutorials/attribute-schemas) to specify the expected structure of the `value` of the Attribute. Display names and hints can also be added to the Attribute Definition for ease of use and readability. 
 
 ### Storing an Attribute Definition in the Vault
 
@@ -461,7 +463,7 @@ To store an Attribute Definition, create an AttributeDefinition object and save 
     attributeDef.setHint("{ line_one: \"1 Hacker Way\", line_two: \"Apt. 53\"," +
                         "city: \"Menlo Park\", state: \"California\", " +
                         "postal_code: \"94025-1456\", country: \"USA\"" +
-                      "}");
+                        "}");
     attributeDef.setSchema(PrimitiveSchema.STRING); // For simple, unstsructured data
     attributeDef.schemaFromClass(YourModel.class); // Alternatively, creating a schema to store objects of a class
     attributeDef.setRepeatable(false);
@@ -477,6 +479,7 @@ To store an Attribute Definition, create an AttributeDefinition object and save 
     attributeDef.name = "Billing Address";
     attributeDef.tags = {"geographic_location", "financial"};
     attributeDef.hint = "{ line_one: \"1 Hacker Way\", line_two: \"Apt. 53\", city: \"Menlo Park\", state: \"California\", postal_code: \"94025-1456\" country: \"USA\" }";
+
     attributeDef.SetSchema(PrimitiveSchema.String); // For simple, unstsructured data
     attributeDef.SchemaFromClass(typeof(YourModel)); // Alternatively, creating a schema to store objects of a class
     attributeDef.repeatable = false;
@@ -560,7 +563,7 @@ To store an Attribute Definition, create an AttributeDefinition object and save 
 
 ### Retrieving Attribute Definitions from the Vault
 
-Attribute Definitions can be retrieved from the Vault in bulk or by specifying the AttributeDefinition name. `getAttributeDefinitions` returns a list of AttributeDefinitions and `getAttributeDefinition` returns the AttributeDefinition given its name.
+To view metadata about attribute definitions, call `getAttributeDefinition` to view one attribute definition by name or `getAttributeDefinitions` to list all attribute definitions in the system.
 
 === "Java"
 
@@ -715,7 +718,7 @@ Tags can be retrieved as a list of Tag objects or as a single Tag if the specifi
 
 ### Deleting Tags from the Vault
 
-To remove a Tag, specify the Tag to be removed. A boolean denoting the status of the operation will be returned.
+To delete a Tag, specify the Tag to be removed. A boolean denoting the status of the operation will be returned. This will remove the tag from all attributes, attribute definitions, and users that are currently tagged with it.
 
 === "Java"
 
@@ -762,7 +765,7 @@ A regulation object represents a governmental regulation that impacts how you ca
 
 ### Storing a Regulation in the Vault
 
-To store a [Regulation](/glossary/regulation) to the Vault, create a new Regulation object and save it to the Vault. The constructor takes the `key`, `name`, and `url` of the Regulation.
+To store a [Regulation](/glossary/regulation) to the Vault, create a Regulation object, set its key and its display name along with a URL pointing to further information about it, and call `storeRegulation`. To automatically apply regulations to incoming data, [rules](/tutorials/regulation-rules) can be specified.
 
 === "Java"
 
@@ -825,7 +828,7 @@ To store a [Regulation](/glossary/regulation) to the Vault, create a new Regulat
 
 ### Retrieving Regulations from the Vault
 
-[Regulations](/glossary/regulation) can be retrieved as a list of Regulation objects or as a single Regulation if the specific Regulation is specified.
+[Regulations](/glossary/regulation) can be retrieved as a list of Regulation objects or by requesting a single Regulation by its key.
 
 === "Java"
 
@@ -884,7 +887,7 @@ To store a [Regulation](/glossary/regulation) to the Vault, create a new Regulat
 
 ### Deleting Regulations from the Vault
 
-To remove a [Regulation](/glossary/regulation), specify the Regulation to be removed. A boolean denoting the status of the operation will be returned.
+To remove a [Regulation](/glossary/regulation), specify the key of the Regulation to be removed. A boolean denoting the status of the operation will be returned.
 
 === "Java"
 
