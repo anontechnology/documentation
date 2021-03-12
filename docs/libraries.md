@@ -121,7 +121,7 @@ Attributes are how the ViziVault ecosystem organizes your data. Every data point
 
 ### Adding an Attribute to an Entity or User
 
-[Attributes](/glossary/attribute) are stored as `key`/`value` pairs of strings. Both Users and Entities can have Attributes set to them. If there is an existing Attribute in the system with the `key` of the provided Attribute, that Attribute will be updated; otherwise, a new Attribute will be created.
+[Attributes](/glossary/datapoint) are stored as `key`/`value` pairs of strings. Both Users and Entities can have Attributes added to them. Some attributes are repeatable, such that multiple values can be stored for the same user; others are not repeatable, such that adding a new value to a user will overwrite any previous values. You can control whether an attribute is repeatable by modifying the associated [attribute definition](/glossary/attribute-definition).
 
 === "Java"
 
@@ -198,7 +198,7 @@ Attributes are how the ViziVault ecosystem organizes your data. Every data point
 
 ### Retrieving all Attributes of an Entity or User
 
-Retrieves all [Attributes](/glossary/attribute) for the specified entity or user. Returns a list of Attribute objects.
+Retrieves all [Attributes](/glossary/datapoint) for the specified entity or user. Returns a list of Attribute objects.
 
 === "Java"
 

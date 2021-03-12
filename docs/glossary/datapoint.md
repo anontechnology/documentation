@@ -1,6 +1,6 @@
 # Attribute
 
-Attributes are the form in which data in ViziVault is stored. Every attribute represents some piece of information about a user in the system. The [AttributeDefintion](/glossary/attribute.md) specifies the metadata and shape of the data being stored.
+Attributes are the form in which data in ViziVault is stored. Every attribute represents some piece of information about a user in the system. The [AttributeDefintion](/glossary/attribute-definition) specifies the metadata and shape of the data being stored.
 
 ## Definition
 

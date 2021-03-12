@@ -19,7 +19,7 @@ nav:
     - Tags: api/tags.md
     - Regulations: api/regulations.md
   - Glossary:
-    - Attribute Definition: glossary/attribute.md
+    - Attribute Definition: glossary/attribute-definition.md
     - Tag: glossary/tag.md
     - Attribute: glossary/datapoint.md
     - Regulation: glossary/regulation.md

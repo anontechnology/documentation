@@ -8,7 +8,7 @@ Creates or edits an attribute definition. If there is an existing attribute in t
 #### Body Parameters (Required)
 |Name            |Type                            |Description                  |
 |----------------|--------------------------------|-----------------------------|
-|payload         |[AttributeDefinition](/glossary/attribute)|Description of new attribute |
+|payload         |[AttributeDefinition](/glossary/attribute-definition)|Description of new attribute |
 
 ### Example payload
 
@@ -66,7 +66,7 @@ On success, returns 201 Created and a description of the updated attribute.
 |409        |Cannot edit attribute schema, as it may invalidate existing data|Returned when attempting to specify a new schema for an attribute definition that is in use (editing the schema for an attribute definition that no data uses is allowed)|
 
 ## GET /attributes
-Retrieves data for all attribute definitions in the system. Returns a list of [AttributeDefinition](/glossary/attribute) objects.
+Retrieves data for all attribute definitions in the system. Returns a list of [AttributeDefinition](/glossary/attribute-definition) objects.
 
 ### Parameters
 None
@@ -93,7 +93,7 @@ None
 ```
 
 ## GET /attributes/{attributeKey}
-Displays information about one attribute definition. Returns an [AttributeDefinition](/glossary/attribute) object.
+Displays information about one attribute definition. Returns an [AttributeDefinition](/glossary/attribute-definition) object.
 
 ### Path Parameters
 |Name            |Type                           |Description                  |
