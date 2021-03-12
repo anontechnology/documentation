@@ -1,6 +1,6 @@
 # Regulation Rules
 
-ViziVault contains a flexible, powerful rules engine that allows specifying exactly what subsets of your data various governmental regulations such as GDPR or HIPAA apply to. This is accomplished by defining constraints, and tagging all data matching those constraints with the regulation. For more sophisticated or nuanced use cases, it is possible to combine multiple constraints together using boolean operators.
+ViziVault contains a flexible and powerful rules engine that allows specifying exactly what subsets of your data various governmental regulations such as GDPR or HIPAA apply to. This is accomplished by defining constraints, and tagging all data matching those constraints with the regulation. For more sophisticated or nuanced use cases, it is possible to combine multiple constraints together using boolean operators.
 
 ## Attribute list constraints
 
@@ -33,7 +33,7 @@ Conjunctive constraints allow you to further constrain what data is matched. The
 
 ## Disjunctive ("any") constraints
 
-Conjunctive constraints allow you to broaden what data is matched. They consist of a list of other constraints, and will match data that is matched by any of the constituent constraints.
+Disjunctive constraints allow you to broaden what data is matched. They consist of a list of other constraints, and will match data that is matched by any of the constituent constraints.
 
 ## JSON format of rules
 
@@ -65,7 +65,7 @@ Rules are expressed as a JSON object, structured as described below. The value o
 
 ## Examples
 
-An example representation of the Children's Online Privacy Protection Act (COPPA), which applies to personal information about Americans under the age of 13. It consists of a conjunctive constraint that combines two user attribute value constraints; one of the user constraints matches users whose age is less than 13, and the other matches users who live in the United States.
+An example representation of the Children's Online Privacy Protection Act (COPPA), which applies to personal information about Americans under the age of 13. It consists of a conjunctive constraint that combines two user attribute value constraints: one of the user constraints matches users whose age is less than 13, and the other matches users who live in the United States.
 
 ```json
 {

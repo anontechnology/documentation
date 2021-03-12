@@ -1,6 +1,6 @@
 # Attribute Schemas
 
-Attribute schemas can be used to structure your data and to specify what form it takes, whether that is textual, numeric, or something more structured. An attribute definition can have a primitive schema, meaning that the associated data consists of a single piece of unstructured information; alternatively, an attribute definition can have a structured schema, breaking up its data into multiple sub-attributes.
+Attribute schemas can be used to structure your data and to specify what form it takes, whether that is textual, numeric, or something more structured. An attribute definition can have a primitive schema, meaning that the associated data consists of a single piece of unstructured information, or alternatively a structured schema, breaking up its data into multiple sub-attributes.
 
 The supported primitive schemas are as follows:
 
@@ -10,7 +10,7 @@ The supported primitive schemas are as follows:
 - `boolean`: For data that takes one of the two values "true" or "false".
 - `file`: For large data such as long text files or base64-encoded representations of image files.
 
-Structured schemas take the form of JSON objects, which map sub-attribute keys to further attribute schemas. Thesse nested schemas can be either primitive or structured. In this way, arbitrarily complex structurse can be represented within a single attribute. To mark that a sub-attribute should be able to take on multiple values within a single data point, or that the value of a sub-attribute should be a list, enclose the name of the sub-attribute in square brackets.
+Structured schemas take the form of JSON objects, which map sub-attribute keys to further attribute schemas. Thesse nested schemas can likewise be either primitive or structured. In this way, arbitrarily complex structures can be represented within a single attribute. To mark that a sub-attribute should be able to take on multiple values within a single data point, or that the value of a sub-attribute should be a list, enclose the name of the sub-attribute in square brackets.
 
 ## Examples
 
