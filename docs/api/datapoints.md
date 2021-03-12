@@ -127,6 +127,11 @@ Searches data that matches specified criteria, using blind indexing to allow sea
 |-----------|-------------|-----------|
 |404|Data Not Found|No search results were found for the provided query.|
 
+## POST /entities/{entityId}/attributes
+Stores attributes for the given entity
+
+Identical to [POST /users/{userId}/attributes](#post-usersuseridattributes), but stores data for entities rather than users.
+
 ## POST /users/{userId}/attributes
 Stores attributes for the given user
 
@@ -197,6 +202,15 @@ Stores attributes for the given user
 |422|Expected \[type\] for value of attribute \[attribute\]|The value given for the indicated attribute or sub-attribute does not match what is expected according to that attribute's [schema](/tutorials/attribute-schemas).|
 |400|Unknown sub-attribute \[sub-attribute\]|A value given for a structured attribute contains a sub-attribute that is not present in that attribute's [schema](/tutorials/attribute-schemas).|
 
+## GET /entities/{entityId}/attributes
+Retrieves attributes for the given entity.
+
+Identical to [GET /users/{userId}/attributes](#get-usersuseridattributes), but retrieves data for entities rather than users.
+
+## GET /entities/{entityId}/attributes/{attributeKey}
+Displays information about an attribute for one entity.
+
+Identical to [GET /users/{userId}/attributes/{attributeKey}](#get-usersuseridattributesattributekey), but retrieves data for entities rather than users.
 
 ## GET /users/{userId}/attributes
 Retrieves attributes for the given user. By default, returns all attributes that your application has access to; alternatively, a list of desired attributes can be specified.
@@ -214,7 +228,7 @@ Retrieves attributes for the given user. By default, returns all attributes that
 ### Query Parameter Variables
 |Name               |Type                          |Description      |
 |-------------------|------------------------------|-----------------|
-|attributes         |Array<String>                 |Comma-delimited list of attribute keys to access|
+|attributes         |Array<String>                 |Comma-delimited list of attribute keys to access (optional)|
 
 ### Example Response
 ```json
@@ -239,18 +253,11 @@ Retrieves attributes for the given user. By default, returns all attributes that
 ### Error responses
 |Status code|Error message|Description|
 |-----------|-------------|-----------|
-|404        |User Data Not found    |The system does not contain an user with the specified id.|
-
-
-### Error responses
-|Status code|Error message|Description|
-|-----------|-------------|-----------|
 |400|Encoded key provided is invalid|The private decryption key provided is not correct.|
 |403|Forbidden|You are trying to access attributes that your application does not have access to.|
 |404|User Data Not Found|The specified user does not exist, or else that user has no value for the attributes specified.|
 
-
- ## GET /users/{userId}/attribute/{attributeKey}
+## GET /users/{userId}/attribute/{attributeKey}
 
 Displays information about an attribute for one user.
 
@@ -284,12 +291,6 @@ Displays information about an attribute for one user.
   ]
 }
 ```
-
-### Error responses
-|Status code|Error message|Description|
-|-----------|-------------|-----------|
-|404        |User Data Not found    |The system does not contain any data with the specified user id and attribute.|
-
 
 ### Error responses
 |Status code|Error message|Description|
@@ -336,6 +337,16 @@ Retrieves data with the given datapoint id
 |400|Encoded key provided is invalid|The private decryption key provided is not correct.|
 |403|Forbidden|Your application does not have access to the attribute of the data point you are trying to read.|
 |404|User Data Not Found|There is no data point in the system with the specified ID.|
+
+## DELETE /entities/{entityId}/attributes/{attributeKey}
+Deletes attributes for the given entity and attribute
+
+Identical to [DELETE /users/{userId}/attributes/{attributeKey}](#delete-usersuseridattributesattributekey), but deletes data for entities rather than users.
+
+## DELETE /entities/{entityId}/data
+Stores attributes for the given entity
+
+Identical to [DELETE /users/{userId}/data](#delete-usersuseriddata), but deletes data for entities rather than users.
 
 ## DELETE /users/{userId}/attributes/{attributeKey}
 Deletes attributes for the given user and attribute

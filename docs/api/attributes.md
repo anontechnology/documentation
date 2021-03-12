@@ -146,5 +146,6 @@ Deletes an attribute definition if it is not being used.
 
 ### Error responses
 |Status code|Error message|Description|
+|-----------|-------------|-----------|
 |409        |Cannot delete attribute, because it is in use|There is existing data in the system that uses this attribute definition, and as such the attribute definition cannot be deleted.|
 |404        |Attribute not found|The system does not contain an attribute with the specified key.|
