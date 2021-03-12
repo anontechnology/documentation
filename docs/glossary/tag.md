@@ -1,6 +1,6 @@
 # Tag
 
-Tags can be used to specify additional metadata about data in the vault. This can be used to determine what regulations should apply to data, and for other business-specific purpose. Users and attribute definitions can each have tags associated with them; these tags will be propagated onto all associated attributes.
+Tags can be used to specify additional metadata about data in the vault. This can be used to determine what regulations should apply to data or for other business-specific purposes. Users and attribute definitions can each have tags associated with them; these tags will be propagated onto all associated attributes.
 
 ## Definition
 

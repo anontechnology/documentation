@@ -1,6 +1,6 @@
 # Attribute Defintions
 
-Attributes are how the ViziVault ecosystem organizes your data. Every data point consists of two main components: a user id (or entity id), which represents who the data is about; and an attribute, which is some piece of information about the user; For example, in an online retail application, there would be an attribute for shipping addresses, an attribute for billing addresses, and an attribute for credit card information.
+Attribute definitions are how the ViziVault ecosystem organizes your data. Every [attribute](/glossary/attribute) in the system consists of a user id (or entity id), which represents who the data is about; a value, which is the data being stored; and an attribute key, which specifies what attribute definition governs the structure of the data. For example, in an online retail application, there would be an attribute definition for shipping addresses, an attribute definition for billing addresses, an attribute definition for credit card information, and so on.
 
 ## Definition
 
@@ -10,15 +10,15 @@ There are several forms of metadata associated with attributes, as follows:
 |-----|-----|-----------|
 |key|String|An unambiguous identifier for this attribute. Only alphanumeric characters and underscores may appear in attribute keys.|
 |name|String|A human-readable identifier for this attribute.|
-|tags|Array<String>|A list of [tags](/glossary/tag) that should be applied to all datapoints under this attribute.|
+|tags|Array<String>|A list of [tags](/glossary/tag) that should be applied to all attributes belonging to this attribute definition.|
 |hint|String|An example value that this attribute could take.|
-|immutable|boolean|Whether this attribute is a pre-loaded attribute provided by ViziVault that cannot be modified through the web interface.|
-|indexed|boolean|Whether this attribute's value should be indexed to allow searching on it. For more information, read [the Search tutorial](/tutorials/search).|
-|createdDate|String|An ISO 8601 representation of the timestamp when the attribute was created.|
-|modifiedDate|String|An ISO 8601 representation of the timestamp when the attribute was most recently modified.|
-|schema|[Attribute schema](/tutorials/attribute-schemas)|A representation of the structure of data this attribute is expected to have, including any sub-attributes, and whether its data is textual, numeric, or other formats. Read [the Attribute Schemas tutorial](/tutorials/attribute-schemas) for more information.|
+|immutable|boolean|Whether this is a pre-loaded attribute definition provided by ViziVault that cannot be modified through the web interface.|
+|indexed|boolean|Whether values of this attribute should be indexed to allow searching on it. For more information, read [the Search tutorial](/tutorials/search).|
+|createdDate|String|An ISO 8601 representation of the timestamp when the attribute definition was created.|
+|modifiedDate|String|An ISO 8601 representation of the timestamp when the attribute definition was most recently modified.|
+|schema|[Attribute schema](/tutorials/attribute-schemas)|A representation of the structure of data belonging to this attribute is expected to have, including any sub-attributes, and whether its data is textual, numeric, or other formats. Read [the Attribute Schemas tutorial](/tutorials/attribute-schemas) for more information.|
 |repeatable|boolean|Whether a user should be able to have multiple values for this attribute.|
-|regulations|Array<String>|A list of [regulation keys](/glossary/regulation), each representing a regulation that is applicable to all datapoints of this attribute.|
+|regulations|Array<String>|A list of [regulation keys](/glossary/regulation), each representing a regulation that is applicable to all attributes belonging to this attribute definition.|
 
 ## Examples
 
