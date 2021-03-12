@@ -34,6 +34,10 @@ nav:
   - Regulations:
     - GDPR (European Union): https://gdpr-info.eu/chapter-3/
     - CCPA (California): https://oag.ca.gov/privacy/ccpa
+    - HIPAA (US medical data): https://www.hhs.gov/hipaa/
+    - PCI (credit card information): https://www.pcisecuritystandards.org/
+    - FERPA (US): https://www2.ed.gov/policy/gen/guid/fpco/ferpa/
+    - COPPA (US): https://www.ftc.gov/tips-advice/business-center/privacy-and-security/children%27s-privacy
   - ViziVault Enterprise:
       - Overview: vizivault-enterprise/overview.md
       - Dashboard: vizivault-enterprise/dashboard.md
