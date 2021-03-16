@@ -314,32 +314,33 @@ Now that we have attributes, let's load some data. We will iterate over every ex
         .readValues(csvReader);
 
     while(iterator.hasNext()) {
-      Map<String, String> csvVals = iterator.next();
-      User user=new User(csvVals.get("USERID"));
+        Map<String, String> csvVals = iterator.next();
+        User user=new User(csvVals.get("USERID"));
 
-      user.addAttribute(eyeColorattributeDef.getName(),csvVals.get("USERID"));
-      user.addAttribute(ageAttributeDef.getName(),csvVals.get("AGE"));
+        user.addAttribute(eyeColorattributeDef.getName(),csvVals.get("USERID"));
+        user.addAttribute(ageAttributeDef.getName(),csvVals.get("AGE"));
 
-      Name name=new Name();
+        Name name=new Name();
+        
+        name.setFirstName(csvVals.get("FIRST_NAME"));
+        name.setLastName(csvVals.get("LAST_NAME"));
+        name.setMiddleName(csvVals.get("MIDDLE_NAME"));
+        name.setCompany(csvVals.get("COMPANY"));
+        user.addAttribute(nameAttributeDef.getName(),myName);
+
+        Address address=new Address();
+        
+        address.setStreet(csvVals.get("STREET"));
+        address.setCity(csvVals.get("CITY"));
+        address.setState(csvVals.get("STATE"));
+        address.setCountry(csvVals.get("COUNTRY"));
+
+        user.addAttribute(addressAttributeDef.getName(),myAddress);
+        vault.save(user);
       
-      name.setFirstName(csvVals.get("FIRST_NAME"));
-      name.setLastName(csvVals.get("LAST_NAME"));
-      name.setMiddleName(csvVals.get("MIDDLE_NAME"));
-      name.setCompany(csvVals.get("COMPANY"));
-      user.addAttribute(nameAttributeDef.getName(),myName);
-
-      Address address=new Address();
-      
-      address.setStreet(csvVals.get("STREET"));
-      address.setCity(csvVals.get("CITY"));
-      address.setState(csvVals.get("STATE"));
-      address.setCountry(csvVals.get("COUNTRY"));
-
-      user.addAttribute(addressAttributeDef.getName(),myAddress);
-      vault.save(user);
-      
-  }
+    }
     ```
+
 === "C#"
 
     ``` c#
@@ -377,6 +378,7 @@ Now that we have attributes, let's load some data. We will iterate over every ex
         }
     }
     ```
+
 === "Python"
 
     ``` python
