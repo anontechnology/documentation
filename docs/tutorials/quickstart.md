@@ -32,6 +32,7 @@ In the following eample you will want to make the following replacements:
 3. Replace "https://my.host:8080' with the secure http address and port of your provided vault.
 
 === "Java"
+
     ``` java
      // 1. Replace 'decryptionKey.txt'  with the path to your encryption file
     FileInputStream decKeyFile = new FileInputStream(new File("src" + File.separator + "test" + File.separator + "resources" + File.separator + "decryptionKey.txt"));
@@ -50,6 +51,7 @@ In the following eample you will want to make the following replacements:
     ```
 
 === "C#"
+
     ```c#
         using IO.Anontech.Vizivault;
         using Microsoft.VisualBasic.FileIO; // for CSV parser
@@ -62,6 +64,7 @@ In the following eample you will want to make the following replacements:
     ```
 
 === "Python"
+
     ``` python
     from  vizivault import ViziVault, AttributeDefinition, SearchRequest
     #You'll need this later to load the CSV sample file
@@ -92,6 +95,7 @@ The first thing we will need to do is establish attributes to store all of the d
 We start with creating some very simple attributes with no structure, such as strings or numeric data. In the next example we will see how to handle data in cases where you only may be interested in retrieving part of a related set of data, or where the data has an internal structure. The hint parameter contains a sample value of the attribute for the purposes of demonstrating the intended format.
 
 === "Java"
+
     ``` java
     AttributeDefinition eyeColorattributeDef = new AttributeDefinition("EyeColor");
     eyeColorattributeDef.setHint("Green");
@@ -103,6 +107,7 @@ We start with creating some very simple attributes with no structure, such as st
     ```
 
 === "C#"
+
     ```c#
     AttributeDefinition eyeColorAttributeDef = new AttributeDefinition("EyeColor") {
         Hint = "Green"
@@ -136,66 +141,67 @@ Let's add some attributes with structure. Here we add a user's full name and the
 * file: For data that takes more than 126 characters to represent, such as long text files or base64-encoded representations of image files.
 
 === "Java"
+
     ``` java
 
     public static class Name {
 
-    public String firstName;
-    public String lastName;
-    public String middleName;
-    public String nickName;
-    public String company;
+        public String firstName;
+        public String lastName;
+        public String middleName;
+        public String nickName;
+        public String company;
 
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
+        public void setFirstName(String firstName) {
+            this.firstName = firstName;
+        }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
+        public void setLastName(String lastName) {
+            this.lastName = lastName;
+        }
 
-    public void setMiddleName(String middleName) {
-        this.middleName = middleName;
-    }
+        public void setMiddleName(String middleName) {
+            this.middleName = middleName;
+        }
 
-    public void setNickName(String nickName) {
-        this.nickName = nickName;
-    }
+        public void setNickName(String nickName) {
+            this.nickName = nickName;
+        }
 
-    public void setCompany(String company) {
-        this.company = company;
-    }
+        public void setCompany(String company) {
+            this.company = company;
+        }
 
     }
 
     public static class Address {
-    public String street;
-    public String city;
-    public String state;
-    public String postalCode;
-    public String country;
+        public String street;
+        public String city;
+        public String state;
+        public String postalCode;
+        public String country;
 
 
-    public void setStreet(String street) {
-        this.street = street;
-    }
+        public void setStreet(String street) {
+            this.street = street;
+        }
 
-    public void setCity(String city) {
-        this.city = city;
-    }
+        public void setCity(String city) {
+            this.city = city;
+        }
 
-    public void setState(String state) {
-        this.state = state;
-    }
+        public void setState(String state) {
+            this.state = state;
+        }
 
-    public void setPostalCode(String postalCode) {
-        this.postalCode = postalCode;
-    }
+        public void setPostalCode(String postalCode) {
+            this.postalCode = postalCode;
+        }
 
-    public void setCountry(String country) {
-        this.country = country;
-    }
+        public void setCountry(String country) {
+            this.country = country;
+        }
 
     }
 
@@ -211,6 +217,7 @@ Let's add some attributes with structure. Here we add a user's full name and the
     ```
 
 === "C#"
+
     ```c#
         // Put these classes in your namespace
         public class Name {
@@ -295,6 +302,7 @@ Let's add some attributes with structure. Here we add a user's full name and the
 Now that we have attributes, let's load some data. We will iterate over every example in our sample CSV. For each row we define a user based on the userid. Then we simply load the vaules for the flat files. For structured object data we create a hash structure and insert the key/value pairs. Finally, we save the completed user to the vault.
 
 === "Java"
+
     ```java
     File csvSampleFile = new File("src" + File.separator + "test" + File.separator + "resources" + File.separator + "tutorial_test.csv");
     Reader csvReader = new FileReader(csvSampleFile);
@@ -370,6 +378,7 @@ Now that we have attributes, let's load some data. We will iterate over every ex
     }
     ```
 === "Python"
+
     ``` python
     with open('./resources/tutorial_test.csv', 'r') as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=',')
@@ -432,6 +441,7 @@ Now that we have attributes, let's load some data. We will iterate over every ex
 Now that we have data in the system, let's try to get our data back. Here we grab the data for a user with the id 101.
 
 === "Java"
+
     ``` java
    
     User receivedUser = vault.findByUser("101");
@@ -442,6 +452,7 @@ Now that we have data in the system, let's try to get our data back. Here we gra
     ```
 
 === "C#"
+
     ```c#
     User receivedUser = await vault.FindByUserAsync("101");
     foreach(AttributeValue attr in receivedUser.Attributes) {
