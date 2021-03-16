@@ -32,7 +32,7 @@ In the following eample you will want to make the following replacements:
 3. Replace "https://my.host:8080' with the secure http address and port of your provided vault.
 
 === "C#"
-```c#
+    ```c#
         using IO.Anontech.Vizivault;
         using Microsoft.VisualBasic.FileIO; // for CSV parser
 
@@ -41,11 +41,11 @@ In the following eample you will want to make the following replacements:
         string decryptionKey = System.IO.File.ReadAllText("decryptionKey.txt");
         string encryptionKey = System.IO.File.ReadAllText("encryptionKey.txt");
         ViziVault vault = new ViziVault(new Uri("http://example.com:8080")).WithApiKey("your-api-key").WithDecryptionKey(decryptionKey).WithEncryptionKey(encryptionKey);
-```
+    ```
 
 === "Python"
 
-``` python
+    ``` python
     from  vizivault import ViziVault, AttributeDefinition, SearchRequest
     #You'll need this later to load the CSV sample file
     import csv 
@@ -66,11 +66,11 @@ In the following eample you will want to make the following replacements:
     
     vault = vizivault.ViziVault(base_url='https://my.host:8080', api_key='12345', encryption_key=encryption_key,
                 decryption_key=decryption_key)
-```
+    ```
 
 === "Java"
 
-``` java
+    ``` java
      // 1. Replace 'decryptionKey.txt'  with the path to your encryption file
     FileInputStream decKeyFile = new FileInputStream(new File("src" + File.separator + "test" + File.separator + "resources" + File.separator + "decryptionKey.txt"));
     decryptionKey = new String(decKeyFile.readAllBytes());
@@ -85,7 +85,7 @@ In the following eample you will want to make the following replacements:
     // 3. Replace 'https://my.host:8080' with the web address and port of your vault server
     // 4. Replace '12345' with the api key (application key) of your application.
     ViziVault vault = new ViziVault(new URL("http://localhost:8080")).withApiKey("12345").withDecryptionKey(decryptionKey).withEncryptionKey(encryptionKey);
-```
+    ```
 
 ## Creating Attributes
 
@@ -94,7 +94,7 @@ The first thing we will need to do is establish attributes to store all of the d
 We start with creating some very simple attributes with no structure, such as strings or numeric data. In the next example we will see how to handle data in cases where you only may be interested in retrieving part of a related set of data, or where the data has an internal structure. The hint parameter contains a sample value of the attribute for the purposes of demonstrating the intended format.
 
 === "C#"
-```c#
+    ```c#
     AttributeDefinition eyeColorAttributeDef = new AttributeDefinition("EyeColor") {
         Hint = "Green"
     };
@@ -104,20 +104,20 @@ We start with creating some very simple attributes with no structure, such as st
 
     await vault.StoreAttributeDefinitionAsync(eyeColorAttributeDef);
     await vault.StoreAttributeDefinitionAsync(ageAttributeDef);
-```
+    ```
 
 === "Python"
 
-``` python
+    ``` python
     eye_color_attribute_def = vault.AttributeDefinition(key="EYE_COLOR", name="Eye Color", hint="Green")
     age_attribute_def = vault.AttributeDefinition(key="AGE", name="Age", hint="18")
         
     vault.store_attribute_definition(attribute_definition=eye_color_attribute_def)
     vault.store_attribute_definition(attribute_definition=age_attribute_def)
-```
+    ```
 
 === "Java"
-``` java
+    ``` java
     AttributeDefinition eyeColorattributeDef = new AttributeDefinition("EyeColor");
     eyeColorattributeDef.setHint("Green");
     AttributeDefinition ageAttributeDef= new AttributeDefinition("Age");
@@ -125,7 +125,7 @@ We start with creating some very simple attributes with no structure, such as st
 
     vault.storeAttributeDefinition(eyeColorAttributeDef);
     vault.storeAttributeDefinition(ageAttributeDef);
-```
+    ```
 
 ## Creating Attributes with Structure
 
@@ -138,7 +138,7 @@ Let's add some attributes with structure. Here we add a user's full name and the
 * file: For data that takes more than 126 characters to represent, such as long text files or base64-encoded representations of image files.
 
 === "C#"
-```c#
+    ```c#
         // Put these classes in your namespace
         public class Name {
             public string FirstName {get; set;}
@@ -171,10 +171,10 @@ Let's add some attributes with structure. Here we add a user's full name and the
 
         await vault.StoreAttributeDefinitionAsync(nameAttributeDef);
         await vault.StoreAttributeDefinitionAsync(addressAttributeDef);
-```
+    ```
 
 === "Python"
-``` python
+    ``` python
 
     name_attribute_def = vault.AttributeDefinition(
         key='CLIENT_NAME',
@@ -215,10 +215,10 @@ Let's add some attributes with structure. Here we add a user's full name and the
     vault.store_attribute_definition(attribute_definition=name_attribute_def)
     vault.store_attribute_definition(attribute_definition=address_attribute_def)
         
-```
+    ```
 
 === "Java"
-``` java
+    ``` java
 
 public static class Name {
 
@@ -297,15 +297,15 @@ public static class Address {
 Now that we have attributes, let's load some data. We will iterate over every example in our sample CSV. For each row we define a user based on the userid. Then we simply load the vaules for the flat files. For structured object data we create a hash structure and insert the key/value pairs. Finally, we save the completed user to the vault.
 
 === "Java"
-```java
-  File csvSampleFile = new File("src" + File.separator + "test" + File.separator + "resources" + File.separator + "tutorial_test.csv");
-  Reader csvReader = new FileReader(csvSampleFile);
+    ```java
+    File csvSampleFile = new File("src" + File.separator + "test" + File.separator + "resources" + File.separator + "tutorial_test.csv");
+    Reader csvReader = new FileReader(csvSampleFile);
 
-  // Use Jackson
-  Iterator<Map<String, String>> iterator = new CsvMapper()
-    .readerFor(Map.class)
-    .with(CsvSchema.emptySchema().withHeader())
-    .readValues(csvReader);
+    // Use Jackson
+    Iterator<Map<String, String>> iterator = new CsvMapper()
+        .readerFor(Map.class)
+        .with(CsvSchema.emptySchema().withHeader())
+        .readValues(csvReader);
 
     while(iterator.hasNext()) {
       Map<String, String> csvVals = iterator.next();
@@ -333,10 +333,10 @@ Now that we have attributes, let's load some data. We will iterate over every ex
       vault.save(user);
       
   }
-```
+    ```
 === "C#"
 
-``` c#
+    ``` c#
     using (var parser = new TextFieldParser("./resources/tutorial_test.csv")) {
         parser.TextFieldType = FieldType.Delimited;
         parser.setDelimiters(",");
@@ -370,12 +370,12 @@ Now that we have attributes, let's load some data. We will iterate over every ex
             await vault.SaveAsync(user);
         }
     }
-```
+    ```
 
 
 === "Python"
 
-``` python
+    ``` python
     with open('./resources/tutorial_test.csv', 'r') as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=',')
         header_row = True
@@ -431,38 +431,38 @@ Now that we have attributes, let's load some data. We will iterate over every ex
                     headers = row
                     header_row = False
             vault.purge(new_user.id)
-```
+    ```
 ### Retrieving Data for a User
 
 Now that we have data in the system, let's try to get our data back. Here we grab the data for a user with the id 101.
 
 === "C#"
-```c#
+    ```c#
     User receivedUser = await vault.FindByUserAsync("101");
     foreach(AttributeValue attr in receivedUser.Attributes) {
         Console.WriteLine($"Attribute: {attr.AttributeKey}; Value: {attr.Value}");
     }
-```
+    ```
 
 === "Python"
 
-``` python
+    ``` python
 
     received_user = vault.find_by_user(entity_id='101')
         
     for attribute in received_user.get_attributes():
         print('Attribute:' + attribute.attribute + 'Value:' + attribute.value)
-```
+    ```
 
 === "Java"
-``` java
+    ``` java
    
     User receivedUser = vault.findByUser("101");
     for (Attribute attribute : receivedUser.getAttributes()) {
       System.out.printf("attribute_name: %s attribute_value: %s%n", attribute.getAttribute(), attribute.getValue());
     }
 
-```
+    ```
 
 
 ### Next Steps
