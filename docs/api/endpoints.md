@@ -34,6 +34,9 @@ Guides and reference materials to help you get started, integrate, optimize, and
 -   [DELETE /regulations/{regulation}](/api/regulations#delete-regulationsregulationkey)
 
 ### Users
+-   [POST /entities](/api/users#post-entities)
 -   [POST /users](/api/users#post-users)
+-   [GET /entities](/api/users#get-entities)
+-   [GET /entities/{entityid}](/api/users#get-entitiesentityid)
 -   [GET /users](/api/users#get-users)
 -   [GET /users/{userId}](/api/users#get-usersuserid)
