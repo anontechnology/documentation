@@ -27,8 +27,11 @@ Put your public encryption key into a file. In a production system, you may wish
 With your decryption key, encryption key, path, and application key, we can initialize the connection to your vault. Note that for the purposes of this quickstart we provide the connection with the encryption and decryption key. However, in your application, you may only wish to pull down data and decrypt with the decryption key, or only create new data with the encryption key. Using application keys and access to encyption and decryption keys lets you manage exactly how data is accessed and controlled.
 
 In the following eample you will want to make the following replacements:
+
 1. Replace "./resources/test_encryption_key.txt" with the path to your encryption file
+
 2. Replace "./resources/test_decryption_key.txt" with the path to your decryption file
+
 3. Replace "https://my.host:8080' with the secure http address and port of your provided vault.
 
 === "C#"
