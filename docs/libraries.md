@@ -7,7 +7,7 @@ We offer an official SDK for most languages widely used in the industry today an
 - [Node.js](https://github.com/anontechnology/vault-node-sdk)
 - [Python](https://github.com/anontechnology/vault-python-sdk)
 - [C#](https://github.com/anontechnology/vault-csharp-sdk)
-- PHP
+- PHP (beta)
 
 Library not available for your desired language? Feel free to contribute to our [open source community](https://github.com/anontechnology)!
 
@@ -117,11 +117,11 @@ Library not available for your desired language? Feel free to contribute to our 
 ----------------------------------------------------------------------
 ## Attributes
 
-Attributes are how the ViziVault ecosystem organizes your data. Every data point consists of three main components: a user id, which represents who the data is about; a value, which is some piece of information about the user; and an attribute, which expresses the relationship between the user and the value. For example, in an online retail application, there would be an attribute for shipping addresses, an attribute for billing addresses, and an attribute for credit card information.
+The ViziVault ecosystem organizes your data using the concept of attributes. Every data point consists of three main components: a user id, which represents who the data is about; a value, which is some piece of information about the user; and an attribute, which expresses the relationship between the user and the value. For example, in an online retail application, there would be an attribute for shipping addresses, an attribute for billing addresses, an attribute for credit card information, and so on.
 
 ### Adding an Attribute to an Entity or User
 
-[Attributes](/glossary/attribute) are stored as `key`/`value` pairs of strings. Both Users and Entities can have Attributes added to them. Some attributes are repeatable, such that multiple values can be stored for the same user; others are not repeatable, such that adding a new value to a user will overwrite any previous values. You can control whether an attribute is repeatable by modifying the associated [attribute definition](/glossary/attribute-definition).
+[Attributes](/glossary/attribute) are stored as `key`/`value` pairs of strings. Both users and entities can have attributes added to them. Some attributes are repeatable, such that multiple values can be stored for the same user; others are not repeatable, such that adding a new value to a user will overwrite any previous values. You can control whether an attribute is repeatable by modifying the associated [attribute definition](/glossary/attribute-definition).
 
 === "Java"
 
@@ -265,7 +265,7 @@ Retrieves all [Attributes](/glossary/attribute) for the specified entity or user
 
 ### Retrieving an Attribute of an Entity or User
 
-Retrieves a single specified [Attribute](/glossary/attribute) for the specified entity or user. For repeatable attributes, use `getAttributes(attributeName)`; for non-repeatable attributes, use `getAttribute(attributeName)`.
+Retrieves a single specified [attribute](/glossary/attribute) for the specified entity or user. For repeatable attributes, use `getAttributes(attributeName)`; for non-repeatable attributes, use `getAttribute(attributeName)`.
 
 === "Java"
 
@@ -448,11 +448,11 @@ To search a Vault for [Attributes](/glossary/attribute), pass in a SearchRequest
 ----------------------------------------------------------------------
 ## Attribute Definitions
 
-Attributes are defined with an object housing all relevant metadata for the `key`. This is where attributes are given [Tags](/glossary/tag) and [Regulations](/glossary/regulation), along with a [schema](/tutorials/attribute-schemas) to specify the expected structure of the `value` of the Attribute. Display names and hints can also be added to the Attribute Definition for ease of use and readability. 
+Attributes are defined using an object that contains all relevant metadata for the `key`. This is where attributes are given [tags](/glossary/tag) and [regulations](/glossary/regulation), along with a [schema](/tutorials/attribute-schemas) to specify the expected structure of the `value` of the attribute. Display names and hints can also be added to the Attribute Definition for ease of use and readability. 
 
 ### Storing an Attribute Definition in the Vault
 
-To store an Attribute Definition, create an AttributeDefinition object and save it to the Vault. The following code details the various properties of the AttributeDefinition object.
+To store an attribute definition, create an AttributeDefinition object and save it to the Vault as shown in the following code.
 
 === "Java"
 
@@ -619,11 +619,11 @@ To view metadata about attribute definitions, call `getAttributeDefinition` to v
 ----------------------------------------------------------------------
 ## Tags
 
-Similar to [Regulations](/glossary/regulation), Tags are user-defined strings that can be applied to Attributes to aid in classification and searching.
+Similar to [regulations](/glossary/regulation), Tags are user-defined strings that can be applied to attributes to aid in classification and searching.
 
 ### Storing a Tag in the Vault
 
-To store a new Tag, create a Tag object and save it to the Vault.
+To store a new tag, create a tag object and save it to the vault.
 
 
 === "Java"
@@ -659,7 +659,7 @@ To store a new Tag, create a Tag object and save it to the Vault.
 
 ### Retrieving Tags from the Vault
 
-Tags can be retrieved as a list of Tag objects or as a single Tag if the specific Tag is specified.
+Like attribute definition metadata, tag metadata can be retrieved for a single tag or for all tags in the system.
 
 === "Java"
 
@@ -718,7 +718,7 @@ Tags can be retrieved as a list of Tag objects or as a single Tag if the specifi
 
 ### Deleting Tags from the Vault
 
-To delete a Tag, specify the Tag to be removed. A boolean denoting the status of the operation will be returned. This will remove the tag from all attributes, attribute definitions, and users that are currently tagged with it.
+To delete a tag, specify the tag to be removed. A boolean denoting the status of the operation will be returned. This will remove the tag from all attributes, attribute definitions, and users that are currently tagged with it.
 
 === "Java"
 
@@ -765,7 +765,7 @@ A regulation object represents a governmental regulation that impacts how you ca
 
 ### Storing a Regulation in the Vault
 
-To store a [Regulation](/glossary/regulation) to the Vault, create a Regulation object, set its key and its display name along with a URL pointing to further information about it, and call `storeRegulation`. To automatically apply regulations to incoming data, [rules](/tutorials/regulation-rules) can be specified.
+To store a [regulation](/glossary/regulation) to the vault, create a Regulation object, set its key and its display name along with a URL pointing to further information about it, and call `storeRegulation`. To automatically apply regulations to incoming data, [rules](/tutorials/regulation-rules) can be specified.
 
 === "Java"
 
@@ -828,7 +828,7 @@ To store a [Regulation](/glossary/regulation) to the Vault, create a Regulation 
 
 ### Retrieving Regulations from the Vault
 
-[Regulations](/glossary/regulation) can be retrieved as a list of Regulation objects or by requesting a single Regulation by its key.
+[Regulations](/glossary/regulation) can be retrieved as a list of Regulation objects or by requesting a single regulation by its key.
 
 === "Java"
 
@@ -887,7 +887,7 @@ To store a [Regulation](/glossary/regulation) to the Vault, create a Regulation 
 
 ### Deleting Regulations from the Vault
 
-To remove a [Regulation](/glossary/regulation), specify the key of the Regulation to be removed. A boolean denoting the status of the operation will be returned.
+To remove a [regulation](/glossary/regulation), specify the key of the regulation to be removed. A boolean denoting the status of the operation will be returned.
 
 === "Java"
 
