@@ -226,6 +226,7 @@ Let's add some attributes with structure. Here we add a user's full name and the
 
 === "Java"
     ``` java
+
     public static class Name {
 
         public String firstName;
@@ -291,8 +292,7 @@ Let's add some attributes with structure. Here we add a user's full name and the
         }
 
     }
-
-```
+    ```
 
 ## Loading Data
 
