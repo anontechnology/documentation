@@ -225,73 +225,73 @@ Let's add some attributes with structure. Here we add a user's full name and the
     ```
 
 === "Java"
-``` java
+    ``` java
 
-public static class Name {
+    public static class Name {
 
-  public String firstName;
-  public String lastName;
-  public String middleName;
-  public String nickName;
-  public String maidenName;
-  public String company;
-
-
-  public void setFirstName(String firstName) {
-    this.firstName = firstName;
-  }
-
-  public void setLastName(String lastName) {
-    this.lastName = lastName;
-  }
-
-  public void setMiddleName(String middleName) {
-    this.middleName = middleName;
-  }
-
-  public void setNickName(String nickName) {
-    this.nickName = nickName;
-  }
-
-  public void setMaidenName(String maidenName) {
-    this.maidenName = maidenName;
-  }
-
-  public void setCompany(String company) {
-    this.company = company;
-  }
-
-}
-
-public static class Address {
-  public String street;
-  public String city;
-  public String state;
-  public String postalCode;
-  public String country;
+    public String firstName;
+    public String lastName;
+    public String middleName;
+    public String nickName;
+    public String maidenName;
+    public String company;
 
 
-  public void setStreet(String street) {
-    this.street = street;
-  }
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
 
-  public void setCity(String city) {
-    this.city = city;
-  }
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
-  public void setState(String state) {
-    this.state = state;
-  }
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
+    }
 
-  public void setPostalCode(String postalCode) {
-    this.postalCode = postalCode;
-  }
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
+    }
 
-  public void setCountry(String country) {
-    this.country = country;
-  }
+    public void setMaidenName(String maidenName) {
+        this.maidenName = maidenName;
+    }
 
-}
+    public void setCompany(String company) {
+        this.company = company;
+    }
+
+    }
+
+    public static class Address {
+    public String street;
+    public String city;
+    public String state;
+    public String postalCode;
+    public String country;
+
+
+    public void setStreet(String street) {
+        this.street = street;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public void setPostalCode(String postalCode) {
+        this.postalCode = postalCode;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    }
 
 ```
 
@@ -458,14 +458,14 @@ Now that we have data in the system, let's try to get our data back. Here we gra
     ```
 
 === "Java"
-   ``` java
+    ``` java
    
     User receivedUser = vault.findByUser("101");
     for (Attribute attribute : receivedUser.getAttributes()) {
       System.out.printf("attribute_name: %s attribute_value: %s%n", attribute.getAttribute(), attribute.getValue());
     }
 
-   ```
+    ```
 
 
 ### Next Steps
