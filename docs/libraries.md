@@ -59,8 +59,8 @@ Library not available for your desired language? Feel free to contribute to our 
 === "Java"
 
     ``` java
-    String encryptionKey = System.getenv("ENCRYPTIONKEY");
-    String decryptionKey = System.getenv("DECRYPTIONKEY");
+    String encryptionKey = System.getenv("VIZIVAULT_ENCRYPTION_KEY");
+    String decryptionKey = System.getenv("VIZIVAULT_DECRYPTION_KEY");
     ViziVault vault = new ViziVault(url)
       .withApiKey(apiKey)
       .withEncryptionKey(encryptionKey)
@@ -70,8 +70,8 @@ Library not available for your desired language? Feel free to contribute to our 
 === "C#"
 
     ``` c#
-    string encryptionKey = System.Environment.GetEnvironmentVariable("ENCRYPTIONKEY");
-    string decryptionKey = System.Environment.GetEnvironmentVariable("DECRYPTIONKEY");
+    string encryptionKey = System.Environment.GetEnvironmentVariable("VIZIVAULT_ENCRYPTION_KEY");
+    string decryptionKey = System.Environment.GetEnvironmentVariable("VIZIVAULT_DECRYPTION_KEY");
     ViziVault vault = new ViziVault(url)
       .WithApiKey(apiKey)
       .WithEncryptionKey(encryptionKey)
@@ -81,8 +81,8 @@ Library not available for your desired language? Feel free to contribute to our 
 === "Node.js"
 
     ``` javascript
-    const encryptionKey = process.env.ENCRYPTIONKEY;
-    const decryptionKey = process.env.DECRYPTIONKEY;
+    const encryptionKey = process.env.VIZIVAULT_ENCRYPTION_KEY;
+    const decryptionKey = process.env.VIZIVAULT_DECRYPTION_KEY;
     let vault = new ViziVault()
       .withBaseURL(url)
       .withAPIKey(apiKey)
@@ -96,15 +96,15 @@ Library not available for your desired language? Feel free to contribute to our 
     vault = vizivault.ViziVault(
         base_url=url,
         api_key=apiKey,
-        encryption_key=os.getenv('ENCRYPTIONKEY'),
-        decryption_key=os.getenv('DECRYPTIONKEY')
+        encryption_key=os.getenv('VIZIVAULT_ENCRYPTION_KEY'),
+        decryption_key=os.getenv('VIZIVAULT_DECRYPTION_KEY')
     ```
 
 === "PHP"
 
     ``` php
-    $encryptionKey = getenv("ENCRYPTIONKEY");
-    $decryptionKey = getenv("DECRYPTIONKEY");
+    $encryptionKey = getenv("VIZIVAULT_ENCRYPTION_KEY");
+    $decryptionKey = getenv("VIZIVAULT_DECRYPTION_KEY");
     $vault = new ViziVault()
       ->withBaseURL($url)
       ->withAPIKey($apiKey)
@@ -135,6 +135,13 @@ The ViziVault ecosystem organizes your data using the concept of attributes. Eve
     Entity entity = vault.findByEntity("Client6789");
     entity.addAttribute("FULL_ADDRESS", "1 Hacker Way, Beverly Hills, CA 90210");
     vault.save(entity);
+
+    // Adding an attribute with additional metadata to a user
+    Attribute attribute = new Attribute("LAST_NAME");
+    attribute.setTags(List.of("ExampleTag"));
+    attribute.setValue("Smith");
+    user.addAttribute(attribute);
+    vault.save(user);
     ```
 
 === "C#"
@@ -149,6 +156,12 @@ The ViziVault ecosystem organizes your data using the concept of attributes. Eve
     Entity entity = await vault.FindByEntityAsync("Client6789");
     entity.AddAttribute("FULL_ADDRESS", "1 Hacker Way, Beverly Hills, CA 90210");
     await vault.SaveAsync(entity);
+
+    // Adding an attribute with additional metadata to a user
+    AttributeValue attribute = new Attribute("LAST_NAME") {
+        Tags = new List<String>{"ExampleTag"},
+        Value = "Smith"
+    };
     ```
 
 === "Node.js"
