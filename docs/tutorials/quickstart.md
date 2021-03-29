@@ -226,70 +226,69 @@ Let's add some attributes with structure. Here we add a user's full name and the
 
 === "Java"
     ``` java
-
     public static class Name {
 
-    public String firstName;
-    public String lastName;
-    public String middleName;
-    public String nickName;
-    public String maidenName;
-    public String company;
+        public String firstName;
+        public String lastName;
+        public String middleName;
+        public String nickName;
+        public String maidenName;
+        public String company;
 
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
+        public void setFirstName(String firstName) {
+            this.firstName = firstName;
+        }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
+        public void setLastName(String lastName) {
+            this.lastName = lastName;
+        }
 
-    public void setMiddleName(String middleName) {
-        this.middleName = middleName;
-    }
+        public void setMiddleName(String middleName) {
+            this.middleName = middleName;
+        }
 
-    public void setNickName(String nickName) {
-        this.nickName = nickName;
-    }
+        public void setNickName(String nickName) {
+            this.nickName = nickName;
+        }
 
-    public void setMaidenName(String maidenName) {
-        this.maidenName = maidenName;
-    }
+        public void setMaidenName(String maidenName) {
+            this.maidenName = maidenName;
+        }
 
-    public void setCompany(String company) {
-        this.company = company;
-    }
+        public void setCompany(String company) {
+            this.company = company;
+        }
 
     }
 
     public static class Address {
-    public String street;
-    public String city;
-    public String state;
-    public String postalCode;
-    public String country;
+        public String street;
+        public String city;
+        public String state;
+        public String postalCode;
+        public String country;
 
 
-    public void setStreet(String street) {
-        this.street = street;
-    }
+        public void setStreet(String street) {
+            this.street = street;
+        }
 
-    public void setCity(String city) {
-        this.city = city;
-    }
+        public void setCity(String city) {
+            this.city = city;
+        }
 
-    public void setState(String state) {
-        this.state = state;
-    }
+        public void setState(String state) {
+            this.state = state;
+        }
 
-    public void setPostalCode(String postalCode) {
-        this.postalCode = postalCode;
-    }
+        public void setPostalCode(String postalCode) {
+            this.postalCode = postalCode;
+        }
 
-    public void setCountry(String country) {
-        this.country = country;
-    }
+        public void setCountry(String country) {
+            this.country = country;
+        }
 
     }
 
