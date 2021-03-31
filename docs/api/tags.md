@@ -101,3 +101,4 @@ Deletes a tag from the system, and removes it from all attribute definitions, us
 |Status code|Error message|Description|
 |-----------|-------------|-----------|
 |404        |No such tag  |The system does not contain a tag with the specified name.|
+|409        |Cannot delete tag, because it is referenced by regulation|There are one or more regulations using [rules](/tutorials/regulation-rules) that reference this tag.|

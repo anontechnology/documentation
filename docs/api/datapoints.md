@@ -127,6 +127,11 @@ Searches data that matches specified criteria, using blind indexing to allow sea
 |-----------|-------------|-----------|
 |404|Data Not Found|No search results were found for the provided query.|
 
+## POST /entities/{entityId}/attributes
+Stores attributes for the given entity
+
+Identical to [POST /users/{userId}/attributes](#post-usersuseridattributes), but stores data for entities rather than users.
+
 ## POST /users/{userId}/attributes
 Stores attributes for the given user
 
@@ -192,13 +197,23 @@ Stores attributes for the given user
 |400|No such attribute|You are attempting to store data for an attribute that does not exist.|
 |400|No such regulation|You are attempting to store data that is tagged with a regulation that does not exist.|
 |403|Forbidden access to attribute|Your application does not have permission to access some of the attributes of the data you are attempting to store.|
+|409|Received multiple values for nonrepeatable attribute|You are attempting to store two or more attributes belonging to the same attribute definition, but that attribute definition is not repeatable.|
 |413|Datapoint values may not exceed 1 MB in size|You are attempting to store a string that is longer than 1,048,576 characters long. For longer data, set the data's [attribute schema](/tutorials/attribute-schemas) to "file".
 |422|Expected \[type\] for value of attribute \[attribute\]|The value given for the indicated attribute or sub-attribute does not match what is expected according to that attribute's [schema](/tutorials/attribute-schemas).|
-|422|Unknown sub-attribute \[sub-attribute\]|A value given for a structured attribute contains a sub-attribute that is not present in that attribute's [schema](/tutorials/attribute-schemas).|
+|400|Unknown sub-attribute \[sub-attribute\]|A value given for a structured attribute contains a sub-attribute that is not present in that attribute's [schema](/tutorials/attribute-schemas).|
 
+## GET /entities/{entityId}/attributes
+Retrieves attributes for the given entity.
+
+Identical to [GET /users/{userId}/attributes](#get-usersuseridattributes), but retrieves data for entities rather than users.
+
+## GET /entities/{entityId}/attributes/{attributeKey}
+Displays information about an attribute for one entity.
+
+Identical to [GET /users/{userId}/attributes/{attributeKey}](#get-usersuseridattributesattributekey), but retrieves data for entities rather than users.
 
 ## GET /users/{userId}/attributes
-Retrieves attributes for the given user
+Retrieves attributes for the given user. By default, returns all attributes that your application has access to; alternatively, a list of desired attributes can be specified.
 
 ### Header Parameters
 |Name            |Type                           |Description                  |
@@ -213,7 +228,7 @@ Retrieves attributes for the given user
 ### Query Parameter Variables
 |Name               |Type                          |Description      |
 |-------------------|------------------------------|-----------------|
-|attributes         |Array<String>                 |Comma-delimited list of attribute keys to access|
+|attributes         |Array<String>                 |Comma-delimited list of attribute keys to access (optional)|
 
 ### Example Response
 ```json
@@ -238,18 +253,11 @@ Retrieves attributes for the given user
 ### Error responses
 |Status code|Error message|Description|
 |-----------|-------------|-----------|
-|404        |Not found    |The system does not contain an user with the specified id.|
-
-
-### Error responses
-|Status code|Error message|Description|
-|-----------|-------------|-----------|
 |400|Encoded key provided is invalid|The private decryption key provided is not correct.|
 |403|Forbidden|You are trying to access attributes that your application does not have access to.|
 |404|User Data Not Found|The specified user does not exist, or else that user has no value for the attributes specified.|
 
-
- ## GET /users/{userId}/attribute/{attributeKey}
+## GET /users/{userId}/attribute/{attributeKey}
 
 Displays information about an attribute for one user.
 
@@ -283,12 +291,6 @@ Displays information about an attribute for one user.
   ]
 }
 ```
-
-### Error responses
-|Status code|Error message|Description|
-|-----------|-------------|-----------|
-|404        |Not found    |The system does not contain an user with the specified id.|
-
 
 ### Error responses
 |Status code|Error message|Description|
@@ -335,6 +337,16 @@ Retrieves data with the given datapoint id
 |400|Encoded key provided is invalid|The private decryption key provided is not correct.|
 |403|Forbidden|Your application does not have access to the attribute of the data point you are trying to read.|
 |404|User Data Not Found|There is no data point in the system with the specified ID.|
+
+## DELETE /entities/{entityId}/attributes/{attributeKey}
+Deletes attributes for the given entity and attribute
+
+Identical to [DELETE /users/{userId}/attributes/{attributeKey}](#delete-usersuseridattributesattributekey), but deletes data for entities rather than users.
+
+## DELETE /entities/{entityId}/data
+Stores attributes for the given entity
+
+Identical to [DELETE /users/{userId}/data](#delete-usersuseriddata), but deletes data for entities rather than users.
 
 ## DELETE /users/{userId}/attributes/{attributeKey}
 Deletes attributes for the given user and attribute

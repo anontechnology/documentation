@@ -1,48 +1,21 @@
-# Attribute Defintions
+# Attribute
 
-Attributes are how the ViziVault ecosystem organizes your data. Every data point consists of two main components: a user id (or entity id), which represents who the data is about; and an attribute, which is some piece of information about the user; For example, in an online retail application, there would be an attribute for shipping addresses, an attribute for billing addresses, and an attribute for credit card information.
+Attributes are the form in which data in ViziVault is stored. Every attribute represents some piece of information about a user in the system. The [AttributeDefintion](/glossary/attribute-definition) that an attribute belongs to specifies important metadata about the nature of the data.
 
 ## Definition
 
-There are several forms of metadata associated with attributes, as follows:
+The anatomy of a Attribute is as follows:
 
 |Name |Type |Description|
 |-----|-----|-----------|
-|key|String|An unambiguous identifier for this attribute. Only alphanumeric characters and underscores may appear in attribute keys.|
-|name|String|A human-readable identifier for this attribute.|
-|tags|Array<String>|A list of [tags](/glossary/tag) that should be applied to all datapoints under this attribute.|
-|hint|String|An example value that this attribute could take.|
-|immutable|boolean|Whether this attribute is a pre-loaded attribute provided by ViziVault that cannot be modified through the web interface.|
-|indexed|boolean|Whether this attribute's value should be indexed to allow searching on it. For more information, read [the Search tutorial](/tutorials/search).|
+|dataPointId|String|A globally-unique identifier for this attribute.|
+|userId|String|The identifier of the user this attribute belongs to.|
+|attribute|String|The attribute key, which specifies the attribute definition that this attribute belongs to.|
+|tags|Array<String>|A list of [tags](/glossary/tag) applied to this attribute, including any inherited from its attribute definition or its user.|
+|sensitivity|String|How sensitive this attribute is. Possible values are `NORMAL`, `PERSONAL`, `SENSITIVE`, and `CONFIDENTIAL`.|
+|value|(varies)|The actual value of this attribute. What type the value is depends on the [schema](/tutorials/attribute-schemas) of the attribute definition.|
+|regulations|Array<String>|A list of [regulations](/glossary/regulation) that are applicable to this datapoint. These can be automatically populated by [rules](/tutorials/regulation-rules) applied to regulations.|
+|structureRootId|String|If this particular attribute represents a sub-attribute within a structured attribute, this field contains the datapoint id of the root of that structure. See [Attribute schemas](/tutorials/attribute-schemas) for more information on structured datapoints.|
+|reportOnly|Boolean|If true, indicates that the ViziVault system is being used to report on this data point but not to store it. As sucn, it will not be possible to read the value of this datapoint. In this case, providing the value while storing the attribute is optional.|
 |createdDate|String|An ISO 8601 representation of the timestamp when the attribute was created.|
 |modifiedDate|String|An ISO 8601 representation of the timestamp when the attribute was most recently modified.|
-|schema|[Attribute schema](/tutorials/attribute-schemas)|A representation of the structure of data this attribute is expected to have, including any sub-attributes, and whether its data is textual, numeric, or other formats. Read [the Attribute Schemas tutorial](/tutorials/attribute-schemas) for more information.|
-|repeatable|boolean|Whether a user should be able to have multiple values for this attribute.|
-|regulations|Array<String>|A list of [regulation keys](/glossary/regulation), each representing a regulation that is applicable to all datapoints of this attribute.|
-
-## Examples
-
-An example attribute definition representing a user's billing address:
-
-```json
-{
-  "key" : "BILLING_ADDRESS",
-  "name" : "Billing address",
-  "tags": ["geographic_location", "financial"],
-  "hint" : "{ line_one: \"1 Hacker Way\", line_two: \"Apt. 53\", city: \"Menlo Park\", state: \"California\", postal_code: \"94025-1456\", country: \"USA\"}",
-  "schema": {
-    "line_one": "string",
-    "line_two": "string",
-    "city": "string",
-    "state": "string",
-    "postal_code": "string",
-    "country": "string"
-  },
-  "repeatable": false,
-  "immutable": false,
-  "indexed": false,
-  "regulations" : ["GDPR", "CCPA"],
-  "createdDate" : "2020-01-01T02:18:54Z",
-  "modifiedDate" : "2020-01-01T02:18:54Z"
-}
-```

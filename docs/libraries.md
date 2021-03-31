@@ -7,7 +7,7 @@ We offer an official SDK for most languages widely used in the industry today an
 - [Node.js](https://github.com/anontechnology/vault-node-sdk)
 - [Python](https://github.com/anontechnology/vault-python-sdk)
 - [C#](https://github.com/anontechnology/vault-csharp-sdk)
-- PHP
+- PHP (beta)
 
 Library not available for your desired language? Feel free to contribute to our [open source community](https://github.com/anontechnology)!
 
@@ -20,8 +20,9 @@ Library not available for your desired language? Feel free to contribute to our 
     ``` xml
     <!-- In your pom.xml -->
     <dependency>
-        <groupId>io.anontech.vizivault</groupId>
-        <artifactId>anontech-vizivault-client</artifactId>
+      <groupId>io.anontech.vizivault</groupId>
+      <artifactId>vizivault-java-client</artifactId>
+      <version>1.0.0</version>
     </dependency>
     ```
 
@@ -58,8 +59,8 @@ Library not available for your desired language? Feel free to contribute to our 
 === "Java"
 
     ``` java
-    String encryptionKey = System.getenv("ENCRYPTIONKEY");
-    String decryptionKey = System.getenv("DECRYPTIONKEY");
+    String encryptionKey = System.getenv("VIZIVAULT_ENCRYPTION_KEY");
+    String decryptionKey = System.getenv("VIZIVAULT_DECRYPTION_KEY");
     ViziVault vault = new ViziVault(url)
       .withApiKey(apiKey)
       .withEncryptionKey(encryptionKey)
@@ -69,8 +70,8 @@ Library not available for your desired language? Feel free to contribute to our 
 === "C#"
 
     ``` c#
-    string encryptionKey = System.Environment.GetEnvironmentVariable("ENCRYPTIONKEY");
-    string decryptionKey = System.Environment.GetEnvironmentVariable("DECRYPTIONKEY");
+    string encryptionKey = System.Environment.GetEnvironmentVariable("VIZIVAULT_ENCRYPTION_KEY");
+    string decryptionKey = System.Environment.GetEnvironmentVariable("VIZIVAULT_DECRYPTION_KEY");
     ViziVault vault = new ViziVault(url)
       .WithApiKey(apiKey)
       .WithEncryptionKey(encryptionKey)
@@ -80,8 +81,8 @@ Library not available for your desired language? Feel free to contribute to our 
 === "Node.js"
 
     ``` javascript
-    const encryptionKey = process.env.ENCRYPTIONKEY;
-    const decryptionKey = process.env.DECRYPTIONKEY;
+    const encryptionKey = process.env.VIZIVAULT_ENCRYPTION_KEY;
+    const decryptionKey = process.env.VIZIVAULT_DECRYPTION_KEY;
     let vault = new ViziVault()
       .withBaseURL(url)
       .withAPIKey(apiKey)
@@ -95,15 +96,15 @@ Library not available for your desired language? Feel free to contribute to our 
     vault = vizivault.ViziVault(
         base_url=url,
         api_key=apiKey,
-        encryption_key=os.getenv('ENCRYPTIONKEY'),
-        decryption_key=os.getenv('DECRYPTIONKEY')
+        encryption_key=os.getenv('VIZIVAULT_ENCRYPTION_KEY'),
+        decryption_key=os.getenv('VIZIVAULT_DECRYPTION_KEY')
     ```
 
 === "PHP"
 
     ``` php
-    $encryptionKey = getenv("ENCRYPTIONKEY");
-    $decryptionKey = getenv("DECRYPTIONKEY");
+    $encryptionKey = getenv("VIZIVAULT_ENCRYPTION_KEY");
+    $decryptionKey = getenv("VIZIVAULT_DECRYPTION_KEY");
     $vault = new ViziVault()
       ->withBaseURL($url)
       ->withAPIKey($apiKey)
@@ -116,11 +117,11 @@ Library not available for your desired language? Feel free to contribute to our 
 ----------------------------------------------------------------------
 ## Attributes
 
-Attributes are how the ViziVault ecosystem organizes your data. Every data point consists of three main components: a user id, which represents who the data is about; a value, which is some piece of information about the user; and an attribute, which expresses the relationship between the user and the value. For example, in an online retail application, there would be an attribute for shipping addresses, an attribute for billing addresses, and an attribute for credit card information.
+The ViziVault ecosystem organizes your data using the concept of attributes. Every data point consists of three main components: a user id, which represents who the data is about; a value, which is some piece of information about the user; and an attribute, which expresses the relationship between the user and the value. For example, in an online retail application, there would be an attribute for shipping addresses, an attribute for billing addresses, an attribute for credit card information, and so on.
 
 ### Adding an Attribute to an Entity or User
 
-[Attributes](/glossary/attribute) are stored as `key`/`value` pairs of strings. Both Users and Entities can have Attributes set to them. If there is an existing Attribute in the system with the `key` of the provided Attribute, that Attribute will be updated; otherwise, a new Attribute will be created.
+[Attributes](/glossary/attribute) are stored as `key`/`value` pairs of strings. Both users and entities can have attributes added to them. Some attributes are repeatable, such that multiple values can be stored for the same user; others are not repeatable, such that adding a new value to a user will overwrite any previous values. You can control whether an attribute is repeatable by modifying the associated [attribute definition](/glossary/attribute-definition).
 
 === "Java"
 
@@ -134,6 +135,13 @@ Attributes are how the ViziVault ecosystem organizes your data. Every data point
     Entity entity = vault.findByEntity("Client6789");
     entity.addAttribute("FULL_ADDRESS", "1 Hacker Way, Beverly Hills, CA 90210");
     vault.save(entity);
+
+    // Adding an attribute with additional metadata to a user
+    Attribute attribute = new Attribute("LAST_NAME");
+    attribute.setTags(List.of("ExampleTag"));
+    attribute.setValue("Smith");
+    user.addAttribute(attribute);
+    vault.save(user);
     ```
 
 === "C#"
@@ -148,6 +156,12 @@ Attributes are how the ViziVault ecosystem organizes your data. Every data point
     Entity entity = await vault.FindByEntityAsync("Client6789");
     entity.AddAttribute("FULL_ADDRESS", "1 Hacker Way, Beverly Hills, CA 90210");
     await vault.SaveAsync(entity);
+
+    // Adding an attribute with additional metadata to a user
+    AttributeValue attribute = new Attribute("LAST_NAME") {
+        Tags = new List<String>{"ExampleTag"},
+        Value = "Smith"
+    };
     ```
 
 === "Node.js"
@@ -264,7 +278,7 @@ Retrieves all [Attributes](/glossary/attribute) for the specified entity or user
 
 ### Retrieving an Attribute of an Entity or User
 
-Retrieves a single specified [Attribute](/glossary/attribute) for the specified entity or user. For repeatable attributes, use `getAttributes(attributeName)`; for non-repeatable attributes, use `getAttribute(attributeName)`.
+Retrieves a single specified [attribute](/glossary/attribute) for the specified entity or user. For repeatable attributes, use `getAttributes(attributeName)`; for non-repeatable attributes, use `getAttribute(attributeName)`.
 
 === "Java"
 
@@ -342,13 +356,17 @@ To search a Vault for [Attributes](/glossary/attribute), pass in a SearchRequest
 === "Java"
 
     ``` java
-    List<Attribute> attributes = vault.search(new SearchRequest("LAST_NAME", "Doe"));
+    int pageIndex = 0;
+    int maxCount = 25;
+    List<Attribute> attributes = vault.search(new SearchRequest("LAST_NAME", "Doe"), pageIndex, maxCount);
     ```
 
 === "C#"
 
     ``` c#
-    List<Attribute> attributes = await vault.SearchAsync(new SearchRequest("LAST_NAME", "Doe"));
+    int pageIndex = 0;
+    int maxCount = 25;
+    List<Attribute> attributes = await vault.SearchAsync(new SearchRequest("LAST_NAME", "Doe"), pageIndex, maxCount);
     ```
 
 === "Node.js"
@@ -382,8 +400,7 @@ To search a Vault for [Attributes](/glossary/attribute), pass in a SearchRequest
 
     ``` java
     // Purging all user attributes
-    User user = vault.findByUser("User1234");
-    vault.purge(user.getId());
+    vault.purge("User1234");
 
     // Removing specific attribute
     User user = vault.findByUser("User1234");
@@ -395,8 +412,7 @@ To search a Vault for [Attributes](/glossary/attribute), pass in a SearchRequest
 
     ``` c#
     // Purging all user attributes
-    User user = await vault.FindByUserAsync("User1234");
-    await vault.PurgeAsync(user.Id);
+    await vault.PurgeAsync("User1234");
 
     // Removing specific attribute
     User user = await vault.FindByUserAsync("User1234");
@@ -445,11 +461,11 @@ To search a Vault for [Attributes](/glossary/attribute), pass in a SearchRequest
 ----------------------------------------------------------------------
 ## Attribute Definitions
 
-Attributes are defined with an object housing all relevant metadata for the `key`. This is where attributes are given [Tags](/glossary/tag) and [Regulations](/glossary/regulation), along with any schema to further break down the structure of the `value` of the Attribute. Display names and hints can also be added to the Attribute Definition for ease of use and readability. 
+Attributes are defined using an object that contains all relevant metadata for the `key`. This is where attributes are given [tags](/glossary/tag) and [regulations](/glossary/regulation), along with a [schema](/tutorials/attribute-schemas) to specify the expected structure of the `value` of the attribute. Display names and hints can also be added to the Attribute Definition for ease of use and readability. 
 
 ### Storing an Attribute Definition in the Vault
 
-To store an Attribute Definition, create an AttributeDefinition object and save it to the Vault. The following code details the various properties of the AttributeDefinition object.
+To store an attribute definition, create an AttributeDefinition object and save it to the Vault as shown in the following code.
 
 === "Java"
 
@@ -460,7 +476,7 @@ To store an Attribute Definition, create an AttributeDefinition object and save 
     attributeDef.setHint("{ line_one: \"1 Hacker Way\", line_two: \"Apt. 53\"," +
                         "city: \"Menlo Park\", state: \"California\", " +
                         "postal_code: \"94025-1456\", country: \"USA\"" +
-                      "}");
+                        "}");
     attributeDef.setSchema(PrimitiveSchema.STRING); // For simple, unstsructured data
     attributeDef.schemaFromClass(YourModel.class); // Alternatively, creating a schema to store objects of a class
     attributeDef.setRepeatable(false);
@@ -476,6 +492,7 @@ To store an Attribute Definition, create an AttributeDefinition object and save 
     attributeDef.name = "Billing Address";
     attributeDef.tags = {"geographic_location", "financial"};
     attributeDef.hint = "{ line_one: \"1 Hacker Way\", line_two: \"Apt. 53\", city: \"Menlo Park\", state: \"California\", postal_code: \"94025-1456\" country: \"USA\" }";
+
     attributeDef.SetSchema(PrimitiveSchema.String); // For simple, unstsructured data
     attributeDef.SchemaFromClass(typeof(YourModel)); // Alternatively, creating a schema to store objects of a class
     attributeDef.repeatable = false;
@@ -559,7 +576,7 @@ To store an Attribute Definition, create an AttributeDefinition object and save 
 
 ### Retrieving Attribute Definitions from the Vault
 
-Attribute Definitions can be retrieved from the Vault in bulk or by specifying the AttributeDefinition name. `getAttributeDefinitions` returns a list of AttributeDefinitions and `getAttributeDefinition` returns the AttributeDefinition given its name.
+To view metadata about attribute definitions, call `getAttributeDefinition` to view one attribute definition by name or `getAttributeDefinitions` to list all attribute definitions in the system.
 
 === "Java"
 
@@ -615,11 +632,11 @@ Attribute Definitions can be retrieved from the Vault in bulk or by specifying t
 ----------------------------------------------------------------------
 ## Tags
 
-Similar to [Regulations](/glossary/regulation), Tags are user-defined strings that can be applied to Attributes to aid in classification and searching.
+Similar to [regulations](/glossary/regulation), Tags are user-defined strings that can be applied to attributes to aid in classification and searching.
 
 ### Storing a Tag in the Vault
 
-To store a new Tag, create a Tag object and save it to the Vault.
+To store a new tag, create a tag object and save it to the vault.
 
 
 === "Java"
@@ -655,7 +672,7 @@ To store a new Tag, create a Tag object and save it to the Vault.
 
 ### Retrieving Tags from the Vault
 
-Tags can be retrieved as a list of Tag objects or as a single Tag if the specific Tag is specified.
+Like attribute definition metadata, tag metadata can be retrieved for a single tag or for all tags in the system.
 
 === "Java"
 
@@ -714,7 +731,7 @@ Tags can be retrieved as a list of Tag objects or as a single Tag if the specifi
 
 ### Deleting Tags from the Vault
 
-To remove a Tag, specify the Tag to be removed. A boolean denoting the status of the operation will be returned.
+To delete a tag, specify the tag to be removed. A boolean denoting the status of the operation will be returned. This will remove the tag from all attributes, attribute definitions, and users that are currently tagged with it.
 
 === "Java"
 
@@ -761,7 +778,7 @@ A regulation object represents a governmental regulation that impacts how you ca
 
 ### Storing a Regulation in the Vault
 
-To store a [Regulation](/glossary/regulation) to the Vault, create a new Regulation object and save it to the Vault. The constructor takes the `key`, `name`, and `url` of the Regulation.
+To store a [regulation](/glossary/regulation) to the vault, create a Regulation object, set its key and its display name along with a URL pointing to further information about it, and call `storeRegulation`. To automatically apply regulations to incoming data, [rules](/tutorials/regulation-rules) can be specified.
 
 === "Java"
 
@@ -824,7 +841,7 @@ To store a [Regulation](/glossary/regulation) to the Vault, create a new Regulat
 
 ### Retrieving Regulations from the Vault
 
-[Regulations](/glossary/regulation) can be retrieved as a list of Regulation objects or as a single Regulation if the specific Regulation is specified.
+[Regulations](/glossary/regulation) can be retrieved as a list of Regulation objects or by requesting a single regulation by its key.
 
 === "Java"
 
@@ -883,7 +900,7 @@ To store a [Regulation](/glossary/regulation) to the Vault, create a new Regulat
 
 ### Deleting Regulations from the Vault
 
-To remove a [Regulation](/glossary/regulation), specify the Regulation to be removed. A boolean denoting the status of the operation will be returned.
+To remove a [regulation](/glossary/regulation), specify the key of the regulation to be removed. A boolean denoting the status of the operation will be returned.
 
 === "Java"
 

@@ -1,8 +1,8 @@
 # Discover
 
-![discover](../assets/images/discover.png "Discover")
+The Discover page lets you browse the information and activities happening in your vault dynamically. This allows you to drill in on relevant subsets of information.
 
-##### Discovery lets you browse the information and activities happening in your vault dynamically. This allows you to drill in on relevant subsets of information.
+![discover](../assets/images/discover.png "Discover")
 
 1. User counts segmented by time and/or region
 2. Aggregate datapoint count split up by attribute data type. Examine totals by time, region, and overall breakdown.

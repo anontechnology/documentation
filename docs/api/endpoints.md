@@ -5,6 +5,7 @@ Guides and reference materials to help you get started, integrate, optimize, and
 -   [POST /attributes](/api/attributes#post-attributes)
 -   [GET /attributes](/api/attributes#get-attributes)
 -   [GET /attributes/{attributeKey}](/api/attributes#get-attributesattributekey)
+-   [DELETE /attributes/{attributeKey}](/api/attributes#delete-attributesattributekey)
 
 ### Tags
 -   [POST​ /tags](/api/tags#post-tags)
@@ -14,10 +15,15 @@ Guides and reference materials to help you get started, integrate, optimize, and
 
 ### Attributes
 -   [POST /search](/api/datapoints#post-search)
+-   [POST /entities/{entityId}/attributes](/api/datapoints#post-entitiesentityidattributes)
 -   [POST /users/{userId}/attributes](/api/datapoints#post-usersuseridattributes)
+-   [GET /entities/{entityId}/attributes](/api/datapoints#get-entitiesentityidattributes)
+-   [GET /entities/{entityId}/attribute/{attributeKey}](/api/datapoints#get-entitiesentityidattributeattributtekey)
 -   [GET /users/{userId}/attributes](/api/datapoints#get-usersuseridattributes)
 -   [GET /users/{userId}/attribute/{attributeKey}](/api/datapoints#get-usersuseridattributeattributtekey)
 -   [GET /data/{dataPointId}](/api/datapoints#get-datadatapointid)
+-   [DELETE /entities/{entityId}/attributes/{attributeKey}](/api/datapoints#delete-entitiesentityidattributesattributekey)
+-   [DELETE /entities/{entityId}/data](/api/datapoints#delete-entitiesentityiddata)
 -   [DELETE /users/{userId}/attributes/{attributeKey}](/api/datapoints#delete-usersuseridattributesattributekey)
 -   [DELETE /users/{userId}/data](/api/datapoints#delete-usersuseriddata)
 
@@ -28,5 +34,9 @@ Guides and reference materials to help you get started, integrate, optimize, and
 -   [DELETE /regulations/{regulation}](/api/regulations#delete-regulationsregulationkey)
 
 ### Users
+-   [POST /entities](/api/users#post-entities)
+-   [POST /users](/api/users#post-users)
+-   [GET /entities](/api/users#get-entities)
+-   [GET /entities/{entityid}](/api/users#get-entitiesentityid)
 -   [GET /users](/api/users#get-users)
 -   [GET /users/{userId}](/api/users#get-usersuserid)
