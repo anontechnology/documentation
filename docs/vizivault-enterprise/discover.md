@@ -5,7 +5,7 @@ The Discover page lets you browse the information and activities happening in yo
 ![discover](../assets/images/discover.png "Discover")
 
 1. User counts segmented by time and/or region
-2. Aggregate datapoint count split up by attribute data type. Examine totals by time, region, and overall breakdown.
+2. Aggregate datapoint count split up by attribute. Examine totals by time, region, and overall breakdown.
 3. Aggregate datapoint counts split up by data accessibility. Examine totals by time, region, and overall breakdown.
 4. Aggregate datapoint counts split up by regulation. Examine totals by time, region, and overall breakdown.
 5. Aggregate activity counts split up by application origin. Examine totals by time, region, and overall breakdown.
