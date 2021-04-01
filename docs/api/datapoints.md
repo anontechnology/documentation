@@ -133,7 +133,9 @@ Stores attributes for the given entity
 Identical to [POST /users/{userId}/attributes](#post-usersuseridattributes), but stores data for entities rather than users.
 
 ## POST /users/{userId}/attributes
-Stores attributes for the given user
+Stores attributes for the given user.
+
+For each attribute stored, if the attribute is repeatable, existing data in the vault will not be affected. If the attribute is not repeatable, existing data will be overwritten. If you want to make modifications to a nonrepeatable attribute, the best way is to read the current value, make changes as necessary, and then store the complete  modified attribute.
 
 ### Header Parameters
 |Name            |Type                           |Description                  |
