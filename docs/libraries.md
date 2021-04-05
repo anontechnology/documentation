@@ -117,21 +117,21 @@ Library not available for your desired language? Feel free to contribute to our 
 ----------------------------------------------------------------------
 ## Attributes
 
-The ViziVault ecosystem organizes your data using the concept of attributes. Every data point consists of three main components: a user id, which represents who the data is about; a value, which is some piece of information about the user; and an attribute, which expresses the relationship between the user and the value. For example, in an online retail application, there would be an attribute for shipping addresses, an attribute for billing addresses, an attribute for credit card information, and so on.
+The ViziVault ecosystem organizes your data using the concept of [attributes](/glossary/attribute). Every data point consists of three main components: a user id, which represents who the data is about; a value, which is some piece of information about the user; and an attribute, which expresses the relationship between the user and the value. For example, in an online retail application, there would be an attribute for shipping addresses, an attribute for billing addresses, an attribute for credit card information, and so on.
 
 ### Adding an Attribute to an Entity or User
 
-[Attributes](/glossary/attribute) are stored as `key`/`value` pairs of strings. Both users and entities can have attributes added to them. Some attributes are repeatable, such that multiple values can be stored for the same user; others are not repeatable, such that adding a new value to a user will overwrite any previous values. You can control whether an attribute is repeatable by modifying the associated [attribute definition](/glossary/attribute-definition).
+Attributes are stored as `key`/`value` pairs of strings. Both users and entities can have attributes added to them. Some attributes are repeatable, such that multiple values can be stored for the same user; others are not repeatable, such that adding a new value to a user will overwrite any previous values. You can control whether an attribute is repeatable by modifying the associated [attribute definition](/glossary/attribute-definition).
 
 === "Java"
 
     ``` java
-    // Adding an attribute to user
-    User user = vault.findByUser("User1234");
-    user.addAttribute("FIRST_NAME", "Jane");
+    // Adding an attribute to a newly-created user
+    User user = new User("exampleUser");
+    user.addAttribute(FIRST_NAME, "Jane");
     vault.save(user);
 
-    // Adding an attribute to entity
+    // Adding an attribute to an entity retrieved from the vault
     Entity entity = vault.findByEntity("Client6789");
     entity.addAttribute("FULL_ADDRESS", "1 Hacker Way, Beverly Hills, CA 90210");
     vault.save(entity);
@@ -162,6 +162,8 @@ The ViziVault ecosystem organizes your data using the concept of attributes. Eve
         Tags = new List<String>{"ExampleTag"},
         Value = "Smith"
     };
+    user.AddAttribute(attribute);
+    await vault.SaveAsync(user);
     ```
 
 === "Node.js"
@@ -349,49 +351,6 @@ Retrieves a single specified [attribute](/glossary/attribute) for the specified 
     $attributes = $entity->getAttribute("FULL_ADDRESS");
     ```  
 
-### Searching
-
-To search a Vault for [Attributes](/glossary/attribute), pass in a SearchRequest. A list of matching Attributes will be returned. For more information, [read about ViziVault search](/tutorials/search). 
-
-=== "Java"
-
-    ``` java
-    int pageIndex = 0;
-    int maxCount = 25;
-    List<Attribute> attributes = vault.search(new SearchRequest("LAST_NAME", "Doe"), pageIndex, maxCount);
-    ```
-
-=== "C#"
-
-    ``` c#
-    int pageIndex = 0;
-    int maxCount = 25;
-    List<Attribute> attributes = await vault.SearchAsync(new SearchRequest("LAST_NAME", "Doe"), pageIndex, maxCount);
-    ```
-
-=== "Node.js"
-
-    ``` javascript
-    const count = 1;
-    const page = 1;
-    vault.search(new SearchRequest("LAST_NAME", "Doe"), page, count).then((attributes) => {
-        // use attributes
-    });
-    ```
-
-=== "Python"
-
-    ``` python
-    attributes = vault.search(SearchRequest("LAST_NAME", "Doe"))
-    ```
-
-=== "PHP"
-
-    ``` php
-    $attributes = $vault.search(new SearchRequest("LAST_NAME", "Doe"));
-    ```  
-  
-
 ### Deleting User Attributes
 
 [Attributes](/glossary/attribute) can be removed from the User object by calling `clearAttribute` with the specified attribute name, or by calling `purge` to remove all Attributes.
@@ -457,15 +416,58 @@ To search a Vault for [Attributes](/glossary/attribute), pass in a SearchRequest
     $user = $vault->findByUser("User1234");
     $user->remove("LAST_NAME");
     ```  
-  
+
+
+### Searching
+
+To search a vault for [attributes](/glossary/attribute), pass in a SearchRequest. A list of matching Attributes will be returned. For more information, [read about ViziVault search](/tutorials/search). 
+
+=== "Java"
+
+    ``` java
+    int pageIndex = 0;
+    int maxCount = 25;
+    List<Attribute> attributes = vault.search(new SearchRequest("LAST_NAME", "Doe"), pageIndex, maxCount);
+    ```
+
+=== "C#"
+
+    ``` c#
+    int pageIndex = 0;
+    int maxCount = 25;
+    List<Attribute> attributes = await vault.SearchAsync(new SearchRequest("LAST_NAME", "Doe"), pageIndex, maxCount);
+    ```
+
+=== "Node.js"
+
+    ``` javascript
+    const count = 1;
+    const page = 1;
+    vault.search(new SearchRequest("LAST_NAME", "Doe"), page, count).then((attributes) => {
+        // use attributes
+    });
+    ```
+
+=== "Python"
+
+    ``` python
+    attributes = vault.search(SearchRequest("LAST_NAME", "Doe"))
+    ```
+
+=== "PHP"
+
+    ``` php
+    $attributes = $vault.search(new SearchRequest("LAST_NAME", "Doe"));
+    ```  
+
 ----------------------------------------------------------------------
 ## Attribute Definitions
 
-Attributes are defined using an object that contains all relevant metadata for the `key`. This is where attributes are given [tags](/glossary/tag) and [regulations](/glossary/regulation), along with a [schema](/tutorials/attribute-schemas) to specify the expected structure of the `value` of the attribute. Display names and hints can also be added to the Attribute Definition for ease of use and readability. 
+Attributes are defined using an [attribute definition](/glossary/attribute-definition) object that contains all relevant metadata for the `key`. This is where attributes are given [tags](/glossary/tag) and [regulations](/glossary/regulation), along with a [schema](/tutorials/attribute-schemas) to specify the expected structure of the `value` of the attribute. Display names and hints can also be added to the attribute definition for ease of use and readability. 
 
 ### Storing an Attribute Definition in the Vault
 
-To store an attribute definition, create an AttributeDefinition object and save it to the Vault as shown in the following code.
+To store an attribute definition, create an AttributeDefinition object and save it to the vault as shown in the following code.
 
 === "Java"
 
@@ -626,17 +628,17 @@ To view metadata about attribute definitions, call `getAttributeDefinition` to v
 
     // Retrieving specific attribute
     $attribute = $vault->getAttributeDefinition("Billing Address");
-    ```  
+    ```
   
 
 ----------------------------------------------------------------------
 ## Tags
 
-Similar to [regulations](/glossary/regulation), Tags are user-defined strings that can be applied to attributes to aid in classification and searching.
+[Tags](/glossary/tag) are user-defined strings that can be applied to attributes to aid in classification and searching.
 
 ### Storing a Tag in the Vault
 
-To store a new tag, create a tag object and save it to the vault.
+To store a new tag, create a Tag object and save it to the vault.
 
 
 === "Java"
@@ -774,11 +776,11 @@ To delete a tag, specify the tag to be removed. A boolean denoting the status of
 ----------------------------------------------------------------------
 ## Regulations
 
-A regulation object represents a governmental regulation that impacts how you can use the data in your vault. Each data point can have a number of regulations associated with it, which makes it easier to ensure your use of the data is compliant. You can tag data points with regulations when entering them into the system, or specify rules that the system will use to automatically tag regulations for you.
+A [regulation](/glossary/regulation) object represents a governmental regulation that impacts how you can use the data in your vault. Each data point can have a number of regulations associated with it, which makes it easier to ensure your use of the data is compliant. You can tag data points with regulations when entering them into the system, or specify rules that the system will use to automatically tag regulations for you.
 
 ### Storing a Regulation in the Vault
 
-To store a [regulation](/glossary/regulation) to the vault, create a Regulation object, set its key and its display name along with a URL pointing to further information about it, and call `storeRegulation`. To automatically apply regulations to incoming data, [rules](/tutorials/regulation-rules) can be specified.
+To store a regulation to the vault, create a Regulation object, set its key and its display name along with a URL pointing to further information about it, and call `storeRegulation`. To automatically apply regulations to incoming data, [rules](/tutorials/regulation-rules) can be specified.
 
 === "Java"
 
