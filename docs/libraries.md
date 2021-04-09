@@ -383,13 +383,12 @@ Retrieves a single specified [attribute](/glossary/attribute) for the specified 
 
     ``` javascript
     // Purging all user attributes
-    vault.findByUser("User1234").then((user) => {
-        user.purge();
-    });
+    vault.purge("User1234");
 
     // Removing specific attribute
     let user = vault.findByUser("User1234").then((user) => {
         user.remove("LAST_NAME");
+        vault.save(user);
     });
     ```
 
@@ -451,7 +450,7 @@ To search a vault for [attributes](/glossary/attribute), pass in a SearchRequest
 === "Python"
 
     ``` python
-    attributes = vault.search(SearchRequest("LAST_NAME", "Doe"))
+    attributes = vault.search(SearchRequest("LAST_NAME", "Doe"), page=0, count=25)
     ```
 
 === "PHP"
