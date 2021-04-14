@@ -18,7 +18,7 @@ There are several forms of metadata associated with attributes, as follows:
 |modifiedDate|String|An ISO 8601 representation of the timestamp when the attribute definition was most recently modified.|
 |schema|[Attribute schema](/tutorials/attribute-schemas)|A representation of the structure of data belonging to this attribute is expected to have, including any sub-attributes, and whether its data is textual, numeric, or other formats. Read [the Attribute Schemas tutorial](/tutorials/attribute-schemas) for more information.|
 |repeatable|boolean|Whether a user should be able to have multiple values for this attribute.|
-|regulations|Array<String>|A list of [regulation keys](/glossary/regulation), each representing a regulation that is applicable to all attributes belonging to this attribute definition.|
+|regulations|Array<String>|A list of [regulation keys](/glossary/regulation), each representing a regulation that will be applied to all attributes belonging to this attribute definition.|
 
 ## Examples
 
