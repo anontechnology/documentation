@@ -298,46 +298,6 @@ Let's add some attributes with structure. Here we add a user's full name and the
 
 Now that we have attributes, let's load some data. We will iterate over every example in our sample CSV. For each row we define a user based on the userid. Then we simply load the vaules for the flat files. For structured object data we create a hash structure and insert the key/value pairs. Finally, we save the completed user to the vault.
 
-=== "Java"
-
-    ```java
-    File csvSampleFile = new File("src" + File.separator + "test" + File.separator + "resources" + File.separator + "tutorial_test.csv");
-    Reader csvReader = new FileReader(csvSampleFile);
-
-    // Use Jackson
-    Iterator<Map<String, String>> iterator = new CsvMapper()
-        .readerFor(Map.class)
-        .with(CsvSchema.emptySchema().withHeader())
-        .readValues(csvReader);
-
-    while(iterator.hasNext()) {
-        Map<String, String> csvVals = iterator.next();
-        User user=new User(csvVals.get("USERID"));
-
-        user.addAttribute(eyeColorattributeDef.getName(),csvVals.get("USERID"));
-        user.addAttribute(ageAttributeDef.getName(),csvVals.get("AGE"));
-
-        Name name=new Name();
-        
-        name.setFirstName(csvVals.get("FIRST_NAME"));
-        name.setLastName(csvVals.get("LAST_NAME"));
-        name.setMiddleName(csvVals.get("MIDDLE_NAME"));
-        name.setCompany(csvVals.get("COMPANY"));
-        user.addAttribute(nameAttributeDef.getName(),myName);
-
-        Address address=new Address();
-        
-        address.setStreet(csvVals.get("STREET"));
-        address.setCity(csvVals.get("CITY"));
-        address.setState(csvVals.get("STATE"));
-        address.setCountry(csvVals.get("COUNTRY"));
-
-        user.addAttribute(addressAttributeDef.getName(),myAddress);
-        vault.save(user);
-    
-    }
-    ```
-
 === "C#"
     ``` c#
     using (var parser = new TextFieldParser("./resources/tutorial_test.csv")) {
@@ -434,6 +394,47 @@ Now that we have attributes, let's load some data. We will iterate over every ex
                     header_row = False
             vault.purge(new_user.id)
     ```
+
+=== "Java"
+
+    ```java
+    File csvSampleFile = new File("src" + File.separator + "test" + File.separator + "resources" + File.separator + "tutorial_test.csv");
+    Reader csvReader = new FileReader(csvSampleFile);
+
+    // Use Jackson
+    Iterator<Map<String, String>> iterator = new CsvMapper()
+        .readerFor(Map.class)
+        .with(CsvSchema.emptySchema().withHeader())
+        .readValues(csvReader);
+
+    while(iterator.hasNext()) {
+        Map<String, String> csvVals = iterator.next();
+        User user=new User(csvVals.get("USERID"));
+
+        user.addAttribute(eyeColorattributeDef.getName(),csvVals.get("USERID"));
+        user.addAttribute(ageAttributeDef.getName(),csvVals.get("AGE"));
+
+        Name name=new Name();
+        
+        name.setFirstName(csvVals.get("FIRST_NAME"));
+        name.setLastName(csvVals.get("LAST_NAME"));
+        name.setMiddleName(csvVals.get("MIDDLE_NAME"));
+        name.setCompany(csvVals.get("COMPANY"));
+        user.addAttribute(nameAttributeDef.getName(),myName);
+
+        Address address=new Address();
+        
+        address.setStreet(csvVals.get("STREET"));
+        address.setCity(csvVals.get("CITY"));
+        address.setState(csvVals.get("STATE"));
+        address.setCountry(csvVals.get("COUNTRY"));
+
+        user.addAttribute(addressAttributeDef.getName(),myAddress);
+        vault.save(user);
+    
+    }
+    ```
+
 ### Retrieving Data for a User
 
 Now that we have data in the system, let's try to get our data back. Here we grab the data for a user with the id 101.
