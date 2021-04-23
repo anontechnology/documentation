@@ -391,3 +391,25 @@ Deletes all data for the given user
 |Status code|Error message|Description|
 |-----------|-------------|-----------|
 |404|User Not Found|There is no user in the system with the specified ID.|
+
+
+## DELETE /data/{dataPointId}
+Deletes data with the given datapoint id
+
+### Path Variables
+|Name               |Type                          |Description      |
+|-------------------|------------------------------|-----------------|
+|dataPointId        |String                        |Datapoint ID     |
+
+### Example Response
+```json
+{
+  "data": "Successfully Deleted Data Point"
+}
+```
+
+### Error responses
+|Status code|Error message|Description|
+|-----------|-------------|-----------|
+|403|Forbidden|Your application does not have access to the attribute of the data point you are trying to delete.|
+|404|User Data Not Found|There is no data point in the system with the specified ID.|

@@ -26,6 +26,7 @@ Guides and reference materials to help you get started, integrate, optimize, and
 -   [DELETE /entities/{entityId}/data](/api/datapoints#delete-entitiesentityiddata)
 -   [DELETE /users/{userId}/attributes/{attributeKey}](/api/datapoints#delete-usersuseridattributesattributekey)
 -   [DELETE /users/{userId}/data](/api/datapoints#delete-usersuseriddata)
+-   [DELETE /data/{dataPointId}](/api/datapoints#delete-datadatapointid)
 
 ### Regulations
 -   [POST /regulations](/api/regulations#post-regulations)
