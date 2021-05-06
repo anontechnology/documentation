@@ -353,7 +353,7 @@ Retrieves a single specified [attribute](/glossary/attribute) for the specified 
 
 ### Deleting User Attributes
 
-[Attributes](/glossary/attribute) can be removed from the User object by calling `clearAttribute` with the specified attribute name, or by calling `purge` to remove all Attributes.
+[Attributes](/glossary/attribute) can be removed from the User object by calling `clearAttribute` with the specified attribute name, or by calling `purge` to remove all attributes. Additionally, all attributes have a unique datapoint id, and attributes can be deleted using this id.
 
 === "Java"
 
@@ -361,10 +361,13 @@ Retrieves a single specified [attribute](/glossary/attribute) for the specified 
     // Purging all user attributes
     vault.purge("User1234");
 
-    // Removing specific attribute
+    // Removing all values of a specific attribute
     User user = vault.findByUser("User1234");
     user.clearAttribute("LAST_NAME");
     vault.save(user);
+
+    // Removing an individual value by its datapoint id
+    vault.deleteDataPoint("123e4567-e89b-12d3-a456-426614174000");
     ```
 
 === "C#"
@@ -377,6 +380,9 @@ Retrieves a single specified [attribute](/glossary/attribute) for the specified 
     User user = await vault.FindByUserAsync("User1234");
     user.ClearAttribute("LAST_NAME");
     await vault.SaveAsync(user);
+
+    // Removing an individual value by its datapoint id
+    await vault.DeleteDataPointAsync("123e4567-e89b-12d3-a456-426614174000");
     ```
 
 === "Node.js"
@@ -402,6 +408,9 @@ Retrieves a single specified [attribute](/glossary/attribute) for the specified 
     user = vault.findByUser("User1234")
     user.remove("LAST_NAME")
     vault.save(user)
+
+    # Removing an individual value by its datapoint id
+    vault.delete_data_point("123e4567-e89b-12d3-a456-426614174000")
     ```
 
 === "PHP"

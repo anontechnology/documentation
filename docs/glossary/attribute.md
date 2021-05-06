@@ -15,7 +15,6 @@ The anatomy of a Attribute is as follows:
 |sensitivity|String|How sensitive this attribute is. Possible values are `NORMAL`, `PERSONAL`, `SENSITIVE`, and `CONFIDENTIAL`.|
 |value|(varies)|The actual value of this attribute. What type the value is depends on the [schema](/tutorials/attribute-schemas) of the attribute definition.|
 |regulations|Array<String>|A list of [regulations](/glossary/regulation) that are applicable to this datapoint. These can be specified manually, or they can be drawn from the regulations associated with this datapoint's [attribute definition](/glossary/attribute-definition). Additionally, [rules](/tutorials/regulation-rules) can be specified to automatically populate the list of applicable regulations based on more sophisticated criteria.|
-|structureRootId|String|If this particular attribute represents a sub-attribute within a structured attribute, this field contains the datapoint id of the root of that structure. See [Attribute schemas](/tutorials/attribute-schemas) for more information on structured datapoints.|
 |reportOnly|Boolean|If true, indicates that the ViziVault system is being used to report on this data point but not to store it. As sucn, it will not be possible to read the value of this datapoint. In this case, providing the value while storing the attribute is optional.|
 |createdDate|String|An ISO 8601 representation of the timestamp when the attribute was created.|
 |modifiedDate|String|An ISO 8601 representation of the timestamp when the attribute was most recently modified.|

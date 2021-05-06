@@ -39,6 +39,7 @@ For more information on how to specify rules for regulations, see [Regulation ru
 |400        |Tag list operator \[operator\] is not supported.|An invalid operator was specified for a tag list constraint. For more information on what operators are valid, see [Tag list constraints](/tutorials/regulation-rules#tag-list-constraints).|
 |400        |User-attribute constraint predicate \[predicate\] is not supported.|An invalid predicate was specified for a user attribute value constraint. For more information on what predicates are valid, see [User attribute constraints](/tutorials/regulation-rules#user-attribute-value-constraints).|
 |400        |Unrecognized constraint type|An invalid constraint type was specified. For more information on what constraint types are valid, see [Regulation rules](/tutorials/regulation-rules)|
+|402        |Your current subscription is limited to (number) custom regulations|Your current license has a hard limit on the number of regulations created, and you have reached the limit|
 
 
 ## GET /regulations

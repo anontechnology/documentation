@@ -18,10 +18,9 @@ Vizivault Enterprise can also let you control and manage your organization's per
 - **Regulations** Create rules to manage personal information across your organization.
 - **Applications** Define which programs have access to which attributes.
 
-## Distribution
+<!--## Distribution
 
 Vizivault Enterprise has specific controls to manage where data is stored in our vault network and who you share data with.
 
 - **Data Sharing** Share data with other organizations. Control what gets shared and how often.
-- **Vaults** Manage your personal data repositories.
-
+- **Vaults** Manage your personal data repositories.-->

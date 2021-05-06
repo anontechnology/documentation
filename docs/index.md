@@ -34,7 +34,7 @@ ViziVault Enterprise is a management platform for the personal information store
 ## Deployment Models
 The ViziVault Platform aims to eliminate any risk of malicious intrusions by enforcing encryption for data in transit and in persistence. It is carefully designed to eliminate the threat of your organization's data being leaked publicly.
 
-Your data is hidden even from our organization; we do not store your decryption key and have no way of reading your sensitive information
+Your data is hidden even from our organization; we do not store your decryption key and have no way of reading your sensitive information.
 
 Even despite these precautions, we completely understand that your policies might require a solution even more secure than sending data to our platform. Therefore, we offer the alternative option of hosting our lightweight API on your own infrastructure to ensure that sensitive data never leaves your network.
 

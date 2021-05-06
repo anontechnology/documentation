@@ -24,8 +24,8 @@ The valid predicates are as follows:
  - `leq`: For numerical data; matches users whose value of this attribute is less than or equal to the provided value.
  - `after`: For temporal data; matches users whose value of this attribute is a later time than the provided value.
  - `before`: For temporal data; matches users whose value of this attribute is an earlier time than the provided value.
- - `any`: Treats the value as a comma-delimited list of strings and matches users whose value of this attribute appears in the provided list.
- - `none`: Treats the value as a comma-delimited list of strings and matches users whose value of this attribute does not appear in the provided list.
+ - `in`: Treats the value as a comma-delimited list of strings and matches users whose value of this attribute appears in the provided list.
+ - `nin`: Treats the value as a comma-delimited list of strings and matches users whose value of this attribute does not appear in the provided list.
 
 ## Conjunctive ("all") constraints
 
@@ -56,12 +56,12 @@ Rules are expressed as a JSON object, structured as described below. The value o
  - User-attribute-value rule
     - `type` : the string `"user"`
     - `attribute` : attribute key (string)
-    - `predicate` : one of `eq`, `neq`, `gt`, `lt`, `geq`, `leq`, `before`, `after`, `any`, `none`
+    - `predicate` : one of `eq`, `neq`, `gt`, `lt`, `geq`, `leq`, `before`, `after`, `in`, `nin`
     - `value` :
         - When predicate is `eq` or `neq`, any number or string.
         - When predicate is `gt`, `lt`, `geq`, or `leq`, any number.
         - When predicate is `before` or `after`, a string representing a point in time.
-        - When predicate is `any` or `none`, a string consisting of values separated by commas.
+        - When predicate is `in` or `nin`, a string consisting of values separated by commas.
 
 ## Examples
 

@@ -27,7 +27,7 @@ nav:
   - Tutorials:
     - Quickstart: tutorials/quickstart.md
     - Attribute Schemas: tutorials/attribute-schemas.md
-    - Data Sharing: tutorials/datasharing.md
+    #- Data Sharing: tutorials/datasharing.md
     - Regulation Rules: tutorials/regulation-rules.md
     - Reports: tutorials/reports.md
     - Search: tutorials/search.md
@@ -45,10 +45,10 @@ nav:
       - Applications: vizivault-enterprise/applications.md
       - Attributes: vizivault-enterprise/attributes.md
       - Tags: vizivault-enterprise/tags.md
-      - Data Sharing: vizivault-enterprise/data-sharing.md
+      #- Data Sharing: vizivault-enterprise/data-sharing.md
       - Regulations: vizivault-enterprise/regulations.md
       - Reports: vizivault-enterprise/reports.md
-      - Vault: vizivault-enterprise/vault.md
+      #- Vault: vizivault-enterprise/vault.md
 extra_css:
   - stylesheets/extra.css
 extra_javascript:
