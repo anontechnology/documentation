@@ -22,7 +22,7 @@ Regulation constraints are much the same as attribute list constraints and tag l
 
 Geographic constraints match incoming data based on the data's geographic location. Note that geolocation data is based on the IP address of the HTTP request storing the data; if there are proxy servers involved, this constraint may not always be fully accurate.
 
-A geographic constraint consists of an operator (either `any` or `none`), a list of countries, and a list of subdivisions. Countries and subdivisions are represented using ISO 3166 two-letter codes.
+A geographic constraint consists of an operator (either `any` or `none`), a list of countries, and a list of subdivisions. Countries are represented using ISO 3166-1 two-letter codes, and subdivisions are represented using ISO 3166-2 hyphenated codes.
 
 ## User attribute value constraints
 
