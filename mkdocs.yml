@@ -18,18 +18,20 @@ nav:
     - Attribute Definitions: api/attributes.md
     - Tags: api/tags.md
     - Regulations: api/regulations.md
+    - Rules: api/rules.md
   - Glossary:
     - Attribute Definition: glossary/attribute-definition.md
     - Tag: glossary/tag.md
     - Attribute: glossary/attribute.md
     - Regulation: glossary/regulation.md
+    - Rule: glossary/rule.md
     - Storage Request: glossary/storage-request.md
   - Tutorials:
     - Quickstart: tutorials/quickstart.md
     - Attribute Schemas: tutorials/attribute-schemas.md
     #- Data Sharing: tutorials/datasharing.md
-    - Regulation Rules: tutorials/regulation-rules.md
     - Reports: tutorials/reports.md
+    - Rules: tutorials/rules.md
     - Search: tutorials/search.md
   - Regulations:
     - GDPR (European Union): https://gdpr-info.eu/chapter-3/
