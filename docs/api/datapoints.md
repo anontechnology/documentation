@@ -31,7 +31,7 @@ Stores data for multiple users simultaneously.
       ],
       "namespace": "Example_Namespace",
       "origin": "127.0.0.1",
-      "userId": "001"
+      "subjectId": "001"
     }
   ]
 }
@@ -49,7 +49,7 @@ Stores data for multiple users simultaneously.
       "regulations": ["SAMPLE_REGULATION"],
       "sensitivity": "PERSONAL",
       "reportOnly": false,
-      "userId": "001",
+      "subjectId": "001",
       "value": "123-456-789"
     }
   ]
@@ -93,7 +93,7 @@ Searches data that matches specified criteria, using blind indexing to allow sea
     "attributes": ["SAMPLE_ATTRIBUTE_3", "SAMPLE_ATTRIBUTE_4"],
     "regulations" : ["SAMPLE_REGULATION"],
     "sensitivity": "NORMAL",
-    "userId": ["001", "002", "003"],
+    "subjectId": ["001", "002", "003"],
     "country": "US",
     "minCreatedDate": "2020-01-01T10:06:32.4426+08:00",
     "maxCreatedDate": "2020-01-31T10:06:32.4426+08:00"
@@ -116,7 +116,7 @@ Searches data that matches specified criteria, using blind indexing to allow sea
       "sensitivity": "NORMAL",
       "reportOnly": false,
       "structureRootId": null,
-      "userId": "001",
+      "subjectId": "001",
     }
   ]
 }
@@ -127,13 +127,8 @@ Searches data that matches specified criteria, using blind indexing to allow sea
 |-----------|-------------|-----------|
 |404|Data Not Found|No search results were found for the provided query.|
 
-## POST /entities/{entityId}/attributes
-Stores attributes for the given entity
-
-Identical to [POST /users/{userId}/attributes](#post-usersuseridattributes), but stores data for entities rather than users.
-
-## POST /users/{userId}/attributes
-Stores attributes for the given user.
+## POST /datasubjects/{subjectId}/attributes
+Stores attributes for the given data subject.
 
 For each attribute stored, if the attribute is repeatable, existing data in the vault will not be affected. If the attribute is not repeatable, existing data will be overwritten. If you want to make modifications to a nonrepeatable attribute, the best way is to read the current value, make changes as necessary, and then store the complete  modified attribute.
 
@@ -148,9 +143,9 @@ For each attribute stored, if the attribute is repeatable, existing data in the 
 |payload             |[StorageRequest](/glossary/storage-request)|Storage Request  |
 
 ### Path Variables
-|Name               |Type                          |Description      |
-|-------------------|------------------------------|-----------------|
-|userId             |String                        |User Identifier  |
+|Name               |Type                          |Description            |
+|-------------------|------------------------------|-----------------------|
+|subjectId          |String                        |Data Subject Identifier|
 
 
 ### Example Payload
@@ -185,7 +180,7 @@ For each attribute stored, if the attribute is repeatable, existing data in the 
       "sensitivity": "PERSONAL",
       "reportOnly": false,
       "structureRootId": null,
-      "userId": "001",
+      "subjectId": "001",
       "value": "123-456-789"
     }
   ]
@@ -204,18 +199,8 @@ For each attribute stored, if the attribute is repeatable, existing data in the 
 |422|Expected \[type\] for value of attribute \[attribute\]|The value given for the indicated attribute or sub-attribute does not match what is expected according to that attribute's [schema](/tutorials/attribute-schemas).|
 |400|Unknown sub-attribute \[sub-attribute\]|A value given for a structured attribute contains a sub-attribute that is not present in that attribute's [schema](/tutorials/attribute-schemas).|
 
-## GET /entities/{entityId}/attributes
-Retrieves attributes for the given entity.
-
-Identical to [GET /users/{userId}/attributes](#get-usersuseridattributes), but retrieves data for entities rather than users.
-
-## GET /entities/{entityId}/attributes/{attributeKey}
-Displays information about an attribute for one entity.
-
-Identical to [GET /users/{userId}/attributes/{attributeKey}](#get-usersuseridattributesattributekey), but retrieves data for entities rather than users.
-
-## GET /users/{userId}/attributes
-Retrieves attributes for the given user. By default, returns all attributes that your application has access to; alternatively, a list of desired attributes can be specified.
+## GET /datasubjects/{subjectId}/attributes
+Retrieves attributes for the given data subject. By default, returns all attributes that your application has access to; alternatively, a list of desired attributes can be specified.
 
 ### Header Parameters
 |Name            |Type                           |Description                  |
@@ -225,7 +210,7 @@ Retrieves attributes for the given user. By default, returns all attributes that
 ### Path Variables
 |Name               |Type                          |Description      |
 |-------------------|------------------------------|-----------------|
-|userId             |String                        |User Identifier  |
+|subjectId          |String                        |Data Subject Identifier|
 
 ### Query Parameter Variables
 |Name               |Type                          |Description      |
@@ -245,7 +230,7 @@ Retrieves attributes for the given user. By default, returns all attributes that
       "sensitivity": "PERSONAL",
       "reportOnly": false,
       "structureRootId": null,
-      "userId": "001",
+      "subjectId": "001",
       "value": "123-456-789"
     }
   ]
@@ -257,11 +242,11 @@ Retrieves attributes for the given user. By default, returns all attributes that
 |-----------|-------------|-----------|
 |400|Encoded key provided is invalid|The private decryption key provided is not correct.|
 |403|Forbidden|You are trying to access attributes that your application does not have access to.|
-|404|User Data Not Found|The specified user does not exist, or else that user has no value for the attributes specified.|
+|404|Data Not Found|The specified data subject does not exist, or else that subject has no value for the attributes specified.|
 
-## GET /users/{userId}/attribute/{attributeKey}
+## GET /datasubjects/{subjectId}/attribute/{attributeKey}
 
-Displays information about an attribute for one user.
+Displays information about an attribute for one data subject.
 
 ### Header Parameters
 |Name            |Type                           |Description                  |
@@ -271,7 +256,7 @@ Displays information about an attribute for one user.
 ### Path Variables
 |Name               |Type                          |Description      |
 |-------------------|------------------------------|-----------------|
-|userId             |String                        |User Identifier  |
+|subjectId          |String                        |Data Subject Identifier|
 |attributeKey       |String                        |Attribute Name   |
 
 ### Example Response
@@ -287,7 +272,7 @@ Displays information about an attribute for one user.
       "sensitivity": "PERSONAL",
       "reportOnly": false,
       "structureRootId": null,
-      "userId": "001",
+      "subjectId": "001",
       "value": "123-456-789"
     }
   ]
@@ -299,7 +284,7 @@ Displays information about an attribute for one user.
 |-----------|-------------|-----------|
 |400|Encoded key provided is invalid|The private decryption key provided is not correct.|
 |403|Forbidden|You are trying to access attributes that your application does not have access to.|
-|404|User Data Not Found|The specified user does not exist, or else that user has no value for the attributes specified.|
+|404|Data Not Found|The specified data subject does not exist, or else that subject has no value for the attributes specified.|
 
 
 ## GET /data/{dataPointId}
@@ -327,7 +312,7 @@ Retrieves data with the given datapoint id
     "sensitivity": "PERSONAL",
     "reportOnly": false,
     "structureRootId": null,
-    "userId": "001",
+    "subjectId": "001",
     "value": "123-456-789"
   }
 }
@@ -338,25 +323,15 @@ Retrieves data with the given datapoint id
 |-----------|-------------|-----------|
 |400|Encoded key provided is invalid|The private decryption key provided is not correct.|
 |403|Forbidden|Your application does not have access to the attribute of the data point you are trying to read.|
-|404|User Data Not Found|There is no data point in the system with the specified ID.|
+|404|Data Not Found|There is no data point in the system with the specified ID.|
 
-## DELETE /entities/{entityId}/attributes/{attributeKey}
-Deletes attributes for the given entity and attribute
-
-Identical to [DELETE /users/{userId}/attributes/{attributeKey}](#delete-usersuseridattributesattributekey), but deletes data for entities rather than users.
-
-## DELETE /entities/{entityId}/data
-Stores attributes for the given entity
-
-Identical to [DELETE /users/{userId}/data](#delete-usersuseriddata), but deletes data for entities rather than users.
-
-## DELETE /users/{userId}/attributes/{attributeKey}
-Deletes attributes for the given user and attribute
+## DELETE /datasubjects/{subjectId}/attributes/{attributeKey}
+Deletes attributes for the given data subject and attribute
 
 ### Path Variables
 |Name          |Type                          |Description      |
 |--------------|------------------------------|-----------------|
-|userId        |String                        |User Identifier  |
+|subjectId     |String                        |Data Subject Identifier|
 |attributeKey  |String                        |Attribute Key    |
 
 ### Example Response
@@ -370,27 +345,27 @@ Deletes attributes for the given user and attribute
 |Status code|Error message|Description|
 |-----------|-------------|-----------|
 |403|Forbidden|You are trying to delete data from an attribute your application does not have access to.|
-|404|User Data Not Found|There is no data in the system with the specified user ID and attribute.|
+|404|Data Not Found|There is no data in the system with the specified data subject ID and attribute.|
 
-## DELETE /users/{userId}/data
-Deletes all data for the given user
+## DELETE /datasubjects/{subjectId}/data
+Deletes all data for the given data subject
 
 ### Path Variables
 |Name          |Type                          |Description      |
 |--------------|------------------------------|-----------------|
-|userId        |String                        |User Identifier  |
+|subjectId     |String                        |Data Subject Identifier  |
 
 ### Example Response
 ```json
 {
-  "data": "Successfully Deleted User"
+  "data": "Successfully Deleted Data Subject"
 }
 ```
 
 ### Error responses
 |Status code|Error message|Description|
 |-----------|-------------|-----------|
-|404|User Not Found|There is no user in the system with the specified ID.|
+|404|Data Subject Not Found|There is no data subject in the system with the specified ID.|
 
 
 ## DELETE /data/{dataPointId}
@@ -404,7 +379,7 @@ Deletes data with the given datapoint id
 ### Example Response
 ```json
 {
-  "data": "Successfully Deleted Data Point"
+  "data": "Successfully Deleted Data"
 }
 ```
 
@@ -412,4 +387,4 @@ Deletes data with the given datapoint id
 |Status code|Error message|Description|
 |-----------|-------------|-----------|
 |403|Forbidden|Your application does not have access to the attribute of the data point you are trying to delete.|
-|404|User Data Not Found|There is no data point in the system with the specified ID.|
+|404|Data Not Found|There is no data point in the system with the specified ID.|

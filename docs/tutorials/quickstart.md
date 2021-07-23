@@ -4,7 +4,7 @@ In this quickstart we will be overviewing several functions you will typically w
 
 ## Setup
 
-In this tutorial you will learn how to load and retrieve personal data about your clients contained in a JSON file. While it's possible to use any personal client data source, we've included a CSV file of ten users with typical user data.
+In this tutorial you will learn how to load and retrieve personal data about your clients contained in a JSON file. While it's possible to use any personal client data source, we've included a CSV file of ten data subjects with typical data.
 
 1. If you don't have a vault deployed for your organization already, reach out and request a demo vault.
 
@@ -92,7 +92,7 @@ In the following eample you will want to make the following replacements:
 
 ## Creating Attributes
 
-The first thing we will need to do is establish attributes to store all of the data from our client. Attribute definitions specify the structure and rules that will govern how your data is stored. For example, this can tell ViziVault whether a user can have more than one value of an attribute, and whether the data should be indexed for cross-user search functionality. We can also directly associate tags and regulations here, establishing how Vizivault will treat the data for retention, storage, and sharing.
+The first thing we will need to do is establish attributes to store all of the data from our client. Attribute definitions specify the structure and rules that will govern how your data is stored. For example, this can tell ViziVault whether a data subject can have more than one value of an attribute, and whether the data should be indexed for search functionality. We can also directly associate tags and regulations here, establishing how Vizivault will treat the data for retention, storage, and sharing.
 
 We start with creating some very simple attributes with no structure, such as strings or numeric data. In the next example we will see how to handle data in cases where you only may be interested in retrieving part of a related set of data, or where the data has an internal structure. The hint parameter contains a sample value of the attribute for the purposes of demonstrating the intended format.
 
@@ -132,7 +132,7 @@ We start with creating some very simple attributes with no structure, such as st
 
 ## Creating Attributes with Structure
 
-Let's add some attributes with structure. Here we add a user's full name and their billing address. We may wish to extract, update, or perform business logic on part of this data, so we store related attribute data in schemas. Here we add schemas that allow nested structures with multiple components. Each component has a type which can be:
+Let's add some attributes with structure. Here we add a data subject's full name and their billing address. We may wish to extract, update, or perform business logic on part of this data, so we store related attribute data in schemas. Here we add schemas that allow nested structures with multiple components. Each component has a type which can be:
 
 * string: For textual data, up to 126 characters long.
 * int: For data that can be expressed as an integer.

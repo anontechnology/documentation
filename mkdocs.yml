@@ -13,9 +13,10 @@ nav:
   - Getting Started: getting-started.md
   - Libraries: libraries.md
   - API Reference:
-    - Endpoints: api/endpoints.md
+    - Endpoint reference: api/endpoints.md
     - Attributes: api/datapoints.md
     - Attribute Definitions: api/attributes.md
+    - Data Subjects: api/datasubjects.md
     - Tags: api/tags.md
     - Regulations: api/regulations.md
   - Glossary:

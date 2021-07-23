@@ -16,16 +16,16 @@ Guides and reference materials to help you get started, integrate, optimize, and
 ### Attributes
 -   [POST /search](/api/datapoints#post-search)
 -   [POST /entities/{entityId}/attributes](/api/datapoints#post-entitiesentityidattributes)
--   [POST /users/{userId}/attributes](/api/datapoints#post-usersuseridattributes)
+-   [POST /datasubjects/{subjectId}/attributes](/api/datapoints#post-datasubjectssubjectidattributes)
 -   [GET /entities/{entityId}/attributes](/api/datapoints#get-entitiesentityidattributes)
 -   [GET /entities/{entityId}/attribute/{attributeKey}](/api/datapoints#get-entitiesentityidattributeattributtekey)
--   [GET /users/{userId}/attributes](/api/datapoints#get-usersuseridattributes)
--   [GET /users/{userId}/attribute/{attributeKey}](/api/datapoints#get-usersuseridattributeattributtekey)
+-   [GET /datasubjects/{subjectId}/attributes](/api/datapoints#get-datasubjectssubjectidattributes)
+-   [GET /datasubjects/{subjectId}/attribute/{attributeKey}](/api/datapoints#get-datasubjectssubjectidattributeattributtekey)
 -   [GET /data/{dataPointId}](/api/datapoints#get-datadatapointid)
 -   [DELETE /entities/{entityId}/attributes/{attributeKey}](/api/datapoints#delete-entitiesentityidattributesattributekey)
 -   [DELETE /entities/{entityId}/data](/api/datapoints#delete-entitiesentityiddata)
--   [DELETE /users/{userId}/attributes/{attributeKey}](/api/datapoints#delete-usersuseridattributesattributekey)
--   [DELETE /users/{userId}/data](/api/datapoints#delete-usersuseriddata)
+-   [DELETE /datasubjects/{subjectId}/attributes/{attributeKey}](/api/datapoints#delete-datasubjectssubjectidattributesattributekey)
+-   [DELETE /datasubjects/{subjectId}/data](/api/datapoints#delete-datasubjectssubjectiddata)
 -   [DELETE /data/{dataPointId}](/api/datapoints#delete-datadatapointid)
 
 ### Regulations
@@ -34,10 +34,7 @@ Guides and reference materials to help you get started, integrate, optimize, and
 -   [GET /regulations/{regulation}](/api/regulations#get-regulationsregulationkey)
 -   [DELETE /regulations/{regulation}](/api/regulations#delete-regulationsregulationkey)
 
-### Users
--   [POST /entities](/api/users#post-entities)
--   [POST /users](/api/users#post-users)
--   [GET /entities](/api/users#get-entities)
--   [GET /entities/{entityid}](/api/users#get-entitiesentityid)
--   [GET /users](/api/users#get-users)
--   [GET /users/{userId}](/api/users#get-usersuserid)
+### Data Subjects
+-   [POST /datasubjects](/api/datasubjects#post-datasubjects)
+-   [GET /datasubjects](/api/datasubjects#get-datasubjects)
+-   [GET /datasubjects/{subjectId}](/api/datasubjects#get-datasubjectssubjectid)
