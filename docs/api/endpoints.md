@@ -34,6 +34,12 @@ Guides and reference materials to help you get started, integrate, optimize, and
 -   [GET /regulations/{regulation}](/api/regulations#get-regulationsregulationkey)
 -   [DELETE /regulations/{regulation}](/api/regulations#delete-regulationsregulationkey)
 
+### Rules
+-   [POST /rules](/api/rules#post-rules)
+-   [GET /rules](/api/rules#get-rules)
+-   [GET /rules/{rule}](/api/rules#get-rulesrulename)
+-   [DELETE /rules/{rule}](/api/rules#delete-rulesrulename)
+
 ### Users
 -   [POST /entities](/api/users#post-entities)
 -   [POST /users](/api/users#post-users)
