@@ -14,7 +14,8 @@ nav:
   - Libraries: libraries.md
   - API Reference:
     - Endpoints: api/endpoints.md
-    - Attributes: api/datapoints.md
+    - User Attributes: api/datapoints.md
+    - Entity Attributes: api/entities.md
     - Attribute Definitions: api/attributes.md
     - Tags: api/tags.md
     - Regulations: api/regulations.md

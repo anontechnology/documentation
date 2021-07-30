@@ -13,20 +13,22 @@ Guides and reference materials to help you get started, integrate, optimize, and
 -   [GET /tags/{tagName}](/api/tags#get-tagstagname)
 -   [DELETE /tags/{tagName}](/api/tags#delete-tagstagname)
 
-### Attributes
--   [POST /search](/api/datapoints#post-search)
--   [POST /entities/{entityId}/attributes](/api/datapoints#post-entitiesentityidattributes)
+### User Attributes
 -   [POST /users/{userId}/attributes](/api/datapoints#post-usersuseridattributes)
--   [GET /entities/{entityId}/attributes](/api/datapoints#get-entitiesentityidattributes)
--   [GET /entities/{entityId}/attribute/{attributeKey}](/api/datapoints#get-entitiesentityidattributeattributtekey)
 -   [GET /users/{userId}/attributes](/api/datapoints#get-usersuseridattributes)
 -   [GET /users/{userId}/attribute/{attributeKey}](/api/datapoints#get-usersuseridattributeattributtekey)
 -   [GET /data/{dataPointId}](/api/datapoints#get-datadatapointid)
--   [DELETE /entities/{entityId}/attributes/{attributeKey}](/api/datapoints#delete-entitiesentityidattributesattributekey)
--   [DELETE /entities/{entityId}/data](/api/datapoints#delete-entitiesentityiddata)
+-   [POST /search](/api/datapoints#post-search)
 -   [DELETE /users/{userId}/attributes/{attributeKey}](/api/datapoints#delete-usersuseridattributesattributekey)
 -   [DELETE /users/{userId}/data](/api/datapoints#delete-usersuseriddata)
 -   [DELETE /data/{dataPointId}](/api/datapoints#delete-datadatapointid)
+
+### Entity Attributes
+-   [POST /entities/{entityId}/attributes](/api/datapoints#post-entitiesentityidattributes)
+-   [GET /entities/{entityId}/attributes](/api/datapoints#get-entitiesentityidattributes)
+-   [GET /entities/{entityId}/attribute/{attributeKey}](/api/datapoints#get-entitiesentityidattributeattributtekey)
+-   [DELETE /entities/{entityId}/attributes/{attributeKey}](/api/datapoints#delete-entitiesentityidattributesattributekey)
+-   [DELETE /entities/{entityId}/data](/api/datapoints#delete-entitiesentityiddata)
 
 ### Regulations
 -   [POST /regulations](/api/regulations#post-regulations)
