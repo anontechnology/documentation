@@ -20,6 +20,8 @@ nav:
     - Tags: api/tags.md
     - Regulations: api/regulations.md
     - Rules: api/rules.md
+    - Users: api/users.md
+    - Entities: api/entity.md
   - Glossary:
     - Attribute Definition: glossary/attribute-definition.md
     - Tag: glossary/tag.md
