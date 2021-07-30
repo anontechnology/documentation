@@ -1,4 +1,4 @@
-# Attributes
+# User Attributes
 
 <!---## POST /data
 Stores data for multiple users simultaneously.
@@ -67,70 +67,6 @@ Stores data for multiple users simultaneously.
 |422|Expected \[type\] for value of attribute \[attribute\]|The value given for the indicated attribute or sub-attribute does not match what is expected according to that attribute's [schema](/tutorials/attribute-schemas).|
 |422|Unknown sub-attribute \[sub-attribute\]|A value given for a structured attribute contains a sub-attribute that is not present in that attribute's [schema](/tutorials/attribute-schemas).|-->
 
-## POST /search
-Searches data that matches specified criteria, using blind indexing to allow searching for values without decrypting data. For more information, [read about ViziVault search](/tutorials/search).
-
-### Body Parameters (Required)
-|Name                 |Type                           |Description                     |
-|---------------------|-------------------------------|--------------------------------|
-|request              |DataSearchRequest              |Parameters to search for        |
-
-
-### Example Payload
-```json
-{
-  "query": {
-    "values": [
-      {
-        "attribute": "SAMPLE_ATTRIBUTE_1",
-        "value": "Value of sample attribute 1"
-      },
-      {
-        "attribute": "SAMPLE_ATTRIBUTE_2",
-        "value": "Value of sample attribute 2"
-      }
-    ],
-    "attributes": ["SAMPLE_ATTRIBUTE_3", "SAMPLE_ATTRIBUTE_4"],
-    "regulations" : ["SAMPLE_REGULATION"],
-    "sensitivity": "NORMAL",
-    "userId": ["001", "002", "003"],
-    "country": "US",
-    "minCreatedDate": "2020-01-01T10:06:32.4426+08:00",
-    "maxCreatedDate": "2020-01-31T10:06:32.4426+08:00"
-  },
-  "page": 0,
-  "count": 100
-}
-```
-
-### Example Response
-```json
-{
-  "data": [
-    {
-      "attribute": "SAMPLE_ATTRIBUTE_2",
-      "createdDate": "2020-01-15T10:05:59.5646+08:00",
-      "dataPointId": "a9fcbf23-852f-441e-b729-dc9fffa528f7",
-      "modifiedDate": "2020-01-01T10:06:32.4426+08:00",
-      "regulations": ["SAMPLE_REGULATION"],
-      "sensitivity": "NORMAL",
-      "reportOnly": false,
-      "structureRootId": null,
-      "userId": "001",
-    }
-  ]
-}
-```
-
-### Error responses
-|Status code|Error message|Description|
-|-----------|-------------|-----------|
-|404|Data Not Found|No search results were found for the provided query.|
-
-## POST /entities/{entityId}/attributes
-Stores attributes for the given entity
-
-Identical to [POST /users/{userId}/attributes](#post-usersuseridattributes), but stores data for entities rather than users.
 
 ## POST /users/{userId}/attributes
 Stores attributes for the given user.
@@ -204,15 +140,47 @@ For each attribute stored, if the attribute is repeatable, existing data in the 
 |422|Expected \[type\] for value of attribute \[attribute\]|The value given for the indicated attribute or sub-attribute does not match what is expected according to that attribute's [schema](/tutorials/attribute-schemas).|
 |400|Unknown sub-attribute \[sub-attribute\]|A value given for a structured attribute contains a sub-attribute that is not present in that attribute's [schema](/tutorials/attribute-schemas).|
 
-## GET /entities/{entityId}/attributes
-Retrieves attributes for the given entity.
+## GET /users/{userId}/attributes/{attributeKey}
 
-Identical to [GET /users/{userId}/attributes](#get-usersuseridattributes), but retrieves data for entities rather than users.
+Displays information about an attribute for one user.
 
-## GET /entities/{entityId}/attributes/{attributeKey}
-Displays information about an attribute for one entity.
+### Header Parameters
+|Name            |Type                           |Description                  |
+|----------------|-------------------------------|-----------------------------|
+|X-Decryption-Key|String                         |Private decryption key       |
 
-Identical to [GET /users/{userId}/attributes/{attributeKey}](#get-usersuseridattributesattributekey), but retrieves data for entities rather than users.
+### Path Variables
+|Name               |Type                          |Description      |
+|-------------------|------------------------------|-----------------|
+|userId             |String                        |User Identifier  |
+|attributeKey       |String                        |Attribute Name   |
+
+### Example Response
+```json
+{
+  "data": [
+    {
+      "attribute": "NAME_FIRST",
+      "createdDate": "2020-01-01T10:05:59.5646+08:00",
+      "dataPointId": "a9fcbf23-852f-441e-b729-dc9fffa528f7",
+      "modifiedDate": "2020-01-01T10:06:32.4426+08:00",
+      "regulations": ["SAMPLE_REGULATION"],
+      "sensitivity": "PERSONAL",
+      "reportOnly": false,
+      "structureRootId": null,
+      "userId": "001",
+      "value": "123-456-789"
+    }
+  ]
+}
+```
+
+### Error responses
+|Status code|Error message|Description|
+|-----------|-------------|-----------|
+|400|Encoded key provided is invalid|The private decryption key provided is not correct.|
+|403|Forbidden|You are trying to access attributes that your application does not have access to.|
+|404|User Data Not Found|The specified user does not exist, or else that user has no value for the attributes specified.|
 
 ## GET /users/{userId}/attributes
 Retrieves attributes for the given user. By default, returns all attributes that your application has access to; alternatively, a list of desired attributes can be specified.
@@ -259,48 +227,28 @@ Retrieves attributes for the given user. By default, returns all attributes that
 |403|Forbidden|You are trying to access attributes that your application does not have access to.|
 |404|User Data Not Found|The specified user does not exist, or else that user has no value for the attributes specified.|
 
-## GET /users/{userId}/attribute/{attributeKey}
 
-Displays information about an attribute for one user.
-
-### Header Parameters
-|Name            |Type                           |Description                  |
-|----------------|-------------------------------|-----------------------------|
-|X-Decryption-Key|String                         |Private decryption key       |
+## DELETE /users/{userId}/attributes/{attributeKey}
+Deletes attributes for the given user and attribute
 
 ### Path Variables
-|Name               |Type                          |Description      |
-|-------------------|------------------------------|-----------------|
-|userId             |String                        |User Identifier  |
-|attributeKey       |String                        |Attribute Name   |
+|Name          |Type                          |Description      |
+|--------------|------------------------------|-----------------|
+|userId        |String                        |User Identifier  |
+|attributeKey  |String                        |Attribute Key    |
 
 ### Example Response
 ```json
 {
-  "data": [
-    {
-      "attribute": "NAME_FIRST",
-      "createdDate": "2020-01-01T10:05:59.5646+08:00",
-      "dataPointId": "a9fcbf23-852f-441e-b729-dc9fffa528f7",
-      "modifiedDate": "2020-01-01T10:06:32.4426+08:00",
-      "regulations": ["SAMPLE_REGULATION"],
-      "sensitivity": "PERSONAL",
-      "reportOnly": false,
-      "structureRootId": null,
-      "userId": "001",
-      "value": "123-456-789"
-    }
-  ]
+  "data": "Successfully Deleted Data Point"
 }
 ```
 
 ### Error responses
 |Status code|Error message|Description|
 |-----------|-------------|-----------|
-|400|Encoded key provided is invalid|The private decryption key provided is not correct.|
-|403|Forbidden|You are trying to access attributes that your application does not have access to.|
-|404|User Data Not Found|The specified user does not exist, or else that user has no value for the attributes specified.|
-
+|403|Forbidden|You are trying to delete data from an attribute your application does not have access to.|
+|404|User Data Not Found|There is no data in the system with the specified user ID and attribute.|
 
 ## GET /data/{dataPointId}
 Retrieves data with the given datapoint id
@@ -340,58 +288,6 @@ Retrieves data with the given datapoint id
 |403|Forbidden|Your application does not have access to the attribute of the data point you are trying to read.|
 |404|User Data Not Found|There is no data point in the system with the specified ID.|
 
-## DELETE /entities/{entityId}/attributes/{attributeKey}
-Deletes attributes for the given entity and attribute
-
-Identical to [DELETE /users/{userId}/attributes/{attributeKey}](#delete-usersuseridattributesattributekey), but deletes data for entities rather than users.
-
-## DELETE /entities/{entityId}/data
-Stores attributes for the given entity
-
-Identical to [DELETE /users/{userId}/data](#delete-usersuseriddata), but deletes data for entities rather than users.
-
-## DELETE /users/{userId}/attributes/{attributeKey}
-Deletes attributes for the given user and attribute
-
-### Path Variables
-|Name          |Type                          |Description      |
-|--------------|------------------------------|-----------------|
-|userId        |String                        |User Identifier  |
-|attributeKey  |String                        |Attribute Key    |
-
-### Example Response
-```json
-{
-  "data": "Successfully Deleted Data Point"
-}
-```
-
-### Error responses
-|Status code|Error message|Description|
-|-----------|-------------|-----------|
-|403|Forbidden|You are trying to delete data from an attribute your application does not have access to.|
-|404|User Data Not Found|There is no data in the system with the specified user ID and attribute.|
-
-## DELETE /users/{userId}/data
-Deletes all data for the given user
-
-### Path Variables
-|Name          |Type                          |Description      |
-|--------------|------------------------------|-----------------|
-|userId        |String                        |User Identifier  |
-
-### Example Response
-```json
-{
-  "data": "Successfully Deleted User"
-}
-```
-
-### Error responses
-|Status code|Error message|Description|
-|-----------|-------------|-----------|
-|404|User Not Found|There is no user in the system with the specified ID.|
-
 
 ## DELETE /data/{dataPointId}
 Deletes data with the given datapoint id
@@ -413,3 +309,83 @@ Deletes data with the given datapoint id
 |-----------|-------------|-----------|
 |403|Forbidden|Your application does not have access to the attribute of the data point you are trying to delete.|
 |404|User Data Not Found|There is no data point in the system with the specified ID.|
+
+## DELETE /users/{userId}/data
+Deletes all data for the given user
+
+### Path Variables
+|Name          |Type                          |Description      |
+|--------------|------------------------------|-----------------|
+|userId        |String                        |User Identifier  |
+
+### Example Response
+```json
+{
+  "data": "Successfully Deleted User"
+}
+```
+
+### Error responses
+|Status code|Error message|Description|
+|-----------|-------------|-----------|
+|404|User Not Found|There is no user in the system with the specified ID.|
+
+## POST /search
+Searches data that matches specified criteria, using blind indexing to allow searching for values without decrypting data. For more information, [read about ViziVault search](/tutorials/search).
+
+### Body Parameters (Required)
+|Name                 |Type                           |Description                     |
+|---------------------|-------------------------------|--------------------------------|
+|request              |DataSearchRequest              |Parameters to search for        |
+
+
+### Example Payload
+```json
+{
+  "query": {
+    "values": [
+      {
+        "attribute": "SAMPLE_ATTRIBUTE_1",
+        "value": "Value of sample attribute 1"
+      },
+      {
+        "attribute": "SAMPLE_ATTRIBUTE_2",
+        "value": "Value of sample attribute 2"
+      }
+    ],
+    "attributes": ["SAMPLE_ATTRIBUTE_3", "SAMPLE_ATTRIBUTE_4"],
+    "regulations" : ["SAMPLE_REGULATION"],
+    "sensitivity": "NORMAL",
+    "userId": ["001", "002", "003"],
+    "country": "US",
+    "minCreatedDate": "2020-01-01T10:06:32.4426+08:00",
+    "maxCreatedDate": "2020-01-31T10:06:32.4426+08:00"
+  },
+  "page": 0,
+  "count": 100
+}
+```
+
+### Example Response
+```json
+{
+  "data": [
+    {
+      "attribute": "SAMPLE_ATTRIBUTE_2",
+      "createdDate": "2020-01-15T10:05:59.5646+08:00",
+      "dataPointId": "a9fcbf23-852f-441e-b729-dc9fffa528f7",
+      "modifiedDate": "2020-01-01T10:06:32.4426+08:00",
+      "regulations": ["SAMPLE_REGULATION"],
+      "sensitivity": "NORMAL",
+      "reportOnly": false,
+      "structureRootId": null,
+      "userId": "001",
+    }
+  ]
+}
+```
+
+### Error responses
+|Status code|Error message|Description|
+|-----------|-------------|-----------|
+|404|Data Not Found|No search results were found for the provided query.|
