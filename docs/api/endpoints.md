@@ -15,15 +15,10 @@ Guides and reference materials to help you get started, integrate, optimize, and
 
 ### Attributes
 -   [POST /search](/api/datapoints#post-search)
--   [POST /entities/{entityId}/attributes](/api/datapoints#post-entitiesentityidattributes)
 -   [POST /datasubjects/{subjectId}/attributes](/api/datapoints#post-datasubjectssubjectidattributes)
--   [GET /entities/{entityId}/attributes](/api/datapoints#get-entitiesentityidattributes)
--   [GET /entities/{entityId}/attribute/{attributeKey}](/api/datapoints#get-entitiesentityidattributeattributtekey)
 -   [GET /datasubjects/{subjectId}/attributes](/api/datapoints#get-datasubjectssubjectidattributes)
 -   [GET /datasubjects/{subjectId}/attribute/{attributeKey}](/api/datapoints#get-datasubjectssubjectidattributeattributtekey)
 -   [GET /data/{dataPointId}](/api/datapoints#get-datadatapointid)
--   [DELETE /entities/{entityId}/attributes/{attributeKey}](/api/datapoints#delete-entitiesentityidattributesattributekey)
--   [DELETE /entities/{entityId}/data](/api/datapoints#delete-entitiesentityiddata)
 -   [DELETE /datasubjects/{subjectId}/attributes/{attributeKey}](/api/datapoints#delete-datasubjectssubjectidattributesattributekey)
 -   [DELETE /datasubjects/{subjectId}/data](/api/datapoints#delete-datasubjectssubjectiddata)
 -   [DELETE /data/{dataPointId}](/api/datapoints#delete-datadatapointid)

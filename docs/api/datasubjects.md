@@ -1,6 +1,6 @@
 # Attributes
 
-## POST /datasubject
+## POST /datasubjects
 Stores metadata associated with a data subject. Returns a [Data Subject](/glossary/datasubject) object.
 
 ### Parameters
