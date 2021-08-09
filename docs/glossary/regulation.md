@@ -28,7 +28,7 @@ An example regulation definition representing the Children's Online Privacy Prot
     "type" : "all",
     "value" : [
       {
-        "type" : "user",
+        "type" : "subjectValue",
         "value" : {
           "attribute" : "AGE_YEARS",
           "predicate" : "lt",
@@ -36,7 +36,7 @@ An example regulation definition representing the Children's Online Privacy Prot
         }
       },
       {
-        "type" : "user",
+        "type" : "subjectValue",
         "value" : {
           "attribute" : "COUNTRY_OF_RESIDENCE",
           "predicate" : "eq",
