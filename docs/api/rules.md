@@ -50,11 +50,11 @@ For more information on how to specify rules for rules, see [Rules](/tutorials/r
 |400        |Geolocation constraint \[country / subdivision\] list must be an array|A geolocation constraint was specified with a country list or subdivision list in an invalid format.|
 |400        |Countries for geolocation constraint must be specified as ISO 3166-1 two-letter codes|A geolocation constraint was specified that contains an invalid country code. ISO 3166-1 country codes consist of two letters, case-insensitive.|
 |400        |Subdivisions for geolocation constraint must be specified as ISO 3166-2 hyphenated codes|A geolocation constraint was specified that contains an invalid subdivision code. ISO 3166-2 hyphenated codes consist of a two-letter country code, followed by a hyphen, followed by a two- or three-letter subdivision code, such as `US-NY`.|
-|400        |User constraint attribute must be specified as a string|A user-attribute-value constraint was specified with a missing or invalid attribute.|
-|422        |No such attribute|An attribute specified for a user attribute value constraint or an attribute list constraint does not exist.|
+|400        |Subject value constraint attribute must be specified as a string|A subject value constraint was specified with a missing or invalid attribute.|
+|422        |No such attribute|An attribute specified for a subject value value constraint or an attribute list constraint does not exist.|
 |422        |No such regulation|A regulation specified for a regulation list constraint does not exist.|
-|400        |No value specified for user attribute constraint|A user-attribute-value constraint was specified with a missing value.|
-|400        |User-attribute constraint predicate \[predicate\] is not supported.|An invalid predicate was specified for a user attribute value constraint. For more information on what predicates are valid, see [User attribute constraints](/tutorials/rules#user-attribute-value-constraints).|
+|400        |No value specified for subject value constraint|A subject value constraint was specified with a missing value.|
+|400        |User-attribute constraint predicate \[predicate\] is not supported.|An invalid predicate was specified for a subject value constraint. For more information on what predicates are valid, see [User attribute constraints](/tutorials/rules#data-subject-value-constraints).|
 |400        |Unrecognized constraint type|An invalid constraint type was specified. For more information on what constraint types are valid, see [Rules](/tutorials/rules)|
 |402        |Your current subscription does not support custom rules|Your current license tier has limited features, and custom rules are not included|
 

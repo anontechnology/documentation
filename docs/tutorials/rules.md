@@ -24,9 +24,9 @@ Geographic constraints match incoming data based on the data's geographic locati
 
 A geographic constraint consists of an operator (either `any` or `none`), a list of countries, and a list of subdivisions. Countries are represented using ISO 3166-1 two-letter codes, and subdivisions are represented using ISO 3166-2 hyphenated codes.
 
-## User attribute value constraints
+## Data subject value constraints
 
-User attribute constraints allow you to apply rules to data based on things that are true about the user it belongs to, rather than just basing it off of the data point itself. A user attribute constraint consists of three parts: the attribute to consider, the value to compare the user's value of the attribute to, and the precise way the attribute values should be compared (referred to as the predicate).
+Data subject value constraints allow you to apply regulations to data based on things that are true about the data subject whom the data belongs to, rather than just basing it off of the data point itself. A data subject value constraint consists of three parts: the attribute to consider, the value to compare the data subject's value of the attribute to, and the precise way the attribute values should be compared (referred to as the predicate).
 
 The valid predicates are as follows:
 
