@@ -2,7 +2,7 @@
 ## Overview
 In order to allow users of the ViziVault system to search on data without opening up the possibility of data breaches, ViziVault supports blind indexing for selected attributes. What this means is that, whenever a datapoint is stored that belongs to an indexable attribute, a secure hash is calculated for the datapoint value. When a user wants to search for a data value in the vault, the value they enter is hashed in the same way, and compared against the stored hash of data that is in the vault. In this way, it is possible to identify whether one specific value exists in the vault, without leaking any information about what else is in the vault.
 
-Of course, this behavior is not desirable for all attributes, which is why it is possible to specify at the attribute level what data should be indexed. This allows analytics such as "what is the ratio of male to female customers" to be calculated, while making it impossible to search for a user by their social security number; in order to do this, all that is necessary is for gender to be an indexed attribute but not social security number. If an indexed attribute contains structured data by means of an attribute schema, each sub-attribute is indexed separately, allowing greater flexibility in how search can be used.
+Of course, this behavior is not desirable for all attributes, which is why it is possible to specify at the attribute level what data should be indexed. This allows analytics such as "what is the ratio of male to female customers" to be calculated, while making it impossible to search for a data subject by their social security number; in order to do this, all that is necessary is for gender to be an indexed attribute but not social security number. If an indexed attribute contains structured data by means of an attribute schema, each sub-attribute is indexed separately, allowing greater flexibility in how search can be used.
 
 ## Performing a search using the ViziVault API
 To perform a search request using the ViziVault API, send a HTTP POST request to `/data/search`. The body of the request should be a JSON object formatted as follows:
@@ -21,7 +21,7 @@ To perform a search request using the ViziVault API, send a HTTP POST request to
         
         "regulations": [ <string> ],
         "sensitivity": <one of "SENSITIVE", "PERSONAL", "CONFIDENTIAL", or "NORMAL">,
-        "userId": [ <string> ],
+        "subjectId": [ <string> ],
 
         "country": <string>,
 
@@ -35,12 +35,12 @@ This query will return all data points in the vault that either belong to an att
  - `values`: This is a list of attribute-value pairs. This will match any datapoint in the vault that belongs to the specified attribute and has the specified value, so long as the attribute in question is indexable. If a non-indexable attribute is specified here, that attribute-value pair will be ignored.
  - `attributes`: This is a list of attributes. This will match any datapoint in the vault that belongs to a specified attribute, regardless of whether it is indexable.
  - `regulations`: This is a list of regulations. It will filter the search results to only include data points tagged with one or more of the regulations specified. Including an empty string in this list will match data points that are not tagged with any regulations.
- - `userid`: This is a list of IDs of users in the vault. It will filter the search results to only include data points belonging to those users.
+ - `subjectId`: This is a list of IDs of data subjects in the vault. It will filter the search results to only include data points belonging to those data subjects.
  - `country`: This is an ISO 3166 country code, such as "US" or "GB". It will filter the search results to only include data points collected from that country.
  - `minCreatedDate`, `maxCreatedDate`: These are timestamps formatted according to ISO 8601. They will filter data points based on when those data points were entered into the system.
 
 ## Examples
-To list all users whose job title is "Software Engineer":
+To list all data subjects whose job title is "Software Engineer":
 ```json
 {
     "page": 0,

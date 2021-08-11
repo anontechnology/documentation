@@ -10,22 +10,22 @@ The simplest constraint is an attribute list constraint, which can mark a regula
 
 Tag list constraints are similar to attribute list constraints, in that they consist of a list of tags and an operator. However, since a data point can have multiple tags (but not belong to multiple attributes), the operator `all` is also allowed; in this case, the constraint would only match data points whose attribute is tagged with all of the tags in the provided list.
 
-## User attribute value constraints
+## Data subject value constraints
 
-User attribute constraints allow you to apply regulations to data based on things that are true about the user it belongs to, rather than just basing it off of the data point itself. A user attribute constraint consists of three parts: the attribute to consider, the value to compare the user's value of the attribute to, and the precise way the attribute values should be compared (referred to as the predicate).
+Data subject value constraints allow you to apply regulations to data based on things that are true about the data subject whom the data belongs to, rather than just basing it off of the data point itself. A data subject value constraint consists of three parts: the attribute to consider, the value to compare the data subject's value of the attribute to, and the precise way the attribute values should be compared (referred to as the predicate).
 
 The valid predicates are as follows:
 
- - `eq`: Matches users whose value of this attribute is exactly equal to the provided value.
- - `neq`: Matches users whose value of this attribute is anything other than the provided value.
- - `gt`: For numerical data; matches users whose value of this attribute is greater than the provided value.
- - `lt`: For numerical data; matches users whose value of this attribute is less than the provided value.
- - `geq`: For numerical data; matches users whose value of this attribute is greater than or equal to the provided value.
- - `leq`: For numerical data; matches users whose value of this attribute is less than or equal to the provided value.
- - `after`: For temporal data; matches users whose value of this attribute is a later time than the provided value.
- - `before`: For temporal data; matches users whose value of this attribute is an earlier time than the provided value.
- - `in`: Treats the value as a comma-delimited list of strings and matches users whose value of this attribute appears in the provided list.
- - `nin`: Treats the value as a comma-delimited list of strings and matches users whose value of this attribute does not appear in the provided list.
+ - `eq`: Matches data subjects whose value of this attribute is exactly equal to the provided value.
+ - `neq`: Matches data subjects whose value of this attribute is anything other than the provided value.
+ - `gt`: For numerical data; matches data subjects whose value of this attribute is greater than the provided value.
+ - `lt`: For numerical data; matches data subjects whose value of this attribute is less than the provided value.
+ - `geq`: For numerical data; matches data subjects whose value of this attribute is greater than or equal to the provided value.
+ - `leq`: For numerical data; matches data subjects whose value of this attribute is less than or equal to the provided value.
+ - `after`: For temporal data; matches data subjects whose value of this attribute is a later time than the provided value.
+ - `before`: For temporal data; matches data subjects whose value of this attribute is an earlier time than the provided value.
+ - `in`: Treats the value as a comma-delimited list of strings and matches data subjects whose value of this attribute appears in the provided list.
+ - `nin`: Treats the value as a comma-delimited list of strings and matches data subjects whose value of this attribute does not appear in the provided list.
 
 ## Conjunctive ("all") constraints
 
@@ -53,8 +53,8 @@ Rules are expressed as a JSON object, structured as described below. The value o
     - `type` : the string `"attribute"`
     - `operator` : either `any` or `none`
     - `attributes` : list of attribute keys (strings)
- - User-attribute-value rule
-    - `type` : the string `"user"`
+ - Data subject value rule
+    - `type` : the string `"subjectValue"`
     - `attribute` : attribute key (string)
     - `predicate` : one of `eq`, `neq`, `gt`, `lt`, `geq`, `leq`, `before`, `after`, `in`, `nin`
     - `value` :
@@ -65,20 +65,20 @@ Rules are expressed as a JSON object, structured as described below. The value o
 
 ## Examples
 
-An example representation of the Children's Online Privacy Protection Act (COPPA), which applies to personal information about Americans under the age of 13. It consists of a conjunctive constraint that combines two user attribute value constraints: one of the user constraints matches users whose age is less than 13, and the other matches users who live in the United States.
+An example representation of the Children's Online Privacy Protection Act (COPPA), which applies to personal information about Americans under the age of 13. It consists of a conjunctive constraint that combines two data subject value constraints: one of the constraints matches data subjects whose age is less than 13, and the other matches data subjects who live in the United States.
 
 ```json
 {
   "type" : "all",
   "constraints" : [
     {
-      "type" : "user",
+      "type" : "subjectValue",
       "attribute" : "AGE_YEARS",
       "predicate" : "lt",
       "value" : 13
     },
     {
-      "type" : "user",
+      "type" : "subjectValue",
       "attribute" : "COUNTRY_OF_RESIDENCE",
       "predicate" : "eq",
       "value" : "US"

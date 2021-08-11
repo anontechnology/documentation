@@ -63,7 +63,7 @@ On success, returns 201 Created and a description of the updated attribute.
 |400        |Sub-attribute key contains unusable characters|Returned if a sub-attribute key contained in the attribute's [schema](/tutorials/attribute-schemas) contains disallowed characters.|
 |400        |Schema has unexpected class|Returned if the [schema](/tutorials/attribute-schemas) of this attribute, or one of its sub-attributes, is netiher a JSON object nor a string (i.e. a number, a boolean value, a list, or `null`)|
 |402        |Your current subscription is limited to (number) custom attributes|Your current license has a hard limit on the number of attribute definitions created, and you have reached the limit|
-|409        |Cannot change existing attribute from repeatable to non-repeatable, as it would invalidate existing data|Returned when edits to a repeatable attribute definition would make it become non-repeatable, if there are users that have multiple values for this attribute|
+|409        |Cannot change existing attribute from repeatable to non-repeatable, as it would invalidate existing data|Returned when edits to a repeatable attribute definition would make it become non-repeatable, if there are data subjects that have multiple values for this attribute|
 |409        |Cannot edit attribute schema, as it may invalidate existing data|Returned when attempting to specify a new schema for an attribute definition that is in use (editing the schema for an attribute definition that no data uses is allowed)|
 
 ## GET /attributes

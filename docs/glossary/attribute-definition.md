@@ -1,6 +1,6 @@
 # Attribute Defintions
 
-Attribute definitions are how the ViziVault ecosystem organizes your data. Every [attribute](/glossary/attribute) in the system consists of a user id (or entity id), which represents who the data is about; a value, which is the data being stored; and an attribute key, which specifies what attribute definition governs the structure of the data. For example, in an online retail application, there would be an attribute definition for shipping addresses, an attribute definition for billing addresses, an attribute definition for credit card information, and so on.
+Attribute definitions are how the ViziVault ecosystem organizes your data. Every [attribute](/glossary/attribute) in the system consists of a data subject id, which represents who the data is about; a value, which is the data being stored; and an attribute key, which specifies what attribute definition governs the structure of the data. For example, in an online retail application, there would be an attribute definition for shipping addresses, an attribute definition for billing addresses, an attribute definition for credit card information, and so on.
 
 ## Definition
 
@@ -17,12 +17,12 @@ There are several forms of metadata associated with attributes, as follows:
 |createdDate|String|An ISO 8601 representation of the timestamp when the attribute definition was created.|
 |modifiedDate|String|An ISO 8601 representation of the timestamp when the attribute definition was most recently modified.|
 |schema|[Attribute schema](/tutorials/attribute-schemas)|A representation of the structure of data belonging to this attribute is expected to have, including any sub-attributes, and whether its data is textual, numeric, or other formats. Read [the Attribute Schemas tutorial](/tutorials/attribute-schemas) for more information.|
-|repeatable|boolean|Whether a user should be able to have multiple values for this attribute.|
+|repeatable|boolean|Whether a data subject should be able to have multiple values for this attribute.|
 |regulations|Array<String>|A list of [regulation keys](/glossary/regulation), each representing a regulation that will be applied to all attributes belonging to this attribute definition.|
 
 ## Examples
 
-An example attribute definition representing a user's billing address:
+An example attribute definition representing a data subject's billing address:
 
 ```json
 {

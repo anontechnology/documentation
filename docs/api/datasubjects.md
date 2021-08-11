@@ -1,14 +1,14 @@
-# Users
+# Attributes
 
-## POST /users
-Stores metadata associated with a user. Returns a [User](/glossary/user) object.
+## POST /datasubjects
+Stores metadata associated with a data subject. Returns a [Data Subject](/glossary/datasubject) object.
 
 ### Parameters
 
 #### Body Parameters (Required)
 |Name            |Type                            |Description                  |
 |----------------|--------------------------------|-----------------------------|
-|payload         |[User](/glossary/user)|Description of user to store|
+|payload         |[Data Subject](/glossary/datasubject)|Description of data subject to store|
 
 ### Example payload
 ```json
@@ -30,13 +30,13 @@ Stores metadata associated with a user. Returns a [User](/glossary/user) object.
 }
 ```
 
-## GET /users/{userId}
-Displays information about one user. Returns a [User](/glossary/user) object.
+## GET /datasubjects/{subjectId}
+Displays information about one data subject. Returns a [Data Subject](/glossary/datasubjet) object.
 
 ### Path Parameters
-|Name            |Type                           |Description                  |
-|----------------|-------------------------------|-----------------------------|
-|userId          |String                         |ID of the user to describe   |
+|Name            |Type                        |Description                       |
+|----------------|----------------------------|----------------------------------|
+|subjectId       |String                      |ID of the data subject to describe|
 
 ### Example response
 ```json
@@ -61,10 +61,10 @@ Displays information about one user. Returns a [User](/glossary/user) object.
 ### Error responses
 |Status code|Error message|Description|
 |-----------|-------------|-----------|
-|404        |Not found    |The system does not contain an user with the specified id.|
+|404        |Not found    |The system does not contain a data subject with the specified id.|
 
-## GET /users
-Retrieves metadata for all users in the system. Returns a list of [User](/glossary/user) objects.
+## GET /datasubjects
+Retrieves metadata for all data subjects in the system. Returns a list of [Data Subject](/glossary/datasubject) objects.
 
 ### Parameters
 None

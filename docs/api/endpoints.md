@@ -1,5 +1,5 @@
 # API Endpoints
-Guides and reference materials to help you get started, integrate, optimize, and troubleshoot your use of the Anon Tech Platform.
+Guides and reference materials to help you get started, integrate, optimize, and troubleshoot your use of the ViziVault Platform.
 
 ### Attribute Definitions
 -   [POST /attributes](/api/attributes#post-attributes)
@@ -13,22 +13,15 @@ Guides and reference materials to help you get started, integrate, optimize, and
 -   [GET /tags/{tagName}](/api/tags#get-tagstagname)
 -   [DELETE /tags/{tagName}](/api/tags#delete-tagstagname)
 
-### User Attributes
--   [POST /users/{userId}/attributes](/api/datapoints#post-usersuseridattributes)
--   [GET /users/{userId}/attributes](/api/datapoints#get-usersuseridattributes)
--   [GET /users/{userId}/attribute/{attributeKey}](/api/datapoints#get-usersuseridattributeattributtekey)
+### Data Subject Attributes
+-   [POST /datasubjects/{subjectId}/attributes](/api/datapoints#post-datasubjectssubjectidattributes)
+-   [GET /datasubjects/{subjectId}/attributes](/api/datapoints#get-datasubjectssubjectidattributes)
+-   [GET /datasubjects/{subjectId}/attribute/{attributeKey}](/api/datapoints#get-datasubjectssubjectidattributeattributtekey)
 -   [GET /data/{dataPointId}](/api/datapoints#get-datadatapointid)
 -   [POST /search](/api/datapoints#post-search)
--   [DELETE /users/{userId}/attributes/{attributeKey}](/api/datapoints#delete-usersuseridattributesattributekey)
--   [DELETE /users/{userId}/data](/api/datapoints#delete-usersuseriddata)
+-   [DELETE /datasubjects/{subjectId}/attributes/{attributeKey}](/api/datapoints#delete-datasubjectssubjectidattributesattributekey)
+-   [DELETE /datasubjects/{subjectId}/data](/api/datapoints#delete-datasubjectssubjectiddata)
 -   [DELETE /data/{dataPointId}](/api/datapoints#delete-datadatapointid)
-
-### Entity Attributes
--   [POST /entities/{entityId}/attributes](/api/datapoints#post-entitiesentityidattributes)
--   [GET /entities/{entityId}/attributes](/api/datapoints#get-entitiesentityidattributes)
--   [GET /entities/{entityId}/attribute/{attributeKey}](/api/datapoints#get-entitiesentityidattributeattributtekey)
--   [DELETE /entities/{entityId}/attributes/{attributeKey}](/api/datapoints#delete-entitiesentityidattributesattributekey)
--   [DELETE /entities/{entityId}/data](/api/datapoints#delete-entitiesentityiddata)
 
 ### Regulations
 -   [POST /regulations](/api/regulations#post-regulations)
@@ -42,10 +35,7 @@ Guides and reference materials to help you get started, integrate, optimize, and
 -   [GET /rules/{rule}](/api/rules#get-rulesrulename)
 -   [DELETE /rules/{rule}](/api/rules#delete-rulesrulename)
 
-### Users
--   [POST /entities](/api/users#post-entities)
--   [POST /users](/api/users#post-users)
--   [GET /entities](/api/users#get-entities)
--   [GET /entities/{entityid}](/api/users#get-entitiesentityid)
--   [GET /users](/api/users#get-users)
--   [GET /users/{userId}](/api/users#get-usersuserid)
+### Data Subjects
+-   [POST /datasubjects](/api/datasubjects#post-datasubjects)
+-   [GET /datasubjects](/api/datasubjects#get-datasubjects)
+-   [GET /datasubjects/{subjectId}](/api/datasubjects#get-datasubjectssubjectid)
