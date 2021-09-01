@@ -94,6 +94,24 @@ On success, returns 200 OK and a summary of the accesses that were recorded, inc
         "dataPointId": "1fbeb66e-d460-43f5-b473-164b2c5ce526",
         "subjectId": "user65536",
         "attribute": "SHIPPING_ADDRESS"
+        "subPoints": [
+            {
+                "attribute": "SHIPPING_ADDRESS.line_one",
+                "dataPointId": "1fbeb66e-d460-43f5-b473-164b2c5ce626"
+            },
+            {
+                "attribute": "SHIPPING_ADDRESS.city",
+                "dataPointId": "1fbeb66e-d460-43f5-b473-164b2c5ce627"
+            },
+            {
+                "attribute": "SHIPPING_ADDRESS.state",
+                "dataPointId": "1fbeb66e-d460-43f5-b473-164b2c5ce628"
+            },
+            {
+                "attribute": "SHIPPING_ADDRESS.postal_code",
+                "dataPointId": "1fbeb66e-d460-43f5-b473-164b2c5ce629"
+            }
+        ]
     },
     {
         "eventType": "read",
