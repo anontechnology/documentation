@@ -24,7 +24,8 @@ Guides and reference materials to help you get started, integrate, optimize, and
 -   [DELETE /data/{dataPointId}](/api/datapoints#delete-datadatapointid)
 
 ### Report-Only Audit Log
--   [POST /auditlog](/api/reportonly#post-auditlog)
+-   [POST /auditlogs](/api/reportonly#post-auditlog)
+-   [POST /auditlogs/bulk](/api/reportonly#post-auditlogbulk)
 
 ### Regulations
 -   [POST /regulations](/api/regulations#post-regulations)

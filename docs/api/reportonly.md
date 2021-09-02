@@ -1,6 +1,6 @@
 # Report-Only Data
 
-## POST /report
+## POST /auditlogs
 Records activity for report-only data; that is, data that is not stored in the vault but is still being monitored. The purpose of this endpoint is to collect metadata about how sensitive data that is stored in external systems is being used.
 
 While writes of external data can be recorded using [the same API endpoint used for storing data in the vault](/api/datapoints#post-datasubjectssubjectidattributes), this endpoint allows recording reads and deletes as well as writes.
@@ -10,7 +10,7 @@ While writes of external data can be recorded using [the same API endpoint used 
 #### Body Parameters (Required)
 |Name            |Type                            |Description                  |
 |----------------|--------------------------------|-----------------------------|
-|payload         |List of ExternalActivityEvent   |List of accesses to externally-stored data|
+|payload         |ExternalActivityEvent   |Description of accesses to externally-stored data|
 
 The structure of the ExternalActivityEvent object is as follows:
 
@@ -25,6 +25,87 @@ The structure of the ExternalActivityEvent object is as follows:
 |applicationUser|String|Identifier for the application user who initiated this access.|Optional|
 |location|Geolocation|The geographic country, subdivision, and/or city where this access was initiated from.|Optional|
 
+### Example payload
+
+```json
+{
+    "eventType": "store",
+    "dataPointId": "1fbeb66e-d460-43f5-b473-164b2c5ce526",
+    "subjectId": "user65536",
+    "data": {
+        "attribute": "SHIPPING_ADDRESS",
+        "value": {
+            "line_one": "1 Hacker Way",
+            "city": "Beverly Hills",
+            "state": "CA",
+            "postal_code": "90210"
+        },
+        "tags": ["tag1", "tag2"],
+        "regulations": ["COPPA", "GDPR"],
+        "sensitivity": "SENSITIVE"
+        
+    }
+    "timestamp": "2021-01-01T00:00:00Z",
+    "applicationId": "5eabb29fac3675476ae1ec48",
+    "applicationUser": "csmith97",
+    "location": {
+        "country": "US",
+        "subdivision": "NY",
+        "city": "Albany"
+    }
+}
+```
+
+### Example response
+On success, returns 200 OK and a summary of the accesses that were recorded, including newly-generated datapoint IDs for any newly-stored attributes that did not already have them.
+
+```json
+{
+    "eventType": "store",
+    "dataPointId": "1fbeb66e-d460-43f5-b473-164b2c5ce526",
+    "subjectId": "user65536",
+    "attribute": "SHIPPING_ADDRESS"
+    "subPoints": [
+        {
+            "attribute": "SHIPPING_ADDRESS.line_one",
+            "dataPointId": "1fbeb66e-d460-43f5-b473-164b2c5ce626"
+        },
+        {
+            "attribute": "SHIPPING_ADDRESS.city",
+            "dataPointId": "1fbeb66e-d460-43f5-b473-164b2c5ce627"
+        },
+        {
+            "attribute": "SHIPPING_ADDRESS.state",
+            "dataPointId": "1fbeb66e-d460-43f5-b473-164b2c5ce628"
+        },
+        {
+            "attribute": "SHIPPING_ADDRESS.postal_code",
+            "dataPointId": "1fbeb66e-d460-43f5-b473-164b2c5ce629"
+        }
+    ]
+}
+```
+### Error responses
+|Status code|Error message|Description|
+|-----------|-------------|-----------|
+|400        |Event type is required|The event type for an activity event was not specified.|
+|400        |Unrecognized event type|The event type for an activity event was something other than `read`, `store`, `update`, or `delete`.|
+|400        |Data point ID is required for events other than creation|An activity event whose event type was not `store` had no datapoint ID specified.|
+|409        |Data point ID is in use|A `store` event had a data point ID specified, but the system already contained an attribute with that datapoint ID that belonged to a different data subject ID and/or attribute definition|
+|400|No such attribute|You are attempting to report activity for data belonging to an attribute that does not exist.|
+|400|Expected \[type\] for value of attribute \[attribute\]|The value provided for the indicated attribute or sub-attribute does not match what is expected according to that attribute's [schema](/tutorials/attribute-schemas).|
+|400|Unknown sub-attribute \[sub-attribute\]|A value provided for a structured attribute contains a sub-attribute that is not present in that attribute's [schema](/tutorials/attribute-schemas).|
+|400|Timestamp out of range|A timestamp was provided for the event that is more than one day in the future.|
+|400|Application ID is required|The application ID was not specified.|
+|403|The provided data could not be stored, as a rule disallows it|A [rule](/tutorials/rules) has been configured that prohibits writing some of the data that was reported as having been stored.| 
+
+## POST /auditlogs/bulk
+Identical to `POST /auditlogs`, but handles multiple events in one request.
+
+#### Body Parameters (Required)
+|Name            |Type                            |Description                  |
+|----------------|--------------------------------|-----------------------------|
+|payload         |List<ExternalActivityEvent>   |List of accesses to externally-stored data|
 
 ### Example payload
 
@@ -59,7 +140,7 @@ The structure of the ExternalActivityEvent object is as follows:
     {
         "eventType": "read",
         "subjectId": "user65536",
-        "attribute": "SHIPPING_ADDRESS",
+        "dataPointId": "1fbeb66e-d460-43f6-b474-164b2c5ce527",
         "timestamp": "2021-01-01T00:00:00Z",
         "applicationId": "5eabb29fac3675476ae1ec48",
         "applicationUser": "csmith97",
@@ -77,7 +158,9 @@ The structure of the ExternalActivityEvent object is as follows:
     {
         "eventType": "store",
         "subjectId": "user01024",
-        "attribute": "BILLING_ADDRESS",
+        "data": {
+            "attribute": "BILLING_ADDRESS",
+        },
         "applicationId": "5eabb29fac3675476ae1ec48"
     }
 ]
@@ -87,8 +170,7 @@ The structure of the ExternalActivityEvent object is as follows:
 On success, returns 200 OK and a summary of the accesses that were recorded, including newly-generated datapoint IDs for any newly-stored attributes that did not already have them.
 
 ```json
-{
-
+[
     {
         "eventType": "store",
         "dataPointId": "1fbeb66e-d460-43f5-b473-164b2c5ce526",
@@ -130,8 +212,8 @@ On success, returns 200 OK and a summary of the accesses that were recorded, inc
         "dataPointId": "1fbeb66e-d460-43f6-b474-164b2c5ce527",
         "subjectId": "user01024",
         "attribute": "BILLING_ADDRESS",
-    },
-}
+    }
+]
 ```
 ### Error responses
 |Status code|Error message|Description|
