@@ -24,6 +24,7 @@ Stores metadata associated with a data subject. Returns a [Data Subject](/glossa
   "data": {
     "id": "0001",
     "tags": ["ExampleTag"],
+    "legalHold": false,
     "created": "2020-09-03T02:18:54Z",
     "updated": "2020-09-24T18:28:29Z",
   }
@@ -41,20 +42,13 @@ Displays information about one data subject. Returns a [Data Subject](/glossary/
 ### Example response
 ```json
 {
-  "data": [
-    {
-      "id": "0001",
-      "tags": [],
-      "created": "2020-09-03T02:18:54Z",
-      "updated": "2020-09-24T18:28:29Z",
-    },
-    {
-      "id": "0002",
-      "tags": [],
-      "created": "2020-09-03T02:18:54Z",
-      "updated": "2020-09-24T18:28:29Z",
-    },
-  ]
+  "data": {
+    "id": "0001",
+    "tags": [],
+    "legalHold": false,
+    "created": "2020-09-03T02:18:54Z",
+    "updated": "2020-09-24T18:28:29Z",
+  }
 }
 ```
 
@@ -72,12 +66,22 @@ None
 ### Example response
 ```json
 {
-  "data": {
-    "id": "0001",
-    "tags": [],
-    "created": "2020-09-03T02:18:54Z",
-    "updated": "2020-09-24T18:28:29Z",
-  }
+  "data": [
+    {
+      "id": "0001",
+      "tags": [],
+      "legalHold": false,
+      "created": "2020-09-03T02:18:54Z",
+      "updated": "2020-09-24T18:28:29Z",
+    },
+    {
+      "id": "0002",
+      "tags": [],
+      "legalHold": false,
+      "created": "2020-09-03T02:18:54Z",
+      "updated": "2020-09-24T18:28:29Z",
+    },
+  ]
 }
 ```
 
