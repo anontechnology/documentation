@@ -104,6 +104,14 @@ A storage prevention action causes the system to reject data, preventing it from
 
 A notification action dispatches a notification to the ViziVault enterprise web interface. The text of the notification and its alert level can be configured.
 
+## Legal hold action
+
+A legal hold action places a legal hold on the [data subject](/glossary/datasubject) that the data is associated with. This prevents potentially destructive actions such as deleting or overwriting data until the hold is lifted.
+
+## Retention policy action
+
+A retention policy action determines how long the data is considered to still be valid. The retention policy status of all your data can be viewed in ViziVault Enterprise. Retention policies can specify either a cutoff date after which the data is no longer valid, or a number of days to retain the data for. Additionally, a secondary policy can be specified that marks data as invalid if it has not been read for a certain number of days.
+
 ## JSON format of actions
 
  - Regulation metadata action
@@ -119,6 +127,13 @@ A notification action dispatches a notification to the ViziVault enterprise web 
    - `type`: the string `"alert"`
    - `alertLevel`: one of `INFO`, `WARNING`, `DANGER`, `SUCCESS`, or `NEUTRAL`
    - `message`: the text to display in the notification
+ - Legal hold action
+   - `type`: the string `"legalHold"`
+ - Retention policy action
+   - `type`: the string `"retention"`
+   - `expirationDate`: an ISO-formatted date string indicating when this data expires (optional; mutually exclusive with `daysSinceStore`)
+   - `daysSinceStore`: an integer indicating how many days to retain this data for (optional; mutually exclusive with `daysSinceStore`)
+   - `daysSinceRead`: an integer indicating that the data will become invalid if it has not been read during this many days (optional)
 
 # Execution order
 
