@@ -296,7 +296,7 @@ Let's add some attributes with structure. Here we add a data subject's full name
 
 ## Loading Data
 
-Now that we have attributes, let's load some data. We will iterate over every example in our sample CSV. For each row we define a user based on the userid. Then we simply load the vaules for the flat files. For structured object data we create a hash structure and insert the key/value pairs. Finally, we save the completed user to the vault.
+Now that we have attributes, let's load some data. We will iterate over every example in our sample CSV. For each row we define a data subject based on the subject id. Then we simply load the vaules for the flat files. For structured object data we create a hash structure and insert the key/value pairs. Finally, we save the completed data subject to the vault.
 
 === "C#"
     ``` c#
@@ -313,24 +313,24 @@ Now that we have attributes, let's load some data. We will iterate over every ex
                 userData[headers[i]] = cells[i];
             }
 
-            User user = new User(userData["USERID"]);
+            DataSubject dataSubject = new DataSubject(userData["SUBJECTID"]);
             
-            user.addAttribute(eyeColorAttributeDef.Name, userData["EYE_COLOR"]);
-            user.addAttribute(ageAttributeDef.Name, userData["AGE"]);
-            user.addAttribute(nameAttributeDef.Name, new Name(){
+            dataSubject.addAttribute(eyeColorAttributeDef.Name, userData["EYE_COLOR"]);
+            dataSubject.addAttribute(ageAttributeDef.Name, userData["AGE"]);
+            dataSubject.addAttribute(nameAttributeDef.Name, new Name(){
                 FirstName = userData["FIRST_NAME"],
                 LastName = userData["LAST_NAME"],
                 MiddleName = userData["MIDDLE_NAME"],
                 Company = userData["COMPANY"]
             });
-            user.addAttribute(addressAttributeDef.Name, new Address(){
+            dataSubject.addAttribute(addressAttributeDef.Name, new Address(){
                 Street = userData["STREET"],
                 City = userData["CITY"],
                 State = userData["STATE"],
                 Country = userData["COUNTRY"]
             });
 
-            await vault.SaveAsync(user);
+            await vault.SaveAsync(dataSubject);
         }
     }
     ```
@@ -409,10 +409,10 @@ Now that we have attributes, let's load some data. We will iterate over every ex
 
     while(iterator.hasNext()) {
         Map<String, String> csvVals = iterator.next();
-        User user=new User(csvVals.get("USERID"));
+        DataSubject dataSubject=new DataSubject(csvVals.get("SUBJECTID"));
 
-        user.addAttribute(eyeColorattributeDef.getName(),csvVals.get("USERID"));
-        user.addAttribute(ageAttributeDef.getName(),csvVals.get("AGE"));
+        dataSubject.addAttribute(eyeColorattributeDef.getName(),csvVals.get("SUBJECTID"));
+        dataSubject.addAttribute(ageAttributeDef.getName(),csvVals.get("AGE"));
 
         Name name=new Name();
         
@@ -420,7 +420,7 @@ Now that we have attributes, let's load some data. We will iterate over every ex
         name.setLastName(csvVals.get("LAST_NAME"));
         name.setMiddleName(csvVals.get("MIDDLE_NAME"));
         name.setCompany(csvVals.get("COMPANY"));
-        user.addAttribute(nameAttributeDef.getName(),myName);
+        dataSubject.addAttribute(nameAttributeDef.getName(),myName);
 
         Address address=new Address();
         
@@ -429,20 +429,20 @@ Now that we have attributes, let's load some data. We will iterate over every ex
         address.setState(csvVals.get("STATE"));
         address.setCountry(csvVals.get("COUNTRY"));
 
-        user.addAttribute(addressAttributeDef.getName(),myAddress);
-        vault.save(user);
+        dataSubject.addAttribute(addressAttributeDef.getName(),myAddress);
+        vault.save(dataSubject);
     
     }
     ```
 
-### Retrieving Data for a User
+### Retrieving Data for a Data Subject
 
-Now that we have data in the system, let's try to get our data back. Here we grab the data for a user with the id 101.
+Now that we have data in the system, let's try to get our data back. Here we grab the data for a data subject with the id 101.
 
 === "C#"
     ```c#
-    User receivedUser = await vault.FindByUserAsync("101");
-    foreach(AttributeValue attr in receivedUser.Attributes) {
+    DataSubject receivedSubject = await vault.FindByDataSubjectAsync("101");
+    foreach(AttributeValue attr in receivedSubject.Attributes) {
         Console.WriteLine($"Attribute: {attr.AttributeKey}; Value: {attr.Value}");
     }
     ```
@@ -460,8 +460,8 @@ Now that we have data in the system, let's try to get our data back. Here we gra
 === "Java"
     ``` java
    
-    User receivedUser = vault.findByUser("101");
-    for (Attribute attribute : receivedUser.getAttributes()) {
+    DataSubject receivedSubject = vault.findByDataSubject("101");
+    for (Attribute attribute : receivedSubject.getAttributes()) {
       System.out.printf("attribute_name: %s attribute_value: %s%n", attribute.getAttribute(), attribute.getValue());
     }
 

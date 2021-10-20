@@ -117,53 +117,53 @@ Library not available for your desired language? Feel free to contribute to our 
 ----------------------------------------------------------------------
 ## Attributes
 
-The ViziVault ecosystem organizes your data using the concept of [attributes](/glossary/attribute). Every data point consists of three main components: a user id, which represents who the data is about; a value, which is some piece of information about the user; and an attribute, which expresses the relationship between the user and the value. For example, in an online retail application, there would be an attribute for shipping addresses, an attribute for billing addresses, an attribute for credit card information, and so on.
+The ViziVault ecosystem organizes your data using the concept of [attributes](/glossary/attribute). Every data point consists of three main components: a data subject id, which represents who the data is about; a value, which is some piece of information about the data subject; and an attribute, which expresses the relationship between the data subject and the value. For example, in an online retail application, there would be an attribute for shipping addresses, an attribute for billing addresses, an attribute for credit card information, and so on.
 
-### Adding an Attribute to an Entity or User
+### Adding an Attribute to a Data Subject
 
-Attributes are stored as `key`/`value` pairs of strings. Both users and entities can have attributes added to them. Some attributes are repeatable, such that multiple values can be stored for the same user; others are not repeatable, such that adding a new value to a user will overwrite any previous values. You can control whether an attribute is repeatable by modifying the associated [attribute definition](/glossary/attribute-definition).
+Attributes are stored as `key`/`value` pairs of strings. Some attributes are repeatable, such that multiple values can be stored for the same data subject; others are not repeatable, such that adding a new value to a data subject will overwrite any previous values. You can control whether an attribute is repeatable by modifying the associated [attribute definition](/glossary/attribute-definition).
 
 === "Java"
 
     ``` java
-    // Adding an attribute to a newly-created user
-    User user = new User("exampleUser");
-    user.addAttribute(FIRST_NAME, "Jane");
-    vault.save(user);
+    // Adding an attribute to a newly-created data subject
+    DataSubject dataSubject = new DataSubject("exampleUser");
+    dataSubject.addAttribute("FIRST_NAME", "Jane");
+    vault.save(dataSubject);
 
-    // Adding an attribute to an entity retrieved from the vault
-    Entity entity = vault.findByEntity("Client6789");
-    entity.addAttribute("FULL_ADDRESS", "1 Hacker Way, Beverly Hills, CA 90210");
-    vault.save(entity);
+    // Adding an attribute to a data subject retrieved from the vault
+    DataSubject dataSubject = vault.findByDataSubject("Client6789");
+    dataSubject.addAttribute("FULL_ADDRESS", "1 Hacker Way, Beverly Hills, CA 90210");
+    vault.save(dataSubject);
 
-    // Adding an attribute with additional metadata to a user
+    // Adding an attribute with additional metadata to a data subject
     Attribute attribute = new Attribute("LAST_NAME");
     attribute.setTags(List.of("ExampleTag"));
     attribute.setValue("Smith");
-    user.addAttribute(attribute);
-    vault.save(user);
+    dataSubject.addAttribute(attribute);
+    vault.save(dataSubject);
     ```
 
 === "C#"
 
     ``` c#
-    // Adding an attribute to user
-    User user = await vault.FindByUserAsync("User1234");
-    user.AddAttribute("FIRST_NAME", "Jane");
-    await vault.SaveAsync(user);
+    // Adding an attribute to a newly-created data subject
+    DataSubject dataSubject = new DataSubject("exampleUser");
+    dataSubject.AddAttribute("FIRST_NAME", "Jane");
+    await vault.SaveAsync(dataSubject);
 
-    // Adding an attribute to entity
-    Entity entity = await vault.FindByEntityAsync("Client6789");
-    entity.AddAttribute("FULL_ADDRESS", "1 Hacker Way, Beverly Hills, CA 90210");
-    await vault.SaveAsync(entity);
+    // Adding an attribute to data subject retrieved from the vault
+    DataSubject dataSubject = await vault.FindByDataSubjectAsync("User1234");
+    dataSubject.AddAttribute("FIRST_NAME", "Jane");
+    await vault.SaveAsync(DataSubject);
 
-    // Adding an attribute with additional metadata to a user
+    // Adding an attribute with additional metadata to a data subject
     AttributeValue attribute = new Attribute("LAST_NAME") {
         Tags = new List<String>{"ExampleTag"},
         Value = "Smith"
     };
-    user.AddAttribute(attribute);
-    await vault.SaveAsync(user);
+    dataSubject.AddAttribute(attribute);
+    await vault.SaveAsync(dataSubject);
     ```
 
 === "Node.js"
@@ -211,32 +211,24 @@ Attributes are stored as `key`/`value` pairs of strings. Both users and entities
     $vault->save($entity);
     ```
 
-### Retrieving all Attributes of an Entity or User
+### Retrieving all Attributes of a Data Subject
 
-Retrieves all [Attributes](/glossary/attribute) for the specified entity or user. Returns a list of Attribute objects.
+Retrieves all [Attributes](/glossary/attribute) for the specified data subject. Returns a list of Attribute objects.
 
 === "Java"
 
     ``` java
-    // Retrieving all attributes for a user
-    User user = vault.findByUser("User1234");
-    List<Attribute> attributes = user.getAttributes();
-
-    // Retrieving all attributes for an entity
-    Entity entity = vault.findByEntity("Client6789");
-    List<Attribute> attributes = entity.getAttributes();
+    // Retrieving all attributes for a data subject
+    DataSubject dataSubject = vault.findByDataSubject("User1234");
+    List<Attribute> attributes = dataSubject.getAttributes();
     ```
 
 === "C#"
 
     ``` c#
-    // Retrieving all attributes for a user
-    User user = await vault.FindByUserAsync("User1234");
-    List<Attribute> attributes = user.Attributes;
-
-    // Retrieving all attributes for an entity
-    Entity entity = await vault.FindByEntityAsync("Client6789");
-    List<Attribute> attributes = entity.Attributes;
+    // Retrieving all attributes for a data subject
+    DataSubject dataSubject = await vault.FindByDataSubjectAsync("User1234");
+    List<Attribute> attributes = dataSubject.Attributes;
     ```
 
 === "Node.js"
@@ -278,38 +270,30 @@ Retrieves all [Attributes](/glossary/attribute) for the specified entity or user
     $attributes = $entity->getAttributes();
     ```  
 
-### Retrieving an Attribute of an Entity or User
+### Retrieving an Attribute of a Data Subject
 
-Retrieves a single specified [attribute](/glossary/attribute) for the specified entity or user. For repeatable attributes, use `getAttributes(attributeName)`; for non-repeatable attributes, use `getAttribute(attributeName)`.
+Retrieves a single specified [attribute](/glossary/attribute) for the specified data subject. For repeatable attributes, use `getAttributes(attributeName)`; for non-repeatable attributes, use `getAttribute(attributeName)`.
 
 === "Java"
 
     ``` java
-    // Retrieving specific attribute for a user
-    User user = vault.findByUser("User1234");
-    Attribute attribute = user.getAttribute("FIRST_NAME");
-
-    // Retrieving specific attribute for an entity
-    Entity entity = vault.findByEntity("Client6789");
-    Attribute attribute = entity.getAttribute("FULL_ADDRESS");
+    // Retrieving specific attribute for a data subject
+    DataSubject dataSubject = vault.findByDataSubject("User1234");
+    Attribute attribute = dataSubject.getAttribute("FIRST_NAME");
 
     // Retrieving multiple values for a repeatable attribute
-    List<Attribute> attributes = user.getAttributes("SHIPPING_ADDRESS");
+    List<Attribute> attributes = dataSubject.getAttributes("SHIPPING_ADDRESS");
     ```
 
 === "C#"
 
     ``` c#
-    // Retrieving specific attribute for a user
-    User user = await vault.FindByUserAsync("User1234");
-    Attribute attribute = user.GetAttribute("FIRST_NAME");
-
-    // Retrieving specific attribute for an entity
-    Entity entity = vault.FindByEntity("Client6789");
-    Attribute attribute = entity.GetAttribute("FULL_ADDRESS");
+    // Retrieving specific attribute for a data subject
+    DataSubject dataSubject = await vault.FindByDataSubjectAsync("User1234");
+    Attribute attribute = dataSubject.GetAttribute("FIRST_NAME");
 
     // Retrieving multiple values for a repeatable attribute
-    List<Attribute> attributes = user.GetAttributes("SHIPPING_ADDRESS");
+    List<Attribute> attributes = dataSubject.GetAttributes("SHIPPING_ADDRESS");
     ```
 
 === "Node.js"
@@ -351,20 +335,20 @@ Retrieves a single specified [attribute](/glossary/attribute) for the specified 
     $attributes = $entity->getAttribute("FULL_ADDRESS");
     ```  
 
-### Deleting User Attributes
+### Deleting Data Subject Attributes
 
-[Attributes](/glossary/attribute) can be removed from the User object by calling `clearAttribute` with the specified attribute name, or by calling `purge` to remove all attributes. Additionally, all attributes have a unique datapoint id, and attributes can be deleted using this id.
+[Attributes](/glossary/attribute) can be removed from the data subject object by calling `clearAttribute` with the specified attribute name, or by calling `purge` to remove all attributes. Additionally, all attributes have a unique datapoint id, and attributes can be deleted using this id.
 
 === "Java"
 
     ``` java
-    // Purging all user attributes
+    // Purging all data subject attributes
     vault.purge("User1234");
 
     // Removing all values of a specific attribute
-    User user = vault.findByUser("User1234");
-    user.clearAttribute("LAST_NAME");
-    vault.save(user);
+    DataSubject dataSubject = vault.findByDataSubject("User1234");
+    dataSubject.clearAttribute("LAST_NAME");
+    vault.save(dataSubject);
 
     // Removing an individual value by its datapoint id
     vault.deleteDataPoint("123e4567-e89b-12d3-a456-426614174000");
@@ -373,13 +357,13 @@ Retrieves a single specified [attribute](/glossary/attribute) for the specified 
 === "C#"
 
     ``` c#
-    // Purging all user attributes
+    // Purging all data subject attributes
     await vault.PurgeAsync("User1234");
 
     // Removing specific attribute
-    User user = await vault.FindByUserAsync("User1234");
-    user.ClearAttribute("LAST_NAME");
-    await vault.SaveAsync(user);
+    DataSubject dataSubject = await vault.FindByDataSubjectAsync("User1234");
+    dataSubject.ClearAttribute("LAST_NAME");
+    await vault.SaveAsync(dataSubject);
 
     // Removing an individual value by its datapoint id
     await vault.DeleteDataPointAsync("123e4567-e89b-12d3-a456-426614174000");
@@ -741,7 +725,7 @@ Like attribute definition metadata, tag metadata can be retrieved for a single t
 
 ### Deleting Tags from the Vault
 
-To delete a tag, specify the tag to be removed. A boolean denoting the status of the operation will be returned. This will remove the tag from all attributes, attribute definitions, and users that are currently tagged with it.
+To delete a tag, specify the tag to be removed. A boolean denoting the status of the operation will be returned. This will remove the tag from all attributes, attribute definitions, and data subjects that are currently tagged with it.
 
 === "Java"
 
