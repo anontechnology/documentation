@@ -11,7 +11,7 @@ To begin using our platform, click the button below to request your own vault.
 
 <a class="md-button md-button--primary" href="https://anontech.io/contact-us" target="_blank">Request a Vault</a>
 
-## Terminology
+## Terminology 
 
 To familiarize yourself with the various concepts used across the system and the data formats that are used to represent them,
 check out our our [Glossary](/glossary/attribute-definition).
