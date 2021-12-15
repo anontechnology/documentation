@@ -17,17 +17,15 @@ The metadata associated with an entity is as follows:
 
 ## Examples
 
-An example tag definition:
+An example entity definition:
 
 ```json
 {
-  "data": {
-    "id": "user0001",
-    "type": "datasubject",
-    "tags": ["ExampleTag"],
-    "legalHold": false,
-    "created": "2020-09-03T02:18:54Z",
-    "updated": "2020-09-24T18:28:29Z",
-  }
+  "id": "user0001",
+  "type": "datasubject",
+  "tags": ["ExampleTag"],
+  "legalHold": false,
+  "created": "2020-09-03T02:18:54Z",
+  "updated": "2020-09-24T18:28:29Z",
 }
 ```
