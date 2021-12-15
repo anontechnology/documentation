@@ -10,6 +10,7 @@ There are several forms of metadata associated with attributes, as follows:
 |-----|-----|-----------|
 |key|String|An unambiguous identifier for this attribute. Only alphanumeric characters and underscores may appear in attribute keys.|
 |name|String|A human-readable identifier for this attribute.|
+|entityTypes|Array<String>|A list of [entity types](/glossary/entity-type) that this attribute is applicable to.|
 |tags|Array<String>|A list of [tags](/glossary/tag) that should be applied to all attributes belonging to this attribute definition.|
 |hint|String|An example value that this attribute could take.|
 |immutable|boolean|Whether this is a pre-loaded attribute definition provided by ViziVault that cannot be modified through the web interface.|
@@ -28,6 +29,7 @@ An example attribute definition representing a data subject's billing address:
 {
   "key" : "BILLING_ADDRESS",
   "name" : "Billing address",
+  "entityTypes" ["datasubject"],
   "tags": ["geographic_location", "financial"],
   "hint" : "{ line_one: \"1 Hacker Way\", line_two: \"Apt. 53\", city: \"Menlo Park\", state: \"California\", postal_code: \"94025-1456\", country: \"USA\"}",
   "schema": {

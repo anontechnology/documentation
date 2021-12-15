@@ -16,6 +16,7 @@ Creates or edits an attribute definition. If there is an existing attribute in t
 {
   "key": "SAMPLE_ATTRIBUTE",
   "name": "Sample Attribute",
+  "entityTypes": [ "datasubject" ],
   "tags": [
     "age",
     "financial",
@@ -38,6 +39,7 @@ On success, returns 201 Created and a description of the updated attribute.
   "data": {
     "key": "SAMPLE_ATTRIBUTE",
     "name": "Sample Attribute",
+    "entityTypes": [ "datasubject" ],
     "tags": [
       "age",
       "financial",
@@ -79,6 +81,7 @@ None
     {
       "key": "SAMPLE_ATTRIBUTE",
       "name": "Sample Attribute",
+      "entityTypes": [ "datasubject" ],
       "tags": ["financial", "medical"],
       "hint": "example data for this attribute",
       "immutable": false,
@@ -107,6 +110,7 @@ Displays information about one attribute definition. Returns an [AttributeDefini
   "data": {
     "key": "SAMPLE_ATTRIBUTE",
     "name": "Sample Attribute",
+    "entityTypes": [ "datasubject" ],
     "tags": [
       "age",
       "financial",

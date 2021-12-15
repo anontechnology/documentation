@@ -13,7 +13,8 @@ Stores metadata associated with a data subject. Returns a [Data Subject](/glossa
 ### Example payload
 ```json
 {
-  "id": "0001",
+  "id": "user0001",
+  "type": "datasubject",
   "tags": ["ExampleTag"]
 }
 ```
@@ -22,7 +23,8 @@ Stores metadata associated with a data subject. Returns a [Data Subject](/glossa
 ```json
 {
   "data": {
-    "id": "0001",
+    "id": "user0001",
+    "type": "datasubject",
     "tags": ["ExampleTag"],
     "legalHold": false,
     "created": "2020-09-03T02:18:54Z",
@@ -43,7 +45,8 @@ Displays information about one data subject. Returns a [Data Subject](/glossary/
 ```json
 {
   "data": {
-    "id": "0001",
+    "id": "user0001",
+    "type": "datasubject",
     "tags": [],
     "legalHold": false,
     "created": "2020-09-03T02:18:54Z",
@@ -68,14 +71,16 @@ None
 {
   "data": [
     {
-      "id": "0001",
+      "id": "user0001",
+      "type": "datasubject",
       "tags": [],
       "legalHold": false,
       "created": "2020-09-03T02:18:54Z",
       "updated": "2020-09-24T18:28:29Z",
     },
     {
-      "id": "0002",
+      "id": "user0002",
+      "type": "datasubject",
       "tags": [],
       "legalHold": false,
       "created": "2020-09-03T02:18:54Z",
