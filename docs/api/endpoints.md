@@ -43,3 +43,9 @@ Guides and reference materials to help you get started, integrate, optimize, and
 -   [POST /datasubjects](/api/datasubjects#post-datasubjects)
 -   [GET /datasubjects](/api/datasubjects#get-datasubjects)
 -   [GET /datasubjects/{subjectId}](/api/datasubjects#get-datasubjectssubjectid)
+
+### Entity Types
+-   [POST /entitytypes](/api/entity-types#post-entitytypes)
+-   [GET /entitytypes](/api/entity-types#get-entitytypes)
+-   [GET /entitytypes/{typeKey}](/api/entity-types#get-entitytypestypekey)
+-   [DELETE /entitytypes/{typeKey}](/api/entity-types#delete-entitytypestypekey)
