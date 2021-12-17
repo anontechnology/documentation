@@ -134,7 +134,9 @@ For each attribute stored, if the attribute is repeatable, existing data in the 
 |400|Encoded key provided is invalid|The public encryption key provided is not correct.|
 |400|No such attribute|You are attempting to store data for an attribute that does not exist.|
 |400|No such regulation|You are attempting to store data that is tagged with a regulation that does not exist.|
+|400|Attribute is not applicable to entity type|You are attempting to store data of an attribute that is not applicable to the entity type of the entity the data belongs to|
 |403|Forbidden access to attribute|Your application does not have permission to access some of the attributes of the data you are attempting to store.|
+|403|Cannot overwrite attribute for data subject, as the data subject is under a legal hold|You are attempting to store a value of a nonrepeatable attribute for a data subject who already has a value for that attribute, which would overwrite the existing value; however, the data subject is under a legal hold, and so the existing data cannot be overwritten|
 |409|Received multiple values for nonrepeatable attribute|You are attempting to store two or more attributes belonging to the same attribute definition, but that attribute definition is not repeatable.|
 |413|Datapoint values may not exceed 1 MB in size|You are attempting to store a string that is longer than 1,048,576 characters long. For longer data, set the data's [attribute schema](/tutorials/attribute-schemas) to "file".
 |422|Expected \[type\] for value of attribute \[attribute\]|The value given for the indicated attribute or sub-attribute does not match what is expected according to that attribute's [schema](/tutorials/attribute-schemas).|
