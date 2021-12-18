@@ -1,77 +1,11 @@
-# User Attributes
+# Entity and Data Subject Attributes
 
-<!---## POST /data
-Stores data for multiple users simultaneously.
+## POST /entities/{entityId}/attributes
+Stores attributes for the given entity.
 
-### Header Parameters
-|Name            |Type                           |Description                  |
-|----------------|-------------------------------|-----------------------------|
-|X-Encryption-Key|String                         |Public encryption key        |
+For each attribute stored, if the attribute is repeatable, existing data in the vault will not be affected. If the attribute is not repeatable, existing data will be overwritten. If you want to make modifications to a nonrepeatable attribute, the best way is to read the current value, make changes as necessary, and then store the complete modified attribute.
 
-
-### Body Parameters (Required)
-|Name            |Type                           |Description                  |
-|----------------|-------------------------------|-----------------------------|
-|payload         |Array<[StorageRequest](/glossary/storage-request)>|List of storage requests (i.e. lists of data points, each for one user) to be processed |
-
-
-### Example Payload
-```json
-{
-  "requests":  [
-    {
-      "data": [
-        {
-          "accessibility": "Read Only",
-          "attribute": "SAMPLE_ATTRIBUTE",
-          "regulations": ["SAMPLE_REGULATION"],
-          "sensitivity": "PERSONAL",
-          "value": "123-456-789"
-        }
-      ],
-      "namespace": "Example_Namespace",
-      "origin": "127.0.0.1",
-      "subjectId": "001"
-    }
-  ]
-}
-```
-
-### Example Response
-```json
-{
-  "data": [
-    {
-      "attribute": "NAME_FIRST",
-      "createdDate": "2020-01-01T10:05:59.5646+08:00",
-      "dataPointId": "a9fcbf23-852f-441e-b729-dc9fffa528f7",
-      "modifiedDate": "2020-01-01T10:06:32.4426+08:00",
-      "regulations": ["SAMPLE_REGULATION"],
-      "sensitivity": "PERSONAL",
-      "reportOnly": false,
-      "subjectId": "001",
-      "value": "123-456-789"
-    }
-  ]
-}
-```
-
-### Error responses
-|Status code|Error message|Description|
-|-----------|-------------|-----------|
-|400|Encoded key provided is invalid|The public encryption key provided is not correct.|
-|400|No such attribute|You are attempting to store data for an attribute that does not exist.|
-|400|No such regulation|You are attempting to store data that is tagged with a regulation that does not exist.|
-|403|Forbidden access to attribute|Your application does not have permission to access some of the attributes of the data you are attempting to store.|
-|413|Datapoint values may not exceed 1 MB in size|You are attempting to store a string that is longer than 1,048,576 characters long. For longer data, set the data's [attribute schema](/tutorials/attribute-schemas) to "file".
-|422|Expected \[type\] for value of attribute \[attribute\]|The value given for the indicated attribute or sub-attribute does not match what is expected according to that attribute's [schema](/tutorials/attribute-schemas).|
-|422|Unknown sub-attribute \[sub-attribute\]|A value given for a structured attribute contains a sub-attribute that is not present in that attribute's [schema](/tutorials/attribute-schemas).|-->
-
-
-## POST /datasubjects/{subjectId}/attributes
-Stores attributes for the given data subject.
-
-For each attribute stored, if the attribute is repeatable, existing data in the vault will not be affected. If the attribute is not repeatable, existing data will be overwritten. If you want to make modifications to a nonrepeatable attribute, the best way is to read the current value, make changes as necessary, and then store the complete  modified attribute.
+If the entity specified does not currently exist in the system, it will be created. By default, the entity will be created as a data subject; the `entityType` field on the StorageRequest object can be used to override this by specifying a different type of entity to create.
 
 ### Header Parameters
 |Name            |Type                           |Description                  |
@@ -84,9 +18,9 @@ For each attribute stored, if the attribute is repeatable, existing data in the 
 |payload             |[StorageRequest](/glossary/storage-request)|Storage Request  |
 
 ### Path Variables
-|Name               |Type                          |Description            |
-|-------------------|------------------------------|-----------------------|
-|subjectId          |String                        |Data Subject Identifier|
+|Name               |Type                          |Description      |
+|-------------------|------------------------------|-----------------|
+|entityId           |String                        |Entity Identifier|
 
 
 ### Example Payload
@@ -103,6 +37,7 @@ For each attribute stored, if the attribute is repeatable, existing data in the 
       "value": "123-456-789"
     }
   ],
+  "entityType": "datasubject",
   "namespace": "Example_Namespace",
   "origin": "127.0.0.1"
 }
@@ -121,7 +56,7 @@ For each attribute stored, if the attribute is repeatable, existing data in the 
       "sensitivity": "PERSONAL",
       "reportOnly": false,
       "structureRootId": null,
-      "subjectId": "001",
+      "entityId": "001",
       "value": "123-456-789"
     }
   ]
@@ -134,6 +69,7 @@ For each attribute stored, if the attribute is repeatable, existing data in the 
 |400|Encoded key provided is invalid|The public encryption key provided is not correct.|
 |400|No such attribute|You are attempting to store data for an attribute that does not exist.|
 |400|No such regulation|You are attempting to store data that is tagged with a regulation that does not exist.|
+|400|Entity is of type \[entityType\], which does not match the provided entity type|The storage request specifies an entity type to create, but the entity that data is being stored for already exists and is of a different type|
 |400|Attribute is not applicable to entity type|You are attempting to store data of an attribute that is not applicable to the entity type of the entity the data belongs to|
 |403|Forbidden access to attribute|Your application does not have permission to access some of the attributes of the data you are attempting to store.|
 |403|Cannot overwrite attribute for data subject, as the data subject is under a legal hold|You are attempting to store a value of a nonrepeatable attribute for a data subject who already has a value for that attribute, which would overwrite the existing value; however, the data subject is under a legal hold, and so the existing data cannot be overwritten|
@@ -142,9 +78,9 @@ For each attribute stored, if the attribute is repeatable, existing data in the 
 |422|Expected \[type\] for value of attribute \[attribute\]|The value given for the indicated attribute or sub-attribute does not match what is expected according to that attribute's [schema](/tutorials/attribute-schemas).|
 |400|Unknown sub-attribute \[sub-attribute\]|A value given for a structured attribute contains a sub-attribute that is not present in that attribute's [schema](/tutorials/attribute-schemas).|
 
-## GET /datasubjects/{subjectId}/attributes/{attributeKey}
+## GET /entities/{entityId}/attributes/{attributeKey}
 
-Displays information about an attribute for one data subject.
+Displays information about an attribute for one entity
 
 ### Header Parameters
 |Name            |Type                           |Description                  |
@@ -154,7 +90,7 @@ Displays information about an attribute for one data subject.
 ### Path Variables
 |Name               |Type                          |Description      |
 |-------------------|------------------------------|-----------------|
-|subjectId          |String                        |Data Subject Identifier|
+|entityId           |String                        |Entity Identifier|
 |attributeKey       |String                        |Attribute Name   |
 
 ### Example Response
@@ -170,7 +106,7 @@ Displays information about an attribute for one data subject.
       "sensitivity": "PERSONAL",
       "reportOnly": false,
       "structureRootId": null,
-      "subjectId": "001",
+      "entityId": "001",
       "value": "123-456-789"
     }
   ]
@@ -182,10 +118,10 @@ Displays information about an attribute for one data subject.
 |-----------|-------------|-----------|
 |400|Encoded key provided is invalid|The private decryption key provided is not correct.|
 |403|Forbidden|You are trying to access attributes that your application does not have access to.|
-|404|Data Not Found|The specified data subject does not exist, or else that subject has no value for the attributes specified.|
+|404|Data Not Found|The specified entity does not exist, or else that entity has no value for the attributes specified.|
 
-## GET /datasubjects/{subjectId}/attributes
-Retrieves attributes for the given data subject. By default, returns all attributes that your application has access to; alternatively, a list of desired attributes can be specified.
+## GET /entities/{entityId}/attributes
+Retrieves attributes for the given entity. By default, returns all attributes that your application has access to; alternatively, a list of desired attributes can be specified.
 
 ### Header Parameters
 |Name            |Type                           |Description                  |
@@ -195,7 +131,7 @@ Retrieves attributes for the given data subject. By default, returns all attribu
 ### Path Variables
 |Name               |Type                          |Description      |
 |-------------------|------------------------------|-----------------|
-|subjectId          |String                        |Data Subject Identifier|
+|entityId           |String                        |Entity Identifier|
 
 ### Query Parameter Variables
 |Name               |Type                          |Description      |
@@ -215,7 +151,7 @@ Retrieves attributes for the given data subject. By default, returns all attribu
       "sensitivity": "PERSONAL",
       "reportOnly": false,
       "structureRootId": null,
-      "subjectId": "001",
+      "entityId": "001",
       "value": "123-456-789"
     }
   ]
@@ -227,16 +163,16 @@ Retrieves attributes for the given data subject. By default, returns all attribu
 |-----------|-------------|-----------|
 |400|Encoded key provided is invalid|The private decryption key provided is not correct.|
 |403|Forbidden|You are trying to access attributes that your application does not have access to.|
-|404|Data Not Found|The specified data subject does not exist, or else that subject has no value for the attributes specified.|
+|404|Data Not Found|The specified entity does not exist, or else that entity has no value for the attributes specified.|
 
 
-## DELETE /datasubjects/{subjectId}/attributes/{attributeKey}
-Deletes attributes for the given data subject and attribute
+## DELETE /entities/{entityId}/attributes/{attributeKey}
+Deletes attributes for the given entity and attribute.
 
 ### Path Variables
 |Name          |Type                          |Description      |
 |--------------|------------------------------|-----------------|
-|subjectId     |String                        |Data Subject Identifier|
+|entityId      |String                        |Entity Identifier|
 |attributeKey  |String                        |Attribute Key    |
 
 ### Example Response
@@ -250,7 +186,7 @@ Deletes attributes for the given data subject and attribute
 |Status code|Error message|Description|
 |-----------|-------------|-----------|
 |403|Forbidden|You are trying to delete data from an attribute your application does not have access to.|
-|404|Data Not Found|There is no data in the system with the specified data subject ID and attribute.|
+|404|Data Not Found|There is no data in the system with the specified entity ID and attribute.|
 
 ## GET /data/{dataPointId}
 Retrieves data with the given datapoint id
@@ -277,7 +213,7 @@ Retrieves data with the given datapoint id
     "sensitivity": "PERSONAL",
     "reportOnly": false,
     "structureRootId": null,
-    "subjectId": "001",
+    "entityId": "001",
     "value": "123-456-789"
   }
 }
@@ -312,13 +248,13 @@ Deletes data with the given datapoint id
 |403|Forbidden|Your application does not have access to the attribute of the data point you are trying to delete.|
 |404|Data Not Found|There is no data point in the system with the specified ID.|
 
-## DELETE /datasubjects/{subjectId}/data
+## DELETE /datasubjects/{entityId}/data
 Deletes all data for the given data subject
 
 ### Path Variables
 |Name          |Type                          |Description      |
 |--------------|------------------------------|-----------------|
-|subjectId     |String                        |Data Subject Identifier  |
+|entityId     |String                        |Data Subject Identifier  |
 
 ### Example Response
 ```json
@@ -331,6 +267,43 @@ Deletes all data for the given data subject
 |Status code|Error message|Description|
 |-----------|-------------|-----------|
 |404|Data Subject Not Found|There is no data subject in the system with the specified ID.|
+
+
+## POST /datasubjects/{entityId}/attributes
+
+See [POST /entities/{entityId}/attributes](#post-entities-entityid-attributes).
+
+## GET /datasubjects/{entityId}/attributes/{attributeKey}
+
+See [GET /entities/{entityId}/attributes/{attributeKey}](#get-entitiesentityidattributesattributekey).
+
+## GET /datasubjects/{entityId}/attributes
+
+See [GET /entities/{entityId}/attributes](#get-entitiesentityidattributes).
+
+### Additional error responses
+|Status code|Error message|Description|
+|-----------|-------------|-----------|
+|400        |Entity is not a data subject|The entity with the specified ID is not a data subject.|
+
+## DELETE /datasubjects/{entityId}/attributes/{attributeKey}
+
+See [DELETE /entities/{entityId}/attributes/{attributeKey}](#delete-entitiesentityidattributesattributekey).
+
+### Additional error responses
+|Status code|Error message|Description|
+|-----------|-------------|-----------|
+|400        |Entity is not of type datasubject|The entity with the specified ID is not a data subject.|
+
+## DELETE /datasubjects/{entityId}/data
+
+See [DELETE /entities/{entityId}/data](#delete-entitiesentityiddata}).
+
+### Additional error responses
+|Status code|Error message|Description|
+|-----------|-------------|-----------|
+|400        |Entity is not of type datasubject|The entity with the specified ID is not a data subject.|
+
 
 ## POST /search
 Searches data that matches specified criteria, using blind indexing to allow searching for values without decrypting data. For more information, [read about ViziVault search](/tutorials/search).
@@ -358,7 +331,7 @@ Searches data that matches specified criteria, using blind indexing to allow sea
     "attributes": ["SAMPLE_ATTRIBUTE_3", "SAMPLE_ATTRIBUTE_4"],
     "regulations" : ["SAMPLE_REGULATION"],
     "sensitivity": "NORMAL",
-    "subjectId": ["001", "002", "003"],
+    "entityId": ["001", "002", "003"],
     "country": "US",
     "minCreatedDate": "2020-01-01T10:06:32.4426+08:00",
     "maxCreatedDate": "2020-01-31T10:06:32.4426+08:00"
@@ -381,7 +354,7 @@ Searches data that matches specified criteria, using blind indexing to allow sea
       "sensitivity": "NORMAL",
       "reportOnly": false,
       "structureRootId": null,
-      "subjectId": "001",
+      "entityId": "001",
     }
   ]
 }

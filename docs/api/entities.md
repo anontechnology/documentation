@@ -1,14 +1,14 @@
 # Attributes
 
-## POST /datasubjects
-Stores metadata associated with a data subject. Returns a [Data Subject](/glossary/datasubject) object.
+## POST /entities
+Stores metadata associated with an entity. Returns an [Entity](/glossary/datasubject) object.
 
 ### Parameters
 
 #### Body Parameters (Required)
 |Name            |Type                            |Description                  |
 |----------------|--------------------------------|-----------------------------|
-|payload         |[Data Subject](/glossary/datasubject)|Description of data subject to store|
+|payload         |[Entity](/glossary/datasubject)|Description of entity to store|
 
 ### Example payload
 ```json
@@ -33,13 +33,13 @@ Stores metadata associated with a data subject. Returns a [Data Subject](/glossa
 }
 ```
 
-## GET /datasubjects/{subjectId}
-Displays information about one data subject. Returns a [Data Subject](/glossary/datasubjet) object.
+## GET /entities/{subjectId}
+Displays information about one entity. Returns an [Entity](/glossary/datasubjet) object.
 
 ### Path Parameters
 |Name            |Type                        |Description                       |
 |----------------|----------------------------|----------------------------------|
-|subjectId       |String                      |ID of the data subject to describe|
+|subjectId       |String                      |ID of the entity to describe|
 
 ### Example response
 ```json
@@ -58,10 +58,10 @@ Displays information about one data subject. Returns a [Data Subject](/glossary/
 ### Error responses
 |Status code|Error message|Description|
 |-----------|-------------|-----------|
-|404        |Not found    |The system does not contain a data subject with the specified id.|
+|404        |Not found    |The system does not contain an entity with the specified id.|
 
-## GET /datasubjects
-Retrieves metadata for all data subjects in the system. Returns a list of [Data Subject](/glossary/datasubject) objects.
+## GET /entities
+Retrieves metadata for all entities in the system. Returns a list of [Entity](/glossary/datasubject) objects.
 
 ### Parameters
 None
@@ -90,3 +90,20 @@ None
 }
 ```
 
+## POST /datasubjects
+
+See [POST /entities](#post-entities). It is not necessary to specify the entity type when using this endpoint, as it will be assumed to be `datasubject`.
+
+## GET /datasubjects/{subjectId}
+
+See [GET /entities/{entityId}](#get-entitiesentityid).
+
+### Additional error responses
+|Status code|Error message|Description|
+|-----------|-------------|-----------|
+|400        |Entity is not a data subject|The entity with the specified ID is not a data subject.|
+
+
+## GET /datasubjects
+
+Retrieves metadata for all data subjects in the system (that is, all entities that belong to the `datasubject` type).

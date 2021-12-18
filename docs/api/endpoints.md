@@ -13,15 +13,20 @@ Guides and reference materials to help you get started, integrate, optimize, and
 -   [GET /tags/{tagName}](/api/tags#get-tagstagname)
 -   [DELETE /tags/{tagName}](/api/tags#delete-tagstagname)
 
-### Data Subject Attributes
--   [POST /datasubjects/{subjectId}/attributes](/api/datapoints#post-datasubjectssubjectidattributes)
--   [GET /datasubjects/{subjectId}/attributes](/api/datapoints#get-datasubjectssubjectidattributes)
--   [GET /datasubjects/{subjectId}/attribute/{attributeKey}](/api/datapoints#get-datasubjectssubjectidattributeattributtekey)
+### Data Subject / Entity Attributes
+-   [POST /entities/{entityId}/attributes](/api/datapoints#post-entitiesentityidattributes)
+-   [POST /datasubjects/{entityId}/attributes](/api/datapoints#post-datasubjectsentityidattributes)
+-   [GET /entities/{entityId}/attributes](/api/datapoints#get-entitiesentityidattributes)
+-   [GET /entities/{entityId}/attribute/{attributeKey}](/api/datapoints#get-entitiesentityidattributesattributekey)
+-   [GET /datasubjects/{entityId}/attributes](/api/datapoints#get-datasubjectsentityidattributes)
+-   [GET /datasubjects/{entityId}/attribute/{attributeKey}](/api/datapoints#get-datasubjectsentityidattributeattributtekey)
 -   [GET /data/{dataPointId}](/api/datapoints#get-datadatapointid)
--   [POST /search](/api/datapoints#post-search)
--   [DELETE /datasubjects/{subjectId}/attributes/{attributeKey}](/api/datapoints#delete-datasubjectssubjectidattributesattributekey)
--   [DELETE /datasubjects/{subjectId}/data](/api/datapoints#delete-datasubjectssubjectiddata)
+-   [DELETE /entities/{entityId}/attributes/{attributeKey}](/api/datapoints#delete-entitiesentityidattributesattributekey)
+-   [DELETE /entities/{entityId}/data](/api/datapoints#delete-entitiesentityiddata)
+-   [DELETE /datasubjects/{entityId}/attributes/{attributeKey}](/api/datapoints#delete-datasubjectsentityidattributesattributekey)
+-   [DELETE /datasubjects/{entityId}/data](/api/datapoints#delete-datasubjectsentityiddata)
 -   [DELETE /data/{dataPointId}](/api/datapoints#delete-datadatapointid)
+-   [POST /search](/api/datapoints#post-search)
 
 ### Report-Only Audit Log
 -   [POST /auditlogs](/api/reportonly#post-auditlog)
@@ -39,10 +44,13 @@ Guides and reference materials to help you get started, integrate, optimize, and
 -   [GET /rules/{rule}](/api/rules#get-rulesrulename)
 -   [DELETE /rules/{rule}](/api/rules#delete-rulesrulename)
 
-### Data Subjects
--   [POST /datasubjects](/api/datasubjects#post-datasubjects)
--   [GET /datasubjects](/api/datasubjects#get-datasubjects)
--   [GET /datasubjects/{subjectId}](/api/datasubjects#get-datasubjectssubjectid)
+### Data Subjects / Entities
+-   [POST /entities](/api/entities#post-entities)
+-   [GET /entities](/api/entities#get-entities)
+-   [GET /entities/{entityId}](/api/entities#get-entitiesentityid)
+-   [POST /datasubjects](/api/entities#post-datasubjects)
+-   [GET /datasubjects](/api/entities#get-datasubjects)
+-   [GET /datasubjects/{entityId}](/api/entities#get-datasubjectsentityid)
 
 ### Entity Types
 -   [POST /entitytypes](/api/entity-types#post-entitytypes)
