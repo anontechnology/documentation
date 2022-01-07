@@ -26,20 +26,25 @@ A geographic constraint consists of an operator (either `any` or `none`), a list
 
 ## Data subject value constraints
 
-Data subject value constraints allow you to apply regulations to data based on things that are true about the data subject whom the data belongs to, rather than just basing it off of the data point itself. A data subject value constraint consists of three parts: the attribute to consider, the value to compare the data subject's value of the attribute to, and the precise way the attribute values should be compared (referred to as the predicate).
+Data subject value constraints allow you to activate rules based on things that are true about the data subject whom the data belongs to, rather than just basing it off of the data point itself. A data subject value constraint consists of three parts: the attribute to consider, the value to compare the data subject's value of the attribute to, and the precise way the attribute values should be compared (referred to as the predicate).
 
 The valid predicates are as follows:
 
- - `eq`: Matches users whose value of this attribute is exactly equal to the provided value.
- - `neq`: Matches users whose value of this attribute is anything other than the provided value.
- - `gt`: For numerical data; matches users whose value of this attribute is greater than the provided value.
- - `lt`: For numerical data; matches users whose value of this attribute is less than the provided value.
- - `geq`: For numerical data; matches users whose value of this attribute is greater than or equal to the provided value.
- - `leq`: For numerical data; matches users whose value of this attribute is less than or equal to the provided value.
- - `after`: For temporal data; matches users whose value of this attribute is a later time than the provided value.
- - `before`: For temporal data; matches users whose value of this attribute is an earlier time than the provided value.
- - `in`: Treats the value as a comma-delimited list of strings and matches users whose value of this attribute appears in the provided list.
- - `nin`: Treats the value as a comma-delimited list of strings and matches users whose value of this attribute does not appear in the provided list.
+ - `eq`: Matches entities whose value of this attribute is exactly equal to the provided value.
+ - `neq`: Matches entities whose value of this attribute is anything other than the provided value.
+ - `gt`: For numerical data; matches entities whose value of this attribute is greater than the provided value.
+ - `lt`: For numerical data; matches entities whose value of this attribute is less than the provided value.
+ - `geq`: For numerical data; matches entities whose value of this attribute is greater than or equal to the provided value.
+ - `leq`: For numerical data; matches entities whose value of this attribute is less than or equal to the provided value.
+ - `after`: For temporal data; matches entities whose value of this attribute is a later time than the provided value.
+ - `before`: For temporal data; matches entities whose value of this attribute is an earlier time than the provided value.
+ - `in`: Treats the value as a comma-delimited list of strings and matches entities whose value of this attribute appears in the provided list.
+ - `nin`: Treats the value as a comma-delimited list of strings and matches entities whose value of this attribute does not appear in the provided list.
+ - `regex`: Treats the value as a regular expression and matches entities whose value of this attribute is a string that matches the provided regular expression.
+
+## Sentiment constraints
+
+For data whose value is natural-language text, the sentiment constraint uses IBM's Watson system to perform sentiment analysis on the data value. Watson detects the overall sentiment of text, as well as the sentiment that the text expresses towards specific topics. This constraint will match data if the overall detected sentiment is more extreme than the threshold (that is, greater than a positive threshold, or less than a negative one), or if sentiment exceeding the threshold is detected towards any keywords.
 
 ## Conjunctive ("all") constraints
 
@@ -79,12 +84,16 @@ Constraints are expressed as a JSON object, structured as described below. The v
  - User-attribute-value constraint
     - `type` : the string `"user"`
     - `attribute` : attribute key (string)
-    - `predicate` : one of `eq`, `neq`, `gt`, `lt`, `geq`, `leq`, `before`, `after`, `in`, `nin`
+    - `predicate` : one of `eq`, `neq`, `gt`, `lt`, `geq`, `leq`, `before`, `after`, `in`, `nin`,
     - `value` :
         - When predicate is `eq` or `neq`, any number or string.
         - When predicate is `gt`, `lt`, `geq`, or `leq`, any number.
         - When predicate is `before` or `after`, a string representing a point in time.
         - When predicate is `in` or `nin`, a string consisting of values separated by commas.
+        - When predicate is `regex`, a valid regular expression.
+ - Sentiment constraint
+    - `type` : the string `sentiment
+    - `threshold` : a floating-point number between -1 and 1
 
 # Actions
 
