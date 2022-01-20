@@ -24,7 +24,7 @@ nav:
     - Entity Types: api/entitytypes.md
   - Glossary:
     - Attribute Definition: glossary/attribute-definition.md
-    - Entity: glossary/entity.md
+    - Entity: glossary/datasubject.md
     - Entity Type: glossary/entity-type.md
     - Tag: glossary/tag.md
     - Attribute: glossary/attribute.md
