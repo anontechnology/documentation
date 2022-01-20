@@ -3,7 +3,7 @@
 ## POST /auditlogs
 Records activity for report-only data; that is, data that is not stored in the vault but is still being monitored. The purpose of this endpoint is to collect metadata about how sensitive data that is stored in external systems is being used.
 
-While writes of external data can be recorded using [the same API endpoint used for storing data in the vault](/api/datapoints#post-datasubjectssubjectidattributes), this endpoint allows recording reads and deletes as well as writes.
+While writes of external data can be recorded using [the same API endpoint used for storing data in the vault](/api/datapoints#post-entitiesentityidattributes), this endpoint allows recording reads and deletes as well as writes.
 
 ### Parameters
 

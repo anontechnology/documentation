@@ -17,7 +17,7 @@ nav:
     - Report-Only Auditing: api/reportonly.md
     - Attributes: api/datapoints.md
     - Attribute Definitions: api/attributes.md
-    - Data Subjects: api/datasubjects.md
+    - Data Subjects and Entities: api/entities.md
     - Tags: api/tags.md
     - Regulations: api/regulations.md
     - Rules: api/rules.md

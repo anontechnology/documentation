@@ -33,13 +33,13 @@ Stores metadata associated with an entity. Returns an [Entity](/glossary/datasub
 }
 ```
 
-## GET /entities/{subjectId}
-Displays information about one entity. Returns an [Entity](/glossary/datasubjet) object.
+## GET /entities/{entityId}
+Displays information about one entity. Returns an [Entity](/glossary/datasubject) object.
 
 ### Path Parameters
 |Name            |Type                        |Description                       |
 |----------------|----------------------------|----------------------------------|
-|subjectId       |String                      |ID of the entity to describe|
+|entityId       |String                      |ID of the entity to describe|
 
 ### Example response
 ```json
@@ -94,7 +94,7 @@ None
 
 See [POST /entities](#post-entities). It is not necessary to specify the entity type when using this endpoint, as it will be assumed to be `datasubject`.
 
-## GET /datasubjects/{subjectId}
+## GET /datasubjects/{entityId}
 
 See [GET /entities/{entityId}](#get-entitiesentityid).
 

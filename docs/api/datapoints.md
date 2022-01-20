@@ -271,7 +271,7 @@ Deletes all data for the given data subject
 
 ## POST /datasubjects/{entityId}/attributes
 
-See [POST /entities/{entityId}/attributes](#post-entities-entityid-attributes).
+See [POST /entities/{entityId}/attributes](#post-entitiesentityidattributes).
 
 ## GET /datasubjects/{entityId}/attributes/{attributeKey}
 
@@ -297,7 +297,7 @@ See [DELETE /entities/{entityId}/attributes/{attributeKey}](#delete-entitiesenti
 
 ## DELETE /datasubjects/{entityId}/data
 
-See [DELETE /entities/{entityId}/data](#delete-entitiesentityiddata}).
+See [DELETE /entities/{entityId}/data](#delete-entitiesentityiddata).
 
 ### Additional error responses
 |Status code|Error message|Description|

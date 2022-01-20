@@ -19,7 +19,7 @@ Guides and reference materials to help you get started, integrate, optimize, and
 -   [GET /entities/{entityId}/attributes](/api/datapoints#get-entitiesentityidattributes)
 -   [GET /entities/{entityId}/attribute/{attributeKey}](/api/datapoints#get-entitiesentityidattributesattributekey)
 -   [GET /datasubjects/{entityId}/attributes](/api/datapoints#get-datasubjectsentityidattributes)
--   [GET /datasubjects/{entityId}/attribute/{attributeKey}](/api/datapoints#get-datasubjectsentityidattributeattributtekey)
+-   [GET /datasubjects/{entityId}/attribute/{attributeKey}](/api/datapoints#get-datasubjectsentityidattributesattributekey)
 -   [GET /data/{dataPointId}](/api/datapoints#get-datadatapointid)
 -   [DELETE /entities/{entityId}/attributes/{attributeKey}](/api/datapoints#delete-entitiesentityidattributesattributekey)
 -   [DELETE /entities/{entityId}/data](/api/datapoints#delete-entitiesentityiddata)
@@ -29,8 +29,8 @@ Guides and reference materials to help you get started, integrate, optimize, and
 -   [POST /search](/api/datapoints#post-search)
 
 ### Report-Only Audit Log
--   [POST /auditlogs](/api/reportonly#post-auditlog)
--   [POST /auditlogs/bulk](/api/reportonly#post-auditlogbulk)
+-   [POST /auditlogs](/api/reportonly#post-auditlogs)
+-   [POST /auditlogs/bulk](/api/reportonly#post-auditlogsbulk)
 
 ### Regulations
 -   [POST /regulations](/api/regulations#post-regulations)
@@ -53,7 +53,7 @@ Guides and reference materials to help you get started, integrate, optimize, and
 -   [GET /datasubjects/{entityId}](/api/entities#get-datasubjectsentityid)
 
 ### Entity Types
--   [POST /entitytypes](/api/entity-types#post-entitytypes)
--   [GET /entitytypes](/api/entity-types#get-entitytypes)
--   [GET /entitytypes/{typeKey}](/api/entity-types#get-entitytypestypekey)
--   [DELETE /entitytypes/{typeKey}](/api/entity-types#delete-entitytypestypekey)
+-   [POST /entitytypes](/api/entitytypes#post-entitytypes)
+-   [GET /entitytypes](/api/entitytypes#get-entitytypes)
+-   [GET /entitytypes/{typeKey}](/api/entitytypes#get-entitytypestypekey)
+-   [DELETE /entitytypes/{typeKey}](/api/entitytypes#delete-entitytypestypekey)

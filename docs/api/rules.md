@@ -54,7 +54,7 @@ For more information on how to specify rules for rules, see [Rules](/tutorials/r
 |422        |No such attribute|An attribute specified for an entity value constraint or an attribute list constraint does not exist.|
 |422        |No such regulation|A regulation specified for a regulation list constraint does not exist.|
 |400        |No value specified for entity value constraint|An entity value constraint was specified with a missing value.|
-|400        |User-attribute constraint predicate \[predicate\] is not supported.|An invalid predicate was specified for an entity value constraint. For more information on what predicates are valid, see [User attribute constraints](/tutorials/rules#entity-value-constraints).|
+|400        |Entity-value attribute constraint predicate \[predicate\] is not supported.|An invalid predicate was specified for an entity value constraint. For more information on what predicates are valid, see [entity value attribute constraints](/tutorials/rules#entity-value-constraints).|
 |400        |Unrecognized constraint type|An invalid constraint type was specified. For more information on what constraint types are valid, see [Rules](/tutorials/rules)|
 |402        |Your current subscription does not support custom rules|Your current license tier has limited features, and custom rules are not included|
 
@@ -80,13 +80,13 @@ None
 }
 ```
 
-## GET /rules/{ruleKey}
-Displays information about one rule. Returns a [Rule](/glossary/rule) object, or 404 Not Found if there is no rule with the specified key.
+## GET /rules/{ruleName}
+Displays information about one rule. Returns a [Rule](/glossary/rule) object, or 404 Not Found if there is no rule with the specified name.
 
 ### Path Parameters
 |Name            |Type                           |Description                  |
 |----------------|-------------------------------|-----------------------------|
-|ruleKey   |String                         |Key of the rule to describe|
+|ruleName        |String                         |Name of the rule to describe |
 
 ### Example response
 ```json
@@ -113,15 +113,15 @@ Displays information about one rule. Returns a [Rule](/glossary/rule) object, or
 ### Error responses
 |Status code|Error message|Description|
 |-----------|-------------|-----------|
-|404        |Rule not found|The system does not contain a rule with the specified key.|
+|404        |Rule not found|The system does not contain a rule with the specified name.|
 
-## DELETE /rules/{ruleKey}
-Deletes a specified rule, and untags it from all attributes. Returns 404 Not Found if there is no rule with the specified key.
+## DELETE /rules/{ruleName}
+Deletes a specified rule, and untags it from all attributes. Returns 404 Not Found if there is no rule with the specified name.
 
 ### Path Parameters
 |Name            |Type                           |Description                  |
 |----------------|-------------------------------|-----------------------------|
-|ruleKey   |String                         |Key of the rule to delete|
+|ruleName        |String                         |Name of the rule to delete   |
 
 ### Example response
 ```json
@@ -133,5 +133,5 @@ Deletes a specified rule, and untags it from all attributes. Returns 404 Not Fou
 ### Error responses
 |Status code|Error message|Description|
 |-----------|-------------|-----------|
-|404        |Rule not found|The system does not contain a rule with the specified key.|
+|404        |Rule not found|The system does not contain a rule with the specified name.|
 
