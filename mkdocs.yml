@@ -35,7 +35,7 @@ nav:
     - Quickstart: tutorials/quickstart.md
     - Attribute Schemas: tutorials/attribute-schemas.md
     #- Data Sharing: tutorials/datasharing.md
-    - Reports: tutorials/reports.md
+    - Scheduled Alerts: tutorials/alerts.md
     - Rules: tutorials/rules.md
     - Search: tutorials/search.md
   - Regulations:

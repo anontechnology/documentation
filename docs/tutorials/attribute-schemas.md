@@ -1,6 +1,6 @@
 # Attribute Schemas
 
-Attribute schemas can be used to structure your data and to specify what form it takes, whether that is textual, numeric, or something more structured. An attribute definition can have a primitive schema, meaning that the associated data consists of a single piece of unstructured information, or alternatively a structured schema, breaking up its data into multiple sub-attributes.
+When creating a new attribute definition, it is important to specify what form the attribute's values will take: whether it is textual, numeric, or something more structured. An attribute definition can have a primitive schema, meaning that the associated data consists of a single piece of unstructured information, or alternatively a structured schema, breaking up its data into multiple sub-attributes.
 
 The supported primitive schemas are as follows:
 

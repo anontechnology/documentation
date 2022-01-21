@@ -469,5 +469,5 @@ Now that we have data in the system, let's try to get our data back. Here we gra
 
 
 ### Next Steps
-   This guide covers basic usage. You can look at our [tutorials](/tutorials/attribute-schemas)  for more advanced usage including [searching](/tutorials/search) and applying [regulations](/tutorials/regulation) to data.
+   This guide covers basic usage. You can look at our [tutorials](/tutorials/attribute-schemas) for more advanced usage including [searching](/tutorials/search) and implementing [rules](/tutorials/rules).
 
