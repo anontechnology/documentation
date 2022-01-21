@@ -1,9 +1,9 @@
 # Report-Only Data
 
 ## POST /auditlogs
-Records activity for report-only data; that is, data that is not stored in the vault but is still being monitored. The purpose of this endpoint is to collect metadata about how sensitive data that is stored in external systems is being used.
+Records activity for report-only data; that is, data that is not stored in the vault but is still being monitored. The purpose of this endpoint is to collect metadata about how sensitive data stored in external systems is being used.
 
-While writes of external data can be recorded using [the same API endpoint used for storing data in the vault](/api/datapoints#post-entitiesentityidattributes), this endpoint allows recording reads and deletes as well as writes.
+While writes of external data can be recorded using [the same API endpoint used for storing data in the vault](/api/datapoints#post-entitiesentityidattributes), this endpoint allows recording reads and deletes as well as writes, as well as allowing more metadata to be expressed.
 
 ### Parameters
 
@@ -23,6 +23,9 @@ The structure of the ExternalActivityEvent object is as follows:
 |timestamp|Date|The time at which the access occurred. If not specified, the current time will be assumed.|Optional|
 |applicationId|String|Unique identifier for the application that was used to initiate this access.|Required|
 |applicationUser|String|Identifier for the application user who initiated this access.|Optional|
+|dataStoreName|String|Identifier for a database in which this event happened.|Optional|
+|dataStoreServer|String|Identifier for a database server on which this event happened.|Optional|
+|dataStoreEntityName|String|Identifier for a collection or table within a database in which this event happened.|Optional|
 |location|Geolocation|The geographic country, subdivision, and/or city where this access was initiated from.|Optional|
 
 ### Example payload
@@ -107,7 +110,7 @@ Identical to `POST /auditlogs`, but handles multiple events in one request.
 #### Body Parameters (Required)
 |Name            |Type                            |Description                  |
 |----------------|--------------------------------|-----------------------------|
-|payload         |List<ExternalActivityEvent>   |List of accesses to externally-stored data|
+|payload         |List&lt;ExternalActivityEvent&gt;|List of accesses to externally-stored data|
 
 ### Example payload
 

@@ -10,7 +10,7 @@ The metadata associated with an entity is as follows:
 |-----|-----|-----------|
 |id|String|A unique identifier for this entity.|
 |type|String|The [type](/glossary/entity-type) of this entity.|
-|tags|Array%lt;String%gt;|A list of [tags](/glossary/tag) that should be automatically applied to all attributes for this entity.|
+|tags|Array<String\>|A list of [tags](/glossary/tag) that should be automatically applied to all attributes for this entity.|
 |legalHold|boolean|Indicates whether this entity is under a legal hold. If `true`, all destructive actions (deleting or overwriting data) are prevented.|
 |created|String|An ISO 8601 representation of the timestamp when the entity was created.|
 |modified|String|An ISO 8601 representation of the timestamp when the entity (or the associated data) was most recently modified.|

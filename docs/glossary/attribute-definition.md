@@ -10,8 +10,8 @@ There are several forms of metadata associated with attributes, as follows:
 |-----|-----|-----------|
 |key|String|An unambiguous identifier for this attribute. Only alphanumeric characters and underscores may appear in attribute keys.|
 |name|String|A human-readable identifier for this attribute.|
-|entityTypes|Array%lt;String%gt;|A list of [entity types](/glossary/entity-type) that this attribute is applicable to.|
-|tags|Array%lt;String%gt;|A list of [tags](/glossary/tag) that should be applied to all attributes belonging to this attribute definition.|
+|entityTypes|Array<String\>|A list of [entity types](/glossary/entity-type) that this attribute is applicable to.|
+|tags|Array<String\>|A list of [tags](/glossary/tag) that should be applied to all attributes belonging to this attribute definition.|
 |hint|String|An example value that this attribute could take.|
 |immutable|boolean|Whether this is a pre-loaded attribute definition provided by ViziVault that cannot be modified through the web interface.|
 |indexed|boolean|Whether values of this attribute should be indexed to allow searching on it. For more information, read [the Search tutorial](/tutorials/search).|
@@ -19,7 +19,7 @@ There are several forms of metadata associated with attributes, as follows:
 |modifiedDate|String|An ISO 8601 representation of the timestamp when the attribute definition was most recently modified.|
 |schema|[Attribute schema](/tutorials/attribute-schemas)|A representation of the structure of data belonging to this attribute is expected to have, including any sub-attributes, and whether its data is textual, numeric, or other formats. Read [the Attribute Schemas tutorial](/tutorials/attribute-schemas) for more information.|
 |repeatable|boolean|Whether a data subject should be able to have multiple values for this attribute.|
-|regulations|Array%lt;String%gt;|A list of [regulation keys](/glossary/regulation), each representing a regulation that will be applied to all attributes belonging to this attribute definition.|
+|regulations|Array<String\>|A list of [regulation keys](/glossary/regulation), each representing a regulation that will be applied to all attributes belonging to this attribute definition.|
 
 ## Examples
 

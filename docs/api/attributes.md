@@ -64,8 +64,10 @@ On success, returns 201 Created and a description of the updated attribute.
 |400        |Schema cannot be null|Returned if no [schema](/tutorials/attribute-schemas) was provided.|
 |400        |Sub-attribute key contains unusable characters|Returned if a sub-attribute key contained in the attribute's [schema](/tutorials/attribute-schemas) contains disallowed characters.|
 |400        |Schema has unexpected class|Returned if the [schema](/tutorials/attribute-schemas) of this attribute, or one of its sub-attributes, is netiher a JSON object nor a string (i.e. a number, a boolean value, a list, or `null`)|
+|400        |No such regulation|Returned if the provided list of regulations contains one or more regulations that do not exist in the system|
 |400        |No such entity type|Returned if the provided list of applicable entity types contains one or more types that do not exist in the system|
 |402        |Your current subscription is limited to (number) custom attributes|Your current license has a hard limit on the number of attribute definitions created, and you have reached the limit|
+|403        |Forbidden access to edit attribute definitions|Your application does not have permission to edit attribute definitions.|
 |409        |Cannot change existing attribute from repeatable to non-repeatable, as it would invalidate existing data|Returned when edits to a repeatable attribute definition would make it become non-repeatable, if there are data subjects that have multiple values for this attribute|
 |409        |Cannot edit attribute schema, as it may invalidate existing data|Returned when attempting to specify a new schema for an attribute definition that is in use (editing the schema for an attribute definition that no data uses is allowed)|
 |409        |Cannot remove entity types from attribute, as it would invalidate existing data|Returned when attempting to remove entity types from an attribute definition when there are attributes belonging to that definition for entities that are of one or more of the types being removed|
@@ -155,5 +157,7 @@ Deletes an attribute definition if it is not being used.
 ### Error responses
 |Status code|Error message|Description|
 |-----------|-------------|-----------|
+|403        |Forbidden access to delete attribute definitions|Your application does not have permission to delete attribute definitions.|
 |409        |Cannot delete attribute, because it is in use|There is existing data in the system that uses this attribute definition, and as such the attribute definition cannot be deleted.|
+|409        |Cannot delete attribute, because it is referenced by rule|There is a [rule](/glossary/rule) that references this attribute definition, and as such the attribute definition cannot be deleted.|
 |404        |Attribute not found|The system does not contain an attribute with the specified key.|

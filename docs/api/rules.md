@@ -16,6 +16,7 @@ For more information on how to specify rules for rules, see [Rules](/tutorials/r
 ```json
 {
   "name": "SampleRule",
+  "type": "data",
   "constraint": {
     "type": "attribute",
     "operator": "any",
@@ -70,9 +71,35 @@ None
 {
   "data" : [
     {
-      "key": "SAMPLE_RULE",
-      "name": "Sample Rule",
-      "url": "https://example.com/rule",
+      "name": "SampleRule1",
+      "type": "data",
+      "constraint": {
+          "type": "attribute",
+          "operator": "any",
+          "attributes": ["ATTRIBUTE_1", "ATTRIBUTE_2"]
+      },
+      "action": {
+          "type": "alert",
+          "alertLevel": "NORMAL",
+          "message": "A data point was stored"
+      },
+      "executionOrder": 1,
+      "createdDate": "2020-01-01T04:00:00Z",
+      "modifiedDate": "2020-09-25T01:10:02Z"
+    },
+    {
+      "name": "SampleRule2",
+      "type": "activity",
+      "constraint": {
+          "type": "eventType",
+          "eventTypes": ["READ"]
+      },
+      "action": {
+          "type": "alert",
+          "alertLevel": "NORMAL",
+          "message": "A data point was accessed"
+      },
+      "executionOrder": 1,
       "createdDate": "2020-01-01T04:00:00Z",
       "modifiedDate": "2020-09-25T01:10:02Z"
     }
@@ -93,6 +120,7 @@ Displays information about one rule. Returns a [Rule](/glossary/rule) object, or
 {
   "data": {
     "name": "SampleRule",
+    "type": "data",
     "constraint": {
         "type": "attribute",
         "operator": "any",
