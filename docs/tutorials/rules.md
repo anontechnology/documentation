@@ -38,11 +38,11 @@ Entity type constraints are applicable only to data rules.
 
 Entity type constraints consist of a list of [entity type keys](/glossary/entity-type) and will match incoming data belonging to an entity of one of the specified types.
 
-## Entity value constraints
+## Value constraints
 
-Entity value constraints are applicable only to data rules.
+Value constraints are applicable only to data rules.
 
-Entity value constraints allow you to activate rules based on things that are true about the data subject whom the data belongs to, rather than just basing it off of the data point itself. An entity value constraint consists of three parts: the attribute to consider, the value to compare the data subject's value of the attribute to, and the precise way the attribute values should be compared (referred to as the predicate).
+Value constraints allow you to activate rules based on various properties of the value of an attribute. A value constraint consists of three parts: the attribute to consider, the value to compare the value of the attribute to, and the precise way the attribute values should be compared (referred to as the predicate). Value constraints can be combined with entity tag actions to allow tags to be added based off of the values of the entity's other attributes.
 
 The valid predicates are as follows:
 
@@ -156,6 +156,12 @@ Legal hold actions are available in both data and activity rules.
 
 A legal hold action places a legal hold on the [data subject](/glossary/datasubject) that the data is associated with. This prevents potentially destructive actions such as deleting or overwriting data until the hold is lifted. Activity rules can also be configured to remove legal holds.
 
+## Entity tag action
+
+Entity tag actions are available in both data and activity rules.
+
+An entity tag action adds or removes a tag on the entity that a data point being accessed belongs to. This will cause the tag to be added to all future data stored about that entity.
+
 ## Regulation metadata action
 
 Regulation metadata actions are avaiable only in data rules.
@@ -173,12 +179,6 @@ A storage prevention action causes the system to reject data, preventing it from
 Retention policy actions are available only in data rules.
 
 A retention policy action determines how long the data is considered to still be valid. The retention policy status of all your data can be viewed in ViziVault Enterprise. Retention policies can specify either a cutoff date after which the data is no longer valid, or a number of days to retain the data for. Additionally, a secondary policy can be specified that marks data as invalid if it has not been read for a certain number of days.
-
-## Entity tag action
-
-Entity tag actions are available only in activity rules.
-
-An entity tag action adds or removes a tag on the entity that a data point being accessed belongs to. This will cause the tag to be added to all future data stored about that entity.
 
 # JSON format of actions
 
