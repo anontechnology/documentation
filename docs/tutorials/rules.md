@@ -178,36 +178,37 @@ A storage prevention action causes the system to reject data, preventing it from
 
 Retention policy actions are available only in data rules.
 
-A retention policy action determines how long the data is considered to still be valid. The retention policy status of all your data can be viewed in ViziVault Enterprise. Retention policies can specify either a cutoff date after which the data is no longer valid, or a number of days to retain the data for. Additionally, a secondary policy can be specified that marks data as invalid if it has not been read for a certain number of days.
+A retention policy action determines how long the data is considered to still be valid. The retention policy status of all your data can be viewed in ViziVault Enterprise. Retention policies can specify either a cutoff date after which the data is no longer valid, or a number of days to retain the data for. Additionally, a secondary policy can be specified that marks data as invalid if it has not been read for a certain number of days. By default, expired data will remain into the system until it is manually deleted, but data can also be set to automatically delete when it expires.
 
 # JSON format of actions
 
  - Regulation metadata action
-   - `type`: the string `"regulation"`
-   - `regulation`: a regulation key (string)
+    - `type`: the string `"regulation"`
+    - `regulation`: a regulation key (string)
  - Tag metadata action
-   - `type`: the string `"tag"`
-   - `tag`: a tag (string)
-   - `status`: a boolean; `true` to add or `false` to remove. **Only present in activity rules.**
+    - `type`: the string `"tag"`
+    - `tag`: a tag (string)
+    - `status`: a boolean; `true` to add or `false` to remove. **Only present in activity rules.**
  - Entity tag action
-   - `type`: the string `"entityTag"`
-   - `tag`: a tag (string)
-   - `status`: a boolean; `true` to add or `false` to remove.
+    - `type`: the string `"entityTag"`
+    - `tag`: a tag (string)
+    - `status`: a boolean; `true` to add or `false` to remove.
  - Storage prevention action
-   - `type`: the string `"block"`
-   - `message`: a human-readable explantion of why the storage was disallowed
+    - `type`: the string `"block"`
+    - `message`: a human-readable explantion of why the storage was disallowed
  - Notification action
-   - `type`: the string `"alert"`
-   - `alertLevel`: one of `INFO`, `WARNING`, `DANGER`, `SUCCESS`, or `NEUTRAL`
-   - `message`: the text to display in the notification
+    - `type`: the string `"alert"`
+    - `alertLevel`: one of `INFO`, `WARNING`, `DANGER`, `SUCCESS`, or `NEUTRAL`
+    - `message`: the text to display in the notification
  - Legal hold action
-   - `type`: the string `"legalHold"`
-   - `status`: a boolean; `true` to add or `false` to remove. **Only present in activity rules.**
+    - `type`: the string `"legalHold"`
+    - `status`: a boolean; `true` to add or `false` to remove. **Only present in activity rules.**
  - Retention policy action
-   - `type`: the string `"retention"`
-   - `expirationDate`: an ISO-formatted date string indicating when this data expires (optional; mutually exclusive with `daysSinceStore`)
-   - `daysSinceStore`: an integer indicating how many days to retain this data for (optional; mutually exclusive with `daysSinceStore`)
-   - `daysSinceRead`: an integer indicating that the data will become invalid if it has not been read during this many days (optional)
+    - `type`: the string `"retention"`
+    - `expirationDate`: an ISO-formatted date string indicating when this data expires (optional; mutually exclusive with `daysSinceStore`)
+    - `daysSinceStore`: an integer indicating how many days to retain this data for (optional; mutually exclusive with `daysSinceStore`)
+    - `daysSinceRead`: an integer indicating that the data will become invalid if it has not been read during this many days (optional)
+    - `autoDelete`: a boolean value; if true, the system will automatically delete this data when it expires
 
 # Execution order
 
