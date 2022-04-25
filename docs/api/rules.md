@@ -15,7 +15,8 @@ For more information on how to specify rules for rules, see [Rules](/tutorials/r
 
 ```json
 {
-  "name": "SampleRule",
+  "name": "Sample rule",
+  "key": "sampleRule"
   "type": "data",
   "constraint": {
     "type": "attribute",
@@ -40,6 +41,7 @@ For more information on how to specify rules for rules, see [Rules](/tutorials/r
 ### Error responses
 |Status code|Error message|Description|
 |-----------|-------------|-----------|
+|400        |Rule key is required|No unique identifier for the rule was specified.|
 |400        |Cannot parse JSON of rule|The rule provided is not valid JSON.|
 |400        |Rule constraint must be specified as an object|The rule's constraint is missing or invalid.|
 |400        |Rule action must be specified as an object|The rule's action is missing or invalid.|
@@ -71,7 +73,8 @@ None
 {
   "data" : [
     {
-      "name": "SampleRule1",
+      "key": "sampleRule1",
+      "name": "First Sample Rule",
       "type": "data",
       "constraint": {
           "type": "attribute",
@@ -88,7 +91,8 @@ None
       "modifiedDate": "2020-09-25T01:10:02Z"
     },
     {
-      "name": "SampleRule2",
+      "key": "sampleRule2",
+      "name": "Second Sample Rule",
       "type": "activity",
       "constraint": {
           "type": "eventType",
@@ -119,7 +123,8 @@ Displays information about one rule. Returns a [Rule](/glossary/rule) object, or
 ```json
 {
   "data": {
-    "name": "SampleRule",
+    "key": "sampleRule",
+    "name": "Sample rule",
     "type": "data",
     "constraint": {
         "type": "attribute",

@@ -8,7 +8,8 @@ There are several forms of metadata associated with regulations, as follows:
 
 |Name |Type |Description|
 |-----|-----|-----------|
-|name|String|A unique identifier for this rule.|
+|key|String|A unique identifier for this rule.|
+|name|String|A human-readable title for this rule.|
 |type|String|Either "activity" or "data"; determines what context this rule is applicable in.|
 |constraint|[Rule constraint](/tutorials/rules#json-format-of-constraints)|The criteria that determine what data this rule applies to.|
 |action|[Rule action](/tutorials/rules#json-format-of-actions)|The action to take on data that meets the condition.|
@@ -22,7 +23,8 @@ An example rule that marks data as governed by the Children's Online Privacy Pro
 
 ```json
 {
-  "name" : "COPPA_Tagging_Rule",
+  "key" : "TagCoppa",
+  "name" : "COPPA tagging rule",
   "type": "data",
   "constraint": {
     "type" : "all",

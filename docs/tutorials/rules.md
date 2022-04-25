@@ -1,6 +1,6 @@
 # Rules
 
-ViziVault contains a flexible and powerful rules engine that can automate tasks on incoming data. When data is stored in your system, you can configure rules that will check the data against configurable constraints and perform various actions based on which predicates match. This can add metadata taggings, such as marking the data with what regulations govern its use (such as GDPR or HIPAA), send notifications to you, or prevent the data from being stored entirely.
+ViziVault contains a flexible and powerful rules engine that can automate tasks on incoming data. When data is stored in your system, you can configure rules that will check the data against configurable constraints and perform various actions based on which predicates match. This can add metadata taggings such as marking the data with what regulations govern its use (such as GDPR or HIPAA), send notifications to you, or prevent the data from being stored entirely.
 
 There are four parts to every rule: a name, a constraint that determines when the rule should be active, an action to take when the rule is active, and optionally an execution order that specifies when this rule should be run relative to other rules. Rules can operate on either data or [activity](/api/reportonly); the constraints and actions available for activity rules differ from those available for data rules.
 
