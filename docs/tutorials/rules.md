@@ -150,11 +150,13 @@ Tag actions are available in both data and activity rules.
 
 A tag metadata action applies a tag to data. This can be used for various business logic, for analytics in the ViziVault Enterprise frontend, and to trigger other rules. Activity rules can also be configured to remove tags.
 
-## Legal hold action
+## Prohibition action
 
-Legal hold actions are available in both data and activity rules.
+Prohibition actions are available in both data and activity rules.
 
-A legal hold action places a legal hold on the [data subject](/glossary/datasubject) that the data is associated with. This prevents potentially destructive actions such as deleting or overwriting data until the hold is lifted. Activity rules can also be configured to remove legal holds.
+A prohibition action marks the relevant entity, stating that certain actions should be disallowed on that entity's data. A prohibition action can also be used to remove an existing prohibition from an entity.
+
+Reading data, storing new data, overwriting existing data, and deleting data can all be prohibited. For example, to mark that an entity is under a legal hold and therefore actions that could result in data being lost should be disallowed, overwriting and deleting data should be prohibited, while reading and storing can continue unimpeded. Likewise, a privacy regulation could indicate that a data subject wants their data to not be accessed, which would necessitate disallowing reads.
 
 ## Entity tag action
 
@@ -200,9 +202,10 @@ A retention policy action determines how long the data is considered to still be
     - `type`: the string `"alert"`
     - `alertLevel`: one of `INFO`, `WARNING`, `DANGER`, `SUCCESS`, or `NEUTRAL`
     - `message`: the text to display in the notification
- - Legal hold action
-    - `type`: the string `"legalHold"`
-    - `status`: a boolean; `true` to add or `false` to remove. **Only present in activity rules.**
+ - Prohibition action
+    - `type`: the string `"prohibition"`
+    - `status`: a boolean; `true` to add or `false` to remove.
+    - `prohibitions`: a list of strings indicating what actions should be prohibited; possible values are `READ`, `STORE`, `UPDATE`, and `DELETE`.
  - Retention policy action
     - `type`: the string `"retention"`
     - `expirationDate`: an ISO-formatted date string indicating when this data expires (optional; mutually exclusive with `daysSinceStore`)
