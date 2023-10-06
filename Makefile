@@ -19,11 +19,11 @@ upgrade:
 
 
 s serve:
-	mkdocs serve --strict
+	mkdocs serve
 
 
 b build:
-	mkdocs build --strict
+	mkdocs build
 
 d deploy:
-	mkdocs gh-deploy --strict --force
+	mkdocs gh-deploy --force
