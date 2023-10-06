@@ -7,7 +7,7 @@ With the platform you can:
 * Encrypt your data, ensuring maximum protection in our secure vault system
 * Enable reporting on private data within your organization or make it available to other organizations in tightly-controlled ways
 
-![ViziVault Platform Overview](/assets/images/anontech-overview-no-data.png)
+![ViziVault Platform Overview](assets/images/anontech-overview-no-data.png)
 
 Our platform and suite of connectors and tools makes it easy for you to transfer sensitive data from various sources into our secure storage protected by state-of-the-art encryption using our [ViziVault API](#vizivault-api).
 
@@ -21,7 +21,7 @@ The multi-layer cryptographic system will allow you to manage access to end user
 
 This is meant to provide users with the greatest flexibility on the security of their data. You have the capability to maximize your usage of sensitive data you have collected without risking any unnecessary exposure. We give you the maximum flexibility and capability to meet or exceed regulatory requirements on the use of personal data.
 
-![ViziVault API](/assets/images/vault-api-docs.png)
+![ViziVault API](assets/images/vault-api-docs.png)
 
 Visit the [API Reference](/api/endpoints/) to learn more about the available endpoints.
 
@@ -29,7 +29,7 @@ Visit the [API Reference](/api/endpoints/) to learn more about the available end
 
 ViziVault Enterprise is a management platform for the personal information stored using the ViziVault API for a company’s users, showing the accessibility and composition of governed data and allowing you to control associated metadata and permissions. Here, companies can take action to reduce data privacy risks and monitor potential problems in real-time.
 
-![ViziVault Enterprise](/assets/images/vizivault-enterprise.png)
+![ViziVault Enterprise](assets/images/vizivault-enterprise.png)
 
 ## Deployment Models
 The ViziVault Platform aims to eliminate any risk of malicious intrusions by enforcing encryption for data in transit and in persistence. It is carefully designed to eliminate the threat of your organization's data being leaked publicly.
@@ -45,7 +45,7 @@ Our architecture is container-ready and can be deployed to fit your needs with a
 
 By sending metadata back to our platform, you maintain rich insights and powerful control to enable your users and customers to take control of their data with full transparency.
 
-![Anontech On-Premise](/assets/images/anontech-onprem.png)
+![Anontech On-Premise](assets/images/anontech-onprem.png)
 
 ### Hosted
 We also offer a full software-as-a-service solution that is managed by AnonTech in the cloud. This option is the most convenient if hosting our API in your infrastructure adds too much complexity or overhead.
@@ -56,13 +56,13 @@ In this way, you can be sure that you will only pay for infrastructure and featu
 
 We strongly enforce internal policies built around your data security at the core, ensuring that no third parties will have access to your data.
 
-![Anontech Hosted](/assets/images/anontech-hosted.png)
+![Anontech Hosted](assets/images/anontech-hosted.png)
 
 Our deployment models can fit your company's needs without sacrificing the features unlocked by using the ViziVault Platform.
 
 ## Global Availability
 With the ever-growing demand for increased data regulation, we are designed with compliance at the core and offer our services globally at the click of a button to meet the regulations of today and tomorrow.
-![Global Vaults](/assets/images/anontech-geovaults.png)
+![Global Vaults](assets/images/anontech-geovaults.png)
 
 Creating new vaults for your orgnization's data has never been easier with [ViziVault Enterprise](/vizivault-enterprise/overview).
 
