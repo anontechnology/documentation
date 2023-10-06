@@ -1,0 +1,2562 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Official documentation for the Anontech ViziVault Platform">
+      
+      
+      
+        <link rel="canonical" href="https://anontechnology.github.io/documentation/api/datapoints/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>Attributes - Anontech</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.975780f9.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="None" data-md-color-accent="None">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#entity-and-data-subject-attributes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Anontech" class="md-header__button md-logo" aria-label="Anontech" data-md-component="logo">
+      
+  <img src="../../assets/images/anontech-cropped.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Anontech
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Attributes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Anontech" class="md-nav__button md-logo" aria-label="Anontech" data-md-component="logo">
+      
+  <img src="../../assets/images/anontech-cropped.png" alt="logo">
+
+    </a>
+    Anontech
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/" class="md-nav__link">
+        Libraries
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          API Reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="API Reference" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          API Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../endpoints/" class="md-nav__link">
+        Endpoint reference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reportonly/" class="md-nav__link">
+        Report-Only Auditing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Attributes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Attributes
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#post-entitiesentityidattributes" class="md-nav__link">
+    POST /entities/{entityId}/attributes
+  </a>
+  
+    <nav class="md-nav" aria-label="POST /entities/{entityId}/attributes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#header-parameters" class="md-nav__link">
+    Header Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#body-parameters-required" class="md-nav__link">
+    Body Parameters (Required)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-variables" class="md-nav__link">
+    Path Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-payload" class="md-nav__link">
+    Example Payload
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-response" class="md-nav__link">
+    Example Response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-responses" class="md-nav__link">
+    Error responses
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-entitiesentityidattributesattributekey" class="md-nav__link">
+    GET /entities/{entityId}/attributes/{attributeKey}
+  </a>
+  
+    <nav class="md-nav" aria-label="GET /entities/{entityId}/attributes/{attributeKey}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#header-parameters_1" class="md-nav__link">
+    Header Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-variables_1" class="md-nav__link">
+    Path Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-response_1" class="md-nav__link">
+    Example Response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-responses_1" class="md-nav__link">
+    Error responses
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-entitiesentityidattributes" class="md-nav__link">
+    GET /entities/{entityId}/attributes
+  </a>
+  
+    <nav class="md-nav" aria-label="GET /entities/{entityId}/attributes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#header-parameters_2" class="md-nav__link">
+    Header Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-variables_2" class="md-nav__link">
+    Path Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#query-parameter-variables" class="md-nav__link">
+    Query Parameter Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-response_2" class="md-nav__link">
+    Example Response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-responses_2" class="md-nav__link">
+    Error responses
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete-entitiesentityidattributesattributekey" class="md-nav__link">
+    DELETE /entities/{entityId}/attributes/{attributeKey}
+  </a>
+  
+    <nav class="md-nav" aria-label="DELETE /entities/{entityId}/attributes/{attributeKey}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#path-variables_3" class="md-nav__link">
+    Path Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-response_3" class="md-nav__link">
+    Example Response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-responses_3" class="md-nav__link">
+    Error responses
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-datadatapointid" class="md-nav__link">
+    GET /data/{dataPointId}
+  </a>
+  
+    <nav class="md-nav" aria-label="GET /data/{dataPointId}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#header-parameters_3" class="md-nav__link">
+    Header Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-variables_4" class="md-nav__link">
+    Path Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-response_4" class="md-nav__link">
+    Example Response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-responses_4" class="md-nav__link">
+    Error responses
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete-datadatapointid" class="md-nav__link">
+    DELETE /data/{dataPointId}
+  </a>
+  
+    <nav class="md-nav" aria-label="DELETE /data/{dataPointId}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#path-variables_5" class="md-nav__link">
+    Path Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-response_5" class="md-nav__link">
+    Example Response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-responses_5" class="md-nav__link">
+    Error responses
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete-datasubjectsentityiddata" class="md-nav__link">
+    DELETE /datasubjects/{entityId}/data
+  </a>
+  
+    <nav class="md-nav" aria-label="DELETE /datasubjects/{entityId}/data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#path-variables_6" class="md-nav__link">
+    Path Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-response_6" class="md-nav__link">
+    Example Response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-responses_6" class="md-nav__link">
+    Error responses
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#post-datasubjectsentityidattributes" class="md-nav__link">
+    POST /datasubjects/{entityId}/attributes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-datasubjectsentityidattributesattributekey" class="md-nav__link">
+    GET /datasubjects/{entityId}/attributes/{attributeKey}
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-datasubjectsentityidattributes" class="md-nav__link">
+    GET /datasubjects/{entityId}/attributes
+  </a>
+  
+    <nav class="md-nav" aria-label="GET /datasubjects/{entityId}/attributes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#additional-error-responses" class="md-nav__link">
+    Additional error responses
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete-datasubjectsentityidattributesattributekey" class="md-nav__link">
+    DELETE /datasubjects/{entityId}/attributes/{attributeKey}
+  </a>
+  
+    <nav class="md-nav" aria-label="DELETE /datasubjects/{entityId}/attributes/{attributeKey}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#additional-error-responses_1" class="md-nav__link">
+    Additional error responses
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete-datasubjectsentityiddata_1" class="md-nav__link">
+    DELETE /datasubjects/{entityId}/data
+  </a>
+  
+    <nav class="md-nav" aria-label="DELETE /datasubjects/{entityId}/data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#additional-error-responses_2" class="md-nav__link">
+    Additional error responses
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#post-search" class="md-nav__link">
+    POST /search
+  </a>
+  
+    <nav class="md-nav" aria-label="POST /search">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#body-parameters-required_1" class="md-nav__link">
+    Body Parameters (Required)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-payload_1" class="md-nav__link">
+    Example Payload
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-response_7" class="md-nav__link">
+    Example Response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-responses_7" class="md-nav__link">
+    Error responses
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../attributes/" class="md-nav__link">
+        Attribute Definitions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entities/" class="md-nav__link">
+        Data Subjects and Entities
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tags/" class="md-nav__link">
+        Tags
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../regulations/" class="md-nav__link">
+        Regulations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rules/" class="md-nav__link">
+        Rules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entitytypes/" class="md-nav__link">
+        Entity Types
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Glossary
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Glossary" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Glossary
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/attribute-definition/" class="md-nav__link">
+        Attribute Definition
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/datasubject/" class="md-nav__link">
+        Entity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/entity-type/" class="md-nav__link">
+        Entity Type
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/tag/" class="md-nav__link">
+        Tag
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/attribute/" class="md-nav__link">
+        Attribute
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/regulation/" class="md-nav__link">
+        Regulation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/rule/" class="md-nav__link">
+        Rule
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/storage-request/" class="md-nav__link">
+        Storage Request
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Tutorials
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tutorials" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/quickstart/" class="md-nav__link">
+        Quickstart
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/attribute-schemas/" class="md-nav__link">
+        Attribute Schemas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/alerts/" class="md-nav__link">
+        Scheduled Alerts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/rules/" class="md-nav__link">
+        Rules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/search/" class="md-nav__link">
+        Search
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Regulations
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Regulations" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Regulations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://gdpr-info.eu/chapter-3/" class="md-nav__link">
+        GDPR (European Union)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://oag.ca.gov/privacy/ccpa" class="md-nav__link">
+        CCPA (California)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.hhs.gov/hipaa/" class="md-nav__link">
+        HIPAA (US medical data)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.pcisecuritystandards.org/" class="md-nav__link">
+        PCI (credit card information)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www2.ed.gov/policy/gen/guid/fpco/ferpa/" class="md-nav__link">
+        FERPA (US)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.ftc.gov/tips-advice/business-center/privacy-and-security/children%27s-privacy" class="md-nav__link">
+        COPPA (US)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          ViziVault Enterprise
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="ViziVault Enterprise" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          ViziVault Enterprise
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vizivault-enterprise/overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vizivault-enterprise/dashboard/" class="md-nav__link">
+        Dashboard
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vizivault-enterprise/discover/" class="md-nav__link">
+        Discover
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vizivault-enterprise/applications/" class="md-nav__link">
+        Applications
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vizivault-enterprise/attributes/" class="md-nav__link">
+        Attributes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vizivault-enterprise/tags/" class="md-nav__link">
+        Tags
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vizivault-enterprise/regulations/" class="md-nav__link">
+        Regulations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vizivault-enterprise/reports/" class="md-nav__link">
+        Reports
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#post-entitiesentityidattributes" class="md-nav__link">
+    POST /entities/{entityId}/attributes
+  </a>
+  
+    <nav class="md-nav" aria-label="POST /entities/{entityId}/attributes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#header-parameters" class="md-nav__link">
+    Header Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#body-parameters-required" class="md-nav__link">
+    Body Parameters (Required)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-variables" class="md-nav__link">
+    Path Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-payload" class="md-nav__link">
+    Example Payload
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-response" class="md-nav__link">
+    Example Response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-responses" class="md-nav__link">
+    Error responses
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-entitiesentityidattributesattributekey" class="md-nav__link">
+    GET /entities/{entityId}/attributes/{attributeKey}
+  </a>
+  
+    <nav class="md-nav" aria-label="GET /entities/{entityId}/attributes/{attributeKey}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#header-parameters_1" class="md-nav__link">
+    Header Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-variables_1" class="md-nav__link">
+    Path Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-response_1" class="md-nav__link">
+    Example Response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-responses_1" class="md-nav__link">
+    Error responses
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-entitiesentityidattributes" class="md-nav__link">
+    GET /entities/{entityId}/attributes
+  </a>
+  
+    <nav class="md-nav" aria-label="GET /entities/{entityId}/attributes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#header-parameters_2" class="md-nav__link">
+    Header Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-variables_2" class="md-nav__link">
+    Path Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#query-parameter-variables" class="md-nav__link">
+    Query Parameter Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-response_2" class="md-nav__link">
+    Example Response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-responses_2" class="md-nav__link">
+    Error responses
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete-entitiesentityidattributesattributekey" class="md-nav__link">
+    DELETE /entities/{entityId}/attributes/{attributeKey}
+  </a>
+  
+    <nav class="md-nav" aria-label="DELETE /entities/{entityId}/attributes/{attributeKey}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#path-variables_3" class="md-nav__link">
+    Path Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-response_3" class="md-nav__link">
+    Example Response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-responses_3" class="md-nav__link">
+    Error responses
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-datadatapointid" class="md-nav__link">
+    GET /data/{dataPointId}
+  </a>
+  
+    <nav class="md-nav" aria-label="GET /data/{dataPointId}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#header-parameters_3" class="md-nav__link">
+    Header Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-variables_4" class="md-nav__link">
+    Path Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-response_4" class="md-nav__link">
+    Example Response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-responses_4" class="md-nav__link">
+    Error responses
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete-datadatapointid" class="md-nav__link">
+    DELETE /data/{dataPointId}
+  </a>
+  
+    <nav class="md-nav" aria-label="DELETE /data/{dataPointId}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#path-variables_5" class="md-nav__link">
+    Path Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-response_5" class="md-nav__link">
+    Example Response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-responses_5" class="md-nav__link">
+    Error responses
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete-datasubjectsentityiddata" class="md-nav__link">
+    DELETE /datasubjects/{entityId}/data
+  </a>
+  
+    <nav class="md-nav" aria-label="DELETE /datasubjects/{entityId}/data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#path-variables_6" class="md-nav__link">
+    Path Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-response_6" class="md-nav__link">
+    Example Response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-responses_6" class="md-nav__link">
+    Error responses
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#post-datasubjectsentityidattributes" class="md-nav__link">
+    POST /datasubjects/{entityId}/attributes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-datasubjectsentityidattributesattributekey" class="md-nav__link">
+    GET /datasubjects/{entityId}/attributes/{attributeKey}
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-datasubjectsentityidattributes" class="md-nav__link">
+    GET /datasubjects/{entityId}/attributes
+  </a>
+  
+    <nav class="md-nav" aria-label="GET /datasubjects/{entityId}/attributes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#additional-error-responses" class="md-nav__link">
+    Additional error responses
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete-datasubjectsentityidattributesattributekey" class="md-nav__link">
+    DELETE /datasubjects/{entityId}/attributes/{attributeKey}
+  </a>
+  
+    <nav class="md-nav" aria-label="DELETE /datasubjects/{entityId}/attributes/{attributeKey}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#additional-error-responses_1" class="md-nav__link">
+    Additional error responses
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete-datasubjectsentityiddata_1" class="md-nav__link">
+    DELETE /datasubjects/{entityId}/data
+  </a>
+  
+    <nav class="md-nav" aria-label="DELETE /datasubjects/{entityId}/data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#additional-error-responses_2" class="md-nav__link">
+    Additional error responses
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#post-search" class="md-nav__link">
+    POST /search
+  </a>
+  
+    <nav class="md-nav" aria-label="POST /search">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#body-parameters-required_1" class="md-nav__link">
+    Body Parameters (Required)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-payload_1" class="md-nav__link">
+    Example Payload
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-response_7" class="md-nav__link">
+    Example Response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-responses_7" class="md-nav__link">
+    Error responses
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="entity-and-data-subject-attributes">Entity and Data Subject Attributes</h1>
+<h2 id="post-entitiesentityidattributes">POST /entities/{entityId}/attributes</h2>
+<p>Stores attributes for the given entity.</p>
+<p>For each attribute stored, if the attribute is repeatable, existing data in the vault will not be affected. If the attribute is not repeatable, existing data will be overwritten. If you want to make modifications to a nonrepeatable attribute, the best way is to read the current value, make changes as necessary, and then store the complete modified attribute.</p>
+<p>If the entity specified does not currently exist in the system, it will be created. By default, the entity will be created as a data subject; the <code>entityType</code> field on the StorageRequest object can be used to override this by specifying a different type of entity to create.</p>
+<h3 id="header-parameters">Header Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>X-Encryption-Key</td>
+<td>String</td>
+<td>Public encryption key</td>
+</tr>
+</tbody>
+</table>
+<h3 id="body-parameters-required">Body Parameters (Required)</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>payload</td>
+<td><a href="/glossary/storage-request">StorageRequest</a></td>
+<td>Storage Request</td>
+</tr>
+</tbody>
+</table>
+<h3 id="path-variables">Path Variables</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>entityId</td>
+<td>String</td>
+<td>Entity Identifier</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-payload">Example Payload</h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;accessibility&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Read Only&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;attribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SAMPLE_ATTRIBUTE&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;dataPointId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;regulations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;SAMPLE_REGULATION&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;sensitivity&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PERSONAL&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;reportOnly&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;123-456-789&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;entityType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;datasubject&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;namespace&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Example_Namespace&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;origin&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;127.0.0.1&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="example-response">Example Response</h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;attribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NAME_FIRST&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;createdDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2020-01-01T10:05:59.5646+08:00&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;dataPointId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a9fcbf23-852f-441e-b729-dc9fffa528f7&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;modifiedDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2020-01-01T10:06:32.4426+08:00&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;regulations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;SAMPLE_REGULATION&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;sensitivity&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PERSONAL&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;reportOnly&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;structureRootId&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;entityId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;001&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;123-456-789&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="error-responses">Error responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status code</th>
+<th>Error message</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>400</td>
+<td>Encoded key provided is invalid</td>
+<td>The public encryption key provided is not correct.</td>
+</tr>
+<tr>
+<td>400</td>
+<td>No such attribute</td>
+<td>You are attempting to store data for an attribute that does not exist.</td>
+</tr>
+<tr>
+<td>400</td>
+<td>No such regulation</td>
+<td>You are attempting to store data that is tagged with a regulation that does not exist.</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Entity is of type [entityType], which does not match the provided entity type</td>
+<td>The storage request specifies an entity type to create, but the entity that data is being stored for already exists and is of a different type</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Attribute is not applicable to entity type</td>
+<td>You are attempting to store data of an attribute that is not applicable to the entity type of the entity the data belongs to</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden access to attribute</td>
+<td>Your application does not have permission to access some of the attributes of the data you are attempting to store.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Cannot overwrite attribute for data subject, as the data subject is under a legal hold</td>
+<td>You are attempting to store a value of a nonrepeatable attribute for a data subject who already has a value for that attribute, which would overwrite the existing value; however, the data subject is under a legal hold, and so the existing data cannot be overwritten</td>
+</tr>
+<tr>
+<td>409</td>
+<td>Received multiple values for nonrepeatable attribute</td>
+<td>You are attempting to store two or more attributes belonging to the same attribute definition, but that attribute definition is not repeatable.</td>
+</tr>
+<tr>
+<td>413</td>
+<td>Datapoint values may not exceed 1 MB in size</td>
+<td>You are attempting to store a string that is longer than 1,048,576 characters long. For longer data, set the data's <a href="/tutorials/attribute-schemas">attribute schema</a> to "file".</td>
+</tr>
+<tr>
+<td>422</td>
+<td>Expected [type] for value of attribute [attribute]</td>
+<td>The value given for the indicated attribute or sub-attribute does not match what is expected according to that attribute's <a href="/tutorials/attribute-schemas">schema</a>.</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Unknown sub-attribute [sub-attribute]</td>
+<td>A value given for a structured attribute contains a sub-attribute that is not present in that attribute's <a href="/tutorials/attribute-schemas">schema</a>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="get-entitiesentityidattributesattributekey">GET /entities/{entityId}/attributes/{attributeKey}</h2>
+<p>Displays information about an attribute for one entity</p>
+<h3 id="header-parameters_1">Header Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>X-Decryption-Key</td>
+<td>String</td>
+<td>Private decryption key</td>
+</tr>
+</tbody>
+</table>
+<h3 id="path-variables_1">Path Variables</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>entityId</td>
+<td>String</td>
+<td>Entity Identifier</td>
+</tr>
+<tr>
+<td>attributeKey</td>
+<td>String</td>
+<td>Attribute Name</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-response_1">Example Response</h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;attribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NAME_FIRST&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;createdDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2020-01-01T10:05:59.5646+08:00&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;dataPointId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a9fcbf23-852f-441e-b729-dc9fffa528f7&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;modifiedDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2020-01-01T10:06:32.4426+08:00&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;regulations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;SAMPLE_REGULATION&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;sensitivity&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PERSONAL&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;reportOnly&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;structureRootId&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;entityId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;001&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;123-456-789&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="error-responses_1">Error responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status code</th>
+<th>Error message</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>400</td>
+<td>Encoded key provided is invalid</td>
+<td>The private decryption key provided is not correct.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden</td>
+<td>You are trying to access attributes that your application does not have access to.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Data Not Found</td>
+<td>The specified entity does not exist, or else that entity has no value for the attributes specified.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="get-entitiesentityidattributes">GET /entities/{entityId}/attributes</h2>
+<p>Retrieves attributes for the given entity. By default, returns all attributes that your application has access to; alternatively, a list of desired attributes can be specified.</p>
+<h3 id="header-parameters_2">Header Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>X-Decryption-Key</td>
+<td>String</td>
+<td>Private decryption key</td>
+</tr>
+</tbody>
+</table>
+<h3 id="path-variables_2">Path Variables</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>entityId</td>
+<td>String</td>
+<td>Entity Identifier</td>
+</tr>
+</tbody>
+</table>
+<h3 id="query-parameter-variables">Query Parameter Variables</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>attributes</td>
+<td>Array<String></td>
+<td>Comma-delimited list of attribute keys to access (optional)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-response_2">Example Response</h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;attribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NAME_FIRST&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;createdDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2020-01-01T10:05:59.5646+08:00&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;dataPointId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a9fcbf23-852f-441e-b729-dc9fffa528f7&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;modifiedDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2020-01-01T10:06:32.4426+08:00&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;regulations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;SAMPLE_REGULATION&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;sensitivity&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PERSONAL&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;reportOnly&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;structureRootId&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;entityId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;001&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;123-456-789&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="error-responses_2">Error responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status code</th>
+<th>Error message</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>400</td>
+<td>Encoded key provided is invalid</td>
+<td>The private decryption key provided is not correct.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden</td>
+<td>You are trying to access attributes that your application does not have access to.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Data Not Found</td>
+<td>The specified entity does not exist, or else that entity has no value for the attributes specified.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="delete-entitiesentityidattributesattributekey">DELETE /entities/{entityId}/attributes/{attributeKey}</h2>
+<p>Deletes attributes for the given entity and attribute.</p>
+<h3 id="path-variables_3">Path Variables</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>entityId</td>
+<td>String</td>
+<td>Entity Identifier</td>
+</tr>
+<tr>
+<td>attributeKey</td>
+<td>String</td>
+<td>Attribute Key</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-response_3">Example Response</h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Successfully Deleted Data Point&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="error-responses_3">Error responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status code</th>
+<th>Error message</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>403</td>
+<td>Forbidden</td>
+<td>You are trying to delete data from an attribute your application does not have access to.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Data Not Found</td>
+<td>There is no data in the system with the specified entity ID and attribute.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="get-datadatapointid">GET /data/{dataPointId}</h2>
+<p>Retrieves data with the given datapoint id</p>
+<h3 id="header-parameters_3">Header Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>X-Decryption-Key</td>
+<td>String</td>
+<td>Private decryption key</td>
+</tr>
+</tbody>
+</table>
+<h3 id="path-variables_4">Path Variables</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dataPointId</td>
+<td>String</td>
+<td>Datapoint ID</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-response_4">Example Response</h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;attribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NAME_FIRST&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;createdDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2020-01-01T10:05:59.5646+08:00&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;dataPointId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a9fcbf23-852f-441e-b729-dc9fffa528f7&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;modifiedDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2020-01-01T10:06:32.4426+08:00&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;regulations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;SAMPLE_REGULATION&quot;</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;sensitivity&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PERSONAL&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;reportOnly&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;structureRootId&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;entityId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;001&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;123-456-789&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="error-responses_4">Error responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status code</th>
+<th>Error message</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>400</td>
+<td>Encoded key provided is invalid</td>
+<td>The private decryption key provided is not correct.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden</td>
+<td>Your application does not have access to the attribute of the data point you are trying to read.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Data Not Found</td>
+<td>There is no data point in the system with the specified ID.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="delete-datadatapointid">DELETE /data/{dataPointId}</h2>
+<p>Deletes data with the given datapoint id</p>
+<h3 id="path-variables_5">Path Variables</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dataPointId</td>
+<td>String</td>
+<td>Datapoint ID</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-response_5">Example Response</h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Successfully Deleted Data Point&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="error-responses_5">Error responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status code</th>
+<th>Error message</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>403</td>
+<td>Forbidden</td>
+<td>Your application does not have access to the attribute of the data point you are trying to delete.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Data Not Found</td>
+<td>There is no data point in the system with the specified ID.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="delete-datasubjectsentityiddata">DELETE /datasubjects/{entityId}/data</h2>
+<p>Deletes all data for the given data subject</p>
+<h3 id="path-variables_6">Path Variables</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>entityId</td>
+<td>String</td>
+<td>Data Subject Identifier</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-response_6">Example Response</h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Successfully Deleted Data Subject&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="error-responses_6">Error responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status code</th>
+<th>Error message</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>404</td>
+<td>Data Subject Not Found</td>
+<td>There is no data subject in the system with the specified ID.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="post-datasubjectsentityidattributes">POST /datasubjects/{entityId}/attributes</h2>
+<p>See <a href="#post-entitiesentityidattributes">POST /entities/{entityId}/attributes</a>.</p>
+<h2 id="get-datasubjectsentityidattributesattributekey">GET /datasubjects/{entityId}/attributes/{attributeKey}</h2>
+<p>See <a href="#get-entitiesentityidattributesattributekey">GET /entities/{entityId}/attributes/{attributeKey}</a>.</p>
+<h2 id="get-datasubjectsentityidattributes">GET /datasubjects/{entityId}/attributes</h2>
+<p>See <a href="#get-entitiesentityidattributes">GET /entities/{entityId}/attributes</a>.</p>
+<h3 id="additional-error-responses">Additional error responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status code</th>
+<th>Error message</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>400</td>
+<td>Entity is not a data subject</td>
+<td>The entity with the specified ID is not a data subject.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="delete-datasubjectsentityidattributesattributekey">DELETE /datasubjects/{entityId}/attributes/{attributeKey}</h2>
+<p>See <a href="#delete-entitiesentityidattributesattributekey">DELETE /entities/{entityId}/attributes/{attributeKey}</a>.</p>
+<h3 id="additional-error-responses_1">Additional error responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status code</th>
+<th>Error message</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>400</td>
+<td>Entity is not of type datasubject</td>
+<td>The entity with the specified ID is not a data subject.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="delete-datasubjectsentityiddata_1">DELETE /datasubjects/{entityId}/data</h2>
+<p>See <a href="#delete-entitiesentityiddata">DELETE /entities/{entityId}/data</a>.</p>
+<h3 id="additional-error-responses_2">Additional error responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status code</th>
+<th>Error message</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>400</td>
+<td>Entity is not of type datasubject</td>
+<td>The entity with the specified ID is not a data subject.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="post-search">POST /search</h2>
+<p>Searches data that matches specified criteria, using blind indexing to allow searching for values without decrypting data. For more information, <a href="/tutorials/search">read about ViziVault search</a>.</p>
+<h3 id="body-parameters-required_1">Body Parameters (Required)</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>request</td>
+<td>DataSearchRequest</td>
+<td>Parameters to search for</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-payload_1">Example Payload</h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;values&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;attribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SAMPLE_ATTRIBUTE_1&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Value of sample attribute 1&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;attribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SAMPLE_ATTRIBUTE_2&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Value of sample attribute 2&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;attributes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;SAMPLE_ATTRIBUTE_3&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;SAMPLE_ATTRIBUTE_4&quot;</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;regulations&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;SAMPLE_REGULATION&quot;</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;sensitivity&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NORMAL&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;entityId&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;001&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;002&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;003&quot;</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;country&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;US&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;minCreatedDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2020-01-01T10:06:32.4426+08:00&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;maxCreatedDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2020-01-31T10:06:32.4426+08:00&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="example-response_7">Example Response</h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;attribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SAMPLE_ATTRIBUTE_2&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;createdDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2020-01-15T10:05:59.5646+08:00&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;dataPointId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a9fcbf23-852f-441e-b729-dc9fffa528f7&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;modifiedDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2020-01-01T10:06:32.4426+08:00&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;regulations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;SAMPLE_REGULATION&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;sensitivity&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NORMAL&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;reportOnly&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;structureRootId&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;entityId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;001&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="error-responses_7">Error responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status code</th>
+<th>Error message</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>404</td>
+<td>Data Not Found</td>
+<td>No search results were found for the provided query.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../reportonly/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Report-Only Auditing" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Report-Only Auditing
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../attributes/" class="md-footer__link md-footer__link--next" aria-label="Next: Attribute Definitions" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Attribute Definitions
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      
+        <script src="../../javascript/libraries.js"></script>
+      
+    
+    
+  </body>
+</html>

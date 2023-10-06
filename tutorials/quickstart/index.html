@@ -1,0 +1,1625 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Official documentation for the Anontech ViziVault Platform">
+      
+      
+      
+        <link rel="canonical" href="https://anontechnology.github.io/documentation/tutorials/quickstart/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>Quickstart - Anontech</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.975780f9.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="None" data-md-color-accent="None">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#quickstart" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Anontech" class="md-header__button md-logo" aria-label="Anontech" data-md-component="logo">
+      
+  <img src="../../assets/images/anontech-cropped.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Anontech
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Quickstart
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Anontech" class="md-nav__button md-logo" aria-label="Anontech" data-md-component="logo">
+      
+  <img src="../../assets/images/anontech-cropped.png" alt="logo">
+
+    </a>
+    Anontech
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/" class="md-nav__link">
+        Libraries
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          API Reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="API Reference" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          API Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/endpoints/" class="md-nav__link">
+        Endpoint reference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/reportonly/" class="md-nav__link">
+        Report-Only Auditing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/datapoints/" class="md-nav__link">
+        Attributes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/attributes/" class="md-nav__link">
+        Attribute Definitions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/entities/" class="md-nav__link">
+        Data Subjects and Entities
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/tags/" class="md-nav__link">
+        Tags
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/regulations/" class="md-nav__link">
+        Regulations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/rules/" class="md-nav__link">
+        Rules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/entitytypes/" class="md-nav__link">
+        Entity Types
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Glossary
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Glossary" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Glossary
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/attribute-definition/" class="md-nav__link">
+        Attribute Definition
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/datasubject/" class="md-nav__link">
+        Entity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/entity-type/" class="md-nav__link">
+        Entity Type
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/tag/" class="md-nav__link">
+        Tag
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/attribute/" class="md-nav__link">
+        Attribute
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/regulation/" class="md-nav__link">
+        Regulation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/rule/" class="md-nav__link">
+        Rule
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/storage-request/" class="md-nav__link">
+        Storage Request
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Tutorials
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tutorials" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Quickstart
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Quickstart
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-your-encryption-key-pair" class="md-nav__link">
+    Get your encryption key pair
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initialize-your-connection-to-the-vault" class="md-nav__link">
+    Initialize your connection to the vault
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-attributes" class="md-nav__link">
+    Creating Attributes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-attributes-with-structure" class="md-nav__link">
+    Creating Attributes with Structure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loading-data" class="md-nav__link">
+    Loading Data
+  </a>
+  
+    <nav class="md-nav" aria-label="Loading Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#retrieving-data-for-a-data-subject" class="md-nav__link">
+    Retrieving Data for a Data Subject
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    Next Steps
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../attribute-schemas/" class="md-nav__link">
+        Attribute Schemas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alerts/" class="md-nav__link">
+        Scheduled Alerts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rules/" class="md-nav__link">
+        Rules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../search/" class="md-nav__link">
+        Search
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Regulations
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Regulations" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Regulations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://gdpr-info.eu/chapter-3/" class="md-nav__link">
+        GDPR (European Union)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://oag.ca.gov/privacy/ccpa" class="md-nav__link">
+        CCPA (California)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.hhs.gov/hipaa/" class="md-nav__link">
+        HIPAA (US medical data)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.pcisecuritystandards.org/" class="md-nav__link">
+        PCI (credit card information)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www2.ed.gov/policy/gen/guid/fpco/ferpa/" class="md-nav__link">
+        FERPA (US)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.ftc.gov/tips-advice/business-center/privacy-and-security/children%27s-privacy" class="md-nav__link">
+        COPPA (US)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          ViziVault Enterprise
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="ViziVault Enterprise" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          ViziVault Enterprise
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vizivault-enterprise/overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vizivault-enterprise/dashboard/" class="md-nav__link">
+        Dashboard
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vizivault-enterprise/discover/" class="md-nav__link">
+        Discover
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vizivault-enterprise/applications/" class="md-nav__link">
+        Applications
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vizivault-enterprise/attributes/" class="md-nav__link">
+        Attributes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vizivault-enterprise/tags/" class="md-nav__link">
+        Tags
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vizivault-enterprise/regulations/" class="md-nav__link">
+        Regulations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vizivault-enterprise/reports/" class="md-nav__link">
+        Reports
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-your-encryption-key-pair" class="md-nav__link">
+    Get your encryption key pair
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initialize-your-connection-to-the-vault" class="md-nav__link">
+    Initialize your connection to the vault
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-attributes" class="md-nav__link">
+    Creating Attributes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-attributes-with-structure" class="md-nav__link">
+    Creating Attributes with Structure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loading-data" class="md-nav__link">
+    Loading Data
+  </a>
+  
+    <nav class="md-nav" aria-label="Loading Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#retrieving-data-for-a-data-subject" class="md-nav__link">
+    Retrieving Data for a Data Subject
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    Next Steps
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="quickstart">Quickstart</h1>
+<p>In this quickstart we will be overviewing several functions you will typically want to do to help start securing, understanding and using the personal data in your system.</p>
+<h2 id="setup">Setup</h2>
+<p>In this tutorial you will learn how to load and retrieve personal data about your clients contained in a JSON file. While it's possible to use any personal client data source, we've included a CSV file of ten data subjects with typical data.</p>
+<ol>
+<li>
+<p>If you don't have a vault deployed for your organization already, reach out and request a demo vault.</p>
+<p><a class="md-button md-button--primary" href="https://anontech.io/contact-us" target="_blank">Request a Vault</a></p>
+</li>
+<li>
+<p>When you get your demo vault, you will need its web address.</p>
+<ul>
+<li>For cloud-hosted vaults, this will be of the form <code>http://vault.anontech.io/VAULT_IDENTIFIER/</code>, where the vault identifier is a hexadecimal code unique to your organization.</li>
+<li>For locally-hosted vaults, your administrator can prove you with the root URL to your hosted ViziVault instance.</li>
+</ul>
+</li>
+<li>
+<p>Download the example CSV file</p>
+<p><a class="md-button md-button--primary" href="https://docs.anontech.io/assets/files/tutorial_test.csv" target="_blank">Download Sample File</a></p>
+</li>
+</ol>
+<h2 id="get-your-encryption-key-pair">Get your encryption key pair</h2>
+<p>Put your public encryption key into a file. In a production system, you may wish to secure your private decryption key further. Even though we deliver our data securely to your system, you may wish to take precautions to secure these keys in your environment.</p>
+<h2 id="initialize-your-connection-to-the-vault">Initialize your connection to the vault</h2>
+<p>With your decryption key, encryption key, path, and application key, we can initialize the connection to your vault. Note that for the purposes of this quickstart we provide the connection with the encryption and decryption key. However, in your application, you may only wish to pull down data and decrypt with the decryption key, or only create new data with the encryption key. Using application keys and access to encyption and decryption keys lets you manage exactly how data is accessed and controlled.</p>
+<p>In the following eample you will want to make the following replacements:</p>
+<ol>
+<li>
+<p>Replace "./resources/test_encryption_key.txt" with the path to your encryption file</p>
+</li>
+<li>
+<p>Replace "./resources/test_decryption_key.txt" with the path to your decryption file</p>
+</li>
+<li>
+<p>Replace "https://my.host:8080' with the secure http address and port of your provided vault.</p>
+</li>
+</ol>
+<div class="tabbed-set" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">C#</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="nn">IO.Anontech.Vizivault</span><span class="p">;</span>
+<span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="nn">Microsoft.VisualBasic.FileIO</span><span class="p">;</span><span class="w"> </span><span class="c1">// for CSV parser</span>
+
+<span class="w">    </span><span class="cm">/* your namespace and class definition here */</span>
+
+<span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">decryptionKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="n">IO</span><span class="p">.</span><span class="n">File</span><span class="p">.</span><span class="n">ReadAllText</span><span class="p">(</span><span class="s">&quot;decryptionKey.txt&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">encryptionKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="n">IO</span><span class="p">.</span><span class="n">File</span><span class="p">.</span><span class="n">ReadAllText</span><span class="p">(</span><span class="s">&quot;encryptionKey.txt&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ViziVault</span><span class="w"> </span><span class="n">vault</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ViziVault</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Uri</span><span class="p">(</span><span class="s">&quot;http://example.com:8080&quot;</span><span class="p">)).</span><span class="n">WithApiKey</span><span class="p">(</span><span class="s">&quot;your-api-key&quot;</span><span class="p">).</span><span class="n">WithDecryptionKey</span><span class="p">(</span><span class="n">decryptionKey</span><span class="p">).</span><span class="n">WithEncryptionKey</span><span class="p">(</span><span class="n">encryptionKey</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Python</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">from</span>  <span class="nn">vizivault</span> <span class="kn">import</span> <span class="n">ViziVault</span><span class="p">,</span> <span class="n">AttributeDefinition</span><span class="p">,</span> <span class="n">SearchRequest</span>
+<span class="c1">#You&#39;ll need this later to load the CSV sample file</span>
+<span class="kn">import</span> <span class="nn">csv</span> 
+
+
+<span class="c1"># 1. Replace &#39;my_encryption_file.txt&#39;  with the path to your encryption file</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;my_encryption_file.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">encryption_file</span><span class="p">:</span>
+    <span class="n">encryption_key</span> <span class="o">=</span> <span class="n">encryption_file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="c1"># 2. Replace &#39;my_decryption_file.txt&#39; with the path to your decryption file</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;my_decryption_file.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">decryption_file</span><span class="p">:</span>
+    <span class="n">decryption_key</span> <span class="o">=</span> <span class="n">decryption_file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+
+<span class="c1"># Connect to the vault</span>
+<span class="c1"># 3. Replace &#39;https://my.host:8080&#39; with the web address and port of your vault server</span>
+<span class="c1"># 4. Replace &#39;12345&#39; with the api key (application key) of your application. </span>
+
+<span class="n">vault</span> <span class="o">=</span> <span class="n">vizivault</span><span class="o">.</span><span class="n">ViziVault</span><span class="p">(</span><span class="n">base_url</span><span class="o">=</span><span class="s1">&#39;https://my.host:8080&#39;</span><span class="p">,</span> <span class="n">api_key</span><span class="o">=</span><span class="s1">&#39;12345&#39;</span><span class="p">,</span> <span class="n">encryption_key</span><span class="o">=</span><span class="n">encryption_key</span><span class="p">,</span>
+            <span class="n">decryption_key</span><span class="o">=</span><span class="n">decryption_key</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">Java</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="c1">// 1. Replace &#39;decryptionKey.txt&#39;  with the path to your encryption file</span>
+<span class="n">FileInputStream</span><span class="w"> </span><span class="n">decKeyFile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FileInputStream</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="s">&quot;src&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">File</span><span class="p">.</span><span class="na">separator</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;test&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">File</span><span class="p">.</span><span class="na">separator</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;resources&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">File</span><span class="p">.</span><span class="na">separator</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;decryptionKey.txt&quot;</span><span class="p">));</span>
+<span class="n">decryptionKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="p">(</span><span class="n">decKeyFile</span><span class="p">.</span><span class="na">readAllBytes</span><span class="p">());</span>
+<span class="n">decKeyFile</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+
+<span class="c1">// 2. Replace &#39;encryptionKey.txt&#39;  with the path to your encryption file</span>
+<span class="n">FileInputStream</span><span class="w"> </span><span class="n">encKeyFile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FileInputStream</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="s">&quot;src&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">File</span><span class="p">.</span><span class="na">separator</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;test&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">File</span><span class="p">.</span><span class="na">separator</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;resources&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">File</span><span class="p">.</span><span class="na">separator</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;encryptionKey.txt&quot;</span><span class="p">));</span>
+<span class="n">encryptionKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="p">(</span><span class="n">encKeyFile</span><span class="p">.</span><span class="na">readAllBytes</span><span class="p">());</span>
+<span class="n">encKeyFile</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+
+<span class="c1">// Connect to the vault</span>
+<span class="c1">// 3. Replace &#39;https://my.host:8080&#39; with the web address and port of your vault server</span>
+<span class="c1">// 4. Replace &#39;12345&#39; with the api key (application key) of your application.</span>
+<span class="n">ViziVault</span><span class="w"> </span><span class="n">vault</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ViziVault</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">URL</span><span class="p">(</span><span class="s">&quot;http://localhost:8080&quot;</span><span class="p">)).</span><span class="na">withApiKey</span><span class="p">(</span><span class="s">&quot;12345&quot;</span><span class="p">).</span><span class="na">withDecryptionKey</span><span class="p">(</span><span class="n">decryptionKey</span><span class="p">).</span><span class="na">withEncryptionKey</span><span class="p">(</span><span class="n">encryptionKey</span><span class="p">);</span>
+</code></pre></div>
+</div>
+</div>
+<h2 id="creating-attributes">Creating Attributes</h2>
+<p>The first thing we will need to do is establish attributes to store all of the data from our client. Attribute definitions specify the structure and rules that will govern how your data is stored. For example, this can tell ViziVault whether a data subject can have more than one value of an attribute, and whether the data should be indexed for search functionality. We can also directly associate tags and regulations here, establishing how Vizivault will treat the data for retention, storage, and sharing.</p>
+<p>We start with creating some very simple attributes with no structure, such as strings or numeric data. In the next example we will see how to handle data in cases where you only may be interested in retrieving part of a related set of data, or where the data has an internal structure. The hint parameter contains a sample value of the attribute for the purposes of demonstrating the intended format.</p>
+<div class="tabbed-set" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">C#</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="n">AttributeDefinition</span><span class="w"> </span><span class="n">eyeColorAttributeDef</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">AttributeDefinition</span><span class="p">(</span><span class="s">&quot;EyeColor&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Hint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Green&quot;</span>
+<span class="p">};</span>
+<span class="n">AttributeDefinition</span><span class="w"> </span><span class="n">ageAttributeDef</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">AttributeDefinition</span><span class="p">(</span><span class="s">&quot;Age&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Hint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;18&quot;</span>
+<span class="p">};</span>
+
+<span class="k">await</span><span class="w"> </span><span class="n">vault</span><span class="p">.</span><span class="n">StoreAttributeDefinitionAsync</span><span class="p">(</span><span class="n">eyeColorAttributeDef</span><span class="p">);</span>
+<span class="k">await</span><span class="w"> </span><span class="n">vault</span><span class="p">.</span><span class="n">StoreAttributeDefinitionAsync</span><span class="p">(</span><span class="n">ageAttributeDef</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">Python</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="n">eye_color_attribute_def</span> <span class="o">=</span> <span class="n">vault</span><span class="o">.</span><span class="n">AttributeDefinition</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">&quot;EYE_COLOR&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Eye Color&quot;</span><span class="p">,</span> <span class="n">hint</span><span class="o">=</span><span class="s2">&quot;Green&quot;</span><span class="p">)</span>
+<span class="n">age_attribute_def</span> <span class="o">=</span> <span class="n">vault</span><span class="o">.</span><span class="n">AttributeDefinition</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">&quot;AGE&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Age&quot;</span><span class="p">,</span> <span class="n">hint</span><span class="o">=</span><span class="s2">&quot;18&quot;</span><span class="p">)</span>
+
+<span class="n">vault</span><span class="o">.</span><span class="n">store_attribute_definition</span><span class="p">(</span><span class="n">attribute_definition</span><span class="o">=</span><span class="n">eye_color_attribute_def</span><span class="p">)</span>
+<span class="n">vault</span><span class="o">.</span><span class="n">store_attribute_definition</span><span class="p">(</span><span class="n">attribute_definition</span><span class="o">=</span><span class="n">age_attribute_def</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><label for="__tabbed_2_3">Java</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="n">AttributeDefinition</span><span class="w"> </span><span class="n">eyeColorattributeDef</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">AttributeDefinition</span><span class="p">(</span><span class="s">&quot;EyeColor&quot;</span><span class="p">);</span>
+<span class="n">eyeColorattributeDef</span><span class="p">.</span><span class="na">setHint</span><span class="p">(</span><span class="s">&quot;Green&quot;</span><span class="p">);</span>
+<span class="n">AttributeDefinition</span><span class="w"> </span><span class="n">ageAttributeDef</span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">AttributeDefinition</span><span class="p">(</span><span class="s">&quot;Age&quot;</span><span class="p">);</span>
+<span class="n">ageAttributeDef</span><span class="p">.</span><span class="na">setHint</span><span class="p">(</span><span class="s">&quot;18&quot;</span><span class="p">);</span>
+
+<span class="n">vault</span><span class="p">.</span><span class="na">storeAttributeDefinition</span><span class="p">(</span><span class="n">eyeColorAttributeDef</span><span class="p">);</span>
+<span class="n">vault</span><span class="p">.</span><span class="na">storeAttributeDefinition</span><span class="p">(</span><span class="n">ageAttributeDef</span><span class="p">);</span>
+</code></pre></div>
+</div>
+</div>
+<h2 id="creating-attributes-with-structure">Creating Attributes with Structure</h2>
+<p>Let's add some attributes with structure. Here we add a data subject's full name and their billing address. We may wish to extract, update, or perform business logic on part of this data, so we store related attribute data in schemas. Here we add schemas that allow nested structures with multiple components. Each component has a type which can be:</p>
+<ul>
+<li>string: For textual data, up to 126 characters long.</li>
+<li>int: For data that can be expressed as an integer.</li>
+<li>float: For numeric data that cannot be expressed as an integer.</li>
+<li>boolean: For data that takes one of the two values "true" or "false".</li>
+<li>file: For data that takes more than 126 characters to represent, such as long text files or base64-encoded representations of image files.</li>
+</ul>
+<div class="tabbed-set" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">C#</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1">// Put these classes in your namespace</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Name</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">FirstName</span><span class="w"> </span><span class="p">{</span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;}</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">LastName</span><span class="w"> </span><span class="p">{</span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;}</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">MiddleName</span><span class="w"> </span><span class="p">{</span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;}</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Nickname</span><span class="w"> </span><span class="p">{</span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;}</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">MaidenName</span><span class="w"> </span><span class="p">{</span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;}</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Company</span><span class="w"> </span><span class="p">{</span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Address</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">LineOne</span><span class="w"> </span><span class="p">{</span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;}</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">LineTwo</span><span class="w"> </span><span class="p">{</span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;}</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">City</span><span class="w"> </span><span class="p">{</span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;}</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">State</span><span class="w"> </span><span class="p">{</span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;}</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">PostalCode</span><span class="w"> </span><span class="p">{</span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;}</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Country</span><span class="w"> </span><span class="p">{</span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;}</span>
+<span class="w">    </span><span class="p">}</span>
+
+
+
+<span class="w">    </span><span class="n">AttributeDefinition</span><span class="w"> </span><span class="n">nameAttributeDef</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">AttributeDefinition</span><span class="p">(</span><span class="s">&quot;Name&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Hint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;{first_name: \&quot;Agnes\&quot;, last_name: \&quot;Driscoll\&quot;, middle_name: \&quot;May\&quot;, nickname: \&quot;Madame X\&quot;, maiden_name: \&quot;Meyer\&quot;, company: \&quot;Hebern Electric\&quot;}&quot;</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="w">    </span><span class="n">nameAttributeDef</span><span class="p">.</span><span class="n">SchemaFromClass</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">Name</span><span class="p">));</span>
+
+
+<span class="w">    </span><span class="n">AttributeDefinition</span><span class="w"> </span><span class="n">addressAttributeDef</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">AttributeDefinition</span><span class="p">(</span><span class="s">&quot;Address&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Hint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;{line_one: \&quot;1 Hacker Way\&quot;, line_two: \&quot;Apt. 53\&quot;, city: \&quot;Menlo Park\&quot;, state: \&quot;California\&quot;, postal_code: \&quot;94025-1456\&quot;, country: \&quot;USA\&quot;}&quot;</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="w">    </span><span class="n">addressAttributeDef</span><span class="p">.</span><span class="n">SchemaFromClass</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">Address</span><span class="p">));</span>
+
+
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="n">vault</span><span class="p">.</span><span class="n">StoreAttributeDefinitionAsync</span><span class="p">(</span><span class="n">nameAttributeDef</span><span class="p">);</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="n">vault</span><span class="p">.</span><span class="n">StoreAttributeDefinitionAsync</span><span class="p">(</span><span class="n">addressAttributeDef</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">Python</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="n">name_attribute_def</span> <span class="o">=</span> <span class="n">vault</span><span class="o">.</span><span class="n">AttributeDefinition</span><span class="p">(</span>
+    <span class="n">key</span><span class="o">=</span><span class="s1">&#39;CLIENT_NAME&#39;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Client Name&quot;</span><span class="p">,</span>
+    <span class="n">hint</span><span class="o">=</span><span class="s2">&quot;{first_name: </span><span class="se">\&quot;</span><span class="s2">Agnes</span><span class="se">\&quot;</span><span class="s2">,&quot;</span>
+            <span class="s2">&quot;last_name: </span><span class="se">\&quot;</span><span class="s2">Driscoll</span><span class="se">\&quot;</span><span class="s2">,&quot;</span>
+            <span class="s2">&quot;middle_name: </span><span class="se">\&quot;</span><span class="s2">May</span><span class="se">\&quot;</span><span class="s2">,&quot;</span>
+            <span class="s2">&quot;nickname: </span><span class="se">\&quot;</span><span class="s2">Madame X</span><span class="se">\&quot;</span><span class="s2">,&quot;</span>
+            <span class="s2">&quot;maiden_name: </span><span class="se">\&quot;</span><span class="s2">Meyer</span><span class="se">\&quot;</span><span class="s2">,&quot;</span>
+            <span class="s2">&quot;company: </span><span class="se">\&quot;</span><span class="s2">Hebern Electric</span><span class="se">\&quot;</span><span class="s2">}&quot;</span><span class="p">,</span>
+    <span class="n">schema</span><span class="o">=</span><span class="p">{</span>
+            <span class="s2">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;middle_name&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;nickname&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;maiden_name&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;company&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
+        <span class="p">}</span>
+<span class="p">)</span>
+
+<span class="n">address_attribute_def</span> <span class="o">=</span> <span class="n">vault</span><span class="o">.</span><span class="n">AttributeDefinition</span><span class="p">(</span>
+    <span class="n">key</span><span class="o">=</span><span class="s2">&quot;BILLING_ADDRESS&quot;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Billing Address&quot;</span><span class="p">,</span>
+    <span class="n">hint</span><span class="o">=</span><span class="s2">&quot;{line_one: </span><span class="se">\&quot;</span><span class="s2">1 Hacker Way</span><span class="se">\&quot;</span><span class="s2">,&quot;</span>
+        <span class="s2">&quot;line_two: </span><span class="se">\&quot;</span><span class="s2">Apt. 53</span><span class="se">\&quot;</span><span class="s2">, &quot;</span>
+        <span class="s2">&quot;city: </span><span class="se">\&quot;</span><span class="s2">Menlo Park</span><span class="se">\&quot;</span><span class="s2">, &quot;</span>
+        <span class="s2">&quot;state: </span><span class="se">\&quot;</span><span class="s2">California</span><span class="se">\&quot;</span><span class="s2">, &quot;</span>
+        <span class="s2">&quot;postal_code: </span><span class="se">\&quot;</span><span class="s2">94025-1456</span><span class="se">\&quot;</span><span class="s2">, &quot;</span>
+        <span class="s2">&quot;country: </span><span class="se">\&quot;</span><span class="s2">USA</span><span class="se">\&quot;</span><span class="s2">}&quot;</span><span class="p">,</span>
+    <span class="n">schema</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;line_one&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;line_two&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;postal_code&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;country&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+
+<span class="n">vault</span><span class="o">.</span><span class="n">store_attribute_definition</span><span class="p">(</span><span class="n">attribute_definition</span><span class="o">=</span><span class="n">name_attribute_def</span><span class="p">)</span>
+<span class="n">vault</span><span class="o">.</span><span class="n">store_attribute_definition</span><span class="p">(</span><span class="n">attribute_definition</span><span class="o">=</span><span class="n">address_attribute_def</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><label for="__tabbed_3_3">Java</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Name</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">firstName</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">lastName</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">middleName</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nickName</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">maidenName</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">company</span><span class="p">;</span>
+
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setFirstName</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">firstName</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">firstName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">firstName</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setLastName</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">lastName</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">lastName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lastName</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setMiddleName</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">middleName</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">middleName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">middleName</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setNickName</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nickName</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">nickName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nickName</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setMaidenName</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">maidenName</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">maidenName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">maidenName</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setCompany</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">company</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">company</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">company</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Address</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">street</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">city</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">state</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">postalCode</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">country</span><span class="p">;</span>
+
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setStreet</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">street</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">street</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">street</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setCity</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">city</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">city</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">city</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setState</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">state</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">state</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setPostalCode</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">postalCode</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">postalCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">postalCode</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setCountry</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">country</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">country</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">country</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+<h2 id="loading-data">Loading Data</h2>
+<p>Now that we have attributes, let's load some data. We will iterate over every example in our sample CSV. For each row we define a data subject based on the subject id. Then we simply load the vaules for the flat files. For structured object data we create a hash structure and insert the key/value pairs. Finally, we save the completed data subject to the vault.</p>
+<div class="tabbed-set" data-tabs="4:3"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">C#</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="p">(</span><span class="kt">var</span><span class="w"> </span><span class="n">parser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TextFieldParser</span><span class="p">(</span><span class="s">&quot;./resources/tutorial_test.csv&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">parser</span><span class="p">.</span><span class="n">TextFieldType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FieldType</span><span class="p">.</span><span class="n">Delimited</span><span class="p">;</span>
+<span class="w">    </span><span class="n">parser</span><span class="p">.</span><span class="n">setDelimiters</span><span class="p">(</span><span class="s">&quot;,&quot;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">headers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">parser</span><span class="p">.</span><span class="n">ReadFields</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">parser</span><span class="p">.</span><span class="n">EndOfData</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">cells</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">parser</span><span class="p">.</span><span class="n">ReadFields</span><span class="p">();</span>
+<span class="w">        </span><span class="n">Dictionary</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">userData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Dictionary</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="m">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="n">cells</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">userData</span><span class="p">[</span><span class="n">headers</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cells</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">DataSubject</span><span class="w"> </span><span class="n">dataSubject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DataSubject</span><span class="p">(</span><span class="n">userData</span><span class="p">[</span><span class="s">&quot;SUBJECTID&quot;</span><span class="p">]);</span>
+
+<span class="w">        </span><span class="n">dataSubject</span><span class="p">.</span><span class="n">addAttribute</span><span class="p">(</span><span class="n">eyeColorAttributeDef</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="n">userData</span><span class="p">[</span><span class="s">&quot;EYE_COLOR&quot;</span><span class="p">]);</span>
+<span class="w">        </span><span class="n">dataSubject</span><span class="p">.</span><span class="n">addAttribute</span><span class="p">(</span><span class="n">ageAttributeDef</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="n">userData</span><span class="p">[</span><span class="s">&quot;AGE&quot;</span><span class="p">]);</span>
+<span class="w">        </span><span class="n">dataSubject</span><span class="p">.</span><span class="n">addAttribute</span><span class="p">(</span><span class="n">nameAttributeDef</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Name</span><span class="p">(){</span>
+<span class="w">            </span><span class="n">FirstName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">userData</span><span class="p">[</span><span class="s">&quot;FIRST_NAME&quot;</span><span class="p">],</span>
+<span class="w">            </span><span class="n">LastName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">userData</span><span class="p">[</span><span class="s">&quot;LAST_NAME&quot;</span><span class="p">],</span>
+<span class="w">            </span><span class="n">MiddleName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">userData</span><span class="p">[</span><span class="s">&quot;MIDDLE_NAME&quot;</span><span class="p">],</span>
+<span class="w">            </span><span class="n">Company</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">userData</span><span class="p">[</span><span class="s">&quot;COMPANY&quot;</span><span class="p">]</span>
+<span class="w">        </span><span class="p">});</span>
+<span class="w">        </span><span class="n">dataSubject</span><span class="p">.</span><span class="n">addAttribute</span><span class="p">(</span><span class="n">addressAttributeDef</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Address</span><span class="p">(){</span>
+<span class="w">            </span><span class="n">Street</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">userData</span><span class="p">[</span><span class="s">&quot;STREET&quot;</span><span class="p">],</span>
+<span class="w">            </span><span class="n">City</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">userData</span><span class="p">[</span><span class="s">&quot;CITY&quot;</span><span class="p">],</span>
+<span class="w">            </span><span class="n">State</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">userData</span><span class="p">[</span><span class="s">&quot;STATE&quot;</span><span class="p">],</span>
+<span class="w">            </span><span class="n">Country</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">userData</span><span class="p">[</span><span class="s">&quot;COUNTRY&quot;</span><span class="p">]</span>
+<span class="w">        </span><span class="p">});</span>
+
+<span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="n">vault</span><span class="p">.</span><span class="n">SaveAsync</span><span class="p">(</span><span class="n">dataSubject</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><label for="__tabbed_4_2">Python</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./resources/tutorial_test.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csv_file</span><span class="p">:</span>
+    <span class="n">csv_reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">csv_file</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+    <span class="n">header_row</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="n">user_data</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">csv_reader</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">header_row</span><span class="p">:</span>
+            <span class="n">headers</span> <span class="o">=</span> <span class="n">row</span>
+            <span class="n">header_row</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">headers</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+                <span class="n">user_data</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+
+            <span class="c1"># Create a User</span>
+            <span class="n">new_user</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">user_data</span><span class="p">[</span><span class="s1">&#39;USERID&#39;</span><span class="p">])</span>
+
+            <span class="c1"># Add the attribute values</span>
+            <span class="n">new_user</span><span class="o">.</span><span class="n">add_attribute</span><span class="p">(</span><span class="n">attribute</span><span class="o">=</span><span class="n">eye_color_attribute_def</span><span class="o">.</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">user_data</span><span class="p">[</span><span class="s2">&quot;EYE_COLOR&quot;</span><span class="p">])</span>
+            <span class="n">new_user</span><span class="o">.</span><span class="n">add_attribute</span><span class="p">(</span><span class="n">attribute</span><span class="o">=</span><span class="n">age_attribute_def</span><span class="o">.</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">user_data</span><span class="p">[</span><span class="s2">&quot;AGE&quot;</span><span class="p">])</span>
+
+            <span class="c1"># Create a dictionary for the user&#39;s name</span>
+            <span class="n">user_name</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s2">&quot;first_name&quot;</span><span class="p">:</span> <span class="n">user_data</span><span class="p">[</span><span class="s2">&quot;FIRST_NAME&quot;</span><span class="p">],</span>
+                <span class="s2">&quot;last_name&quot;</span><span class="p">:</span> <span class="n">user_data</span><span class="p">[</span><span class="s2">&quot;LAST_NAME&quot;</span><span class="p">],</span>
+                <span class="s2">&quot;middle_name&quot;</span><span class="p">:</span> <span class="n">user_data</span><span class="p">[</span><span class="s2">&quot;MIDDLE_NAME&quot;</span><span class="p">],</span>
+                <span class="s2">&quot;company&quot;</span><span class="p">:</span> <span class="n">user_data</span><span class="p">[</span><span class="s2">&quot;COMPANY&quot;</span><span class="p">]</span>
+            <span class="p">}</span>
+
+            <span class="c1"># Save the user&#39;s name</span>
+            <span class="n">new_user</span><span class="o">.</span><span class="n">add_attribute</span><span class="p">(</span><span class="n">attribute</span><span class="o">=</span><span class="n">name_attribute_def</span><span class="o">.</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">user_name</span><span class="p">)</span>
+
+            <span class="c1"># Create a dictionary for the address</span>
+            <span class="n">address</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s2">&quot;street&quot;</span><span class="p">:</span> <span class="n">user_data</span><span class="p">[</span><span class="s2">&quot;STREET&quot;</span><span class="p">],</span>
+                <span class="s2">&quot;city&quot;</span><span class="p">:</span> <span class="n">user_data</span><span class="p">[</span><span class="s2">&quot;CITY&quot;</span><span class="p">],</span>
+                <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="n">user_data</span><span class="p">[</span><span class="s2">&quot;STATE&quot;</span><span class="p">],</span>
+                <span class="s2">&quot;country&quot;</span><span class="p">:</span> <span class="n">user_data</span><span class="p">[</span><span class="s2">&quot;COUNTRY&quot;</span><span class="p">]</span>
+            <span class="p">}</span>
+
+            <span class="c1"># Save the Address</span>
+            <span class="n">new_user</span><span class="o">.</span><span class="n">add_attribute</span><span class="p">(</span><span class="n">attribute</span><span class="o">=</span><span class="n">address_attribute_def</span><span class="o">.</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">address</span><span class="p">)</span>
+
+            <span class="n">vault</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">new_user</span><span class="p">)</span>
+
+
+    <span class="c1"># Cleanup</span>
+    <span class="n">csv_reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">csv_file</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+        <span class="n">header_row</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="n">user_data</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">csv_reader</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">header_row</span><span class="p">:</span>
+                <span class="n">headers</span> <span class="o">=</span> <span class="n">row</span>
+                <span class="n">header_row</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">vault</span><span class="o">.</span><span class="n">purge</span><span class="p">(</span><span class="n">new_user</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><label for="__tabbed_4_3">Java</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="n">File</span><span class="w"> </span><span class="n">csvSampleFile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="s">&quot;src&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">File</span><span class="p">.</span><span class="na">separator</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;test&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">File</span><span class="p">.</span><span class="na">separator</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;resources&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">File</span><span class="p">.</span><span class="na">separator</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;tutorial_test.csv&quot;</span><span class="p">);</span>
+<span class="n">Reader</span><span class="w"> </span><span class="n">csvReader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FileReader</span><span class="p">(</span><span class="n">csvSampleFile</span><span class="p">);</span>
+
+<span class="c1">// Use Jackson</span>
+<span class="n">Iterator</span><span class="o">&lt;</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">iterator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CsvMapper</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">readerFor</span><span class="p">(</span><span class="n">Map</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">with</span><span class="p">(</span><span class="n">CsvSchema</span><span class="p">.</span><span class="na">emptySchema</span><span class="p">().</span><span class="na">withHeader</span><span class="p">())</span>
+<span class="w">    </span><span class="p">.</span><span class="na">readValues</span><span class="p">(</span><span class="n">csvReader</span><span class="p">);</span>
+
+<span class="k">while</span><span class="p">(</span><span class="n">iterator</span><span class="p">.</span><span class="na">hasNext</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">csvVals</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iterator</span><span class="p">.</span><span class="na">next</span><span class="p">();</span>
+<span class="w">    </span><span class="n">DataSubject</span><span class="w"> </span><span class="n">dataSubject</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">DataSubject</span><span class="p">(</span><span class="n">csvVals</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;SUBJECTID&quot;</span><span class="p">));</span>
+
+<span class="w">    </span><span class="n">dataSubject</span><span class="p">.</span><span class="na">addAttribute</span><span class="p">(</span><span class="n">eyeColorattributeDef</span><span class="p">.</span><span class="na">getName</span><span class="p">(),</span><span class="n">csvVals</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;SUBJECTID&quot;</span><span class="p">));</span>
+<span class="w">    </span><span class="n">dataSubject</span><span class="p">.</span><span class="na">addAttribute</span><span class="p">(</span><span class="n">ageAttributeDef</span><span class="p">.</span><span class="na">getName</span><span class="p">(),</span><span class="n">csvVals</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;AGE&quot;</span><span class="p">));</span>
+
+<span class="w">    </span><span class="n">Name</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">Name</span><span class="p">();</span>
+
+<span class="w">    </span><span class="n">name</span><span class="p">.</span><span class="na">setFirstName</span><span class="p">(</span><span class="n">csvVals</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;FIRST_NAME&quot;</span><span class="p">));</span>
+<span class="w">    </span><span class="n">name</span><span class="p">.</span><span class="na">setLastName</span><span class="p">(</span><span class="n">csvVals</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;LAST_NAME&quot;</span><span class="p">));</span>
+<span class="w">    </span><span class="n">name</span><span class="p">.</span><span class="na">setMiddleName</span><span class="p">(</span><span class="n">csvVals</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;MIDDLE_NAME&quot;</span><span class="p">));</span>
+<span class="w">    </span><span class="n">name</span><span class="p">.</span><span class="na">setCompany</span><span class="p">(</span><span class="n">csvVals</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;COMPANY&quot;</span><span class="p">));</span>
+<span class="w">    </span><span class="n">dataSubject</span><span class="p">.</span><span class="na">addAttribute</span><span class="p">(</span><span class="n">nameAttributeDef</span><span class="p">.</span><span class="na">getName</span><span class="p">(),</span><span class="n">myName</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">Address</span><span class="w"> </span><span class="n">address</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">Address</span><span class="p">();</span>
+
+<span class="w">    </span><span class="n">address</span><span class="p">.</span><span class="na">setStreet</span><span class="p">(</span><span class="n">csvVals</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;STREET&quot;</span><span class="p">));</span>
+<span class="w">    </span><span class="n">address</span><span class="p">.</span><span class="na">setCity</span><span class="p">(</span><span class="n">csvVals</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;CITY&quot;</span><span class="p">));</span>
+<span class="w">    </span><span class="n">address</span><span class="p">.</span><span class="na">setState</span><span class="p">(</span><span class="n">csvVals</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;STATE&quot;</span><span class="p">));</span>
+<span class="w">    </span><span class="n">address</span><span class="p">.</span><span class="na">setCountry</span><span class="p">(</span><span class="n">csvVals</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;COUNTRY&quot;</span><span class="p">));</span>
+
+<span class="w">    </span><span class="n">dataSubject</span><span class="p">.</span><span class="na">addAttribute</span><span class="p">(</span><span class="n">addressAttributeDef</span><span class="p">.</span><span class="na">getName</span><span class="p">(),</span><span class="n">myAddress</span><span class="p">);</span>
+<span class="w">    </span><span class="n">vault</span><span class="p">.</span><span class="na">save</span><span class="p">(</span><span class="n">dataSubject</span><span class="p">);</span>
+
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+<h3 id="retrieving-data-for-a-data-subject">Retrieving Data for a Data Subject</h3>
+<p>Now that we have data in the system, let's try to get our data back. Here we grab the data for a data subject with the id 101.</p>
+<div class="tabbed-set" data-tabs="5:3"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><label for="__tabbed_5_1">C#</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="n">DataSubject</span><span class="w"> </span><span class="n">receivedSubject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">vault</span><span class="p">.</span><span class="n">FindByDataSubjectAsync</span><span class="p">(</span><span class="s">&quot;101&quot;</span><span class="p">);</span>
+<span class="k">foreach</span><span class="p">(</span><span class="n">AttributeValue</span><span class="w"> </span><span class="n">attr</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">receivedSubject</span><span class="p">.</span><span class="n">Attributes</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;Attribute: {attr.AttributeKey}; Value: {attr.Value}&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><label for="__tabbed_5_2">Python</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="n">received_user</span> <span class="o">=</span> <span class="n">vault</span><span class="o">.</span><span class="n">find_by_user</span><span class="p">(</span><span class="n">entity_id</span><span class="o">=</span><span class="s1">&#39;101&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">attribute</span> <span class="ow">in</span> <span class="n">received_user</span><span class="o">.</span><span class="n">get_attributes</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Attribute:&#39;</span> <span class="o">+</span> <span class="n">attribute</span><span class="o">.</span><span class="n">attribute</span> <span class="o">+</span> <span class="s1">&#39;Value:&#39;</span> <span class="o">+</span> <span class="n">attribute</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_5_3" name="__tabbed_5" type="radio" /><label for="__tabbed_5_3">Java</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="n">DataSubject</span><span class="w"> </span><span class="n">receivedSubject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vault</span><span class="p">.</span><span class="na">findByDataSubject</span><span class="p">(</span><span class="s">&quot;101&quot;</span><span class="p">);</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Attribute</span><span class="w"> </span><span class="n">attribute</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">receivedSubject</span><span class="p">.</span><span class="na">getAttributes</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;attribute_name: %s attribute_value: %s%n&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">attribute</span><span class="p">.</span><span class="na">getAttribute</span><span class="p">(),</span><span class="w"> </span><span class="n">attribute</span><span class="p">.</span><span class="na">getValue</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+<h3 id="next-steps">Next Steps</h3>
+<p>This guide covers basic usage. You can look at our <a href="/tutorials/attribute-schemas">tutorials</a> for more advanced usage including <a href="/tutorials/search">searching</a> and implementing <a href="/tutorials/rules">rules</a>.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../../glossary/storage-request/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Storage Request" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Storage Request
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../attribute-schemas/" class="md-footer__link md-footer__link--next" aria-label="Next: Attribute Schemas" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Attribute Schemas
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      
+        <script src="../../javascript/libraries.js"></script>
+      
+    
+    
+  </body>
+</html>

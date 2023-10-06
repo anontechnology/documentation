@@ -1,0 +1,1660 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Official documentation for the Anontech ViziVault Platform">
+      
+      
+      
+        <link rel="canonical" href="https://anontechnology.github.io/documentation/api/reportonly/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>Report-Only Auditing - Anontech</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.975780f9.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="None" data-md-color-accent="None">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#report-only-data" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Anontech" class="md-header__button md-logo" aria-label="Anontech" data-md-component="logo">
+      
+  <img src="../../assets/images/anontech-cropped.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Anontech
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Report-Only Auditing
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Anontech" class="md-nav__button md-logo" aria-label="Anontech" data-md-component="logo">
+      
+  <img src="../../assets/images/anontech-cropped.png" alt="logo">
+
+    </a>
+    Anontech
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/" class="md-nav__link">
+        Libraries
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          API Reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="API Reference" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          API Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../endpoints/" class="md-nav__link">
+        Endpoint reference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Report-Only Auditing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Report-Only Auditing
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#post-auditlogs" class="md-nav__link">
+    POST /auditlogs
+  </a>
+  
+    <nav class="md-nav" aria-label="POST /auditlogs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#body-parameters-required" class="md-nav__link">
+    Body Parameters (Required)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-payload" class="md-nav__link">
+    Example payload
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-response" class="md-nav__link">
+    Example response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-responses" class="md-nav__link">
+    Error responses
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#post-auditlogsbulk" class="md-nav__link">
+    POST /auditlogs/bulk
+  </a>
+  
+    <nav class="md-nav" aria-label="POST /auditlogs/bulk">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#body-parameters-required_1" class="md-nav__link">
+    Body Parameters (Required)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-payload_1" class="md-nav__link">
+    Example payload
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-response_1" class="md-nav__link">
+    Example response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-responses_1" class="md-nav__link">
+    Error responses
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datapoints/" class="md-nav__link">
+        Attributes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../attributes/" class="md-nav__link">
+        Attribute Definitions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entities/" class="md-nav__link">
+        Data Subjects and Entities
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tags/" class="md-nav__link">
+        Tags
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../regulations/" class="md-nav__link">
+        Regulations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rules/" class="md-nav__link">
+        Rules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entitytypes/" class="md-nav__link">
+        Entity Types
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Glossary
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Glossary" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Glossary
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/attribute-definition/" class="md-nav__link">
+        Attribute Definition
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/datasubject/" class="md-nav__link">
+        Entity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/entity-type/" class="md-nav__link">
+        Entity Type
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/tag/" class="md-nav__link">
+        Tag
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/attribute/" class="md-nav__link">
+        Attribute
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/regulation/" class="md-nav__link">
+        Regulation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/rule/" class="md-nav__link">
+        Rule
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/storage-request/" class="md-nav__link">
+        Storage Request
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Tutorials
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tutorials" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/quickstart/" class="md-nav__link">
+        Quickstart
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/attribute-schemas/" class="md-nav__link">
+        Attribute Schemas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/alerts/" class="md-nav__link">
+        Scheduled Alerts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/rules/" class="md-nav__link">
+        Rules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/search/" class="md-nav__link">
+        Search
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Regulations
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Regulations" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Regulations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://gdpr-info.eu/chapter-3/" class="md-nav__link">
+        GDPR (European Union)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://oag.ca.gov/privacy/ccpa" class="md-nav__link">
+        CCPA (California)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.hhs.gov/hipaa/" class="md-nav__link">
+        HIPAA (US medical data)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.pcisecuritystandards.org/" class="md-nav__link">
+        PCI (credit card information)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www2.ed.gov/policy/gen/guid/fpco/ferpa/" class="md-nav__link">
+        FERPA (US)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.ftc.gov/tips-advice/business-center/privacy-and-security/children%27s-privacy" class="md-nav__link">
+        COPPA (US)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          ViziVault Enterprise
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="ViziVault Enterprise" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          ViziVault Enterprise
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vizivault-enterprise/overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vizivault-enterprise/dashboard/" class="md-nav__link">
+        Dashboard
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vizivault-enterprise/discover/" class="md-nav__link">
+        Discover
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vizivault-enterprise/applications/" class="md-nav__link">
+        Applications
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vizivault-enterprise/attributes/" class="md-nav__link">
+        Attributes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vizivault-enterprise/tags/" class="md-nav__link">
+        Tags
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vizivault-enterprise/regulations/" class="md-nav__link">
+        Regulations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vizivault-enterprise/reports/" class="md-nav__link">
+        Reports
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#post-auditlogs" class="md-nav__link">
+    POST /auditlogs
+  </a>
+  
+    <nav class="md-nav" aria-label="POST /auditlogs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#body-parameters-required" class="md-nav__link">
+    Body Parameters (Required)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-payload" class="md-nav__link">
+    Example payload
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-response" class="md-nav__link">
+    Example response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-responses" class="md-nav__link">
+    Error responses
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#post-auditlogsbulk" class="md-nav__link">
+    POST /auditlogs/bulk
+  </a>
+  
+    <nav class="md-nav" aria-label="POST /auditlogs/bulk">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#body-parameters-required_1" class="md-nav__link">
+    Body Parameters (Required)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-payload_1" class="md-nav__link">
+    Example payload
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-response_1" class="md-nav__link">
+    Example response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-responses_1" class="md-nav__link">
+    Error responses
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="report-only-data">Report-Only Data</h1>
+<h2 id="post-auditlogs">POST /auditlogs</h2>
+<p>Records activity for report-only data; that is, data that is not stored in the vault but is still being monitored. The purpose of this endpoint is to collect metadata about how sensitive data stored in external systems is being used.</p>
+<p>While writes of external data can be recorded using <a href="/api/datapoints#post-entitiesentityidattributes">the same API endpoint used for storing data in the vault</a>, this endpoint allows recording reads and deletes as well as writes, as well as allowing more metadata to be expressed.</p>
+<h3 id="parameters">Parameters</h3>
+<h4 id="body-parameters-required">Body Parameters (Required)</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>payload</td>
+<td>ExternalActivityEvent</td>
+<td>Description of accesses to externally-stored data</td>
+</tr>
+</tbody>
+</table>
+<p>The structure of the ExternalActivityEvent object is as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>eventType</td>
+<td>String</td>
+<td>One of "READ", "STORE", "DELETE", or "UPDATE".</td>
+<td>Required</td>
+</tr>
+<tr>
+<td>dataPointId</td>
+<td>String</td>
+<td>Unique identifier for the attribute being accessed. This can be an identifier that is created externally or one that is generated by ViziVault.</td>
+<td>Optional for <code>"STORE"</code> events (a new data point ID will be generated by ViziVault in this case); required for other events.</td>
+</tr>
+<tr>
+<td>subjectId</td>
+<td>String</td>
+<td>Unique identifier for the data subject whom this attribute belongs to</td>
+<td>Required for <code>"STORE"</code> events; optional for other events as it can be derived from the data point id.</td>
+</tr>
+<tr>
+<td>data</td>
+<td><a href="/glossary/attribute">Attribute</a></td>
+<td>The attribute being saved for a <code>"STORE"</code> or <code>"UPDATE"</code> event.</td>
+<td>For <code>"STORE"</code> events, <code>data</code> must contain <code>attribute</code>, and all other fields that would be used when storing data in the vault are optional. For <code>"UPDATE"</code> events, all fields of <code>data</code> other than <code>value</code> are ignored. In either case, if a value is supplied, it will be used by the <a href="/tutorials/rules">rules engine</a> but it will <strong>not</strong> be stored.</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>Date</td>
+<td>The time at which the access occurred. If not specified, the current time will be assumed.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>applicationId</td>
+<td>String</td>
+<td>Unique identifier for the application that was used to initiate this access.</td>
+<td>Required</td>
+</tr>
+<tr>
+<td>applicationUser</td>
+<td>String</td>
+<td>Identifier for the application user who initiated this access.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>dataStoreName</td>
+<td>String</td>
+<td>Identifier for a database in which this event happened.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>dataStoreServer</td>
+<td>String</td>
+<td>Identifier for a database server on which this event happened.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>dataStoreEntityName</td>
+<td>String</td>
+<td>Identifier for a collection or table within a database in which this event happened.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>location</td>
+<td>Geolocation</td>
+<td>The geographic country, subdivision, and/or city where this access was initiated from.</td>
+<td>Optional</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-payload">Example payload</h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;eventType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;STORE&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;dataPointId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1fbeb66e-d460-43f5-b473-164b2c5ce526&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;subjectId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;user65536&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;attribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SHIPPING_ADDRESS&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;line_one&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1 Hacker Way&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;city&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Beverly Hills&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CA&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;postal_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;90210&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;tag1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;tag2&quot;</span><span class="p">],</span>
+<span class="w">        </span><span class="nt">&quot;regulations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;COPPA&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;GDPR&quot;</span><span class="p">],</span>
+<span class="w">        </span><span class="nt">&quot;sensitivity&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SENSITIVE&quot;</span>
+
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-01-01T00:00:00Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;applicationId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5eabb29fac3675476ae1ec48&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;applicationUser&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;csmith97&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;location&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;country&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;US&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;subdivision&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NY&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;city&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Albany&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="example-response">Example response</h3>
+<p>On success, returns 200 OK and a summary of the accesses that were recorded, including newly-generated datapoint IDs for any newly-stored attributes that did not already have them.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;eventType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;STORE&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;dataPointId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1fbeb66e-d460-43f5-b473-164b2c5ce526&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;subjectId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;user65536&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;attribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SHIPPING_ADDRESS&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;subPoints&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;attribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SHIPPING_ADDRESS.line_one&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;dataPointId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1fbeb66e-d460-43f5-b473-164b2c5ce626&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;attribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SHIPPING_ADDRESS.city&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;dataPointId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1fbeb66e-d460-43f5-b473-164b2c5ce627&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;attribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SHIPPING_ADDRESS.state&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;dataPointId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1fbeb66e-d460-43f5-b473-164b2c5ce628&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;attribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SHIPPING_ADDRESS.postal_code&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;dataPointId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1fbeb66e-d460-43f5-b473-164b2c5ce629&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="error-responses">Error responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status code</th>
+<th>Error message</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>400</td>
+<td>Event type is required</td>
+<td>The event type for an activity event was not specified.</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Unrecognized event type</td>
+<td>The event type for an activity event was something other than <code>READ</code>, <code>STORE</code>, <code>UPDATE</code>, or <code>DELETE</code>.</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Data point ID is required for events other than creation</td>
+<td>An activity event whose event type was not <code>STORE</code> had no datapoint ID specified.</td>
+</tr>
+<tr>
+<td>409</td>
+<td>Cannot create data point with ID, as there is already a point with that ID</td>
+<td>A <code>STORE</code> event had a data point ID specified, but the system already contained an attribute with that datapoint ID</td>
+</tr>
+<tr>
+<td>409</td>
+<td>Attribute given for datapoint ID does not match attribute of existing point with that ID</td>
+<td>An <code>UPDATE</code> event had an attribute definition specified that does not match the attribute being updated</td>
+</tr>
+<tr>
+<td>409</td>
+<td>Data subject ID given for datapoint ID does not match attribute of existing point with that ID</td>
+<td>An <code>UPDATE</code> event had a data subject id specified that does not match the attribute being updated</td>
+</tr>
+<tr>
+<td>400</td>
+<td>No such attribute</td>
+<td>You are attempting to report activity for data belonging to an attribute that does not exist.</td>
+</tr>
+<tr>
+<td>422</td>
+<td>Expected [type] for value of attribute [attribute]</td>
+<td>The value provided for the indicated attribute or sub-attribute does not match what is expected according to that attribute's <a href="/tutorials/attribute-schemas">schema</a>.</td>
+</tr>
+<tr>
+<td>422</td>
+<td>Unknown sub-attribute [sub-attribute]</td>
+<td>A value provided for a structured attribute contains a sub-attribute that is not present in that attribute's <a href="/tutorials/attribute-schemas">schema</a>.</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Timestamp out of range</td>
+<td>A timestamp was provided for the event that is more than one day in the future.</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Application ID is required</td>
+<td>The application ID was not specified.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>The provided data could not be stored, as a rule disallows it</td>
+<td>A <a href="/tutorials/rules">rule</a> has been configured that prohibits writing some of the data that was reported as having been stored.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="post-auditlogsbulk">POST /auditlogs/bulk</h2>
+<p>Identical to <code>POST /auditlogs</code>, but handles multiple events in one request.</p>
+<h4 id="body-parameters-required_1">Body Parameters (Required)</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>payload</td>
+<td>List&lt;ExternalActivityEvent&gt;</td>
+<td>List of accesses to externally-stored data</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-payload_1">Example payload</h3>
+<div class="highlight"><pre><span></span><code><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;eventType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;STORE&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;dataPointId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1fbeb66e-d460-43f5-b473-164b2c5ce526&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;subjectId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;user65536&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;attribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SHIPPING_ADDRESS&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;line_one&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1 Hacker Way&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;city&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Beverly Hills&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CA&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;postal_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;90210&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;tag1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;tag2&quot;</span><span class="p">],</span>
+<span class="w">            </span><span class="nt">&quot;regulations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;COPPA&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;GDPR&quot;</span><span class="p">],</span>
+<span class="w">            </span><span class="nt">&quot;sensitivity&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SENSITIVE&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-01-01T00:00:00Z&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;applicationId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5eabb29fac3675476ae1ec48&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;applicationUser&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;csmith97&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;location&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;country&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;US&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;subdivision&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NY&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;city&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Albany&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;eventType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;READ&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;subjectId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;user65536&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;dataPointId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1fbeb66e-d460-43f6-b474-164b2c5ce527&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-01-01T00:00:00Z&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;applicationId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5eabb29fac3675476ae1ec48&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;applicationUser&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;csmith97&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;location&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;country&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;US&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;subdivision&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NY&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;city&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Albany&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;eventType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;READ&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;dataPointId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1fbeb66e-d460-43f6-b474-164b2c5ce527&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;applicationId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5eabb29fac3675476ae1ec48&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;eventType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;STORE&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;subjectId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;user01024&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;attribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BILLING_ADDRESS&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;applicationId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5eabb29fac3675476ae1ec48&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">]</span>
+</code></pre></div>
+<h3 id="example-response_1">Example response</h3>
+<p>On success, returns 200 OK and a summary of the accesses that were recorded, including newly-generated datapoint IDs for any newly-stored attributes that did not already have them.</p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;eventType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;STORE&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;dataPointId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1fbeb66e-d460-43f5-b473-164b2c5ce526&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;subjectId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;user65536&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;attribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SHIPPING_ADDRESS&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;subPoints&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;attribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SHIPPING_ADDRESS.line_one&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;dataPointId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1fbeb66e-d460-43f5-b473-164b2c5ce626&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;attribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SHIPPING_ADDRESS.city&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;dataPointId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1fbeb66e-d460-43f5-b473-164b2c5ce627&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;attribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SHIPPING_ADDRESS.state&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;dataPointId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1fbeb66e-d460-43f5-b473-164b2c5ce628&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;attribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SHIPPING_ADDRESS.postal_code&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;dataPointId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1fbeb66e-d460-43f5-b473-164b2c5ce629&quot;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;eventType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;READ&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;dataPointId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1fbeb66e-d460-43f5-b473-164b2c5ce526&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;subjectId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;user65536&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;attribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SHIPPING_ADDRESS&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;eventType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;READ&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;dataPointId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1fbeb66e-d460-43f6-b474-164b2c5ce527&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;subjectId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;user01024&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;attribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BILLING_ADDRESS&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;eventType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;STORE&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;dataPointId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1fbeb66e-d460-43f6-b474-164b2c5ce527&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;subjectId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;user01024&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;attribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BILLING_ADDRESS&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">]</span>
+</code></pre></div>
+<h3 id="error-responses_1">Error responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status code</th>
+<th>Error message</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>400</td>
+<td>Event type is required</td>
+<td>The event type for an activity event was not specified.</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Unrecognized event type</td>
+<td>The event type for an activity event was something other than <code>READ</code>, <code>STORE</code>, <code>UPDATE</code>, or <code>DELETE</code>.</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Data point ID is required for events other than creation</td>
+<td>An activity event whose event type was not <code>STORE</code> had no datapoint ID specified.</td>
+</tr>
+<tr>
+<td>409</td>
+<td>Data point ID is in use</td>
+<td>A <code>STORE</code> event had a data point ID specified, but the system already contained an attribute with that datapoint ID that belonged to a different data subject ID and/or attribute definition</td>
+</tr>
+<tr>
+<td>400</td>
+<td>No such attribute</td>
+<td>You are attempting to report activity for data belonging to an attribute that does not exist.</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Expected [type] for value of attribute [attribute]</td>
+<td>The value provided for the indicated attribute or sub-attribute does not match what is expected according to that attribute's <a href="/tutorials/attribute-schemas">schema</a>.</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Unknown sub-attribute [sub-attribute]</td>
+<td>A value provided for a structured attribute contains a sub-attribute that is not present in that attribute's <a href="/tutorials/attribute-schemas">schema</a>.</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Timestamp out of range</td>
+<td>A timestamp was provided for the event that is more than one day in the future.</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Application ID is required</td>
+<td>The application ID was not specified.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>The provided data could not be stored, as a rule disallows it</td>
+<td>A <a href="/tutorials/rules">rule</a> has been configured that prohibits writing some of the data that was reported as having been stored.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../endpoints/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Endpoint reference" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Endpoint reference
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../datapoints/" class="md-footer__link md-footer__link--next" aria-label="Next: Attributes" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Attributes
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      
+        <script src="../../javascript/libraries.js"></script>
+      
+    
+    
+  </body>
+</html>

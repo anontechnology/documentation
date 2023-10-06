@@ -1,0 +1,2143 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Official documentation for the Anontech ViziVault Platform">
+      
+      
+      
+        <link rel="canonical" href="https://anontechnology.github.io/documentation/libraries/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>Libraries - Anontech</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.975780f9.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="None" data-md-color-accent="None">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#libraries" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Anontech" class="md-header__button md-logo" aria-label="Anontech" data-md-component="logo">
+      
+  <img src="../assets/images/anontech-cropped.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Anontech
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Libraries
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Anontech" class="md-nav__button md-logo" aria-label="Anontech" data-md-component="logo">
+      
+  <img src="../assets/images/anontech-cropped.png" alt="logo">
+
+    </a>
+    Anontech
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Libraries
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Libraries
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-does-the-sdk-work" class="md-nav__link">
+    How does the SDK work?
+  </a>
+  
+    <nav class="md-nav" aria-label="How does the SDK work?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vault-setup" class="md-nav__link">
+    Vault Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attributes" class="md-nav__link">
+    Attributes
+  </a>
+  
+    <nav class="md-nav" aria-label="Attributes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-an-attribute-to-a-data-subject" class="md-nav__link">
+    Adding an Attribute to a Data Subject
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retrieving-all-attributes-of-a-data-subject" class="md-nav__link">
+    Retrieving all Attributes of a Data Subject
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retrieving-an-attribute-of-a-data-subject" class="md-nav__link">
+    Retrieving an Attribute of a Data Subject
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deleting-data-subject-attributes" class="md-nav__link">
+    Deleting Data Subject Attributes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#searching" class="md-nav__link">
+    Searching
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attribute-definitions" class="md-nav__link">
+    Attribute Definitions
+  </a>
+  
+    <nav class="md-nav" aria-label="Attribute Definitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#storing-an-attribute-definition-in-the-vault" class="md-nav__link">
+    Storing an Attribute Definition in the Vault
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retrieving-attribute-definitions-from-the-vault" class="md-nav__link">
+    Retrieving Attribute Definitions from the Vault
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tags" class="md-nav__link">
+    Tags
+  </a>
+  
+    <nav class="md-nav" aria-label="Tags">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#storing-a-tag-in-the-vault" class="md-nav__link">
+    Storing a Tag in the Vault
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retrieving-tags-from-the-vault" class="md-nav__link">
+    Retrieving Tags from the Vault
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deleting-tags-from-the-vault" class="md-nav__link">
+    Deleting Tags from the Vault
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regulations" class="md-nav__link">
+    Regulations
+  </a>
+  
+    <nav class="md-nav" aria-label="Regulations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#storing-a-regulation-in-the-vault" class="md-nav__link">
+    Storing a Regulation in the Vault
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retrieving-regulations-from-the-vault" class="md-nav__link">
+    Retrieving Regulations from the Vault
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deleting-regulations-from-the-vault" class="md-nav__link">
+    Deleting Regulations from the Vault
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          API Reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="API Reference" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          API Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/endpoints/" class="md-nav__link">
+        Endpoint reference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/reportonly/" class="md-nav__link">
+        Report-Only Auditing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/datapoints/" class="md-nav__link">
+        Attributes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/attributes/" class="md-nav__link">
+        Attribute Definitions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/entities/" class="md-nav__link">
+        Data Subjects and Entities
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/tags/" class="md-nav__link">
+        Tags
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/regulations/" class="md-nav__link">
+        Regulations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/rules/" class="md-nav__link">
+        Rules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/entitytypes/" class="md-nav__link">
+        Entity Types
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Glossary
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Glossary" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Glossary
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/attribute-definition/" class="md-nav__link">
+        Attribute Definition
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/datasubject/" class="md-nav__link">
+        Entity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/entity-type/" class="md-nav__link">
+        Entity Type
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/tag/" class="md-nav__link">
+        Tag
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/attribute/" class="md-nav__link">
+        Attribute
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/regulation/" class="md-nav__link">
+        Regulation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/rule/" class="md-nav__link">
+        Rule
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/storage-request/" class="md-nav__link">
+        Storage Request
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Tutorials
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tutorials" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/quickstart/" class="md-nav__link">
+        Quickstart
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/attribute-schemas/" class="md-nav__link">
+        Attribute Schemas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/alerts/" class="md-nav__link">
+        Scheduled Alerts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/rules/" class="md-nav__link">
+        Rules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/search/" class="md-nav__link">
+        Search
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Regulations
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Regulations" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Regulations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://gdpr-info.eu/chapter-3/" class="md-nav__link">
+        GDPR (European Union)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://oag.ca.gov/privacy/ccpa" class="md-nav__link">
+        CCPA (California)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.hhs.gov/hipaa/" class="md-nav__link">
+        HIPAA (US medical data)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.pcisecuritystandards.org/" class="md-nav__link">
+        PCI (credit card information)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www2.ed.gov/policy/gen/guid/fpco/ferpa/" class="md-nav__link">
+        FERPA (US)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.ftc.gov/tips-advice/business-center/privacy-and-security/children%27s-privacy" class="md-nav__link">
+        COPPA (US)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          ViziVault Enterprise
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="ViziVault Enterprise" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          ViziVault Enterprise
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vizivault-enterprise/overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vizivault-enterprise/dashboard/" class="md-nav__link">
+        Dashboard
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vizivault-enterprise/discover/" class="md-nav__link">
+        Discover
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vizivault-enterprise/applications/" class="md-nav__link">
+        Applications
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vizivault-enterprise/attributes/" class="md-nav__link">
+        Attributes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vizivault-enterprise/tags/" class="md-nav__link">
+        Tags
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vizivault-enterprise/regulations/" class="md-nav__link">
+        Regulations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vizivault-enterprise/reports/" class="md-nav__link">
+        Reports
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-does-the-sdk-work" class="md-nav__link">
+    How does the SDK work?
+  </a>
+  
+    <nav class="md-nav" aria-label="How does the SDK work?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vault-setup" class="md-nav__link">
+    Vault Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attributes" class="md-nav__link">
+    Attributes
+  </a>
+  
+    <nav class="md-nav" aria-label="Attributes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-an-attribute-to-a-data-subject" class="md-nav__link">
+    Adding an Attribute to a Data Subject
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retrieving-all-attributes-of-a-data-subject" class="md-nav__link">
+    Retrieving all Attributes of a Data Subject
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retrieving-an-attribute-of-a-data-subject" class="md-nav__link">
+    Retrieving an Attribute of a Data Subject
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deleting-data-subject-attributes" class="md-nav__link">
+    Deleting Data Subject Attributes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#searching" class="md-nav__link">
+    Searching
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attribute-definitions" class="md-nav__link">
+    Attribute Definitions
+  </a>
+  
+    <nav class="md-nav" aria-label="Attribute Definitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#storing-an-attribute-definition-in-the-vault" class="md-nav__link">
+    Storing an Attribute Definition in the Vault
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retrieving-attribute-definitions-from-the-vault" class="md-nav__link">
+    Retrieving Attribute Definitions from the Vault
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tags" class="md-nav__link">
+    Tags
+  </a>
+  
+    <nav class="md-nav" aria-label="Tags">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#storing-a-tag-in-the-vault" class="md-nav__link">
+    Storing a Tag in the Vault
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retrieving-tags-from-the-vault" class="md-nav__link">
+    Retrieving Tags from the Vault
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deleting-tags-from-the-vault" class="md-nav__link">
+    Deleting Tags from the Vault
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regulations" class="md-nav__link">
+    Regulations
+  </a>
+  
+    <nav class="md-nav" aria-label="Regulations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#storing-a-regulation-in-the-vault" class="md-nav__link">
+    Storing a Regulation in the Vault
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retrieving-regulations-from-the-vault" class="md-nav__link">
+    Retrieving Regulations from the Vault
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deleting-regulations-from-the-vault" class="md-nav__link">
+    Deleting Regulations from the Vault
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="libraries">Libraries</h1>
+<p>Integrate into your Vault APIs using one of our official libraries.</p>
+<p>We offer an official SDK for most languages widely used in the industry today and are actively maintained by our engineering team.</p>
+<ul>
+<li><a href="https://github.com/anontechnology/vault-java-sdk">Java</a></li>
+<li><a href="https://github.com/anontechnology/vault-node-sdk">Node.js</a></li>
+<li><a href="https://github.com/anontechnology/vault-python-sdk">Python</a></li>
+<li><a href="https://github.com/anontechnology/vault-csharp-sdk">C#</a></li>
+<li>PHP (beta)</li>
+</ul>
+<p>Library not available for your desired language? Feel free to contribute to our <a href="https://github.com/anontechnology">open source community</a>!</p>
+<h2 id="how-does-the-sdk-work">How does the SDK work?</h2>
+<h3 id="installation">Installation</h3>
+<div class="tabbed-set" data-tabs="1:5"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Java</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- In your pom.xml --&gt;</span>
+<span class="nt">&lt;dependency&gt;</span>
+<span class="w">  </span><span class="nt">&lt;groupId&gt;</span>io.anontech.vizivault<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">  </span><span class="nt">&lt;artifactId&gt;</span>vizivault-java-client<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">  </span><span class="nt">&lt;version&gt;</span>1.0.0<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">C#</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="c"># Installing via NuGet</span>
+<span class="nb">Install-Package</span> <span class="n">Anontech-VizivaultClient</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">Node.js</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>npm install anontech-vizivault-client
+</code></pre></div>
+</div>
+<input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><label for="__tabbed_1_4">Python</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>pip install -e git://github.com/anontechnology/vault-python-sdk.git/#egg=vizivault
+</code></pre></div>
+</div>
+<input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><label for="__tabbed_1_5">PHP</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="x">// Coming soon...</span>
+</code></pre></div>
+</div>
+</div>
+<hr />
+<h2 id="vault-setup">Vault Setup</h2>
+<div class="tabbed-set" data-tabs="2:5"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">Java</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">encryptionKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">getenv</span><span class="p">(</span><span class="s">&quot;VIZIVAULT_ENCRYPTION_KEY&quot;</span><span class="p">);</span>
+<span class="n">String</span><span class="w"> </span><span class="n">decryptionKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">getenv</span><span class="p">(</span><span class="s">&quot;VIZIVAULT_DECRYPTION_KEY&quot;</span><span class="p">);</span>
+<span class="n">ViziVault</span><span class="w"> </span><span class="n">vault</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ViziVault</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="w">  </span><span class="p">.</span><span class="na">withApiKey</span><span class="p">(</span><span class="n">apiKey</span><span class="p">)</span>
+<span class="w">  </span><span class="p">.</span><span class="na">withEncryptionKey</span><span class="p">(</span><span class="n">encryptionKey</span><span class="p">)</span>
+<span class="w">  </span><span class="p">.</span><span class="na">withDecryptionKey</span><span class="p">(</span><span class="n">decryptionKey</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">C#</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kt">string</span><span class="w"> </span><span class="n">encryptionKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="n">Environment</span><span class="p">.</span><span class="n">GetEnvironmentVariable</span><span class="p">(</span><span class="s">&quot;VIZIVAULT_ENCRYPTION_KEY&quot;</span><span class="p">);</span>
+<span class="kt">string</span><span class="w"> </span><span class="n">decryptionKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="n">Environment</span><span class="p">.</span><span class="n">GetEnvironmentVariable</span><span class="p">(</span><span class="s">&quot;VIZIVAULT_DECRYPTION_KEY&quot;</span><span class="p">);</span>
+<span class="n">ViziVault</span><span class="w"> </span><span class="n">vault</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ViziVault</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="w">  </span><span class="p">.</span><span class="n">WithApiKey</span><span class="p">(</span><span class="n">apiKey</span><span class="p">)</span>
+<span class="w">  </span><span class="p">.</span><span class="n">WithEncryptionKey</span><span class="p">(</span><span class="n">encryptionKey</span><span class="p">)</span>
+<span class="w">  </span><span class="p">.</span><span class="n">WithDecryptionKey</span><span class="p">(</span><span class="n">decryptionKey</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><label for="__tabbed_2_3">Node.js</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">encryptionKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">VIZIVAULT_ENCRYPTION_KEY</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">decryptionKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">VIZIVAULT_DECRYPTION_KEY</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">vault</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ViziVault</span><span class="p">()</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">withBaseURL</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">withAPIKey</span><span class="p">(</span><span class="nx">apiKey</span><span class="p">)</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">withEncryptionKey</span><span class="p">(</span><span class="nx">encryptionKey</span><span class="p">)</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">withDecryptionKey</span><span class="p">(</span><span class="nx">decryptionKey</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><label for="__tabbed_2_4">Python</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="n">vault</span> <span class="o">=</span> <span class="n">vizivault</span><span class="o">.</span><span class="n">ViziVault</span><span class="p">(</span>
+    <span class="n">base_url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span>
+    <span class="n">api_key</span><span class="o">=</span><span class="n">apiKey</span><span class="p">,</span>
+    <span class="n">encryption_key</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;VIZIVAULT_ENCRYPTION_KEY&#39;</span><span class="p">),</span>
+    <span class="n">decryption_key</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;VIZIVAULT_DECRYPTION_KEY&#39;</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_2_5" name="__tabbed_2" type="radio" /><label for="__tabbed_2_5">PHP</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="x">$encryptionKey = getenv(&quot;VIZIVAULT_ENCRYPTION_KEY&quot;);</span>
+<span class="x">$decryptionKey = getenv(&quot;VIZIVAULT_DECRYPTION_KEY&quot;);</span>
+<span class="x">$vault = new ViziVault()</span>
+<span class="x">  -&gt;withBaseURL($url)</span>
+<span class="x">  -&gt;withAPIKey($apiKey)</span>
+<span class="x">  -&gt;withEncryptionKey($encryptionKey)</span>
+<span class="x">  -&gt;withDecryptionKey($decryptionKey)</span>
+<span class="x">  -&gt;build();</span>
+</code></pre></div>
+</div>
+</div>
+<hr />
+<h2 id="attributes">Attributes</h2>
+<p>The ViziVault ecosystem organizes your data using the concept of <a href="/glossary/attribute">attributes</a>. Every data point consists of three main components: a data subject id, which represents who the data is about; a value, which is some piece of information about the data subject; and an attribute, which expresses the relationship between the data subject and the value. For example, in an online retail application, there would be an attribute for shipping addresses, an attribute for billing addresses, an attribute for credit card information, and so on.</p>
+<h3 id="adding-an-attribute-to-a-data-subject">Adding an Attribute to a Data Subject</h3>
+<p>Attributes are stored as <code>key</code>/<code>value</code> pairs of strings. Some attributes are repeatable, such that multiple values can be stored for the same data subject; others are not repeatable, such that adding a new value to a data subject will overwrite any previous values. You can control whether an attribute is repeatable by modifying the associated <a href="/glossary/attribute-definition">attribute definition</a>.</p>
+<div class="tabbed-set" data-tabs="3:5"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">Java</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="c1">// Adding an attribute to a newly-created data subject</span>
+<span class="n">DataSubject</span><span class="w"> </span><span class="n">dataSubject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DataSubject</span><span class="p">(</span><span class="s">&quot;exampleUser&quot;</span><span class="p">);</span>
+<span class="n">dataSubject</span><span class="p">.</span><span class="na">addAttribute</span><span class="p">(</span><span class="s">&quot;FIRST_NAME&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Jane&quot;</span><span class="p">);</span>
+<span class="n">vault</span><span class="p">.</span><span class="na">save</span><span class="p">(</span><span class="n">dataSubject</span><span class="p">);</span>
+
+<span class="c1">// Adding an attribute to a data subject retrieved from the vault</span>
+<span class="n">DataSubject</span><span class="w"> </span><span class="n">dataSubject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vault</span><span class="p">.</span><span class="na">findByDataSubject</span><span class="p">(</span><span class="s">&quot;Client6789&quot;</span><span class="p">);</span>
+<span class="n">dataSubject</span><span class="p">.</span><span class="na">addAttribute</span><span class="p">(</span><span class="s">&quot;FULL_ADDRESS&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;1 Hacker Way, Beverly Hills, CA 90210&quot;</span><span class="p">);</span>
+<span class="n">vault</span><span class="p">.</span><span class="na">save</span><span class="p">(</span><span class="n">dataSubject</span><span class="p">);</span>
+
+<span class="c1">// Adding an attribute with additional metadata to a data subject</span>
+<span class="n">Attribute</span><span class="w"> </span><span class="n">attribute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Attribute</span><span class="p">(</span><span class="s">&quot;LAST_NAME&quot;</span><span class="p">);</span>
+<span class="n">attribute</span><span class="p">.</span><span class="na">setTags</span><span class="p">(</span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">&quot;ExampleTag&quot;</span><span class="p">));</span>
+<span class="n">attribute</span><span class="p">.</span><span class="na">setValue</span><span class="p">(</span><span class="s">&quot;Smith&quot;</span><span class="p">);</span>
+<span class="n">dataSubject</span><span class="p">.</span><span class="na">addAttribute</span><span class="p">(</span><span class="n">attribute</span><span class="p">);</span>
+<span class="n">vault</span><span class="p">.</span><span class="na">save</span><span class="p">(</span><span class="n">dataSubject</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">C#</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="c1">// Adding an attribute to a newly-created data subject</span>
+<span class="n">DataSubject</span><span class="w"> </span><span class="n">dataSubject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DataSubject</span><span class="p">(</span><span class="s">&quot;exampleUser&quot;</span><span class="p">);</span>
+<span class="n">dataSubject</span><span class="p">.</span><span class="n">AddAttribute</span><span class="p">(</span><span class="s">&quot;FIRST_NAME&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Jane&quot;</span><span class="p">);</span>
+<span class="k">await</span><span class="w"> </span><span class="n">vault</span><span class="p">.</span><span class="n">SaveAsync</span><span class="p">(</span><span class="n">dataSubject</span><span class="p">);</span>
+
+<span class="c1">// Adding an attribute to data subject retrieved from the vault</span>
+<span class="n">DataSubject</span><span class="w"> </span><span class="n">dataSubject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">vault</span><span class="p">.</span><span class="n">FindByDataSubjectAsync</span><span class="p">(</span><span class="s">&quot;User1234&quot;</span><span class="p">);</span>
+<span class="n">dataSubject</span><span class="p">.</span><span class="n">AddAttribute</span><span class="p">(</span><span class="s">&quot;FIRST_NAME&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Jane&quot;</span><span class="p">);</span>
+<span class="k">await</span><span class="w"> </span><span class="n">vault</span><span class="p">.</span><span class="n">SaveAsync</span><span class="p">(</span><span class="n">DataSubject</span><span class="p">);</span>
+
+<span class="c1">// Adding an attribute with additional metadata to a data subject</span>
+<span class="n">AttributeValue</span><span class="w"> </span><span class="n">attribute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Attribute</span><span class="p">(</span><span class="s">&quot;LAST_NAME&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Tags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">{</span><span class="s">&quot;ExampleTag&quot;</span><span class="p">},</span>
+<span class="w">    </span><span class="n">Value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Smith&quot;</span>
+<span class="p">};</span>
+<span class="n">dataSubject</span><span class="p">.</span><span class="n">AddAttribute</span><span class="p">(</span><span class="n">attribute</span><span class="p">);</span>
+<span class="k">await</span><span class="w"> </span><span class="n">vault</span><span class="p">.</span><span class="n">SaveAsync</span><span class="p">(</span><span class="n">dataSubject</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><label for="__tabbed_3_3">Node.js</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="c1">// Adding an attribute to user</span>
+<span class="nx">vault</span><span class="p">.</span><span class="nx">findByUser</span><span class="p">(</span><span class="s2">&quot;User1234&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">user</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">user</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s2">&quot;FIRST_NAME&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Jane&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">vault</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="nx">user</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="c1">// Adding an attribute to entity</span>
+<span class="nx">vault</span><span class="p">.</span><span class="nx">findByEntity</span><span class="p">(</span><span class="s2">&quot;Client6789&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">entity</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">entity</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s2">&quot;FULL_ADDRESS&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;1 Hacker Way, Beverly Hills, CA 90210&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">vault</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="nx">entity</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_3_4" name="__tabbed_3" type="radio" /><label for="__tabbed_3_4">Python</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="c1"># Adding an attribute to user</span>
+<span class="n">user</span> <span class="o">=</span> <span class="n">vault</span><span class="o">.</span><span class="n">find_by_user</span><span class="p">(</span><span class="s2">&quot;User1234&quot;</span><span class="p">)</span>
+<span class="n">user</span><span class="o">.</span><span class="n">add_attribute</span><span class="p">(</span><span class="s2">&quot;FIRST_NAME&quot;</span><span class="p">,</span> <span class="s2">&quot;Jane&quot;</span><span class="p">)</span>
+<span class="n">vault</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
+
+<span class="c1"># Adding an attribute to entity</span>
+<span class="n">entity</span> <span class="o">=</span> <span class="n">vault</span><span class="o">.</span><span class="n">find_by_entity</span><span class="p">(</span><span class="s2">&quot;Client6789&quot;</span><span class="p">)</span>
+<span class="n">entity</span><span class="o">.</span><span class="n">add_attribute</span><span class="p">(</span><span class="s2">&quot;FULL_ADDRESS&quot;</span><span class="p">,</span> <span class="s2">&quot;1 Hacker Way, Beverly Hills, CA 90210&quot;</span><span class="p">)</span>
+<span class="n">vault</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">entity</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_3_5" name="__tabbed_3" type="radio" /><label for="__tabbed_3_5">PHP</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="x">// Adding an attribute to user</span>
+<span class="x">$user = $vault-&gt;findByUser(&quot;User1234&quot;);</span>
+<span class="x">$user-&gt;setAttribute(&quot;FIRST_NAME&quot;, &quot;Jane&quot;);</span>
+<span class="x">$vault-&gt;save($user);</span>
+
+<span class="x">// Adding an attribute to entity</span>
+<span class="x">$entity = $vault-&gt;findByUser(&quot;Client6789&quot;);</span>
+<span class="x">$entity-&gt;setAttribute(&quot;FULL_ADDRESS&quot;, &quot;1 Hacker Way, Beverly Hills, CA 90210&quot;);</span>
+<span class="x">$vault-&gt;save($entity);</span>
+</code></pre></div>
+</div>
+</div>
+<h3 id="retrieving-all-attributes-of-a-data-subject">Retrieving all Attributes of a Data Subject</h3>
+<p>Retrieves all <a href="/glossary/attribute">Attributes</a> for the specified data subject. Returns a list of Attribute objects.</p>
+<div class="tabbed-set" data-tabs="4:5"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">Java</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="c1">// Retrieving all attributes for a data subject</span>
+<span class="n">DataSubject</span><span class="w"> </span><span class="n">dataSubject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vault</span><span class="p">.</span><span class="na">findByDataSubject</span><span class="p">(</span><span class="s">&quot;User1234&quot;</span><span class="p">);</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">Attribute</span><span class="o">&gt;</span><span class="w"> </span><span class="n">attributes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dataSubject</span><span class="p">.</span><span class="na">getAttributes</span><span class="p">();</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><label for="__tabbed_4_2">C#</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="c1">// Retrieving all attributes for a data subject</span>
+<span class="n">DataSubject</span><span class="w"> </span><span class="n">dataSubject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">vault</span><span class="p">.</span><span class="n">FindByDataSubjectAsync</span><span class="p">(</span><span class="s">&quot;User1234&quot;</span><span class="p">);</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">Attribute</span><span class="o">&gt;</span><span class="w"> </span><span class="n">attributes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dataSubject</span><span class="p">.</span><span class="n">Attributes</span><span class="p">;</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><label for="__tabbed_4_3">Node.js</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="c1">// Retrieving all attributes for a user</span>
+<span class="nx">vault</span><span class="p">.</span><span class="nx">findByUser</span><span class="p">(</span><span class="s2">&quot;User1234&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">user</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">attributes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">user</span><span class="p">.</span><span class="nx">getAttributes</span><span class="p">();</span>
+<span class="p">});</span>
+
+<span class="c1">// Retrieving all attributes for an entity</span>
+<span class="nx">vault</span><span class="p">.</span><span class="nx">findByEntity</span><span class="p">(</span><span class="s2">&quot;Client6789&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">entity</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">attributes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">entity</span><span class="p">.</span><span class="nx">getAttributes</span><span class="p">();</span>
+<span class="p">});</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_4_4" name="__tabbed_4" type="radio" /><label for="__tabbed_4_4">Python</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="c1"># Retrieving all attributes for a user</span>
+<span class="n">user</span> <span class="o">=</span> <span class="n">vault</span><span class="o">.</span><span class="n">find_by_user</span><span class="p">(</span><span class="s2">&quot;User1234&quot;</span><span class="p">)</span>
+<span class="n">attributes</span> <span class="o">=</span> <span class="n">user</span><span class="o">.</span><span class="n">get_attributes</span><span class="p">()</span>
+
+<span class="c1"># Retrieving all attributes for an entity</span>
+<span class="n">entity</span> <span class="o">=</span> <span class="n">vault</span><span class="o">.</span><span class="n">find_by_entity</span><span class="p">(</span><span class="s2">&quot;Client6789&quot;</span><span class="p">)</span>
+<span class="n">attributes</span> <span class="o">=</span> <span class="n">entity</span><span class="o">.</span><span class="n">get_attributes</span><span class="p">()</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_4_5" name="__tabbed_4" type="radio" /><label for="__tabbed_4_5">PHP</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="x">// Retrieving all attributes for a user</span>
+<span class="x">$user = $vault-&gt;findByUser(&quot;User1234&quot;);</span>
+<span class="x">$attributes = $user-&gt;getAttributes();</span>
+
+<span class="x">// Retrieving all attributes for an entity</span>
+<span class="x">$entity = $vault-&gt;findByEntity(&quot;Client6789&quot;);</span>
+<span class="x">$attributes = $entity-&gt;getAttributes();</span>
+</code></pre></div>
+</div>
+</div>
+<h3 id="retrieving-an-attribute-of-a-data-subject">Retrieving an Attribute of a Data Subject</h3>
+<p>Retrieves a single specified <a href="/glossary/attribute">attribute</a> for the specified data subject. For repeatable attributes, use <code>getAttributes(attributeName)</code>; for non-repeatable attributes, use <code>getAttribute(attributeName)</code>.</p>
+<div class="tabbed-set" data-tabs="5:5"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><label for="__tabbed_5_1">Java</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="c1">// Retrieving specific attribute for a data subject</span>
+<span class="n">DataSubject</span><span class="w"> </span><span class="n">dataSubject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vault</span><span class="p">.</span><span class="na">findByDataSubject</span><span class="p">(</span><span class="s">&quot;User1234&quot;</span><span class="p">);</span>
+<span class="n">Attribute</span><span class="w"> </span><span class="n">attribute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dataSubject</span><span class="p">.</span><span class="na">getAttribute</span><span class="p">(</span><span class="s">&quot;FIRST_NAME&quot;</span><span class="p">);</span>
+
+<span class="c1">// Retrieving multiple values for a repeatable attribute</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">Attribute</span><span class="o">&gt;</span><span class="w"> </span><span class="n">attributes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dataSubject</span><span class="p">.</span><span class="na">getAttributes</span><span class="p">(</span><span class="s">&quot;SHIPPING_ADDRESS&quot;</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><label for="__tabbed_5_2">C#</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="c1">// Retrieving specific attribute for a data subject</span>
+<span class="n">DataSubject</span><span class="w"> </span><span class="n">dataSubject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">vault</span><span class="p">.</span><span class="n">FindByDataSubjectAsync</span><span class="p">(</span><span class="s">&quot;User1234&quot;</span><span class="p">);</span>
+<span class="n">Attribute</span><span class="w"> </span><span class="n">attribute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dataSubject</span><span class="p">.</span><span class="n">GetAttribute</span><span class="p">(</span><span class="s">&quot;FIRST_NAME&quot;</span><span class="p">);</span>
+
+<span class="c1">// Retrieving multiple values for a repeatable attribute</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">Attribute</span><span class="o">&gt;</span><span class="w"> </span><span class="n">attributes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dataSubject</span><span class="p">.</span><span class="n">GetAttributes</span><span class="p">(</span><span class="s">&quot;SHIPPING_ADDRESS&quot;</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_5_3" name="__tabbed_5" type="radio" /><label for="__tabbed_5_3">Node.js</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="c1">// Retrieving specific attribute for a user</span>
+<span class="nx">vault</span><span class="p">.</span><span class="nx">findByUser</span><span class="p">(</span><span class="s2">&quot;User1234&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">user</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">attribute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">user</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">&quot;FIRST_NAME&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="c1">// Retrieving specific attribute for an entity</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">entity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">vault</span><span class="p">.</span><span class="nx">findByEntity</span><span class="p">(</span><span class="s2">&quot;Client6789&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">entity</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">attribute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">entity</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">&quot;FULL_ADDRESS&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_5_4" name="__tabbed_5" type="radio" /><label for="__tabbed_5_4">Python</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="c1"># Retrieving specific attribute for a user</span>
+<span class="n">user</span> <span class="o">=</span> <span class="n">vault</span><span class="o">.</span><span class="n">find_by_user</span><span class="p">(</span><span class="s2">&quot;User1234&quot;</span><span class="p">)</span>
+<span class="n">attribute</span> <span class="o">=</span> <span class="n">user</span><span class="o">.</span><span class="n">get_attribute</span><span class="p">(</span><span class="s2">&quot;FIRST_NAME&quot;</span><span class="p">)</span>
+
+<span class="c1"># Retrieving specific attribute for an entity</span>
+<span class="n">entity</span> <span class="o">=</span> <span class="n">vault</span><span class="o">.</span><span class="n">find_by_entity</span><span class="p">(</span><span class="s2">&quot;Client6789&quot;</span><span class="p">)</span>
+<span class="n">attributes</span> <span class="o">=</span> <span class="n">entity</span><span class="o">.</span><span class="n">get_attribute</span><span class="p">(</span><span class="s2">&quot;FULL_ADDRESS&quot;</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_5_5" name="__tabbed_5" type="radio" /><label for="__tabbed_5_5">PHP</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="x">// Retrieving specific attribute for a user</span>
+<span class="x">$user = $vault-&gt;findByUser(&quot;User1234&quot;);</span>
+<span class="x">$attribute = $user-&gt;getAttribute(&quot;FIRST_NAME&quot;);</span>
+
+<span class="x">// Retrieving specific attribute for an entity</span>
+<span class="x">$entity = $vault-&gt;findByEntity(&quot;Client6789&quot;);</span>
+<span class="x">$attributes = $entity-&gt;getAttribute(&quot;FULL_ADDRESS&quot;);</span>
+</code></pre></div>
+</div>
+</div>
+<h3 id="deleting-data-subject-attributes">Deleting Data Subject Attributes</h3>
+<p><a href="/glossary/attribute">Attributes</a> can be removed from the data subject object by calling <code>clearAttribute</code> with the specified attribute name, or by calling <code>purge</code> to remove all attributes. Additionally, all attributes have a unique datapoint id, and attributes can be deleted using this id.</p>
+<div class="tabbed-set" data-tabs="6:5"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><label for="__tabbed_6_1">Java</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="c1">// Purging all data subject attributes</span>
+<span class="n">vault</span><span class="p">.</span><span class="na">purge</span><span class="p">(</span><span class="s">&quot;User1234&quot;</span><span class="p">);</span>
+
+<span class="c1">// Removing all values of a specific attribute</span>
+<span class="n">DataSubject</span><span class="w"> </span><span class="n">dataSubject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vault</span><span class="p">.</span><span class="na">findByDataSubject</span><span class="p">(</span><span class="s">&quot;User1234&quot;</span><span class="p">);</span>
+<span class="n">dataSubject</span><span class="p">.</span><span class="na">clearAttribute</span><span class="p">(</span><span class="s">&quot;LAST_NAME&quot;</span><span class="p">);</span>
+<span class="n">vault</span><span class="p">.</span><span class="na">save</span><span class="p">(</span><span class="n">dataSubject</span><span class="p">);</span>
+
+<span class="c1">// Removing an individual value by its datapoint id</span>
+<span class="n">vault</span><span class="p">.</span><span class="na">deleteDataPoint</span><span class="p">(</span><span class="s">&quot;123e4567-e89b-12d3-a456-426614174000&quot;</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><label for="__tabbed_6_2">C#</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="c1">// Purging all data subject attributes</span>
+<span class="k">await</span><span class="w"> </span><span class="n">vault</span><span class="p">.</span><span class="n">PurgeAsync</span><span class="p">(</span><span class="s">&quot;User1234&quot;</span><span class="p">);</span>
+
+<span class="c1">// Removing specific attribute</span>
+<span class="n">DataSubject</span><span class="w"> </span><span class="n">dataSubject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">vault</span><span class="p">.</span><span class="n">FindByDataSubjectAsync</span><span class="p">(</span><span class="s">&quot;User1234&quot;</span><span class="p">);</span>
+<span class="n">dataSubject</span><span class="p">.</span><span class="n">ClearAttribute</span><span class="p">(</span><span class="s">&quot;LAST_NAME&quot;</span><span class="p">);</span>
+<span class="k">await</span><span class="w"> </span><span class="n">vault</span><span class="p">.</span><span class="n">SaveAsync</span><span class="p">(</span><span class="n">dataSubject</span><span class="p">);</span>
+
+<span class="c1">// Removing an individual value by its datapoint id</span>
+<span class="k">await</span><span class="w"> </span><span class="n">vault</span><span class="p">.</span><span class="n">DeleteDataPointAsync</span><span class="p">(</span><span class="s">&quot;123e4567-e89b-12d3-a456-426614174000&quot;</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_6_3" name="__tabbed_6" type="radio" /><label for="__tabbed_6_3">Node.js</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="c1">// Purging all user attributes</span>
+<span class="nx">vault</span><span class="p">.</span><span class="nx">purge</span><span class="p">(</span><span class="s2">&quot;User1234&quot;</span><span class="p">);</span>
+
+<span class="c1">// Removing specific attribute</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">vault</span><span class="p">.</span><span class="nx">findByUser</span><span class="p">(</span><span class="s2">&quot;User1234&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">user</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">user</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s2">&quot;LAST_NAME&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">vault</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="nx">user</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_6_4" name="__tabbed_6" type="radio" /><label for="__tabbed_6_4">Python</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="c1"># Purging all user attributes</span>
+<span class="n">vault</span><span class="o">.</span><span class="n">purge</span><span class="p">(</span><span class="s2">&quot;User1234&quot;</span><span class="p">)</span>
+
+<span class="c1"># Removing specific attribute</span>
+<span class="n">user</span> <span class="o">=</span> <span class="n">vault</span><span class="o">.</span><span class="n">findByUser</span><span class="p">(</span><span class="s2">&quot;User1234&quot;</span><span class="p">)</span>
+<span class="n">user</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;LAST_NAME&quot;</span><span class="p">)</span>
+<span class="n">vault</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
+
+<span class="c1"># Removing an individual value by its datapoint id</span>
+<span class="n">vault</span><span class="o">.</span><span class="n">delete_data_point</span><span class="p">(</span><span class="s2">&quot;123e4567-e89b-12d3-a456-426614174000&quot;</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_6_5" name="__tabbed_6" type="radio" /><label for="__tabbed_6_5">PHP</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="x">// Purging all user attributes</span>
+<span class="x">$user = $vault-&gt;findByUser(&quot;User1234&quot;);</span>
+<span class="x">$user-&gt;purge();</span>
+
+<span class="x">// Removing specific attribute</span>
+<span class="x">$user = $vault-&gt;findByUser(&quot;User1234&quot;);</span>
+<span class="x">$user-&gt;remove(&quot;LAST_NAME&quot;);</span>
+</code></pre></div>
+</div>
+</div>
+<h3 id="searching">Searching</h3>
+<p>To search a vault for <a href="/glossary/attribute">attributes</a>, pass in a SearchRequest. A list of matching Attributes will be returned. For more information, <a href="/tutorials/search">read about ViziVault search</a>. </p>
+<div class="tabbed-set" data-tabs="7:5"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><label for="__tabbed_7_1">Java</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">pageIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">maxCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">25</span><span class="p">;</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">Attribute</span><span class="o">&gt;</span><span class="w"> </span><span class="n">attributes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vault</span><span class="p">.</span><span class="na">search</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">SearchRequest</span><span class="p">(</span><span class="s">&quot;LAST_NAME&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Doe&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">pageIndex</span><span class="p">,</span><span class="w"> </span><span class="n">maxCount</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><label for="__tabbed_7_2">C#</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">pageIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">maxCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">25</span><span class="p">;</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">Attribute</span><span class="o">&gt;</span><span class="w"> </span><span class="n">attributes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">vault</span><span class="p">.</span><span class="n">SearchAsync</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">SearchRequest</span><span class="p">(</span><span class="s">&quot;LAST_NAME&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Doe&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">pageIndex</span><span class="p">,</span><span class="w"> </span><span class="n">maxCount</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_7_3" name="__tabbed_7" type="radio" /><label for="__tabbed_7_3">Node.js</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
+<span class="nx">vault</span><span class="p">.</span><span class="nx">search</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">SearchRequest</span><span class="p">(</span><span class="s2">&quot;LAST_NAME&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Doe&quot;</span><span class="p">),</span><span class="w"> </span><span class="nx">page</span><span class="p">,</span><span class="w"> </span><span class="nx">count</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">attributes</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// use attributes</span>
+<span class="p">});</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_7_4" name="__tabbed_7" type="radio" /><label for="__tabbed_7_4">Python</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="n">attributes</span> <span class="o">=</span> <span class="n">vault</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">SearchRequest</span><span class="p">(</span><span class="s2">&quot;LAST_NAME&quot;</span><span class="p">,</span> <span class="s2">&quot;Doe&quot;</span><span class="p">),</span> <span class="n">page</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_7_5" name="__tabbed_7" type="radio" /><label for="__tabbed_7_5">PHP</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="x">$attributes = $vault.search(new SearchRequest(&quot;LAST_NAME&quot;, &quot;Doe&quot;));</span>
+</code></pre></div>
+</div>
+</div>
+<hr />
+<h2 id="attribute-definitions">Attribute Definitions</h2>
+<p>Attributes are defined using an <a href="/glossary/attribute-definition">attribute definition</a> object that contains all relevant metadata for the <code>key</code>. This is where attributes are given <a href="/glossary/tag">tags</a> and <a href="/glossary/regulation">regulations</a>, along with a <a href="/tutorials/attribute-schemas">schema</a> to specify the expected structure of the <code>value</code> of the attribute. Display names and hints can also be added to the attribute definition for ease of use and readability. </p>
+<h3 id="storing-an-attribute-definition-in-the-vault">Storing an Attribute Definition in the Vault</h3>
+<p>To store an attribute definition, create an AttributeDefinition object and save it to the vault as shown in the following code.</p>
+<div class="tabbed-set" data-tabs="8:5"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><label for="__tabbed_8_1">Java</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="n">AttributeDefinition</span><span class="w"> </span><span class="n">attributeDef</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">AttributeDefinition</span><span class="p">();</span>
+<span class="n">attributeDef</span><span class="p">.</span><span class="na">setName</span><span class="p">(</span><span class="s">&quot;Billing Address&quot;</span><span class="p">);</span>
+<span class="n">attributeDef</span><span class="p">.</span><span class="na">setTags</span><span class="p">(</span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">&quot;geographic_location&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;financial&quot;</span><span class="p">));</span>
+<span class="n">attributeDef</span><span class="p">.</span><span class="na">setHint</span><span class="p">(</span><span class="s">&quot;{ line_one: \&quot;1 Hacker Way\&quot;, line_two: \&quot;Apt. 53\&quot;,&quot;</span><span class="w"> </span><span class="o">+</span>
+<span class="w">                    </span><span class="s">&quot;city: \&quot;Menlo Park\&quot;, state: \&quot;California\&quot;, &quot;</span><span class="w"> </span><span class="o">+</span>
+<span class="w">                    </span><span class="s">&quot;postal_code: \&quot;94025-1456\&quot;, country: \&quot;USA\&quot;&quot;</span><span class="w"> </span><span class="o">+</span>
+<span class="w">                    </span><span class="s">&quot;}&quot;</span><span class="p">);</span>
+<span class="n">attributeDef</span><span class="p">.</span><span class="na">setSchema</span><span class="p">(</span><span class="n">PrimitiveSchema</span><span class="p">.</span><span class="na">STRING</span><span class="p">);</span><span class="w"> </span><span class="c1">// For simple, unstsructured data</span>
+<span class="n">attributeDef</span><span class="p">.</span><span class="na">schemaFromClass</span><span class="p">(</span><span class="n">YourModel</span><span class="p">.</span><span class="na">class</span><span class="p">);</span><span class="w"> </span><span class="c1">// Alternatively, creating a schema to store objects of a class</span>
+<span class="n">attributeDef</span><span class="p">.</span><span class="na">setRepeatable</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+<span class="n">attributeDef</span><span class="p">.</span><span class="na">setIndexed</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+
+<span class="n">vault</span><span class="p">.</span><span class="na">storeAttributeDefinition</span><span class="p">(</span><span class="n">attributeDef</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><label for="__tabbed_8_2">C#</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="n">AttributeDefinition</span><span class="w"> </span><span class="n">attributeDef</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">AttributeDefinition</span><span class="p">();</span>
+<span class="n">attributeDef</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Billing Address&quot;</span><span class="p">;</span>
+<span class="n">attributeDef</span><span class="p">.</span><span class="n">tags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;geographic_location&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;financial&quot;</span><span class="p">};</span>
+<span class="n">attributeDef</span><span class="p">.</span><span class="n">hint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;{ line_one: \&quot;1 Hacker Way\&quot;, line_two: \&quot;Apt. 53\&quot;, city: \&quot;Menlo Park\&quot;, state: \&quot;California\&quot;, postal_code: \&quot;94025-1456\&quot; country: \&quot;USA\&quot; }&quot;</span><span class="p">;</span>
+
+<span class="n">attributeDef</span><span class="p">.</span><span class="n">SetSchema</span><span class="p">(</span><span class="n">PrimitiveSchema</span><span class="p">.</span><span class="n">String</span><span class="p">);</span><span class="w"> </span><span class="c1">// For simple, unstsructured data</span>
+<span class="n">attributeDef</span><span class="p">.</span><span class="n">SchemaFromClass</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">YourModel</span><span class="p">));</span><span class="w"> </span><span class="c1">// Alternatively, creating a schema to store objects of a class</span>
+<span class="n">attributeDef</span><span class="p">.</span><span class="n">repeatable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+<span class="n">attributeDef</span><span class="p">.</span><span class="n">indexed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+
+<span class="k">await</span><span class="w"> </span><span class="n">vault</span><span class="p">.</span><span class="n">StoreAttributeDefinitionAsync</span><span class="p">(</span><span class="n">attribute</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_8_3" name="__tabbed_8" type="radio" /><label for="__tabbed_8_3">Node.js</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">attribute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">AttributeDefinition</span><span class="p">();</span>
+<span class="nx">attribute</span><span class="p">.</span><span class="nx">setName</span><span class="p">(</span><span class="s2">&quot;Billing Address&quot;</span><span class="p">);</span>
+<span class="nx">attribute</span><span class="p">.</span><span class="nx">setTags</span><span class="p">([</span><span class="s2">&quot;geographic_location&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;financial&quot;</span><span class="p">]);</span>
+<span class="nx">attribute</span><span class="p">.</span><span class="nx">setHint</span><span class="p">(</span><span class="s2">&quot;{ line_one: \&quot;1 Hacker Way\&quot;, line_two: \&quot;Apt. 53\&quot;, city: \&quot;Menlo Park\&quot;, state: \&quot;California\&quot;, postal_code: \&quot;94025-1456\&quot; country: \&quot;USA\&quot; }&quot;</span><span class="p">);</span>
+<span class="nx">attribute</span><span class="p">.</span><span class="nx">setSchema</span><span class="p">(</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span><span class="w"> </span>
+<span class="w">                    </span><span class="s2">&quot;line_one&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="s2">&quot;line_two&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="s2">&quot;city&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="s2">&quot;state&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="s2">&quot;postal_code&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="s2">&quot;country&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">                  </span><span class="p">}));</span>
+<span class="nx">attribute</span><span class="p">.</span><span class="nx">setRepeatable</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+<span class="nx">attribute</span><span class="p">.</span><span class="nx">setImmutable</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+<span class="nx">attribute</span><span class="p">.</span><span class="nx">setIndexed</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+<span class="nx">attribute</span><span class="p">.</span><span class="nx">setRegulations</span><span class="p">([</span><span class="s2">&quot;GDPR&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;CCPA&quot;</span><span class="p">]);</span>
+
+<span class="nx">vault</span><span class="p">.</span><span class="nx">storeAttribute</span><span class="p">(</span><span class="nx">attribute</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_8_4" name="__tabbed_8" type="radio" /><label for="__tabbed_8_4">Python</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="n">attribute</span> <span class="o">=</span> <span class="n">AttributeDefinition</span><span class="p">(</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Billing Address&quot;</span><span class="p">,</span>
+    <span class="n">tags</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;geographic_location&quot;</span><span class="p">,</span> <span class="s2">&quot;financial&quot;</span><span class="p">],</span>
+    <span class="n">hint</span> <span class="o">=</span> <span class="s2">&quot;{ line_one: </span><span class="se">\&quot;</span><span class="s2">1 Hacker Way</span><span class="se">\&quot;</span><span class="s2">, line_two: </span><span class="se">\&quot;</span><span class="s2">Apt. 53</span><span class="se">\&quot;</span><span class="s2">, city: </span><span class="se">\&quot;</span><span class="s2">Menlo Park</span><span class="se">\&quot;</span><span class="s2">, state: </span><span class="se">\&quot;</span><span class="s2">California</span><span class="se">\&quot;</span><span class="s2">, postal_code: </span><span class="se">\&quot;</span><span class="s2">94025-1456</span><span class="se">\&quot;</span><span class="s2"> country: </span><span class="se">\&quot;</span><span class="s2">USA</span><span class="se">\&quot;</span><span class="s2"> }&quot;</span><span class="p">,</span>
+    <span class="n">schema</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span> 
+                    <span class="s2">&quot;line_one&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;line_two&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;postal_code&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;country&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
+                  <span class="p">}),</span>
+    <span class="n">repeatable</span> <span class="o">=</span> <span class="n">false</span><span class="p">,</span>
+    <span class="n">indexed</span> <span class="o">=</span> <span class="n">false</span><span class="p">,</span>
+    <span class="n">regulations</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;GDPR&quot;</span><span class="p">,</span> <span class="s2">&quot;CCPA&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="n">vault</span><span class="o">.</span><span class="n">store_attribute</span><span class="p">(</span><span class="n">attribute</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_8_5" name="__tabbed_8" type="radio" /><label for="__tabbed_8_5">PHP</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="x">$attribute = new AttributeDefinition();</span>
+<span class="x">$attribute-&gt;setName(&quot;Billing Address&quot;);</span>
+<span class="x">$attribute-&gt;setTags(array(&quot;geographic_location&quot;, &quot;financial&quot;));</span>
+<span class="x">$attribute-&gt;setHint(&quot;{ line_one: \&quot;1 Hacker Way\&quot;, line_two: \&quot;Apt. 53\&quot;, </span>
+<span class="x">                    city: \&quot;Menlo Park\&quot;, state: \&quot;California\&quot;, </span>
+<span class="x">                    postal_code: \&quot;94025-1456\&quot;, country: \&quot;USA\&quot;</span>
+<span class="x">                  }&quot;);</span>
+<span class="x">$attribute-&gt;setSchema(json.encode({ </span>
+<span class="x">                    &quot;line_one&quot;: &quot;string&quot;,</span>
+<span class="x">                    &quot;line_two&quot;: &quot;string&quot;,</span>
+<span class="x">                    &quot;city&quot;: &quot;string&quot;,</span>
+<span class="x">                    &quot;state&quot;: &quot;string&quot;,</span>
+<span class="x">                    &quot;postal_code&quot;: &quot;string&quot;,</span>
+<span class="x">                    &quot;country&quot;: &quot;string&quot;</span>
+<span class="x">                  });</span>
+<span class="x">$attribute-&gt;setRepeatable(false);</span>
+<span class="x">$attribute-&gt;setImmutable(false);</span>
+<span class="x">$attribute-&gt;setIndexed(false);</span>
+<span class="x">$attribute-&gt;setRegulations(array(&quot;GDPR&quot;, &quot;CCPA&quot;));</span>
+
+<span class="x">$vault-&gt;storeAttribute($attribute);</span>
+</code></pre></div>
+</div>
+</div>
+<h3 id="retrieving-attribute-definitions-from-the-vault">Retrieving Attribute Definitions from the Vault</h3>
+<p>To view metadata about attribute definitions, call <code>getAttributeDefinition</code> to view one attribute definition by name or <code>getAttributeDefinitions</code> to list all attribute definitions in the system.</p>
+<div class="tabbed-set" data-tabs="9:5"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><label for="__tabbed_9_1">Java</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="c1">// Retrieving all attribute definitions</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">AttributeDefinition</span><span class="o">&gt;</span><span class="w"> </span><span class="n">attributeDefs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vault</span><span class="p">.</span><span class="na">getAttributeDefinitions</span><span class="p">();</span>
+
+<span class="c1">// Retrieving specific attribute definition</span>
+<span class="n">AttributeDefinition</span><span class="w"> </span><span class="n">attributeDef</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vault</span><span class="p">.</span><span class="na">getAttributeDefinition</span><span class="p">(</span><span class="s">&quot;Billing Address&quot;</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><label for="__tabbed_9_2">C#</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="c1">// Retrieving all attributes</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">AttributeDefinition</span><span class="o">&gt;</span><span class="w"> </span><span class="n">attributes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">vault</span><span class="p">.</span><span class="n">GetAttributeDefinitionsAsync</span><span class="p">();</span>
+
+<span class="c1">// Retrieving specific attribute</span>
+<span class="n">AttributeDefinition</span><span class="w"> </span><span class="n">attribute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">vault</span><span class="p">.</span><span class="n">GetAttributeDefinitionAsync</span><span class="p">(</span><span class="s">&quot;Billing Address&quot;</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_9_3" name="__tabbed_9" type="radio" /><label for="__tabbed_9_3">Node.js</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="c1">// Retrieving all attributes</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">attributes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">vault</span><span class="p">.</span><span class="nx">getAttributeDefinitions</span><span class="p">();</span>
+
+<span class="c1">// Retrieving specific attribute</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">attribute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">vault</span><span class="p">.</span><span class="nx">getAttributeDefinition</span><span class="p">(</span><span class="s2">&quot;Billing Address&quot;</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_9_4" name="__tabbed_9" type="radio" /><label for="__tabbed_9_4">Python</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="c1"># Retrieving all attributes</span>
+<span class="n">attributes</span> <span class="o">=</span> <span class="n">vault</span><span class="o">.</span><span class="n">get_attribute_definitions</span><span class="p">()</span>
+
+<span class="c1"># Retrieving specific attribute</span>
+<span class="n">attribute</span> <span class="o">=</span> <span class="n">vault</span><span class="o">.</span><span class="n">get_attribute_definition</span><span class="p">(</span><span class="s2">&quot;Billing Address&quot;</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_9_5" name="__tabbed_9" type="radio" /><label for="__tabbed_9_5">PHP</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="x">// Retrieving all attributes</span>
+<span class="x">$attributes = $vault-&gt;getAttributeDefinitions();</span>
+
+<span class="x">// Retrieving specific attribute</span>
+<span class="x">$attribute = $vault-&gt;getAttributeDefinition(&quot;Billing Address&quot;);</span>
+</code></pre></div>
+</div>
+</div>
+<hr />
+<h2 id="tags">Tags</h2>
+<p><a href="/glossary/tag">Tags</a> are user-defined strings that can be applied to attributes to aid in classification and searching.</p>
+<h3 id="storing-a-tag-in-the-vault">Storing a Tag in the Vault</h3>
+<p>To store a new tag, create a Tag object and save it to the vault.</p>
+<div class="tabbed-set" data-tabs="10:5"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><label for="__tabbed_10_1">Java</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="n">vault</span><span class="p">.</span><span class="na">storeTag</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Tag</span><span class="p">(</span><span class="s">&quot;Financial Data&quot;</span><span class="p">));</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><label for="__tabbed_10_2">C#</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="k">await</span><span class="w"> </span><span class="n">vault</span><span class="p">.</span><span class="n">StoreTagAsync</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Tag</span><span class="p">(</span><span class="s">&quot;Financial Data&quot;</span><span class="p">));</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_10_3" name="__tabbed_10" type="radio" /><label for="__tabbed_10_3">Node.js</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="nx">vault</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">Tag</span><span class="p">(</span><span class="s2">&quot;Financial Data&quot;</span><span class="p">));</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_10_4" name="__tabbed_10" type="radio" /><label for="__tabbed_10_4">Python</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="n">tag</span> <span class="o">=</span> <span class="n">vault</span><span class="o">.</span><span class="n">store_tag</span><span class="p">(</span><span class="n">Tag</span><span class="p">(</span><span class="s2">&quot;Financial Data&quot;</span><span class="p">))</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_10_5" name="__tabbed_10" type="radio" /><label for="__tabbed_10_5">PHP</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="x">$tag = $vault-&gt;save(new Tag(&quot;Financial Data&quot;));</span>
+</code></pre></div>
+</div>
+</div>
+<h3 id="retrieving-tags-from-the-vault">Retrieving Tags from the Vault</h3>
+<p>Like attribute definition metadata, tag metadata can be retrieved for a single tag or for all tags in the system.</p>
+<div class="tabbed-set" data-tabs="11:5"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><label for="__tabbed_11_1">Java</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="c1">// Retrieving all tags</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">Tag</span><span class="o">&gt;</span><span class="w"> </span><span class="n">tags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vault</span><span class="p">.</span><span class="na">getTags</span><span class="p">();</span>
+
+<span class="c1">// Retrieving specific tag</span>
+<span class="n">Tag</span><span class="w"> </span><span class="n">tag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vault</span><span class="p">.</span><span class="na">getTag</span><span class="p">(</span><span class="s">&quot;Financial Data&quot;</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><label for="__tabbed_11_2">C#</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="c1">// Retrieving all tags</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">Tag</span><span class="o">&gt;</span><span class="w"> </span><span class="n">tags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">vault</span><span class="p">.</span><span class="n">GetTagsAsync</span><span class="p">();</span>
+
+<span class="c1">// Retrieving specific tag</span>
+<span class="n">String</span><span class="w"> </span><span class="n">tag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">vault</span><span class="p">.</span><span class="n">GetTagAsync</span><span class="p">(</span><span class="s">&quot;Financial Data&quot;</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_11_3" name="__tabbed_11" type="radio" /><label for="__tabbed_11_3">Node.js</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="c1">// Retrieving all tags</span>
+<span class="nx">vault</span><span class="p">.</span><span class="nx">getTags</span><span class="p">().</span><span class="nx">then</span><span class="p">((</span><span class="nx">tags</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// use tags</span>
+<span class="p">});</span>
+
+<span class="c1">// Retrieving specific tag</span>
+<span class="nx">vault</span><span class="p">.</span><span class="nx">getTag</span><span class="p">(</span><span class="s2">&quot;Financial Data&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">tag</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// use tag</span>
+<span class="p">});</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_11_4" name="__tabbed_11" type="radio" /><label for="__tabbed_11_4">Python</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="c1"># Retrieving all tags</span>
+<span class="n">tags</span> <span class="o">=</span> <span class="n">vault</span><span class="o">.</span><span class="n">get_tags</span><span class="p">()</span>
+
+<span class="c1"># Retrieving specific tag</span>
+<span class="n">tag</span> <span class="o">=</span> <span class="n">vault</span><span class="o">.</span><span class="n">get_tag</span><span class="p">(</span><span class="s2">&quot;Financial Data&quot;</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_11_5" name="__tabbed_11" type="radio" /><label for="__tabbed_11_5">PHP</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="x">// Retrieving all tags</span>
+<span class="x">$tags = $vault-&gt;getTags();</span>
+
+<span class="x">// Retrieving specific tag</span>
+<span class="x">$tag = $vault-&gt;getTag(&quot;Financial Data&quot;);</span>
+</code></pre></div>
+</div>
+</div>
+<h3 id="deleting-tags-from-the-vault">Deleting Tags from the Vault</h3>
+<p>To delete a tag, specify the tag to be removed. A boolean denoting the status of the operation will be returned. This will remove the tag from all attributes, attribute definitions, and data subjects that are currently tagged with it.</p>
+<div class="tabbed-set" data-tabs="12:5"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><label for="__tabbed_12_1">Java</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="c1">// Removing a specific tag</span>
+<span class="kt">boolean</span><span class="w"> </span><span class="n">removed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vault</span><span class="p">.</span><span class="na">deleteTag</span><span class="p">(</span><span class="s">&quot;Financial Data&quot;</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><label for="__tabbed_12_2">C#</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="c1">// Removing a specific tag</span>
+<span class="kt">bool</span><span class="w"> </span><span class="n">removed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">vault</span><span class="p">.</span><span class="n">DeleteTagAsync</span><span class="p">(</span><span class="s">&quot;Financial Data&quot;</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_12_3" name="__tabbed_12" type="radio" /><label for="__tabbed_12_3">Node.js</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="c1">// Removing a specific tag</span>
+<span class="nx">vault</span><span class="p">.</span><span class="nx">removeTag</span><span class="p">(</span><span class="s2">&quot;Financial Data&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">removed</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// removed is a boolean</span>
+<span class="p">});</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_12_4" name="__tabbed_12" type="radio" /><label for="__tabbed_12_4">Python</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="c1"># Removing a specific tag</span>
+<span class="n">removed</span> <span class="o">=</span> <span class="n">vault</span><span class="o">.</span><span class="n">remove_tag</span><span class="p">(</span><span class="s2">&quot;Financial Data&quot;</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_12_5" name="__tabbed_12" type="radio" /><label for="__tabbed_12_5">PHP</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="x">// Removing a specific tag</span>
+<span class="x">$removed = $vault-&gt;removeTag(&quot;Financial Data&quot;);</span>
+</code></pre></div>
+</div>
+</div>
+<hr />
+<h2 id="regulations">Regulations</h2>
+<p>A <a href="/glossary/regulation">regulation</a> object represents a governmental regulation that impacts how you can use the data in your vault. Each data point can have a number of regulations associated with it, which makes it easier to ensure your use of the data is compliant. You can tag data points with regulations when entering them into the system, or specify rules that the system will use to automatically tag regulations for you.</p>
+<h3 id="storing-a-regulation-in-the-vault">Storing a Regulation in the Vault</h3>
+<p>To store a regulation to the vault, create a Regulation object, set its key and its display name along with a URL pointing to further information about it, and call <code>storeRegulation</code>. To automatically apply regulations to incoming data, <a href="/tutorials/regulation-rules">rules</a> can be specified.</p>
+<div class="tabbed-set" data-tabs="13:5"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><label for="__tabbed_13_1">Java</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="c1">// Storing a regulation</span>
+<span class="n">Regulation</span><span class="w"> </span><span class="n">regulation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Regulation</span><span class="p">();</span>
+<span class="n">regulation</span><span class="p">.</span><span class="na">setKey</span><span class="p">(</span><span class="s">&quot;GDPR&quot;</span><span class="p">);</span>
+<span class="n">regulation</span><span class="p">.</span><span class="na">setName</span><span class="p">(</span><span class="s">&quot;General Data Protection Regulation&quot;</span><span class="p">);</span>
+<span class="n">regulation</span><span class="p">.</span><span class="na">setUrl</span><span class="p">(</span><span class="s">&quot;https://gdpr.eu/&quot;</span><span class="p">);</span>
+<span class="n">regulation</span><span class="p">.</span><span class="na">setRule</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">UserRule</span><span class="p">(</span><span class="s">&quot;GEOGRAPHIC_REGION&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">UserRule</span><span class="p">.</span><span class="na">UserValuePredicate</span><span class="p">.</span><span class="na">EQUALS</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;EU&quot;</span><span class="p">));</span>
+<span class="n">vault</span><span class="p">.</span><span class="na">storeRegulation</span><span class="p">(</span><span class="n">regulation</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><label for="__tabbed_13_2">C#</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="c1">// Storing a regulation</span>
+<span class="n">Regulation</span><span class="w"> </span><span class="n">regulation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Regulation</span><span class="p">();</span>
+<span class="n">regulation</span><span class="p">.</span><span class="n">Key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;GDPR&quot;</span><span class="p">;</span>
+<span class="n">regulation</span><span class="p">.</span><span class="n">Name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;General Data Protection Regulation&quot;</span><span class="p">;</span>
+<span class="n">regulation</span><span class="p">.</span><span class="n">Url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;https://gdpr.eu/&quot;</span><span class="p">;</span>
+<span class="n">regulation</span><span class="p">.</span><span class="n">Rule</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">UserRule</span><span class="p">(</span><span class="s">&quot;GEOGRAPHIC_REGION&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">UserRule</span><span class="p">.</span><span class="n">UserValuePredicate</span><span class="p">.</span><span class="n">Eq</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;EU&quot;</span><span class="p">);</span>
+<span class="k">await</span><span class="w"> </span><span class="n">vault</span><span class="p">.</span><span class="n">StoreRegulationAsync</span><span class="p">(</span><span class="n">regulation</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_13_3" name="__tabbed_13" type="radio" /><label for="__tabbed_13_3">Node.js</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="c1">// Storing a regulation</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">regulation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Regulation</span><span class="p">();</span>
+<span class="nx">regulation</span><span class="p">.</span><span class="nx">setKey</span><span class="p">(</span><span class="s2">&quot;GDPR&quot;</span><span class="p">);</span>
+<span class="nx">regulation</span><span class="p">.</span><span class="nx">setName</span><span class="p">(</span><span class="s2">&quot;General Data Protection Regulation&quot;</span><span class="p">);</span>
+<span class="nx">regulation</span><span class="p">.</span><span class="nx">setUrl</span><span class="p">(</span><span class="s2">&quot;https://gdpr.eu/&quot;</span><span class="p">);</span>
+<span class="nx">regulation</span><span class="p">.</span><span class="nx">setRule</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">UserRule</span><span class="p">(</span><span class="s2">&quot;GEOGRAPHIC_REGION&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">UserRule</span><span class="p">.</span><span class="nx">UserValuePredicate</span><span class="p">.</span><span class="nx">EQUALS</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;EU&quot;</span><span class="p">));</span>
+<span class="nx">vault</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="nx">regulation</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_13_4" name="__tabbed_13" type="radio" /><label for="__tabbed_13_4">Python</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="c1"># Storing a regulation</span>
+<span class="n">regulation</span> <span class="o">=</span> <span class="n">Regulation</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">&quot;GDPR&quot;</span><span class="p">,</span> 
+                        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;General Data Protection Regulation&quot;</span><span class="p">,</span>
+                        <span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://gdpr.eu/&quot;</span> 
+                        <span class="p">)</span>
+<span class="n">savedRegulation</span> <span class="o">=</span> <span class="n">vault</span><span class="o">.</span><span class="n">store_regulation</span><span class="p">(</span><span class="n">regulation</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_13_5" name="__tabbed_13" type="radio" /><label for="__tabbed_13_5">PHP</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="x">// Storing a regulation</span>
+<span class="x">$regulation = new Regulation(&quot;GDPR&quot;, </span>
+<span class="x">                                &quot;General Data Protection Regulation&quot;,</span>
+<span class="x">                                &quot;https://gdpr.eu/&quot; </span>
+<span class="x">                                );</span>
+<span class="x">$savedRegulation = $vault-&gt;save($regulation);</span>
+</code></pre></div>
+</div>
+</div>
+<h3 id="retrieving-regulations-from-the-vault">Retrieving Regulations from the Vault</h3>
+<p><a href="/glossary/regulation">Regulations</a> can be retrieved as a list of Regulation objects or by requesting a single regulation by its key.</p>
+<div class="tabbed-set" data-tabs="14:5"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><label for="__tabbed_14_1">Java</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="c1">// Retrieving all regulations</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">Regulation</span><span class="o">&gt;</span><span class="w"> </span><span class="n">regulations</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vault</span><span class="p">.</span><span class="na">getRegulations</span><span class="p">();</span>
+
+<span class="c1">// Retrieving specific regulation</span>
+<span class="n">Regulation</span><span class="w"> </span><span class="n">regulation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vault</span><span class="p">.</span><span class="na">getRegulation</span><span class="p">(</span><span class="s">&quot;GDPR&quot;</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_14_2" name="__tabbed_14" type="radio" /><label for="__tabbed_14_2">C#</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="c1">/// Retrieving all regulations</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">Regulation</span><span class="o">&gt;</span><span class="w"> </span><span class="n">regulations</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">vault</span><span class="p">.</span><span class="n">GetRegulationsAsync</span><span class="p">();</span>
+
+<span class="c1">// Retrieving specific regulation</span>
+<span class="n">Regulation</span><span class="w"> </span><span class="n">regulation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">vault</span><span class="p">.</span><span class="n">GetRegulationAsync</span><span class="p">(</span><span class="s">&quot;GDPR&quot;</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_14_3" name="__tabbed_14" type="radio" /><label for="__tabbed_14_3">Node.js</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="c1">// Retrieving all regulations</span>
+<span class="nx">vault</span><span class="p">.</span><span class="nx">getRegulations</span><span class="p">().</span><span class="nx">then</span><span class="p">((</span><span class="nx">regulations</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// use regulations</span>
+<span class="p">});</span>
+
+<span class="c1">// Retrieving specific regulation</span>
+<span class="nx">vault</span><span class="p">.</span><span class="nx">getRegulation</span><span class="p">(</span><span class="s2">&quot;GDPR&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">regulation</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// use regulation</span>
+<span class="p">});</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_14_4" name="__tabbed_14" type="radio" /><label for="__tabbed_14_4">Python</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="c1"># Retrieving all regulations</span>
+<span class="n">regulations</span> <span class="o">=</span> <span class="n">vault</span><span class="o">.</span><span class="n">get_regulations</span>
+
+<span class="c1"># Retrieving specific regulation</span>
+<span class="n">regulation</span> <span class="o">=</span> <span class="n">vault</span><span class="o">.</span><span class="n">get_regulation</span><span class="p">(</span><span class="s2">&quot;GDPR&quot;</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_14_5" name="__tabbed_14" type="radio" /><label for="__tabbed_14_5">PHP</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="x">// Retrieving all regulations</span>
+<span class="x">$regulations = $vault-&gt;getRegulations();</span>
+
+<span class="x">// Retrieving specific regulation</span>
+<span class="x">$regulation = $vault-&gt;getRegulation(&quot;GDPR&quot;);</span>
+</code></pre></div>
+</div>
+</div>
+<h3 id="deleting-regulations-from-the-vault">Deleting Regulations from the Vault</h3>
+<p>To remove a <a href="/glossary/regulation">regulation</a>, specify the key of the regulation to be removed. A boolean denoting the status of the operation will be returned.</p>
+<div class="tabbed-set" data-tabs="15:5"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><label for="__tabbed_15_1">Java</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="c1">// Removing a specific regulation</span>
+<span class="kt">boolean</span><span class="w"> </span><span class="n">removed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vault</span><span class="p">.</span><span class="na">deleteRegulation</span><span class="p">(</span><span class="s">&quot;GDPR&quot;</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_15_2" name="__tabbed_15" type="radio" /><label for="__tabbed_15_2">C#</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="c1">// Removing a specific regulation</span>
+<span class="kt">bool</span><span class="w"> </span><span class="n">removed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">vault</span><span class="p">.</span><span class="n">DeleteRegulationAsync</span><span class="p">(</span><span class="s">&quot;GDPR&quot;</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_15_3" name="__tabbed_15" type="radio" /><label for="__tabbed_15_3">Node.js</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="c1">// Removing a specific regulation</span>
+<span class="nx">vault</span><span class="p">.</span><span class="nx">removeRegulation</span><span class="p">(</span><span class="s2">&quot;GDPR&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">removed</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// removed is a boolean</span>
+<span class="p">});</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_15_4" name="__tabbed_15" type="radio" /><label for="__tabbed_15_4">Python</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="c1"># Removing a specific regulation</span>
+<span class="n">removed</span> <span class="o">=</span> <span class="n">vault</span><span class="o">.</span><span class="n">delete_regulation</span><span class="p">(</span><span class="s2">&quot;GDPR&quot;</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_15_5" name="__tabbed_15" type="radio" /><label for="__tabbed_15_5">PHP</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="x">// Removing a specific regulation</span>
+<span class="x">$removed = $vault-&gt;removeRegulation(&quot;GDPR&quot;);</span>
+</code></pre></div>
+</div>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../getting-started/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Getting Started" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Getting Started
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../api/endpoints/" class="md-footer__link md-footer__link--next" aria-label="Next: Endpoint reference" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Endpoint reference
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      
+        <script src="../javascript/libraries.js"></script>
+      
+    
+    
+  </body>
+</html>

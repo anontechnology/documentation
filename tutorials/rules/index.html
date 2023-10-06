@@ -1,0 +1,1219 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Official documentation for the Anontech ViziVault Platform">
+      
+      
+      
+        <link rel="canonical" href="https://anontechnology.github.io/documentation/tutorials/rules/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>Rules - Anontech</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.975780f9.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="None" data-md-color-accent="None">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#rules" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Anontech" class="md-header__button md-logo" aria-label="Anontech" data-md-component="logo">
+      
+  <img src="../../assets/images/anontech-cropped.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Anontech
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Rules
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Anontech" class="md-nav__button md-logo" aria-label="Anontech" data-md-component="logo">
+      
+  <img src="../../assets/images/anontech-cropped.png" alt="logo">
+
+    </a>
+    Anontech
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/" class="md-nav__link">
+        Libraries
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          API Reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="API Reference" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          API Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/endpoints/" class="md-nav__link">
+        Endpoint reference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/reportonly/" class="md-nav__link">
+        Report-Only Auditing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/datapoints/" class="md-nav__link">
+        Attributes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/attributes/" class="md-nav__link">
+        Attribute Definitions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/entities/" class="md-nav__link">
+        Data Subjects and Entities
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/tags/" class="md-nav__link">
+        Tags
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/regulations/" class="md-nav__link">
+        Regulations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/rules/" class="md-nav__link">
+        Rules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/entitytypes/" class="md-nav__link">
+        Entity Types
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Glossary
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Glossary" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Glossary
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/attribute-definition/" class="md-nav__link">
+        Attribute Definition
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/datasubject/" class="md-nav__link">
+        Entity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/entity-type/" class="md-nav__link">
+        Entity Type
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/tag/" class="md-nav__link">
+        Tag
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/attribute/" class="md-nav__link">
+        Attribute
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/regulation/" class="md-nav__link">
+        Regulation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/rule/" class="md-nav__link">
+        Rule
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/storage-request/" class="md-nav__link">
+        Storage Request
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Tutorials
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tutorials" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quickstart/" class="md-nav__link">
+        Quickstart
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../attribute-schemas/" class="md-nav__link">
+        Attribute Schemas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alerts/" class="md-nav__link">
+        Scheduled Alerts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Rules
+      </a>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../search/" class="md-nav__link">
+        Search
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Regulations
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Regulations" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Regulations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://gdpr-info.eu/chapter-3/" class="md-nav__link">
+        GDPR (European Union)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://oag.ca.gov/privacy/ccpa" class="md-nav__link">
+        CCPA (California)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.hhs.gov/hipaa/" class="md-nav__link">
+        HIPAA (US medical data)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.pcisecuritystandards.org/" class="md-nav__link">
+        PCI (credit card information)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www2.ed.gov/policy/gen/guid/fpco/ferpa/" class="md-nav__link">
+        FERPA (US)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.ftc.gov/tips-advice/business-center/privacy-and-security/children%27s-privacy" class="md-nav__link">
+        COPPA (US)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          ViziVault Enterprise
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="ViziVault Enterprise" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          ViziVault Enterprise
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vizivault-enterprise/overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vizivault-enterprise/dashboard/" class="md-nav__link">
+        Dashboard
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vizivault-enterprise/discover/" class="md-nav__link">
+        Discover
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vizivault-enterprise/applications/" class="md-nav__link">
+        Applications
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vizivault-enterprise/attributes/" class="md-nav__link">
+        Attributes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vizivault-enterprise/tags/" class="md-nav__link">
+        Tags
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vizivault-enterprise/regulations/" class="md-nav__link">
+        Regulations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vizivault-enterprise/reports/" class="md-nav__link">
+        Reports
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="rules">Rules</h1>
+<p>ViziVault contains a flexible and powerful rules engine that can automate tasks on incoming data. When data is stored in your system, you can configure rules that will check the data against configurable constraints and perform various actions based on which predicates match. This can add metadata taggings such as marking the data with what regulations govern its use (such as GDPR or HIPAA), send notifications to you, or prevent the data from being stored entirely.</p>
+<p>There are four parts to every rule: a name, a constraint that determines when the rule should be active, an action to take when the rule is active, and optionally an execution order that specifies when this rule should be run relative to other rules. Rules can operate on either data or <a href="/api/reportonly">activity</a>; the constraints and actions available for activity rules differ from those available for data rules.</p>
+<h1 id="constraints">Constraints</h1>
+<h2 id="attribute-list-constraints">Attribute list constraints</h2>
+<p>Attribute constraints are applicable to both data rules and activity rules.</p>
+<p>The simplest constraint is an attribute list constraint, which can mark a rule as applying to either all attributes in a specified list, or all attributes that are not in that specified list. The attribute list constraint consists of a list of attribute keys, and an operator, which is either <code>any</code> (which will match data whose attribute is in the list) or <code>none</code> (which will match data whose attribute is not in the list).</p>
+<h2 id="geographic-constraints">Geographic constraints</h2>
+<p>Geographic constraints are applicable to both data rules and activity rules.</p>
+<p>Geographic constraints match incoming data based on the data's geographic location. Note that geolocation data is based on the IP address of the HTTP request storing the data; if there are proxy servers involved, this constraint may not always be fully accurate.</p>
+<p>A geographic constraint consists of an operator (either <code>any</code> or <code>none</code>), a list of countries, and a list of subdivisions. Countries are represented using ISO 3166-1 two-letter codes, and subdivisions are represented using ISO 3166-2 hyphenated codes.</p>
+<h2 id="tag-list-constraints">Tag list constraints</h2>
+<p>Tag constraints are applicable only to data rules.</p>
+<p>Tag list constraints are similar to attribute list constraints, in that they consist of a list of tags and an operator. However, since a data point can have multiple tags (but not belong to multiple attributes), the operator <code>all</code> is also allowed; in this case, the constraint would only match data points whose attribute is tagged with all of the tags in the provided list.</p>
+<h2 id="regulation-list-constraints">Regulation list constraints</h2>
+<p>Regulation constraints are applicable only to data rules.</p>
+<p>Regulation constraints are much the same as attribute list constraints and tag list constraints, consisting of an operator which is <code>any</code> or <code>all</code> or <code>none</code> and a list of regulations.</p>
+<h2 id="entity-type-constraints">Entity type constraints</h2>
+<p>Entity type constraints are applicable only to data rules.</p>
+<p>Entity type constraints consist of a list of <a href="/glossary/entity-type">entity type keys</a> and will match incoming data belonging to an entity of one of the specified types.</p>
+<h2 id="value-constraints">Value constraints</h2>
+<p>Value constraints are applicable only to data rules.</p>
+<p>Value constraints allow you to activate rules based on various properties of the value of an attribute. A value constraint consists of three parts: the attribute to consider, the value to compare the value of the attribute to, and the precise way the attribute values should be compared (referred to as the predicate). Value constraints can be combined with entity tag actions to allow tags to be added based off of the values of the entity's other attributes.</p>
+<p>The valid predicates are as follows:</p>
+<ul>
+<li><code>eq</code>: Matches entities whose value of this attribute is exactly equal to the provided value.</li>
+<li><code>neq</code>: Matches entities whose value of this attribute is anything other than the provided value.</li>
+<li><code>gt</code>: For numerical data; matches entities whose value of this attribute is greater than the provided value.</li>
+<li><code>lt</code>: For numerical data; matches entities whose value of this attribute is less than the provided value.</li>
+<li><code>geq</code>: For numerical data; matches entities whose value of this attribute is greater than or equal to the provided value.</li>
+<li><code>leq</code>: For numerical data; matches entities whose value of this attribute is less than or equal to the provided value.</li>
+<li><code>after</code>: For temporal data; matches entities whose value of this attribute is a later time than the provided value.</li>
+<li><code>before</code>: For temporal data; matches entities whose value of this attribute is an earlier time than the provided value.</li>
+<li><code>in</code>: Treats the value as a comma-delimited list of strings and matches entities whose value of this attribute appears in the provided list.</li>
+<li><code>nin</code>: Treats the value as a comma-delimited list of strings and matches entities whose value of this attribute does not appear in the provided list.</li>
+<li><code>regex</code>: Treats the value as a regular expression and matches entities whose value of this attribute is a string that matches the provided regular expression.</li>
+</ul>
+<h2 id="sentiment-constraints">Sentiment constraints</h2>
+<p>Sentiment constraints are applicable only to data rules.</p>
+<p>For data whose value is natural-language text, the sentiment constraint uses IBM's Watson system to perform sentiment analysis on the data value. Watson detects the overall sentiment of text, as well as the sentiment that the text expresses towards specific topics. This constraint will match data if the overall detected sentiment is more extreme than the threshold (that is, greater than a positive threshold, or less than a negative one), or if sentiment exceeding the threshold is detected towards any keywords.</p>
+<h2 id="application-constraints">Application constraints</h2>
+<p>Application constraints are applicable only to activity rules.</p>
+<p>Application constraints are similar to attribute constraints, containing a list of application ids and an operator that is either "any" or "none". This will match activity events whose specified application ID is either included or excluded in the list.</p>
+<h2 id="event-type-constraints">Event type constraints</h2>
+<p>Event type constraints are applicable only to activity rules.</p>
+<p>An event type constraint consists of some subset of the strings "STORE", "UPDATE", "READ", and "DELETE", and will match activity events whose event type is contained in that subset.</p>
+<h2 id="conjunctive-all-constraints">Conjunctive ("all") constraints</h2>
+<p>Conjunctive constraints are applicable to any rule type.</p>
+<p>Conjunctive constraints allow you to further constrain what data is matched. They consist of a list of other constraints, and will match data that is matched by all of the constituent constraints.</p>
+<h2 id="disjunctive-any-constraints">Disjunctive ("any") constraints</h2>
+<p>Disjunctive constraints are applicable to any rule type.</p>
+<p>Disjunctive constraints allow you to broaden what data is matched. They consist of a list of other constraints, and will match data that is matched by any of the constituent constraints.</p>
+<h1 id="json-format-of-constraints">JSON format of constraints</h1>
+<p>Constraints are expressed as a JSON object, structured as described below. The value of the rule's <code>type</code> field determines the rest of its structure.</p>
+<ul>
+<li>Conjunctive constraint<ul>
+<li><code>type</code> : the string <code>"all"</code></li>
+<li><code>constraints</code> : a list of rule objects</li>
+</ul>
+</li>
+<li>Disjunctive constraint<ul>
+<li><code>type</code> : the string <code>"any"</code></li>
+<li><code>constraints</code> : a list of rule objects</li>
+</ul>
+</li>
+<li>Attribute constraint<ul>
+<li><code>type</code> : the string <code>"attribute"</code></li>
+<li><code>operator</code> : either <code>any</code> or <code>none</code></li>
+<li><code>attributes</code> : list of attribute keys (strings)</li>
+</ul>
+</li>
+<li>Geographic constraint<ul>
+<li><code>type</code> : the string <code>"geo"</code></li>
+<li><code>operator</code> : either <code>any</code> or <code>none</code></li>
+<li><code>countries</code> : list of ISO 3166-1 country codes, as strings</li>
+<li><code>subdivisions</code> : list of ISO 3166-2 country subdivision codes, as strings</li>
+</ul>
+</li>
+<li>Tag constraint<ul>
+<li><code>type</code> : the string <code>"tag"</code></li>
+<li><code>operator</code> : either <code>any</code>, <code>all</code>, or <code>none</code></li>
+<li><code>tags</code> : list of tag names (strings)</li>
+</ul>
+</li>
+<li>Regulation constraint<ul>
+<li><code>type</code> : the string <code>"regulation"</code></li>
+<li><code>operator</code> : either <code>any</code>, <code>all</code>, or <code>none</code></li>
+<li><code>regulations</code> : List of regulation keys (strings)</li>
+</ul>
+</li>
+<li>Entity-attribute-value constraint<ul>
+<li><code>type</code> : the string <code>"user"</code></li>
+<li><code>attribute</code> : attribute key (string)</li>
+<li><code>predicate</code> : one of <code>eq</code>, <code>neq</code>, <code>gt</code>, <code>lt</code>, <code>geq</code>, <code>leq</code>, <code>before</code>, <code>after</code>, <code>in</code>, <code>nin</code>,</li>
+<li><code>value</code> :<ul>
+<li>When predicate is <code>eq</code> or <code>neq</code>, any number or string.</li>
+<li>When predicate is <code>gt</code>, <code>lt</code>, <code>geq</code>, or <code>leq</code>, any number.</li>
+<li>When predicate is <code>before</code> or <code>after</code>, a string representing a point in time.</li>
+<li>When predicate is <code>in</code> or <code>nin</code>, a string consisting of values separated by commas.</li>
+<li>When predicate is <code>regex</code>, a valid regular expression.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Sentiment constraint<ul>
+<li><code>type</code> : the string <code>sentiment</code></li>
+<li><code>threshold</code> : a floating-point number between -1 and 1</li>
+</ul>
+</li>
+<li>Application constraint<ul>
+<li><code>type</code> : the string <code>application</code></li>
+<li><code>operator</code> : either <code>any</code> or <code>none</code></li>
+<li><code>applications</code>: list of application ids (strings)</li>
+</ul>
+</li>
+<li>Event type constraint<ul>
+<li><code>type</code>: the string <code>eventType</code></li>
+<li><code>eventTypes</code>: list of strings taken from among <code>"STORE"</code>, <code>"UPDATE"</code>, <code>"READ"</code>, and <code>"DELETE"</code></li>
+</ul>
+</li>
+</ul>
+<h1 id="actions">Actions</h1>
+<h2 id="notification-action">Notification action</h2>
+<p>Notification actions are available in any rule type.</p>
+<p>A notification action dispatches a notification to the ViziVault enterprise web interface. The text of the notification and its alert level can be configured.</p>
+<h2 id="tag-metadata-action">Tag metadata action</h2>
+<p>Tag actions are available in both data and activity rules.</p>
+<p>A tag metadata action applies a tag to data. This can be used for various business logic, for analytics in the ViziVault Enterprise frontend, and to trigger other rules. Activity rules can also be configured to remove tags.</p>
+<h2 id="prohibition-action">Prohibition action</h2>
+<p>Prohibition actions are available in both data and activity rules.</p>
+<p>A prohibition action marks the relevant entity, stating that certain actions should be disallowed on that entity's data. A prohibition action can also be used to remove an existing prohibition from an entity.</p>
+<p>Reading data, storing new data, overwriting existing data, and deleting data can all be prohibited. For example, to mark that an entity is under a legal hold and therefore actions that could result in data being lost should be disallowed, overwriting and deleting data should be prohibited, while reading and storing can continue unimpeded. Likewise, a privacy regulation could indicate that a data subject wants their data to not be accessed, which would necessitate disallowing reads.</p>
+<h2 id="entity-tag-action">Entity tag action</h2>
+<p>Entity tag actions are available in both data and activity rules.</p>
+<p>An entity tag action adds or removes a tag on the entity that a data point being accessed belongs to. This will cause the tag to be added to all future data stored about that entity.</p>
+<h2 id="regulation-metadata-action">Regulation metadata action</h2>
+<p>Regulation metadata actions are avaiable only in data rules.</p>
+<p>A regulation metadata action adds a regulation to data in the same way a tag metadata action adds a tag. Like a tag metadata action, this can be used for internal business logic or to trigger other rules.</p>
+<h2 id="storage-prevention-action">Storage prevention action</h2>
+<p>Storage prevention actions are available only in data rules.</p>
+<p>A storage prevention action causes the system to reject data, preventing it from being stored in the system. This is often useful for regulatory compliance. This allows configuring a custom message to display to clients when their data is rejected.</p>
+<h2 id="retention-policy-action">Retention policy action</h2>
+<p>Retention policy actions are available only in data rules.</p>
+<p>A retention policy action determines how long the data is considered to still be valid. The retention policy status of all your data can be viewed in ViziVault Enterprise. Retention policies can specify either a cutoff date after which the data is no longer valid, or a number of days to retain the data for. Additionally, a secondary policy can be specified that marks data as invalid if it has not been read for a certain number of days. By default, expired data will remain into the system until it is manually deleted, but data can also be set to automatically delete when it expires.</p>
+<h1 id="json-format-of-actions">JSON format of actions</h1>
+<ul>
+<li>Regulation metadata action<ul>
+<li><code>type</code>: the string <code>"regulation"</code></li>
+<li><code>regulation</code>: a regulation key (string)</li>
+</ul>
+</li>
+<li>Tag metadata action<ul>
+<li><code>type</code>: the string <code>"tag"</code></li>
+<li><code>tag</code>: a tag (string)</li>
+<li><code>status</code>: a boolean; <code>true</code> to add or <code>false</code> to remove. <strong>Only present in activity rules.</strong></li>
+</ul>
+</li>
+<li>Entity tag action<ul>
+<li><code>type</code>: the string <code>"entityTag"</code></li>
+<li><code>tag</code>: a tag (string)</li>
+<li><code>status</code>: a boolean; <code>true</code> to add or <code>false</code> to remove.</li>
+</ul>
+</li>
+<li>Storage prevention action<ul>
+<li><code>type</code>: the string <code>"block"</code></li>
+<li><code>message</code>: a human-readable explantion of why the storage was disallowed</li>
+</ul>
+</li>
+<li>Notification action<ul>
+<li><code>type</code>: the string <code>"alert"</code></li>
+<li><code>alertLevel</code>: one of <code>INFO</code>, <code>WARNING</code>, <code>DANGER</code>, <code>SUCCESS</code>, or <code>NEUTRAL</code></li>
+<li><code>message</code>: the text to display in the notification</li>
+</ul>
+</li>
+<li>Prohibition action<ul>
+<li><code>type</code>: the string <code>"prohibition"</code></li>
+<li><code>status</code>: a boolean; <code>true</code> to add or <code>false</code> to remove.</li>
+<li><code>prohibitions</code>: a list of strings indicating what actions should be prohibited; possible values are <code>READ</code>, <code>STORE</code>, <code>UPDATE</code>, and <code>DELETE</code>.</li>
+</ul>
+</li>
+<li>Retention policy action<ul>
+<li><code>type</code>: the string <code>"retention"</code></li>
+<li><code>expirationDate</code>: an ISO-formatted date string indicating when this data expires (optional; mutually exclusive with <code>daysSinceStore</code>)</li>
+<li><code>daysSinceStore</code>: an integer indicating how many days to retain this data for (optional; mutually exclusive with <code>daysSinceStore</code>)</li>
+<li><code>daysSinceRead</code>: an integer indicating that the data will become invalid if it has not been read during this many days (optional)</li>
+<li><code>autoDelete</code>: a boolean value; if true, the system will automatically delete this data when it expires</li>
+</ul>
+</li>
+</ul>
+<h1 id="execution-order">Execution order</h1>
+<p>Because rules can modify tags and regulations but can also depend on tags and regulations, it may be necessary to specify an order in which they are executed. Because of this, rules can optionally have an execution order specified. Rules that have the same type of action will be executed in order from lowest to highest specified order. When two or more rules have the same execution order, there is no guarantee what order they will be executed in, although it will usually default to the order they were created. For this reason, it is recommended that if one rule modifies a tag or regulation that another rule depends on, the two rules should have different execution orders.</p>
+<p>Some rules by their nature cannot affect further rules. For this reason, rules are executed as follows: first, all rules that add tags in order, then all rules that add regulations in order, then all rules that send notifications, then all rules that block storage.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../alerts/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Scheduled Alerts" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Scheduled Alerts
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../search/" class="md-footer__link md-footer__link--next" aria-label="Next: Search" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Search
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      
+        <script src="../../javascript/libraries.js"></script>
+      
+    
+    
+  </body>
+</html>
